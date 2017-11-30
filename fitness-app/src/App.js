@@ -7,23 +7,24 @@ class App extends Component {
 
   state = {
     buttonActive: true,
-  }
+  };
 
   render() {
     return (
       <div className={styles.App}>
         <h1>App</h1>
         <button type='button' style={
-            this.state.buttonActive ? {'background':'red'} : {'background':'green'}
+            this.state.buttonActive ? { background: 'red' } : { background: 'green' }
         } onClick={this.changeState}>Click</button>
         <img src={webpackLogo} alt='' />
-        <PropsTest name='First App' />
+        <PropsTest
+            name='First App'
+            fast='gh'/>
       </div>
     );
   }
 
-  changeState = () => this.setState({buttonActive: !this.state.buttonActive})
-
+  changeState = () => this.setState({ buttonActive: !this.state.buttonActive });
 }
 
 export default App;

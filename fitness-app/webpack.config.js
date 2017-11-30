@@ -74,8 +74,8 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({template: './src/index.html'}),
     new CleanWebpackPlugin(['dist']),
-    extractSass
-  ]
+    extractSass,
+  ];
 
 };
 
