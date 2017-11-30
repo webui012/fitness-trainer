@@ -12,8 +12,6 @@ class App extends Component {
         <Slider/>
         <Footer/>
       </div>
-
-
     )
   }
 }
