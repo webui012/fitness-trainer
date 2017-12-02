@@ -1,0 +1,15 @@
+.login-btn {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 12px;
+  padding: 20px;
+  background-color: transparent;
+  transition: background-color color .2s;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+
+  &:hover {
+    color: #000;
+    background-color: #fff;
+  }
+}

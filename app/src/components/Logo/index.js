@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import './style.scss'
 
-const Logo = () => {
+const Logo = props => {
   return (
     <div className='logo-wrapper'>
       {/* <img src='' alt='Logo' /> */}
-      <span className='logo'>Fitness</span>
+      <span className='logo' style={props.style}>Fitness</span>
     </div>
   )
 }

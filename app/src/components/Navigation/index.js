@@ -1,15 +1,34 @@
 import React, { Component } from 'react'
 import './style.scss'
 
-const Navigation = () => {
+const Navigation = props => {
   return (
     <nav className='nav'>
-      <a href='#' className='link nav-link'>Главная</a>
-      <a href='#' className='link nav-link'>О тренере</a>
-      <a href='#' className='link nav-link'>Услуги</a>
-      <a href='#' className='link nav-link'>Акции</a>
-      <a href='#' className='link nav-link'>Форум</a>
-      <a href='#' className='link nav-link'>Контакты</a>
+      <ul className='nav-list'>
+        <li className='nav-list-item'>
+          <a href='#' className='link nav-link'>Главная</a>
+        </li>
+
+        <li className='nav-list-item'>
+          <a href='#' className='link nav-link'>О тренере</a>
+        </li>
+
+        <li className='nav-list-item'>
+          <a href='#' className='link nav-link'>Услуги</a>
+        </li>
+
+        <li className='nav-list-item'>
+          <a href='#' className='link nav-link'>Акции</a>
+        </li>
+
+        <li className='nav-list-item'>
+          <a href='#' className='link nav-link'>Форум</a>
+        </li>
+
+        <li className='nav-list-item'>
+          <a href='#' className='link nav-link'>Контакты</a>
+        </li>
+      </ul>
     </nav>
   )
 }
