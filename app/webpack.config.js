@@ -1,11 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
-  filename: "main.css",
-  disable: process.env.NODE_ENV === "development"
+  filename: 'main.css',
+  disable: process.env.NODE_ENV === 'development'
 });
 
 const config = {
@@ -27,17 +27,19 @@ const config = {
       {
         test: /\.scss$/,
         use: extractSass.extract({
-          use: [{
-            loader: "css-loader",
+          use: [
+            {
+            loader: 'css-loader',
             options: {
               modules: true,
               localIdentName: '[local]--[hash:base64:5]'
             }
           }, {
-            loader: "sass-loader"
-          }],
+            loader: 'sass-loader'
+          }
+        ],
           // use style-loader in development
-          fallback: "style-loader"
+          fallback: 'style-loader'
         })
       },
       {
@@ -73,7 +75,7 @@ const config = {
 
   plugins: [
     new HtmlWebpackPlugin({template: './src/index.html'}),
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin([ 'dist' ]),
     extractSass,
   ]
 
