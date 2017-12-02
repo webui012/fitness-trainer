@@ -1,0 +1,13 @@
+.nav {
+  display: flex;
+}
+
+.nav-link {
+  color: rgba(0, 0, 0, 0.6);
+  display: block;
+  padding: 20px;
+
+  &:hover {
+    color: #000;
+  }
+}
