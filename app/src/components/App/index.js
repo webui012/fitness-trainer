@@ -11,7 +11,7 @@ const App = () => {
       <Header />
       <Slider />
       {/* <Main /> */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

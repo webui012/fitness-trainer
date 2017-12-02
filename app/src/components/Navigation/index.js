@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import './style.scss'
 
-const Navigation = () => {
+const Navigation = props => {
   return (
     <nav className='nav'>
       <ul className='nav-list'>
-        <li className='nav-list-item active'>
+        <li className='nav-list-item'>
           <a href='#' className='link nav-link'>Главная</a>
         </li>
 
