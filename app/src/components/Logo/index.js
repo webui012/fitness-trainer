@@ -4,7 +4,8 @@ import './style.scss'
 const Logo = () => {
   return (
     <div className='logo-wrapper'>
-      <img src='' alt='Logo' />
+      {/* <img src='' alt='Logo' /> */}
+      <span className='logo'>Fitness</span>
     </div>
   )
 }
