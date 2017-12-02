@@ -1,6 +1,10 @@
 .header {
+  z-index: 1000;
+  width: 100%;
+  position: fixed;
+  top: 0;
   font-family: 'Open Sans', sans-serif;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   padding: 0 20px;
   justify-content: space-between;
