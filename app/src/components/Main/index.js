@@ -1,12 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 // import Slider from '../Slider'
-import './style.scss'
+import styles from './style.scss'
 
-const Main = () => {
-  return (
-    <div className='main'>
-      {/* <Slider /> */}
-    </div>
-  )
-}
+const Main = () =>
+  <div className={styles.main}>
+    {/* <Slider /> */}
+  </div>
+
 export default Main

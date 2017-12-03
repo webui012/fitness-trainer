@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Swiper from 'react-id-swiper'
-import './style.scss'
+import styles from './style.scss'
 
 class Slider extends Component {
   render() {
