@@ -22,7 +22,7 @@ import styles from './style.scss';
 
 const App = () =>
   <Router>
-    <div className='App'>
+    <div className={styles.App}>
       <Header />
       <Main>
         <Route exact path='/' component={Homepage} />
