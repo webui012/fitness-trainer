@@ -8,7 +8,7 @@ import Navigation from '../Navigation/Navigation.js'
 import styles from './Footer.scss'
 
 const Footer = () => {
-  let style = { color: '#000' };
+  let style = { color: '#fff' };
   return (
     <footer className={styles.footer}>
       <Logo style={style} />
