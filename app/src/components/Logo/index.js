@@ -1,10 +1,13 @@
-import React from 'react';
-import styles from './style.scss';
+import React, { Component } from 'react'
+import './style.scss'
 
-const Logo = props =>
-  <div className={styles['logo-wrapper']}>
-    {/* <img src='' alt='Logo' /> */}
-    <span className={styles.logo} style={props.style}>Fitness</span>
-  </div>;
+const Logo = props => {
+  return (
+    <div className='logo-wrapper'>
+      {/* <img src='' alt='Logo' /> */}
+      <span className='logo' style={props.style}>Fitness</span>
+    </div>
+  )
+}
 
-export default Logo;
+export default Logo

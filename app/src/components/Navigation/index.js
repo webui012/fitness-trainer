@@ -1,39 +1,32 @@
 import React, { Component } from 'react'
-import styles from './style.scss'
-import { Link } from 'react-router-dom';
+import './style.scss'
 
 const Navigation = props => {
-  const listItem = styles['nav-list-item'],
-        navLink = styles['nav-link'],
-        navList = styles['nav-list'],
-        link = styles.link,
-        nav = styles.nav
-
   return (
-    <nav className={nav}>
-      <ul className={navList}>
-        <li className={listItem}>
-          <Link to='/' className={link, navLink}>Главная</Link>
+    <nav className='nav'>
+      <ul className='nav-list'>
+        <li className='nav-list-item'>
+          <a href='#' className='link nav-link'>Главная</a>
         </li>
 
-        <li className={listItem}>
-          <Link to='/about' className={link, navLink}>О тренере</Link>
+        <li className='nav-list-item'>
+          <a href='#' className='link nav-link'>О тренере</a>
         </li>
 
-        <li className={listItem}>
-          <Link to='/services' className={link, navLink}>Услуги</Link>
+        <li className='nav-list-item'>
+          <a href='#' className='link nav-link'>Услуги</a>
         </li>
 
-        <li className={listItem}>
-          <Link to='/sales' className={link, navLink}>Акции</Link>
+        <li className='nav-list-item'>
+          <a href='#' className='link nav-link'>Акции</a>
         </li>
 
-        <li className={listItem}>
-          <Link to='/forum' className={link, navLink}>Форум</Link>
+        <li className='nav-list-item'>
+          <a href='#' className='link nav-link'>Форум</a>
         </li>
 
-        <li className={listItem}>
-          <Link to='/contacts' className={link, navLink}>Контакты</Link>
+        <li className='nav-list-item'>
+          <a href='#' className='link nav-link'>Контакты</a>
         </li>
       </ul>
     </nav>
