@@ -11,12 +11,12 @@ import Header from '../Header';
 import Main from '../Main';
 import Footer from '../Footer';
 
-import Homepage from '../../pages/Homepage';
-import About from '../../pages/About';
-import Services from '../../pages/Services';
-import Sales from '../../pages/Sales';
-import Forum from '../../pages/Forum';
-import Contacts from '../../pages/Contacts';
+import Homepage from '../pages/Homepage';
+import About from '../pages/About';
+import Services from '../pages/Services';
+import Sales from '../pages/Sales';
+import Forum from '../pages/Forum';
+import Contacts from '../pages/Contacts';
 
 import styles from './style.scss';
 

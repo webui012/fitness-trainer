@@ -1,5 +1,5 @@
 import React from 'react'
-import Slider from '../components/Slider'
+import Slider from '../Slider'
 
 const Homepage = props =>
   <div>
