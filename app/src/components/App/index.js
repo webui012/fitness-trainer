@@ -1,16 +1,42 @@
 import React from 'react';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom';
+
 import Header from '../Header';
-import Slider from '../Slider';
 import Main from '../Main';
 import Footer from '../Footer';
+
+import Homepage from '../../pages/Homepage';
+import About from '../../pages/About';
+import Services from '../../pages/Services';
+import Sales from '../../pages/Sales';
+import Forum from '../../pages/Forum';
+import Contacts from '../../pages/Contacts';
+
 import styles from './style.scss';
 
 const App = () =>
-  <div className={styles.App}>
-    <Header />
-    <Slider />
-    {/* <Main /> */}
-    <Footer />
-  </div>;
+  <Router>
+    <div className='App'>
+      <Header />
+      <Switch>
+        <Main>
+          <Route exact path='/' component={Homepage} />
+          <Route exact path='/about' component={About} />
+          <Route exact path='/services' component={Services} />
+          <Route exact path='/sales' component={Sales} />
+          <Route exact path='/forum' component={Forum} />
+          <Route exact path='/contacts' component={Contacts} />
+        </Main>
+      </Switch>
+      <Footer />
+    </div>
+  </Router>
+
 
 export default App;
