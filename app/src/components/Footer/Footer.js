@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import facebook from '../../images/facebook.svg';
 import twitter from '../../images/twitter.svg';
 import instagram from '../../images/instagram.svg';
-import Logo from '../Logo'
-import Navigation from '../Navigation'
-import styles from './style.scss'
+import Logo from '../Logo/Logo.js'
+import Navigation from '../Navigation/Navigation.js'
+import styles from './Footer.scss'
 
 const Footer = () => {
   let style = { color: '#000' };

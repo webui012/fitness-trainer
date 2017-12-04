@@ -4,6 +4,6 @@ import reset from './css/reset.scss'
 import fonts from './css/fonts.scss'
 import common from './css/common.scss'
 
-import App from './components/App';
+import App from './components/App/App';
 
 render(<App />, document.getElementById('root'))

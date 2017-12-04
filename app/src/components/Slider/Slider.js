@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Swiper from 'react-id-swiper'
-import styles from './style.scss'
+import styles from './Slider.scss'
 
 const Slider = () => {
     const params = {

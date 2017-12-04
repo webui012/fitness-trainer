@@ -3,22 +3,20 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Link,
-  Switch
 } from 'react-router-dom';
 
-import Header from '../Header';
-import Main from '../Main';
-import Footer from '../Footer';
+import Header from '../Header/Header.js';
+import Main from '../Main/Main.js';
+import Footer from '../Footer/Footer.js';
 
-import Homepage from '../pages/Homepage';
-import About from '../pages/About';
-import Services from '../pages/Services';
-import Sales from '../pages/Sales';
-import Forum from '../pages/Forum';
-import Contacts from '../pages/Contacts';
+import Homepage from '../pages/Homepage/Homepage.js';
+import About from '../pages/About/About.js';
+import Services from '../pages/Services/Services.js';
+import Sales from '../pages/Sales/Sales.js';
+import Forum from '../pages/Forum/Forum.js';
+import Contacts from '../pages/Contacts/Contacts.js';
 
-import styles from './style.scss';
+import styles from './App.scss';
 
 const App = () =>
   <Router>
