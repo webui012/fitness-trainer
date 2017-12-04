@@ -15,7 +15,9 @@ class Slider extends Component {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
       },
-      spaceBetween: 0
+      spaceBetween: 0,
+      speed: 1000,
+      loop: true,
     }
     return (
       <Swiper {...params}>
