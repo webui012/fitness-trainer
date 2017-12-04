@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './style.scss'
+import styles from './Service.scss'
 
 class Service extends React.Component{
   constructor(props){
