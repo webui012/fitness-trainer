@@ -1,9 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import reset from './css/reset.scss'
-import fonts from './css/fonts.scss'
-import common from './css/common.scss'
-
+import './styles/reset.scss'
+import './styles/fonts.scss'
+import './styles/common.scss'
 import App from './components/App/App';
 
 render(<App />, document.getElementById('root'))

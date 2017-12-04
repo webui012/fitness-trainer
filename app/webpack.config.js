@@ -5,14 +5,14 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
   filename: 'main.css',
-  disable: process.env.NODE_ENV === 'development'
+  disable: process.env.NODE_ENV === 'development',
 });
 
 const config = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
 
   module: {
@@ -21,7 +21,7 @@ const config = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
         }
       },
       {
@@ -29,18 +29,18 @@ const config = {
         use: extractSass.extract({
           use: [
             {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[local]--[hash:base64:5]'
-            }
-          }, {
-            loader: 'sass-loader'
-          }
-        ],
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                localIdentName: '[local]' //--[hash:base64:5]',
+              },
+            }, {
+              loader: 'sass-loader',
+            },
+          ],
           // use style-loader in development
-          fallback: 'style-loader'
-        })
+          fallback: 'style-loader',
+        }),
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -49,9 +49,9 @@ const config = {
             loader: 'file-loader',
             options: {
               name: 'images/[name].[ext]',
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -59,12 +59,12 @@ const config = {
           {
             loader: 'file-loader',
             options: {
-              name: 'fonts/[name].[ext]'
-            }
-          }
-        ]
-      }
-    ]
+              name: 'fonts/[name].[ext]',
+            },
+          },
+        ],
+      },
+    ],
   },
 
   devServer: {
@@ -74,8 +74,8 @@ const config = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({template: './src/index.html'}),
-    new CleanWebpackPlugin([ 'dist' ]),
+    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new CleanWebpackPlugin(['dist']),
     extractSass,
   ]
 
