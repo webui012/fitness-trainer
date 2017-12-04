@@ -40,12 +40,14 @@
     "babel-loader": "^8.0.0-beta.0",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
+    "react-bootstrap": "^0.31.5",
     "react-dom": "^16.1.1",
     "react-id-swiper": "^1.5.6",
     "react-redux": "^5.0.6",
     "react-responsive-carousel": "^3.1.30",
     "react-router-dom": "^4.2.2",
     "react-slick": "^0.15.4",
+    "react-video": "^1.5.3",
     "redux": "^3.7.2",
     "slick-carousel": "^1.8.1"
   }
