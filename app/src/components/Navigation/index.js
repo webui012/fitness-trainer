@@ -1,33 +1,43 @@
 import React, { Component } from 'react'
 import styles from './style.scss'
+import { Link } from 'react-router-dom';
 
-const Navigation = props =>
-  <nav className={styles.nav}>
-    <ul className={styles['nav-list']}>
-      <li className={styles['nav-list-item']}>
-        <a href='#' className={styles.link, styles['nav-link']}>Главная</a>
-      </li>
+const Navigation = props => {
+  const listItem = styles['nav-list-item'],
+        navLink = styles['nav-link'],
+        navList = styles['nav-list'],
+        link = styles.link,
+        nav = styles.nav
 
-      <li className={styles['nav-list-item']}>
-        <a href='#' className={styles.link, styles['nav-link']}>О тренере</a>
-      </li>
+  return (
+    <nav className={nav}>
+      <ul className={navList}>
+        <li className={listItem}>
+          <Link to='/' className={link, navLink}>Главная</Link>
+        </li>
 
-      <li className={styles['nav-list-item']}>
-        <a href='#' className={styles.link, styles['nav-link']}>Услуги</a>
-      </li>
+        <li className={listItem}>
+          <Link to='/about' className={link, navLink}>О тренере</Link>
+        </li>
 
-      <li className={styles['nav-list-item']}>
-        <a href='#' className={styles.link, styles['nav-link']}>Акции</a>
-      </li>
+        <li className={listItem}>
+          <Link to='/services' className={link, navLink}>Услуги</Link>
+        </li>
 
-      <li className={styles['nav-list-item']}>
-        <a href='#' className={styles.link, styles['nav-link']}>Форум</a>
-      </li>
+        <li className={listItem}>
+          <Link to='/sales' className={link, navLink}>Акции</Link>
+        </li>
 
-      <li className={styles['nav-list-item']}>
-        <a href='#' className={styles.link, styles['nav-link']}>Контакты</a>
-      </li>
-    </ul>
-  </nav>
+        <li className={listItem}>
+          <Link to='/forum' className={link, navLink}>Форум</Link>
+        </li>
+
+        <li className={listItem}>
+          <Link to='/contacts' className={link, navLink}>Контакты</Link>
+        </li>
+      </ul>
+    </nav>
+  )
+}
 
 export default Navigation
