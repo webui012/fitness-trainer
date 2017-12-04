@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './style.scss';
+import styles from './Logo.scss';
 
 const Logo = props =>
   <div className={styles['logo-wrapper']}>
