@@ -24,16 +24,14 @@ const App = () =>
   <Router>
     <div className='App'>
       <Header />
-      <Switch>
-        <Main>
-          <Route exact path='/' component={Homepage} />
-          <Route exact path='/about' component={About} />
-          <Route exact path='/services' component={Services} />
-          <Route exact path='/sales' component={Sales} />
-          <Route exact path='/forum' component={Forum} />
-          <Route exact path='/contacts' component={Contacts} />
-        </Main>
-      </Switch>
+      <Main>
+        <Route exact path='/' component={Homepage} />
+        <Route exact path='/about' component={About} />
+        <Route exact path='/services' component={Services} />
+        <Route exact path='/sales' component={Sales} />
+        <Route exact path='/forum' component={Forum} />
+        <Route exact path='/contacts' component={Contacts} />
+      </Main>
       <Footer />
     </div>
   </Router>
