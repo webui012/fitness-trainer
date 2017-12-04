@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 const Navigation = props => {
   const listItem = styles['nav-list-item'],
-    navLink = styles['nav-link'],
-    navList = styles['nav-list'],
-    link = styles.link,
-    nav = styles.nav,
-    navDropDown = styles['nav-link-menu'],
-    dropDownLink = styles['dropdown-link']
+        navLink = styles['nav-link'],
+        navList = styles['nav-list'],
+        link = styles.link,
+        nav = styles.nav,
+        navDropDown = styles['nav-link-menu'],
+        dropDownLink = styles['dropdown-link']
 
 
   return (

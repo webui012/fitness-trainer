@@ -8,9 +8,9 @@
   "globals": {
     "React": true
   },
-/*  "ecmaFeatures": {
-    "jsx": true
-  },*/
+  # "ecmaFeatures": {
+  #   "jsx": true
+  # },
   "plugins": [
     "react"
   ],

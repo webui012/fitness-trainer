@@ -5,4 +5,4 @@ import './styles/fonts.scss'
 import './styles/common.scss'
 import App from './components/App/App';
 
-render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById('root'))
