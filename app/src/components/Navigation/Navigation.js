@@ -7,7 +7,10 @@ const Navigation = props => {
         navLink = styles['nav-link'],
         navList = styles['nav-list'],
         link = styles.link,
-        nav = styles.nav
+        nav = styles.nav,
+        navDropDown = styles['nav-link-menu'],
+        dropDownLink = styles['dropdown-link']
+
 
   return (
     <nav className={nav}>
@@ -22,6 +25,13 @@ const Navigation = props => {
 
         <li className={listItem}>
           <Link to='/services' className={link, navLink}>Услуги</Link>
+          <div className={navDropDown}>
+            <Link to='/services/online-training' className={dropDownLink}>Онлайн тренировка</Link>
+            <Link to='/services/training-plan' className={dropDownLink}>Программа тренировок</Link>
+            <Link to='/services/nutrition-plan' className={dropDownLink}>Правильное питание</Link>
+            <Link to='/services/fitness-clothing' className={dropDownLink}>Одежда для фитнесса</Link>
+            <Link to='/services/' className={dropDownLink}>Другие услуги</Link>
+          </div>
         </li>
 
         <li className={listItem}>

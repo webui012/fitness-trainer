@@ -8,17 +8,48 @@
   color: rgba(255, 255, 255, 0.6);
   display: block;
   padding: 20px;
+  position: relative;
 
   &:hover {
     color: #fff;
   }
+
+  &:hover .nav-link-menu {
+    display: flex;
+  }
 }
+
+.nav-link-menu {
+  margin: 2px 0;
+  padding: 10px;
+  border-radius: 1px;
+  background: #fff;
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-link {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 13px;
+  margin: 10px;
+
+  &:hover {
+    color: #000;
+  }
+}
+
 
 .nav-list-item {
   overflow: hidden;
 
   &:hover:after {
     transform: translateY(0);
+  }
+
+  &:hover .nav-link-menu {
+    display: flex;
   }
 }
 
