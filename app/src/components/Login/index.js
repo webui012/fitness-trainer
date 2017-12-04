@@ -1,9 +1,12 @@
-import React from 'react'
-import styles from './style.scss'
+import React, { Component } from 'react'
+import './style.scss'
 
-const Login = () =>
-  <div className={styles['login-section']}>
-    <a href='#' className={styles['login-btn']}>Вход</a>
-  </div>;
+const Login = () => {
+  return (
+    <div className='login-section'>
+      <a href='#' className='login-btn'>Вход</a>
+    </div>
+  )
+}
 
 export default Login

@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Logo from '../Logo'
 import Navigation from '../Navigation'
 import Login from '../Login'
 
-import styles from './style.scss'
+import './style.scss'
 
-const Header = () =>
-  <header className={styles.header}>
-    <Logo />
-    <Navigation />
-    <Login />
-  </header>;
+const Header = () => {
+  return (
+    <header className='header'>
+      <Logo />
+      <Navigation />
+      <Login />
+    </header>
+  )
+}
 
 export default Header

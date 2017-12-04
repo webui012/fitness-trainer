@@ -4,34 +4,34 @@ import twitter from '../../images/twitter.svg';
 import instagram from '../../images/instagram.svg';
 import Logo from '../Logo'
 import Navigation from '../Navigation'
-import styles from './style.scss'
+import './style.scss'
 
 const Footer = () => {
-  let style = { color: '#000' };
+  let style = {color: '#000'}
   return (
-    <footer className={styles.footer}>
+    <footer className='footer'>
       <Logo style={style} />
-      <span className={styles['logo-caption']}>Find your perfect body!</span>
-      <nav className={styles.nav, styles['footer-nav']}>
-        <a href='#' className={styles['footer-nav-link']}>Главная</a>
-        <a href='#' className={styles['footer-nav-link']}>О Тренере</a>
-        <a href='#' className={styles['footer-nav-link']}>Услуги</a>
-        <a href='#' className={styles['footer-nav-link']}>Акции</a>
-        <a href='#' className={styles['footer-nav-link']}>Форум</a>
-        <a href='#' className={styles['footer-nav-link']}>Контакты</a>
+      <span className='logo-caption'>Find your perfect body!</span>
+      <nav className='nav footer-nav'>
+        <a href='#' className='footer-nav-link'>Главнаяя</a>
+        <a href='#' className='footer-nav-link'>О Тренере</a>
+        <a href='#' className='footer-nav-link'>Услуги</a>
+        <a href='#' className='footer-nav-link'>Акции</a>
+        <a href='#' className='footer-nav-link'>Форум</a>
+        <a href='#' className='footer-nav-link'>Контакты</a>
       </nav>
-      <div className={styles.socials}>
-        <a href='https://www.facebook.com' className={styles['social-link']}>
+      <div className='socials'>
+        <a href='https://www.facebook.com' className='social-link'>
           <img src={facebook} alt='facebook' />
         </a>
-        <a href='https://www.twitter.com' className={styles['social-link']}>
+        <a href='https://www.twitter.com' className='social-link'>
           <img src={twitter} alt='twitter' />
         </a>
-        <a href='https://www.instagram.com' className={styles['social-link']}>
+        <a href='https://www.instagram.com' className='social-link'>
           <img src={instagram} alt='instagram' />
         </a>
       </div>
-      <p className={styles.copyright}>&copy;2017 All Rights Reserved</p>
+      <p className="copyright">&copy;2017 All Rights Reserved</p>
     </footer>
   )
 }
