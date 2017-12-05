@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import LoginForm from '../../LoginForm/LoginForm.js'
 
 const LoginPage = props =>
@@ -6,4 +6,4 @@ const LoginPage = props =>
     <LoginForm />
   </div>
 
-export default LoginPage
+export default LoginPage;

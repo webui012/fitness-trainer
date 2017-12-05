@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {Component} from 'react'
 import styles from './LoginForm.scss'
+import { Link } from 'react-router';
 
 class LoginForm extends Component {
   constructor(props){
@@ -35,7 +36,8 @@ class LoginForm extends Component {
           </button>
 
           <p className='forgot-password'>
-            <a className='link' href=''> Забыли пароль? </a>
+            <a className='link' href=''> Забыли пароль? </a> <br />
+            <a className='link' href='/signup'> Создать аккаунт </a>
           </p>
 
         </form>

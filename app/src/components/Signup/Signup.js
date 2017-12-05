@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import styles from './Signup.scss'
 
 
+
 class Signup extends Component {
   constructor(props){
     super(props)
@@ -44,15 +45,12 @@ class Signup extends Component {
           </button>
 
           <p className='do-you-have-account'>
-            <a className='link' href=''> Уже есть акаунт?</a>
+            <a className='link' href='/login'> Уже есть аккаунт?</a>
           </p>
-
         </form>
-
    </div>
   )
  }
 }
-
 
 import default Signup
