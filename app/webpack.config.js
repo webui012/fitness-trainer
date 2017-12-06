@@ -68,10 +68,11 @@ const config = {
   },
 
   devServer: {
+      historyApiFallback: true,
     compress: true,
     open: true,
     port: 6289,
-    historyApiFallback: true,
+    historyApiFallback: true
   },
 
   plugins: [

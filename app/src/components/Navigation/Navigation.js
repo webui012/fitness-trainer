@@ -16,18 +16,18 @@ const Navigation = props => {
     <nav className={nav}>
       <ul className={navList}>
         <li className={listItem}>
-          <Link to='/' className={link, navLink}>Главная</Link>
+          <Link to='/' className={navLink}>Главная</Link>
         </li>
 
         <li className={listItem}>
-          <Link to='/about' className={link, navLink}>О тренере</Link>
+          <Link to='/about' className={navLink}>О тренере</Link>
         </li>
 
         <li className={listItem}>
-          <Link to='/services' className={link, navLink}>Услуги</Link>
+          <Link to='/services' className={navLink}>Услуги</Link>
           <div className={navDropDown}>
             <Link to='/services/online-training' className={dropDownLink}>Онлайн тренировка</Link>
-            <Link to='/training-plan' className={dropDownLink}>Программа тренировок</Link>
+            <Link to='/services/training-plan' className={dropDownLink}>Программа тренировок</Link>
             <Link to='/services/nutrition-plan' className={dropDownLink}>Правильное питание</Link>
             <Link to='/services/fitness-clothing' className={dropDownLink}>Одежда для фитнесса</Link>
             <Link to='/services/' className={dropDownLink}>Другие услуги</Link>
@@ -35,15 +35,15 @@ const Navigation = props => {
         </li>
 
         <li className={listItem}>
-          <Link to='/sales' className={link, navLink}>Акции</Link>
+          <Link to='/sales' className={navLink}>Акции</Link>
         </li>
 
         <li className={listItem}>
-          <Link to='/forum' className={link, navLink}>Форум</Link>
+          <Link to='/forum' className={navLink}>Форум</Link>
         </li>
 
         <li className={listItem}>
-          <Link to='/contacts' className={link, navLink}>Контакты</Link>
+          <Link to='/contacts' className={navLink}>Контакты</Link>
         </li>
       </ul>
     </nav>
