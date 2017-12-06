@@ -5,7 +5,7 @@ function Video(props)  {
   const opts = {
       height: '1000',
       width: '100%',
-      playerVars: { // https://developers.google.com/youtube/player_parameters
+      playerVars: { /* https://developers.google.com/youtube/player_parameters*/
         autoplay: 1,
         end: 222,
         loop: 1,
