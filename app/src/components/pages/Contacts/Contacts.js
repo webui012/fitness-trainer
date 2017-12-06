@@ -2,6 +2,8 @@ import React,{ Component } from 'react'
 import styles from './Contacts.scss'
 import ContactsField from '../../ContactsField/ContactsField.js';
 import Map from '../../Map/Map.js';
+import Image from '../../Image/Image.js';
+
 
 
 const dataContacts = {
@@ -13,7 +15,7 @@ const dataContacts = {
 
   emailTitle: 'EMAIL',
   email: 'email@email.com',
-  
+
   storeTitle: 'STORE',
   store: '123, Rev Avenu, Hawai'
 }
@@ -22,6 +24,11 @@ const Contacts = () =>
   <div className={styles.contacts}>
 
     <Map />
+    <Image
+      class={styles.contactsImg}
+      path={'https://searchengineland.com/figz/wp-content/seloads/2015/10/google-maps2-fade-ss-1920.jpg'}
+      description={'map image'}
+    />
 
     <h1>CONTACTS</h1>
 
@@ -44,7 +51,3 @@ const Contacts = () =>
   </div>
 
 export default Contacts
-
-
-
-
