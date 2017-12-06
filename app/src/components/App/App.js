@@ -20,7 +20,6 @@ import styles from './App.scss';
 const App = () =>
   <Router>
     <div className={styles.App}>
-      <Payment />
       <Header />
       <Main>
         <Route exact path='/' component={Homepage} />
