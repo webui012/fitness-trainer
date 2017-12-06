@@ -10,6 +10,6 @@ const Header = () =>
     <Logo />
     <Navigation />
     <Login />
-  </header>;
+  </header>
 
 export default Header

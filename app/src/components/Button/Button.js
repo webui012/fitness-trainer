@@ -1,11 +1,10 @@
-import React from 'react'
-import {Button} from 'react-bootstrap'
+import React, {Component} from 'react'
 import styles from './Button.scss'
 
-function ButtonTraining(props){
-  return(
-    <Button className = {styles.button} bsSize = 'large' bsStyle = 'success'>{props.text}</Button>
-    )
-}
+const Button = props =>
+  <button className={styles[`service-button`]}>
+    {props.text}
+  </button>
 
-export default ButtonTraining
+export default Button;
+

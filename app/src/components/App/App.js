@@ -15,7 +15,7 @@ import Services from '../pages/Services/Services.js';
 import Sales from '../pages/Sales/Sales.js';
 import Forum from '../pages/Forum/Forum.js';
 import Contacts from '../pages/Contacts/Contacts.js';
-import TrainingPlanSection from '../pages/Services/TrainingPlanSection.js';
+import TrainingPlanSection from '../pages/TrainingPlanSection/TrainingPlanSection.js';
 
 import styles from './App.scss';
 
@@ -27,7 +27,7 @@ const App = () =>
         <Route exact path='/' component={Homepage} />
         <Route exact path='/about' component={About} />
         <Route exact path='/services' component={Services} />
-        <Route exact path='/services/training-plan' component={TrainingPlanSection} />
+        <Route exact path='/training-plan' component={TrainingPlanSection} />
         <Route exact path='/sales' component={Sales} />
         <Route exact path='/forum' component={Forum} />
         <Route exact path='/contacts' component={Contacts} />
