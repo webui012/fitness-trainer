@@ -2,14 +2,14 @@ div.signup-page {
   padding: 50px;
   background-color: #e6e6e6;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 30px;
   display: table;
   text-align: center;
   height: 100%;
   width: 100%;
 }
 
-.signup {
+.signup-form-caption {
   color:#808080;
 }
 
@@ -43,18 +43,9 @@ button:hover {
   background-color: #84e184;
 }
 
-p.btn {
-  color: #f2f2f2;
-}
-
-p.do-you-have-account {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 15px;
-}
-
 .btn {
   margin-top: 20px;
+  color: #f2f2f2;
 }
 
 .linkto {
