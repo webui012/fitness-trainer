@@ -25,7 +25,7 @@ const Contacts = () =>
 
     <Map />
     <Image
-      class={styles.contactsImg}
+      imageClass={styles.contactsImg}
       path={'https://searchengineland.com/figz/wp-content/seloads/2015/10/google-maps2-fade-ss-1920.jpg'}
       description={'map image'}
     />
