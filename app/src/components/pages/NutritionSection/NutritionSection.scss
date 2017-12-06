@@ -1,0 +1,43 @@
+.title-work{
+  font-size: 32px;
+  color: #000;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 78px;
+  margin-bottom: 100px;
+  padding-top: 70px;
+}
+.title{
+  width: 100%;
+  display: block;
+  margin-bottom: 50px;
+  //position: relative;
+}
+.nutrition-list-img{
+  width: 30%;
+  float: left;
+  display: block;
+  margin-top: -30px;
+  margin-left: 149px;
+  margin-bottom: 156px;
+}
+
+.getwrap{
+  min-width: 500px;
+  min-height: 800px;
+  display: block;
+  background-image: url(https://images.pexels.com/photos/669576/pexels-photo-669576.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: 100% 50%;
+}
+.txt-list{
+  width: 50%;
+  font-weight: 700;
+  float: right;
+  display: block;
+}
+.service-button{
+  margin-left: 10%;
+  margin-top: 100px;
+}
