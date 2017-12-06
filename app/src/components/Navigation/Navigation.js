@@ -28,7 +28,7 @@ const Navigation = props => {
           <div className={navDropDown}>
             <Link to='/services/online-training' className={dropDownLink}>Онлайн тренировка</Link>
             <Link to='/services/training-plan' className={dropDownLink}>Программа тренировок</Link>
-            <Link to='/services/nutrition-plan' className={dropDownLink}>Правильное питание</Link>
+            <Link to='/services/nutrition' className={dropDownLink}>Правильное питание</Link>
             <Link to='/services/fitness-clothing' className={dropDownLink}>Одежда для фитнесса</Link>
             <Link to='/services/' className={dropDownLink}>Другие услуги</Link>
           </div>

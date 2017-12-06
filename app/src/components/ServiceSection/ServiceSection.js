@@ -10,7 +10,7 @@ const ServiceSection = props =>
   <section className={styles[`service-section`]}>
     <Service serviceName='Персноальная тренировка 1 на 1' imgSrc='khudaev' />
     <Service serviceName='Индивидуальная программа' imgSrc='khudaev1' />
-    <Service serviceName='Правильное питание' imgSrc='khudaev2' />
+    <Service serviceName='Правильное питание' imgSrc='khudaev2'  />
     <Service serviceName='Заказать на девичник' imgSrc='khudaev' />
   </section>
 
