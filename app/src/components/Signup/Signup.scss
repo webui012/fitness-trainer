@@ -1,0 +1,51 @@
+div.signup-page {
+  padding: 100px;
+  background-color: #e6e6e6;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  height: 100%;
+}
+
+.signup {
+  color:#808080;
+}
+
+.form {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 20px;
+  opacity: 0.5;
+  height: 65px;
+  width: 30%;
+}
+
+.btn-signup {
+  margin-top: 30px;
+  align: center;
+  height: 65px;
+  width: 30%;
+  background-color: #33cc33;
+  border-radius: 5px;
+  font-size: 20px;
+  font-style: normal;
+  box-shadow: none;
+}
+
+button:hover {
+  background-color: #84e184;
+}
+
+p.btn {
+  color: #f2f2f2;
+}
+
+p.do-you-have-account {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 15px;
+}
+
+a.link {
+  color: #808080;
+}
