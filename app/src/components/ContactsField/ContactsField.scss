@@ -1,0 +1,24 @@
+.text {
+  position: relative;
+  width: 30%;
+  margin: 15px 15px;
+  padding: 15px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+}
+
+.textTitle {
+  position: absolute;
+  left: 5px;
+  top: -15px;
+  width: 70px;
+  background: rgb(33, 30, 235);
+  padding: 3px 5px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  font-weight: normal;
+}
