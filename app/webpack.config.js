@@ -71,6 +71,7 @@ const config = {
     compress: true,
     open: true,
     port: 6289,
+    historyApiFallback: true
   },
 
   plugins: [
