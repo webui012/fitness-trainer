@@ -1,5 +1,5 @@
 div.signup-page {
-  padding: 150px;
+  padding: 100px;
   background-color: #e6e6e6;
   font-weight: 600;
   font-size: 20px;
@@ -23,12 +23,13 @@ div.signup-page {
 .btn-signup {
   margin-top: 30px;
   align: center;
-  height: 75px;
+  height: 65px;
   width: 30%;
   background-color: #33cc33;
   border-radius: 5px;
   font-size: 20px;
   font-style: normal;
+  box-shadow: none;
 }
 
 button:hover {
@@ -40,6 +41,7 @@ p.btn {
 }
 
 p.do-you-have-account {
+  margin-top: 10px;
   text-align: center;
   font-size: 15px;
 }

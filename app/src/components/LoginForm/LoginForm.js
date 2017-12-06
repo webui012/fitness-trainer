@@ -24,7 +24,7 @@ class LoginForm extends Component {
         <form onSubmit={this.onSubmit}>
 
           <input className='form' type='text'
-              placeholder='Введите ваше имя или адрес эл. почты'
+              placeholder='Введите имя или адрес эл. почты'
               onChange={this.handleChange('username')} /> <br />
 
           <input className='form' type='password'
@@ -42,8 +42,8 @@ class LoginForm extends Component {
 
         </form>
       </div>
-  )
- }
+    )
+  }
 }
 
 export default LoginForm

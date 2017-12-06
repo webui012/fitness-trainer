@@ -1,5 +1,5 @@
 div.login-page {
-  padding: 180px;
+  padding: 150px;
   background-color: #e6e6e6;
   font-weight: 600;
   font-size: 20px;
@@ -17,18 +17,19 @@ div.login-page {
   font-size: 20px;
   opacity: 0.5;
   height: 65px;
-  width: 30%;
+  width: 100%;
 }
 
 .btn-login {
   margin-top: 30px;
   align: center;
-  height: 75px;
+  height: 65px;
   width: 30%;
   background-color: #33cc33;
   border-radius: 5px;
   font-size: 20px;
   font-style: normal;
+  box-shadow: none;
 }
 
 button:hover {
@@ -40,10 +41,13 @@ p.btn {
 }
 
 p.forgot-password {
+  margin-top: 10px;
   text-align: center;
   font-size: 15px;
 }
 
 a.link {
+  margin-top: 10px;
+  margin-bottom: 10px;
   color: #808080;
 }

@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
-{/*import Signup from '../../Signup/Signup.js'*/}
+import Signup from '../../Signup/Signup.js'
 
 const SignupPage = props =>
   <div>
-    {/*<Signup />*/}
-    Signup
+    <Signup />
   </div>
 
 export default SignupPage;
