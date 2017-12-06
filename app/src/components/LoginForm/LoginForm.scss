@@ -1,15 +1,15 @@
 .login-page {
-  padding: 155px;
+  padding: 130px;
   background-color: #e6e6e6;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 30px;
   display: table;
   text-align: center;
   height: 100%;
   width: 100%;
 }
 
-.login {
+.login-form-caption {
   color:#808080;
 }
 
@@ -48,7 +48,7 @@ button:hover {
   background-color: #84e184;
 }
 
-p.btn {
+.btn {
   color: #f2f2f2;
 }
 
