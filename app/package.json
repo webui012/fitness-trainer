@@ -39,6 +39,7 @@
     "@babel/preset-env": "^7.0.0-beta.32",
     "@u-wave/react-youtube": "^0.4.1",
     "babel-loader": "^8.0.0-beta.0",
+    "google-map-react": "^0.25.0",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
