@@ -70,6 +70,7 @@ const config = {
   devServer: {
     compress: true,
     open: true,
+      historyApiFallback: true,
     port: 6289,
   },
 
