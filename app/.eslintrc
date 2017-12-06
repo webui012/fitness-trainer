@@ -1,5 +1,4 @@
 {
-  "extends": "eslint:recommended",
   "parser": "babel-eslint",
   "env": {
     "browser": true,
@@ -7,9 +6,6 @@
   },
   "globals": {
     "React": true
-  },
-  "ecmaFeatures": {
-    "jsx": true
   },
   "plugins": [
     "react"
@@ -22,7 +18,7 @@
     "lines-between-class-members": ["error", "always"],
     "no-trailing-spaces": "error",
     "quote-props": ["error", "as-needed"],
-    "semi": 0,
+    "semi": 1,
     "no-eq-null": "error",
     "no-cond-assign": ["error", "always"],
     "no-empty": "error",
