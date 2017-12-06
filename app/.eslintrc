@@ -18,7 +18,7 @@
     "lines-between-class-members": ["error", "always"],
     "no-trailing-spaces": "error",
     "quote-props": ["error", "as-needed"],
-    "semi": 1,
+    "semi": 0,
     "no-eq-null": "error",
     "no-cond-assign": ["error", "always"],
     "no-empty": "error",

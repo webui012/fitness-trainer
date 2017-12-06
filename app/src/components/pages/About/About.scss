@@ -1,4 +1,4 @@
-.AboutWrap {
+.About {
   background: url('../../../images/aboutBg.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -10,11 +10,11 @@
 
     .caption {
       margin-top: 30px;
+      margin-bottom: 40px;
       font-size: 22px;
       font-weight: 700;
       display: flex;
       justify-content: center;
-      margin-bottom: 40px;
     }
 
     .photo {
