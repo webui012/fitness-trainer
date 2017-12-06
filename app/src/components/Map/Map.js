@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import styles from './Map.scss'
+
 
 const AnyReactComponent = ({ text }) => (<div style={{
     position: 'relative', color: 'black', background: 'red',
@@ -16,8 +18,9 @@ class Map extends Component {
 
     render() {
         return (
-            <div className="map">
+            <div className={styles.map}>
                 <GoogleMapReact
+                    bootstrapURLKeys={{ key:'AIzaSyB-7Fn2cGaiF3_2zTedyusFSiYHGn9RfMQ'}}
                     defaultCenter={this.props.center}
                     defaultZoom={this.props.zoom}
                 >
