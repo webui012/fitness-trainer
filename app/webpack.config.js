@@ -22,7 +22,7 @@ const config = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-        }
+        },
       },
       {
         test: /\.scss$/,
@@ -32,7 +32,7 @@ const config = {
               loader: 'css-loader',
               options: {
                 modules: true,
-                localIdentName: '[local]' //--[hash:base64:5]',
+                localIdentName: '[local]', //--[hash:base64:5]',
               },
             }, {
               loader: 'sass-loader',
@@ -68,18 +68,17 @@ const config = {
   },
 
   devServer: {
-      historyApiFallback: true,
     compress: true,
     open: true,
     port: 6289,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
 
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.html' }),
-    new CleanWebpackPlugin([ 'dist' ]),
+    new CleanWebpackPlugin(['dist']),
     extractSass,
-  ]
+  ],
 
 };
 
