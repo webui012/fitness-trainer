@@ -12,9 +12,14 @@ const Nutrition = props => {
         icon_2 = 'https://cdn0.iconfinder.com/data/icons/infographic-bar-11/512/24-128.png',
         icon_3 = 'https://cdn0.iconfinder.com/data/icons/infographic-bar-11/512/10-128.png',
         food = 'https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Food-Dome-128.png'
+
+  const slide1 = 'https://img3.goodfon.ru/original/2560x1440/a/82/sport-healthy-food-diet.jpg',
+        slide2 = 'http://www.sportobzor.ru/uploads/images/6a601d944bff23d928ef8ec5a57df52a.jpg',
+        slide3 = 'https://images.pexels.com/photos/196643/pexels-photo-196643.jpeg?h=350&auto=compress&cs=tinysrgb'
+
   return (
     <section className='nutrition'>
-      <Slider />
+      <Slider slide1={slide1} slide2={slide2} slide3={slide3} />
       <div className='nutrition-content'>
         <div className='nut-section-row'>
           <h2 className='nut-row-title'>Что вы получаете</h2>

@@ -1,20 +1,17 @@
-.paymentItem {
+.payment-item {
 	display: inline-block;
-    margin: 30px;
+  margin: 30px;
 }
 
-.content {
-    width:  700px;
+.payment-content {
+  width:  700px;
 	float: right;
-	margin-bottom:  30px;
+	margin-bottom: 30px;
 	margin-left: 30px;
-
-
 }
 
-.image {
-    
-    float: left;
-	width: 100px; 
+.payment-img {
+  float: left;
+	width: 100px;
 	height: 100px;
 }
