@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './Image.scss';
 
 const Image = props =>
   <img className={props.imageClass} src={props.path} alt={props.description} />;
