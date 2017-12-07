@@ -26,7 +26,7 @@ const Navigation = props => {
         <li className={listItem}>
           <Link to='/services' className={navLink}>Услуги</Link>
           <div className={navDropDown}>
-            <Link to='/services/online' className={dropDownLink}>Онлайн тренировка</Link>
+            <Link to='/services/online-training' className={dropDownLink}>Онлайн тренировка</Link>
             <Link to='/services/training-plan' className={dropDownLink}>Программа тренировок</Link>
             <Link to='/services/nutrition-plan' className={dropDownLink}>Правильное питание</Link>
             <Link to='/services/fitness-clothing' className={dropDownLink}>Одежда для фитнесса</Link>
