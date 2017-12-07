@@ -1,12 +1,10 @@
 import React from 'react'
-import Header from '../../Header/Header.js'
-import Footer from '../../Footer/Footer.js'
 import Image from '../../Image/Image.js'
 import Text from '../../Text/Text.js'
 import Button from '../../Button/Button.js'
 import Slider from '../../Slider/Slider.js'
 import Video from '../../Video/Video.js'
-import styles from './TrainingPlanSection.scss'
+import './TrainingPlanSection.scss'
 
 function TrainingPlanSection(){
 
@@ -21,19 +19,20 @@ function TrainingPlanSection(){
     btnText: 'НАЧАТЬ ТРЕНИРОВАТЬСЯ!',
   };
 
-  return(
+  return (
     <div>
-      <section className = {styles.service}>
-        <Video videoId = {params.videoId} className= {styles.video} />
-        <Image path = {params.imgPath} description = {params.description} />
-        <Text content = {params.text} />
-        <Slider slide1 = {params.slide1}
-            slide2 = {params.slide2}
-            slide3 = {params.slide3} />
-        <Text content = {params.text} />
+      <section className='service'>
+        <Video videoId={params.videoId} className='video' />
+        <Image path={params.imgPath} description={params.description} />
+        <Text content={params.text} />
+        <Slider
+            slide1={params.slide1}
+            slide2={params.slide2}
+            slide3={params.slide3} />
+        <Text content={params.text} />
       </section>
-      <section className = {styles.motivation}>
-        <Button text = {params.btnText} />
+      <section className='motivation'>
+        <Button text={params.btnText} />
       </section>
     </div>
   )
