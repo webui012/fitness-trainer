@@ -1,7 +1,7 @@
 import React,{ Component } from 'react'
-import styles from './Contacts.scss'
 import ContactsField from '../../ContactsField/ContactsField.js';
 import Map from '../../Map/Map.js';
+import './Contacts.scss'
 
 const dataContacts = {
   adressTitle: 'ADRESS',
@@ -18,27 +18,24 @@ const dataContacts = {
 }
 
 const Contacts = () =>
-  <div className={styles.contacts}>
-
+  <div className='contacts'>
     <Map />
-
     <h1>CONTACTS</h1>
-
     <ContactsField
-      title={dataContacts.adressTitle}
-      data={dataContacts.adress}
+        title={dataContacts.adressTitle}
+        data={dataContacts.adress}
     />
     <ContactsField
-      title={dataContacts.phoneTitle}
-      data={dataContacts.phone}
+        title={dataContacts.phoneTitle}
+        data={dataContacts.phone}
     />
     <ContactsField
-      title={dataContacts.emailTitle}
-      data={dataContacts.email}
+        title={dataContacts.emailTitle}
+        data={dataContacts.email}
     />
     <ContactsField
-      title={dataContacts.storeTitle}
-      data={dataContacts.store}
+        title={dataContacts.storeTitle}
+        data={dataContacts.store}
     />
   </div>
 
