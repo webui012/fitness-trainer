@@ -3,7 +3,7 @@ import Image from '../../Image/Image.js'
 import Text from '../../Text/Text.js'
 import Button from '../../Button/Button.js'
 import Slider from '../../Slider/Slider.js'
-import Video from '../../Video/Video.js'
+import YouTube from '@u-wave/react-youtube';
 import './TrainingPlanSection.scss'
 
 function TrainingPlanSection(){
@@ -21,8 +21,8 @@ function TrainingPlanSection(){
 
   return (
     <div>
-      <section className='service'>
-        <Video videoId={params.videoId} className='video' />
+      <section className='training-plan'>
+        <YouTube video='duXyGlVSacM' className='video' />
         <Image path={params.imgPath} description={params.description} />
         <Text content={params.text} />
         <Slider
