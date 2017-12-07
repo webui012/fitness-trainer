@@ -21,17 +21,17 @@ import SignupPage from '../pages/SignupPage/SignupPage.js'
 import Nutrition from '../pages/Nutrition/Nutrition.js'
 import TrainingPlanSection from '../pages/TrainingPlanSection/TrainingPlanSection.js';
 
-import styles from './App.scss';
+import './App.scss';
 
 const App = () =>
   <Router>
-    <div className={styles.App}>
+    <div className='app'>
       <Header />
       <Main>
         <Route exact path='/' component={Homepage} />
         <Route exact path='/about' component={About} />
         <Route exact path='/services' component={Services} />
-        <Route exact path='/services/online' component={Online} />
+        <Route exact path='/services/online-training' component={Online} />
         <Route exact path='/services/training-plan' component={TrainingPlanSection} />
         <Route exact path='/services/nutrition-plan' component={Nutrition} />
         <Route exact path='/sales' component={Sales} />

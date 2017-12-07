@@ -1,49 +1,40 @@
 import React, { Component } from 'react'
-import styles from './Navigation.scss'
+import './Navigation.scss'
 import { Link } from 'react-router-dom';
 
 const Navigation = props => {
-  const listItem = styles['nav-list-item'],
-        navLink = styles['nav-link'],
-        navList = styles['nav-list'],
-        link = styles.link,
-        nav = styles.nav,
-        navDropDown = styles['nav-link-menu'],
-        dropDownLink = styles['dropdown-link']
-
-
   return (
-    <nav className={nav}>
-      <ul className={navList}>
-        <li className={listItem}>
-          <Link to='/' className={navLink}>Главная</Link>
+    <nav className='nav'>
+      <ul className='nav-list'>
+        <li className='nav-list-item'>
+          <Link to='/' className='nav-link'>Главная</Link>
         </li>
 
-        <li className={listItem}>
-          <Link to='/about' className={navLink}>О тренере</Link>
+        <li className='nav-list-item'>
+          <Link to='/about' className='nav-link'>О тренере</Link>
         </li>
 
-        <li className={listItem}>
-          <Link to='/services' className={navLink}>Услуги</Link>
-          <div className={navDropDown}>
-            <Link to='/services/online-training' className={dropDownLink}>Онлайн тренировка</Link>
-            <Link to='/services/training-plan' className={dropDownLink}>Программа тренировок</Link>
-            <Link to='/services/nutrition-plan' className={dropDownLink}>Правильное питание</Link>
-            <Link to='/services/fitness-clothing' className={dropDownLink}>Одежда для фитнесса</Link>
-            <Link to='/services/' className={dropDownLink}>Другие услуги</Link>
+        <li className='nav-list-item'>
+          <Link to='/services' className='nav-link'>Услуги</Link>
+          <div className='nav-link-menu'>
+            <Link to='/services/online-training' className='dropdown-link'>Онлайн тренировка</Link>
+            <Link to='/services/training-plan' className='dropdown-link'>Программа тренировок</Link>
+            <Link to='/services/nutrition-plan' className='dropdown-link'>Правильное питание</Link>
+            <Link to='/services/fitness-clothing' className='dropdown-link'>Одежда для фитнесса</Link>
+            <Link to='/services/' className='dropdown-link'>Другие услуги</Link>
           </div>
         </li>
 
-        <li className={listItem}>
-          <Link to='/sales' className={navLink}>Акции</Link>
+        <li className='nav-list-item'>
+          <Link to='/sales' className='nav-link'>Акции</Link>
         </li>
 
-        <li className={listItem}>
-          <Link to='/forum' className={navLink}>Форум</Link>
+        <li className='nav-list-item'>
+          <Link to='/forum' className='nav-link'>Форум</Link>
         </li>
 
-        <li className={listItem}>
-          <Link to='/contacts' className={navLink}>Контакты</Link>
+        <li className='nav-list-item'>
+          <Link to='/contacts' className='nav-link'>Контакты</Link>
         </li>
       </ul>
     </nav>

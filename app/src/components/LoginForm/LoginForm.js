@@ -18,7 +18,7 @@ class LoginForm extends Component {
 
   render(){
     return (
-      <div className='login-page'>
+      <section className='login-page'>
 
         <form onSubmit={this.onSubmit}>
           <fieldset className='login-form'>
@@ -50,7 +50,7 @@ class LoginForm extends Component {
 
           </fieldset>
         </form>
-      </div>
+      </section>
     )
   }
 }
