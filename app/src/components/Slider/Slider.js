@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Swiper from 'react-id-swiper'
 import styles from './Slider.scss'
 
-const Slider = (props) => {
+const Slider = props => {
     const params = {
       containerClass: styles.slider,
       paginationCustomizedClass: styles.pagination,
