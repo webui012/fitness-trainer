@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './LoginForm.scss'
+import './LoginForm.scss'
 import { Link } from 'react-router-dom';
 
 class LoginForm extends Component {
@@ -18,7 +18,7 @@ class LoginForm extends Component {
 
   render(){
     return (
-      <div className='login-page'>
+      <section className='login-page'>
 
         <form onSubmit={this.onSubmit}>
           <fieldset className='login-form'>
@@ -50,7 +50,7 @@ class LoginForm extends Component {
 
           </fieldset>
         </form>
-      </div>
+      </section>
     )
   }
 }

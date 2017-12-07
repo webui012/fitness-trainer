@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
+import './ContactsField.scss'
 
-import styles from './ContactsField.scss'
 
-
-const ContactsField = (props) => 
-    <div className={styles.text}>
-        <p><span className={styles.textTitle}>{props.title}</span>
-            {props.data}
-        </p>
-    </div>
+const ContactsField = props =>
+  <div className='text'>
+    <p><span className='textTitle'>{props.title}</span>
+      {props.data}
+    </p>
+  </div>
 
 
 export default ContactsField

@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from './Main.scss'
+import './Main.scss'
 
 const Main = props =>
-  <div className={styles.main}>
+  <div className='main'>
     {props.children}
   </div>
 
