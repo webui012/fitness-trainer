@@ -6,7 +6,7 @@ import Image from '../Image/Image.js'
 import './PersonalTraining.scss'
 
 const PersonalTraining = () =>
-  <section className={styles.PersonalTraining}>
+  <section className='PersonalTraining'>
     <Video />
     <Text />
     <div className='online-img'>
