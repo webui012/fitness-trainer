@@ -17,6 +17,7 @@ import Forum from '../pages/Forum/Forum.js';
 import Contacts from '../pages/Contacts/Contacts.js';
 import LoginPage from '../pages/LoginPage/LoginPage.js'
 import SignupPage from '../pages/SignupPage/SignupPage.js'
+import Nutrition from '../pages/Nutrition/Nutrition.js'
 
 import styles from './App.scss';
 
@@ -29,6 +30,7 @@ const App = () =>
         <Route exact path='/about' component={About} />
         <Route exact path='/services' component={Services} />
         <Route exact path='/services/online' component={Online} />
+        <Route exact path='/services/nutrition-plan' component={Nutrition} />
         <Route exact path='/sales' component={Sales} />
         <Route exact path='/forum' component={Forum} />
         <Route exact path='/contacts' component={Contacts} />
