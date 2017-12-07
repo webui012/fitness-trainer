@@ -8,6 +8,7 @@ import {
 import Header from '../Header/Header.js';
 import Main from '../Main/Main.js';
 import Footer from '../Footer/Footer.js';
+
 import Homepage from '../pages/Homepage/Homepage.js';
 import About from '../pages/About/About.js';
 import Services from '../pages/Services/Services.js';
