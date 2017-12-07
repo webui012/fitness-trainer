@@ -13,7 +13,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <Logo style={style} />
       <span className={styles['logo-caption']}>Find your perfect body!</span>
-      <nav className={ styles['footer-nav']}>
+      <nav className={styles['footer-nav']}>
         <a href='#' className={styles['footer-nav-link']}>Главная</a>
         <a href='#' className={styles['footer-nav-link']}>О Тренере</a>
         <a href='#' className={styles['footer-nav-link']}>Услуги</a>
