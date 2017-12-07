@@ -3,10 +3,10 @@ import Logo from '../Logo/Logo.js'
 import Navigation from '../Navigation/Navigation.js'
 import Login from '../Login/Login.js'
 
-import styles from './Header.scss'
+import './Header.scss'
 
 const Header = () =>
-  <header className={styles.header}>
+  <header className='header'>
     <Logo />
     <Navigation />
     <Login />
