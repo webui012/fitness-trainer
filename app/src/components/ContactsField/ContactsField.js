@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import './ContactsField.scss'
-
+import './ContactsField.scss';
 
 const ContactsField = props =>
-  <div className='text'>
+  <div className='texts'>
     <p><span className='textTitle'>{props.title}</span>
       {props.data}
     </p>
