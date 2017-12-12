@@ -20,17 +20,13 @@ const Slider = props => {
       speed: 1000,
       loop: true,
     }
+
     return (
       <Swiper {...params}>
-        <div>
-          <img src={props.slide1} alt='slide1' />
-        </div>
-        <div>
-          <img src={props.slide2} alt='slide2' />
-        </div>
-        <div>
-          <img src={props.slide3} alt='slide3' />
-        </div>
+        {props.data.map((slider, i) =>
+          <div key={i}>
+            <img src={slider.url} alt={slider.alt} />
+          </div>)}
       </Swiper>
     )
 }
