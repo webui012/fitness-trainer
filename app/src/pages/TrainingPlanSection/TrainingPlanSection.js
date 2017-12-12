@@ -6,24 +6,29 @@ import {
   Slider
 } from 'Components';
 import YouTube from '@u-wave/react-youtube';
-import TrainingPlanSectionData from ./TrainingPlanSectionData;
+import TrainingPlanSectionData from './TrainingPlanSectionData';
 import './TrainingPlanSection.scss';
 
 function TrainingPlanSection(){
 
-  const {videoId, image, text, slider, btnText} = TrainingPlanSectionData;
+  const {
+    videoId,
+    image:{imgPath, description},
+    text,
+    slider,
+    btnText } = TrainingPlanSectionData;
 
   return (
     <div>
       <section className='training-plan'>
         <YouTube video={videoId} className='video' />
-        <Image path={params.imgPath} description={params.description} />
-        <Text content={params.text} />
-        <Slider />
-        <Text content={params.text} />
+        <Image path={imgPath} description={description} />
+        <Text content={text} />
+        <Slider data={slider} />
+        <Text content={text} />
       </section>
       <section className='motivation'>
-        <Button text={params.btnText} />
+        <Button text={btnText} />
       </section>
     </div>
   )
