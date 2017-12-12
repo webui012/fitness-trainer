@@ -80,6 +80,12 @@ const config = {
     extractSass,
   ],
 
+  resolve: {
+    alias: {
+      Components: path.resolve(__dirname, 'src/components/'),
+      Pages: path.resolve(__dirname, 'src/pages/')
+    },
+  },
 };
 
 module.exports = config;
