@@ -1,12 +1,10 @@
-import React, {Component} from 'react'
-import styles from './Signup.scss'
+import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-
-
+import './Signup.scss';
 
 class Signup extends Component {
   constructor(props){
-    super(props)
+    super(props);
 
     this.state = {user: {}}
   }

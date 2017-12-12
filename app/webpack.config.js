@@ -75,11 +75,17 @@ const config = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html' }),
-    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({ template: './public/index.html' }),
+    new CleanWebpackPlugin([ 'dist' ]),
     extractSass,
   ],
 
+  resolve: {
+    alias: {
+      Components: path.resolve(__dirname, 'src/components/'),
+      Pages: path.resolve(__dirname, 'src/pages/')
+    },
+  },
 };
 
 module.exports = config;

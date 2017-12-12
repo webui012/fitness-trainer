@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
-import Image from '../Image/Image'
-import './NutritionItem.scss'
+import React, {Component} from 'react';
+import {Image} from 'Components';
+import './NutritionItem.scss';
 
 const NutritionItem = props =>
   <div className='nutrition-item'>

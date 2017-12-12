@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
-import Swiper from 'react-id-swiper'
-import Text from './../Text/Text';
-import Image from './../Image/Image';
-import './ReviewSection.scss'
+import React, { Component } from 'react';
+import Swiper from 'react-id-swiper';
+import {
+  Text,
+  Image
+} from 'Components';
+import './ReviewSection.scss';
 
 
 const Review = props => {
