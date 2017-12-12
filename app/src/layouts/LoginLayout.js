@@ -3,7 +3,7 @@ import React from 'react';
 import { Header } from 'Components';
 
 const LoginLayout = props => (
-  <div className='main-layout'>
+  <div className='login-layout'>
     <Header />
     {props.children}
   </div>
