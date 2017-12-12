@@ -1,11 +1,15 @@
-import React, {Component} from 'react'
-import Slider from '../../Slider/Slider'
-import NutritionItem from '../../NutritionItem/NutritionItem'
-import Button from '../../Button/Button'
-import Image from '../../Image/Image'
-import './Nutrition.scss'
-// import background from '../../../images/nutrition-bg.jpg'
-
+import React, {Component} from 'react';
+import {
+  Slider,
+  NutritionItem,
+  Button,
+  Image
+} from 'Components';
+/*import Slider from '../../components/Slider/Slider';
+import NutritionItem from '../../components/NutritionItem/NutritionItem';
+import Button from '../../components/Button/Button';
+import Image from '../../components/Image/Image';*/
+import './Nutrition.scss';
 
 const Nutrition = props => {
   // Icons

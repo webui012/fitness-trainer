@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import Signup from '../../Signup/Signup.js'
+import React, {Component} from 'react';
+import {Signup} from 'Components';
 
 const SignupPage = props => <Signup />
 

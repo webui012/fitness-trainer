@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import './Navigation.scss'
+import React, { Component } from 'react';
+import './Navigation.scss';
 import { Link } from 'react-router-dom';
 
 const Navigation = props => {

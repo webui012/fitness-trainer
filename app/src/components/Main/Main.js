@@ -1,5 +1,5 @@
-import React from 'react'
-import './Main.scss'
+import React from 'react';
+import './Main.scss';
 
 const Main = props =>
   <div className='main'>

@@ -1,11 +1,11 @@
-import React, {Component} from 'react'
-import Service from '../Service/Service'
+import React, {Component} from 'react';
+import {Service} from 'Components';
 
-import onlineTraining from '../../images/khudaev.png'
-import trainingPlan from '../../images/training-plan.jpg'
-import anotherServices from '../../images/khudaev2.png'
-import nutritionPlan from '../../images/nutrition-plan.jpg'
-import './ServiceSection.scss'
+import onlineTraining from '../../images/khudaev.png';
+import trainingPlan from '../../images/training-plan.jpg';
+import anotherServices from '../../images/khudaev2.png';
+import nutritionPlan from '../../images/nutrition-plan.jpg';
+import './ServiceSection.scss';
 
 const ServiceSection = props =>
   <section className='service-section'>

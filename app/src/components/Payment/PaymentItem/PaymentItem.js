@@ -1,7 +1,9 @@
-import React from 'react'
-import Text from '../Text/Text.js'
-import Image from '../Image/Image.js'
-import './PaymentItem.scss'
+import React from 'react';
+import {
+  Text,
+  Image
+} from 'Components';
+import './PaymentItem.scss';
 
 const PaymentItem = props =>
   <div className='payment-item'>

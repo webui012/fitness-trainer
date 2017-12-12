@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './ContactsField.scss'
+import './ContactsField.scss';
 
 
 const ContactsField = props =>

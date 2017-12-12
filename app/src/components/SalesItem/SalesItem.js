@@ -1,6 +1,6 @@
-import React from 'react'
-import Text from '../Text/Text.js'
-import './SalesItem.scss'
+import React from 'react';
+import {Text} from 'Components';
+import './SalesItem.scss';
 
 const SalesItem = props =>
   <div className='itemWrap'>

@@ -1,9 +1,13 @@
-import React from 'react'
-import Logo from '../Logo/Logo.js'
-import Navigation from '../Navigation/Navigation.js'
-import Login from '../Login/Login.js'
-
-import './Header.scss'
+import React from 'react';
+import {
+  Logo,
+  Navigation,
+  Login
+} from 'Components';
+/*import Logo from '../Logo/Logo';
+import Navigation from '../Navigation/Navigation';
+import Login from '../Login/Login';*/
+import './Header.scss';
 
 const Header = () =>
   <header className='header'>

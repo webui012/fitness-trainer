@@ -1,12 +1,15 @@
-import React, {Component} from 'react'
-import ServiceSection from '../../ServiceSection/ServiceSection'
-import MotiovationSection from '../../MotivationSection/MotiovationSection'
-import './Services.scss'
+import React, {Component} from 'react';
+import {
+ServiceSection,
+MotivationSection,
+} from 'Components';
+import './Services.scss';
+
 
 const Services = props =>
   <div className='services'>
     <ServiceSection />
-    <MotiovationSection />
+    <MotivationSection />
   </div>
 
 export default Services

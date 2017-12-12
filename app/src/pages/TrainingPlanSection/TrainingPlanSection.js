@@ -1,10 +1,16 @@
 import React from 'react'
-import Image from '../../Image/Image.js'
-import Text from '../../Text/Text.js'
-import Button from '../../Button/Button.js'
-import Slider from '../../Slider/Slider.js'
+import {
+  Image,
+  Text,
+  Button,
+  Slider
+} from 'Components';
+/*import Image from '../../components/Image/Image'
+import Text from '../../components/Text/Text'
+import Button from '../../components/Button/Button'
+import Slider from '../../components/Slider/Slider'*/
 import YouTube from '@u-wave/react-youtube';
-import './TrainingPlanSection.scss'
+import './TrainingPlanSection.scss';
 
 function TrainingPlanSection(){
 

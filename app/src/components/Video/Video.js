@@ -1,6 +1,6 @@
 import React from 'react';
 import YouTube from '@u-wave/react-youtube';
-import './Video.scss'
+import './Video.scss';
 
 const Video = props => {
   return (
@@ -11,4 +11,4 @@ const Video = props => {
   )
 }
 
- export default Video
+export default Video

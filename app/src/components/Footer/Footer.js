@@ -2,9 +2,13 @@ import React, { Component } from 'react'
 import facebook from '../../images/facebook.svg';
 import twitter from '../../images/twitter.svg';
 import instagram from '../../images/instagram.svg';
+import {
+  Logo,
+  Navigation
+} from 'Components';
 
-import Logo from '../Logo/Logo.js'
-import Navigation from '../Navigation/Navigation.js'
+/*import Logo from '../Logo/Logo'
+import Navigation from '../Navigation/Navigation'*/
 import './Footer.scss'
 
 const Footer = () => {

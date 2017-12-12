@@ -1,7 +1,9 @@
-import React from 'react'
+import React from 'react';
 import YouTube from '@u-wave/react-youtube';
-import Text from '../Text/Text.js'
-import Image from '../Image/Image.js'
+import {
+  Text,
+  Image
+} from 'Components';
 
 import './PersonalTraining.scss'
 

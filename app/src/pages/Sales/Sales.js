@@ -1,5 +1,5 @@
-import React from 'react'
-import SalesItem from '../../SalesItem/SalesItem.js'
+import React from 'react';
+import {SalesItem} from 'Components';
 
 const Sales = props => {
   const salesHeadline = 'Lorem',

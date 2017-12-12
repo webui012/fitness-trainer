@@ -1,7 +1,11 @@
-import React,{ Component } from 'react'
-import ContactsField from '../../ContactsField/ContactsField.js';
-import Map from '../../Map/Map.js';
-import './Contacts.scss'
+import React,{ Component } from 'react';
+/*import ContactsField from '../../components/ContactsField/ContactsField';
+import Map from '../../components/Map/Map';*/
+import './Contacts.scss';
+import {
+  Map,
+  ContactsField
+} from 'Components';
 
 const dataContacts = {
   adressTitle: 'ADRESS',

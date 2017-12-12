@@ -1,5 +1,5 @@
-import React from 'react'
-import Slider from '../../Slider/Slider.js'
+import React from 'react';
+import {Slider} from 'Components';
 
 const Homepage = props => {
   const slide1 = 'https://www.hdwallpapers.in/walls/pushup_workout-HD.jpg',
