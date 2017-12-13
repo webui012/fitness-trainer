@@ -35,7 +35,7 @@ const TrainingPlanSection = () => {
         <Slider data={slider} />
         <div>{textLower}</div>
       </section>
-      <MotivationSection data={motivations[0]}/>
+      <MotivationSection data={motivations}/>
     </div>
   )
 }
