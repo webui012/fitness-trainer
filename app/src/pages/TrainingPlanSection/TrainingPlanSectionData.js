@@ -47,14 +47,13 @@ const TrainingPlanSectionData = {
       loop: true,
     }
   },
-    motivations: [
+    motivations:
     {
       text: 'Начать тренироваться',
       heading: 'Стань лучше прямо сейчас!',
       sectionStyle: 'motivation-section',
       buttonStyle: 'service-button',
-    }
-    ],
+    },
   }
 
   export default TrainingPlanSectionData
