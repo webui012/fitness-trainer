@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 /*import ContactsField from '../../components/ContactsField/ContactsField';
 import Map from '../../components/Map/Map';*/
 import './Contacts.scss';
-import dataContacts from './contactsFieldsData'
+import dataContacts from './contactsData'
 import {
   Map,
   ContactsField
@@ -17,12 +17,14 @@ class Contacts extends Component{
   }
 
   render() {
+    const fields = this.dataContacts.fields
+    const mapData = this.dataContacts.mapData
 
     return (
       <div className='contacts'>
-        <Map />
+        <Map data={mapData} />
         <h1>CONTACTS</h1>
-        {this.dataContacts.map( item =>
+        {fields.map( item =>
           <ContactsField
               key={item.id}
               title={item.Title}

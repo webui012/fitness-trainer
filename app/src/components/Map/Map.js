@@ -3,32 +3,24 @@ import GoogleMapReact from 'google-map-react';
 import PropTypes from 'prop-types';
 import './Map.scss';
 import Marker from './Marker';
-import mapData from './mapData';
 
-class Map extends Component {
-    constructor(props) {
-        super(props)
-        this.mapData = mapData;
-    }
-
-    render() {
-        return (
-          <div className='map'>
-            <GoogleMapReact
-                bootstrapURLKeys={this.mapData.bootstrapURLKeys}
-                defaultCenter={this.mapData.center}
-                defaultZoom={this.mapData.zoom}
-                >
-              <Marker
-                  textClass='marker'
-                  lat={this.mapData.center.lat}
-                  lng={this.mapData.center.lng}
-                  text={'WorkShop'}
-                  />
-            </GoogleMapReact>
-          </div>
-        );
-    }
+const Map = props => {
+    return (
+      <div className='map'>
+        <GoogleMapReact
+            bootstrapURLKeys={props.data.bootstrapURLKeys}
+            defaultCenter={props.data.center}
+            defaultZoom={props.data.zoom}
+            >
+          <Marker
+              textClass='marker'
+              lat={props.data.center.lat}
+              lng={props.data.center.lng}
+              text={'WorkShop'}
+                />
+        </GoogleMapReact>
+      </div>
+    );
 }
 
 Map.propTypes = {
