@@ -5,8 +5,36 @@ import Logo from 'Components'
 
 const FooterData = {
   logo: Logo,
+
   caption: 'Find your perfect body!',
-  copyright: '&copy;2017 All Rights Reserved',
+
+  navigation: [
+    {
+      name: 'Главная',
+      url: '/',
+    },
+    {
+      name: 'О тренере',
+      url: '/about',
+    },
+    {
+      name: 'Услуги',
+      url: '/services',
+    },
+    {
+      name: 'Акции',
+      url: '/sales',
+    },
+    {
+      name: 'Форум',
+      url: '/forum',
+    },
+    {
+      name: 'Контакты',
+      url: '/contacts',
+    },
+  ],
+
   socials: [
     {
       url: 'https://www.facebook.com',
@@ -26,6 +54,7 @@ const FooterData = {
       icon: instagram
     },
   ],
+  copyright: '&copy;2017 All Rights Reserved',
 }
 
 export default FooterData;

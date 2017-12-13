@@ -29,7 +29,7 @@ import './App.scss';
 const App = () =>
   <Router>
     <div className='app'>
-      <Header />
+      {/* <Header /> */}
       <Main>
         <Route exact path='/' component={Homepage} />
         <Route exact path='/about' component={About} />
