@@ -1,18 +1,26 @@
 import React, {Component} from 'react';
 import {Service} from 'Components';
 
-import onlineTraining from '../../images/khudaev.png';
-import trainingPlan from '../../images/training-plan.jpg';
-import anotherServices from '../../images/khudaev2.png';
-import nutritionPlan from '../../images/nutrition-plan.jpg';
 import './ServiceSection.scss';
 
-const ServiceSection = props =>
-  <section className='service-section'>
-    <Service path='online-training' serviceName='Онлайн тренировка 1 на 1' imgSrc={onlineTraining} />
-    <Service path='training-plan' serviceName='Индивидуальная программа' imgSrc={trainingPlan} />
-    <Service path='nutrition-plan' serviceName='Правильное питание' imgSrc={nutritionPlan} />
-    <Service path='' serviceName='Другие услуги' imgSrc={anotherServices} />
-  </section>
+const ServiceSection = props => {
+  const servicesData = props.data;
+
+  return (
+    <section className='service-section'>
+      {
+        servicesData.map(service => {
+          return (
+            <Service key={service.id}
+                path={service.path}
+                serviceName={service.serviceName}
+                imgSrc={service.imgSrc}
+            />
+           )
+        })
+      }
+    </section>
+  )
+}
 
 export default ServiceSection
