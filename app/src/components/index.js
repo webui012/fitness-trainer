@@ -23,9 +23,4 @@ export {default as Signup} from './Signup/Signup';
 export {default as Slider} from './Slider/Slider';
 export {default as Text} from './Text/Text';
 export {default as Video} from './Video/Video';
-
-
-
-
-
-
+export {default as Socials} from './Socials/Socials';

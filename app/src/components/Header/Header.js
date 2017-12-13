@@ -4,16 +4,22 @@ import {
   Navigation,
   Login
 } from 'Components';
-/*import Logo from '../Logo/Logo';
-import Navigation from '../Navigation/Navigation';
-import Login from '../Login/Login';*/
 import './Header.scss';
 
-const Header = () =>
-  <header className='header'>
-    <Logo />
-    <Navigation />
-    <Login />
-  </header>
+import HeaderData from './HeaderData'
+
+const Header = () => {
+  const logo = HeaderData.logo,
+        navigation = HeaderData.navigation
+
+  return (
+    <header className='header'>
+      <Logo data={logo} />
+      <Navigation data={navigation} />
+      <Login />
+    </header>
+  )
+}
+
 
 export default Header

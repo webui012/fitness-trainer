@@ -25,12 +25,12 @@ import {
 } from 'Pages';
 
 import './App.scss';
+import MainLayout from '../../layouts/MainLayout'
 
 const App = () =>
   <Router>
     <div className='app'>
-      <Header />
-      <Main>
+      <MainLayout>
         <Route exact path='/' component={Homepage} />
         <Route exact path='/about' component={About} />
         <Route exact path='/services' component={Services} />
@@ -42,8 +42,7 @@ const App = () =>
         <Route exact path='/contacts' component={Contacts} />
         <Route exact path='/login' component={LoginPage} />
         <Route exact path='/signup' component={SignupPage} />
-      </Main>
-      <Footer />
+      </MainLayout>
     </div>
   </Router>
 
