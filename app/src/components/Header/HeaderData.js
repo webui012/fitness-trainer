@@ -18,7 +18,7 @@ const HeaderData = {
       submenu: [
         {
           name: 'Онлайн тренировка',
-          url: '/services/online-plan',
+          url: '/services/online-training',
         },
         {
           name: 'Программа тренировок',
