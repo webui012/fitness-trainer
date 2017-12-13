@@ -9,7 +9,7 @@ const MotivationSection = props => {
     return (
       <section className='motivation-section'>
         <h3>{data.heading}</h3>
-        <Button text={data.text} classStyle='service-button' />
+        <button className='service-button'>{data.text}</button>
       </section>
     )
 }

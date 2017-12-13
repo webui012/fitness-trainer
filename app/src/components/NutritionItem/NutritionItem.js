@@ -4,7 +4,7 @@ import './NutritionItem.scss';
 
 const NutritionItem = props =>
   <div className='nutrition-item'>
-    <Image path={props.icon} imageClass='nut-photo' description='icon' />
+    <img src={props.icon} className='nut-photo' alt='icon' />
     <h2 className='nut-title'>{props.title}</h2>
     <p className='nut-text'>{props.text}</p>
   </div>

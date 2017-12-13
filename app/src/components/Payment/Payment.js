@@ -16,7 +16,7 @@ const Payment = () => {
 	return (
   <div>
     <div className='paymentHead'>
-      <Text content={headPayment} />
+      <p>{headPayment}</p>
     </div>
     <PaymentItem content={paymentItem1} img={urlPaymentImg1} />
     <PaymentItem content={paymentItem2} img={urlPaymentImg2} />
