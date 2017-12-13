@@ -1,9 +1,7 @@
 export {default as App} from './App/App';
-export {default as Button} from './Button/Button';
 export {default as ContactsField} from './ContactsField/ContactsField';
 export {default as Footer} from './Footer/Footer';
 export {default as Header} from './Header/Header';
-export {default as Image} from './Image/Image';
 export {default as Login} from './Login/Login';
 export {default as LoginForm} from './LoginForm/LoginForm';
 export {default as Logo} from './Logo/Logo';
@@ -21,6 +19,4 @@ export {default as ServiceSection} from './ServiceSection/ServiceSection';
 export {default as Service} from './ServiceSection/Service/Service';
 export {default as Signup} from './Signup/Signup';
 export {default as Slider} from './Slider/Slider';
-export {default as Text} from './Text/Text';
-export {default as Video} from './Video/Video';
 export {default as Socials} from './Socials/Socials';
