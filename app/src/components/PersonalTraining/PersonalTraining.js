@@ -1,22 +1,12 @@
 import React from 'react';
 import YouTube from '@u-wave/react-youtube';
-import {
-  Text,
-  Image
-} from 'Components';
-
 import './PersonalTraining.scss'
 
-const PersonalTraining = () =>
-  <section className='PersonalTraining'>
-    <YouTube video='duXyGlVSacM' className='video' />
-    <Text />
-    <div className='online-img'>
-      <Image />
-      <Image />
-      <Image />
-    </div>
-    <Text />
+const PersonalTraining = props  =>
+  <section className='PersonalTrainin'>
+    <YouTube video={props.data.videoId} className='video-online'  /* autoplay*//>
+      <p  className='training-text'>{props.data.texting}</p>
+      <img className='training-photo' src={props.data.photo}  />
   </section>
 
 export default PersonalTraining
