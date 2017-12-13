@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import './MotivationSection.scss';
 
 const MotivationSection = props => {
-    const data = props.data;
+    const {text, heading, sectionStyle, buttonStyle} = props.data;
 
     return (
-      <section className='motivation-section'>
-        <h3>{data.heading}</h3>
+      <section className={sectionStyle}>
+        <h3>{heading}</h3>
         <Link to='/signup'>
-          <button className='service-button'>{data.text}</button>
+          <button className={buttonStyle}>{text}</button>
         </Link>
       </section>
     )
