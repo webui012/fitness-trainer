@@ -20,8 +20,8 @@ class Contacts extends Component{
 
     return (
       <div className='contacts'>
+        <p className='contactsTitle'>CONTACTS</p>
         <Map data={mapData} />
-        <h1>CONTACTS</h1>
         {fields.map( item =>
           <ContactsField
               key={item.id}
