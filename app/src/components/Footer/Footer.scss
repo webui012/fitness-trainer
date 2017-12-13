@@ -5,6 +5,14 @@
   justify-content: center;
   align-items: center;
   padding: 50px;
+
+  .nav-list-item:hover .nav-link-menu {
+    display: none;
+  }
+
+  .nav-list-item:after {
+    display: none;
+  }
 }
 
 .logo-caption {
