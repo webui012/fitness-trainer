@@ -3,13 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import PropTypes from 'prop-types';
 import './Map.scss';
 import Marker from './Marker';
-
-/*This data for map location must be transfere in to store*/
-const mapData = {
-  center: { lat: 49.97, lng: 36.25 },
-  zoom: 11,
-  bootstrapURLKeys: { key: 'AIzaSyB-7Fn2cGaiF3_2zTedyusFSiYHGn9RfMQ' }
-};
+import mapData from './mapData';
 
 class Map extends Component {
     constructor(props) {
