@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import './Socials.scss';
-import SocialsData from './SocialsData'
 
 const Socials = props => {
-  const socials = SocialsData.socials
+  const socials = props.data
   return (
     <div className='socials'>
       {socials.map((social, i) => {

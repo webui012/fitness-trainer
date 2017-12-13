@@ -1,8 +1,10 @@
 import facebook from '../../images/facebook.svg';
 import twitter from '../../images/twitter.svg';
 import instagram from '../../images/instagram.svg';
+import Logo from 'Components'
 
 const FooterData = {
+  logo: Logo,
   caption: 'Find your perfect body!',
   copyright: '&copy;2017 All Rights Reserved',
   socials: [

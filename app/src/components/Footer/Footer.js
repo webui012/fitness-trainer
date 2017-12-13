@@ -5,15 +5,20 @@ import {
   Socials
 } from 'Components';
 import './Footer.scss'
+import FooterData from './FooterData'
 
 const Footer = () => {
+  const logo = FooterData.logo,
+        caption = FooterData.caption,
+        socials = FooterData.socials,
+        copyright = FooterData. copyright
   return (
     <footer className='footer'>
-      <Logo />
-      <span className='logo-caption'>Find your perfect body!</span>
+      <Logo data={logo} />
+      <span className='logo-caption'>{caption}</span>
       <Navigation />
-      <Socials />
-      <p className='copyright'>&copy;2017 All Rights Reserved</p>
+      <Socials data={socials} />
+      <p className='copyright'>{copyright}</p>
     </footer>
   )
 }
