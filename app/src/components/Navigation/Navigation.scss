@@ -39,16 +39,3 @@
     color: #000;
   }
 }
-
-
-.nav-list-item {
-  overflow: hidden;
-
-  &:hover:after {
-    transform: translateY(0);
-  }
-
-  &:hover .nav-link-menu {
-    display: flex;
-  }
-}
