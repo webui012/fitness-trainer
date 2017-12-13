@@ -9,27 +9,31 @@ import {
 
 const dataContacts = [
   {
+    id: 1,
     Title: 'ADRESS',
     data: '123, Rev Avenu, Hawai'
   },
 
   {
+    id: 2,
     Title: 'PHONE',
     data: '+81 2345854646'
   },
 
   {
+    id: 3,
     Title: 'EMAIL',
     data: 'email@email.com'
   },
 
   {
+    id: 4,
     Title: 'STORE',
     data: '123, Rev Avenu, Hawai'
   }
 ]
 
-class Contacts extends Conponent{
+class Contacts extends Component{
   constructor(props) {
     super(props)
     this.dataContacts = dataContacts
@@ -41,11 +45,11 @@ class Contacts extends Conponent{
       <div className='contacts'>
         <Map />
         <h1>CONTACTS</h1>
-        {this.dataContacts.map( item, i =>
+        {this.dataContacts.map( item =>
           <ContactsField
-              key={i}
-              title={this.dataContacts.Title}
-              data={this.dataContacts.data}
+              key={item.id}
+              title={item.Title}
+              data={item.data}
           />)
         }
       </div>)
