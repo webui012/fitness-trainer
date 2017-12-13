@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Service} from 'Components';
-
+import PropTypes from 'prop-types';
 import './ServiceSection.scss';
 
 const ServiceSection = props => {
@@ -21,6 +21,10 @@ const ServiceSection = props => {
       }
     </section>
   )
+}
+
+ServiceSection.propTypes = {
+  data: PropTypes.array
 }
 
 export default ServiceSection

@@ -8,7 +8,9 @@ import {
 const MainLayout = props => (
   <div className='main-layout'>
     <Header />
-    {props.children}
+    <div className='layout-content'>
+      {props.children}
+    </div>
     <Footer />
   </div>
 )

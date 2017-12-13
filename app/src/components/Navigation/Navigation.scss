@@ -28,6 +28,7 @@
   display: none;
   flex-direction: column;
   box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.3);
+  z-index: 999999;
 }
 
 .dropdown-link {
@@ -38,29 +39,4 @@
   &:hover {
     color: #000;
   }
-}
-
-
-.nav-list-item {
-  overflow: hidden;
-
-  &:hover:after {
-    transform: translateY(0);
-  }
-
-  &:hover .nav-link-menu {
-    display: flex;
-  }
-}
-
-.nav-list-item:after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: #fff;
-  transform: translateY(2px);
-  transition-property: transform;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-out;
 }
