@@ -2,7 +2,9 @@ import facebook from '../../images/facebook.svg';
 import twitter from '../../images/twitter.svg';
 import instagram from '../../images/instagram.svg';
 
-const SocialsData = {
+const FooterData = {
+  caption: 'Find your perfect body!',
+  copyright: '&copy;2017 All Rights Reserved',
   socials: [
     {
       url: 'https://www.facebook.com',
@@ -21,7 +23,7 @@ const SocialsData = {
       name: 'instagram',
       icon: instagram
     },
-  ]
+  ],
 }
 
-export default SocialsData;
+export default FooterData;
