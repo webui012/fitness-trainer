@@ -1,4 +1,5 @@
 import React,{ Component } from 'react';
+import PropTypes from 'prop-types';
 /*import ContactsField from '../../components/ContactsField/ContactsField';
 import Map from '../../components/Map/Map';*/
 import './Contacts.scss';
@@ -55,5 +56,11 @@ class Contacts extends Component{
       </div>)
   }
 }
+
+Contacts.propTypes = {
+  key: PropTypes.number,
+  title: PropTypes.string,
+  data: PropTypes.string
+};
 
 export default Contacts

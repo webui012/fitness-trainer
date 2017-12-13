@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './ContactsField.scss';
 
 
@@ -10,5 +11,9 @@ const ContactsField = props =>
     </p>
   </div>
 
+ContactsField.propTypes = {
+  title: PropTypes.string,
+  data: PropTypes.string
+};
 
 export default ContactsField
