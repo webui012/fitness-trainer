@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Button} from 'Components';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './MotivationSection.scss';
