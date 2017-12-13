@@ -5,13 +5,14 @@ import {
   MotivationSection
 } from 'Components';
 import './Online.scss'
-import ServicesData from './../Services/ServicesData';
+import OnlineData from './OnlineData'
+/*import ServicesData from './../Services/ServicesData';*/
 
 const Online = props =>
   <div className='online'>
     <PersonalTraining />
     <ReviewSection />
-    <MotivationSection />
+    <MotivationSection data={OnlineData.motivations[0]} />
   </div>
 
 export default Online
