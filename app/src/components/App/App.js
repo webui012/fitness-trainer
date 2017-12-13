@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
-import { Provider } from 'react-redux';
 
 import {
   Header,
@@ -27,27 +26,25 @@ import {
 
 import './App.scss';
 
-const App = ({store}) =>
-  <Provider store={store}>
-    <Router>
-      <div className='app'>
-        <Header />
-        <Main>
-          <Route exact path='/' component={Homepage} />
-          <Route exact path='/about' component={About} />
-          <Route exact path='/services' component={Services} />
-          <Route exact path='/services/online-training' component={Online} />
-          <Route exact path='/services/training-plan' component={TrainingPlanSection} />
-          <Route exact path='/services/nutrition-plan' component={Nutrition} />
-          <Route exact path='/sales' component={Sales} />
-          <Route exact path='/forum' component={Forum} />
-          <Route exact path='/contacts' component={Contacts} />
-          <Route exact path='/login' component={LoginPage} />
-          <Route exact path='/signup' component={SignupPage} />
-        </Main>
-        <Footer />
-      </div>
-    </Router>
-  </Provider>
+const App = () =>
+  <Router>
+    <div className='app'>
+      <Header />
+      <Main>
+        <Route exact path='/' component={Homepage} />
+        <Route exact path='/about' component={About} />
+        <Route exact path='/services' component={Services} />
+        <Route exact path='/services/online-training' component={Online} />
+        <Route exact path='/services/training-plan' component={TrainingPlanSection} />
+        <Route exact path='/services/nutrition-plan' component={Nutrition} />
+        <Route exact path='/sales' component={Sales} />
+        <Route exact path='/forum' component={Forum} />
+        <Route exact path='/contacts' component={Contacts} />
+        <Route exact path='/login' component={LoginPage} />
+        <Route exact path='/signup' component={SignupPage} />
+      </Main>
+      <Footer />
+    </div>
+  </Router>
 
 export default App;
