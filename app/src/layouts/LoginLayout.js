@@ -5,7 +5,9 @@ import { Header } from 'Components';
 const LoginLayout = props => (
   <div className='login-layout'>
     <Header />
-    {props.children}
+    <div className='layout-content'>
+      {props.children}
+    </div>
   </div>
 )
 
