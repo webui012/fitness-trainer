@@ -1,46 +1,44 @@
 import React,{ Component } from 'react';
+import PropTypes from 'prop-types';
 /*import ContactsField from '../../components/ContactsField/ContactsField';
 import Map from '../../components/Map/Map';*/
 import './Contacts.scss';
+import dataContacts from './contactsData'
 import {
   Map,
   ContactsField
 } from 'Components';
 
-const dataContacts = {
-  adressTitle: 'ADRESS',
-  adress: '123, Rev Avenu, Hawai',
 
-  phoneTitle: 'PHONE',
-  phone: '+81 2345854646',
+class Contacts extends Component{
+  constructor(props) {
+    super(props)
+    this.dataContacts = dataContacts
+  }
 
-  emailTitle: 'EMAIL',
-  email: 'email@email.com',
+  render() {
+    const fields = this.dataContacts.fields
+    const mapData = this.dataContacts.mapData
 
-  storeTitle: 'STORE',
-  store: '123, Rev Avenu, Hawai'
+    return (
+      <div className='contacts'>
+        <Map data={mapData} />
+        <h1>CONTACTS</h1>
+        {fields.map( item =>
+          <ContactsField
+              key={item.id}
+              title={item.Title}
+              data={item.data}
+          />)
+        }
+      </div>)
+  }
 }
 
-const Contacts = () =>
-  <div className='contacts'>
-    <Map />
-    <h1>CONTACTS</h1>
-    <ContactsField
-        title={dataContacts.adressTitle}
-        data={dataContacts.adress}
-    />
-    <ContactsField
-        title={dataContacts.phoneTitle}
-        data={dataContacts.phone}
-    />
-    <ContactsField
-        title={dataContacts.emailTitle}
-        data={dataContacts.email}
-    />
-    <ContactsField
-        title={dataContacts.storeTitle}
-        data={dataContacts.store}
-    />
-  </div>
+Contacts.propTypes = {
+  key: PropTypes.number,
+  title: PropTypes.string,
+  data: PropTypes.string
+};
 
 export default Contacts
