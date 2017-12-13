@@ -12,8 +12,7 @@ let store = createStore(reducer);
 
 render(
   <Provider store={store}>
-    <App/>
+    <App />
   </Provider>,
   document.getElementById('root')
 )
-

@@ -1,7 +1,5 @@
 import React,{ Component } from 'react';
 import PropTypes from 'prop-types';
-/*import ContactsField from '../../components/ContactsField/ContactsField';
-import Map from '../../components/Map/Map';*/
 import './Contacts.scss';
 import dataContacts from './contactsData'
 import {
