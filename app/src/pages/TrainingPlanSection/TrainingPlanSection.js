@@ -4,7 +4,7 @@ import YouTube from '@u-wave/react-youtube';
 import TrainingPlanSectionData from './TrainingPlanSectionData';
 import './TrainingPlanSection.scss';
 
-function TrainingPlanSection(){
+const TrainingPlanSection = () => {
 
   const {
     videoId,
