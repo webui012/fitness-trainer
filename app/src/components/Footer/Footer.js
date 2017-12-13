@@ -9,10 +9,9 @@ import {
 import './Footer.scss'
 
 const Footer = () => {
-  let style = { color: '#fff' };
   return (
     <footer className='footer'>
-      <Logo style={style} />
+      <Logo />
       <span className='logo-caption'>Find your perfect body!</span>
       <Navigation />
       <div className='socials'>
