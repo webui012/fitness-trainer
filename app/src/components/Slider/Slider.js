@@ -3,8 +3,8 @@ import Swiper from 'react-id-swiper';
 import styles from './Slider.scss';
 
 const Slider = props => {
-  const params = props.data.sliderParams,
-        slides = props.data.slides
+  const params = props.sliderParams,
+        slides = props.slides
     return (
       <Swiper {...params}>
         {slides.map((slider, i) =>
