@@ -1,13 +1,13 @@
 const NutritionData = {
   slides: [
     {
-      url: 'https://img3.goodfon.ru/original/2560x1440/a/82/sport-healthy-food-diet.jpg',
-      alt: 'Pushup Workout'
-    },
-
-     {
       url: 'http://www.sportobzor.ru/uploads/images/6a601d944bff23d928ef8ec5a57df52a.jpg',
       alt: 'Workout Pakage'
+    },
+
+    {
+      url: 'https://img3.goodfon.ru/original/2560x1440/a/82/sport-healthy-food-diet.jpg',
+      alt: 'Pushup Workout'
     },
 
      {
@@ -15,6 +15,7 @@ const NutritionData = {
       alt: 'Running Workout'
     }
   ],
+
   nutritions: [
     {
       title: 'Индивидуальный подход',
@@ -32,6 +33,7 @@ const NutritionData = {
       iconUrl: 'https://cdn0.iconfinder.com/data/icons/infographic-bar-11/512/10-128.png'
     },
   ],
+
   foodPic: 'https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Food-Dome-128.png'
 }
 

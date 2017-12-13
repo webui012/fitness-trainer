@@ -20,7 +20,7 @@ const Footer = () => {
       <span className='logo-caption'>{caption}</span>
       <Navigation data={navigation} />
       <Socials data={socials} />
-      <p className='copyright'>{copyright}</p>
+      <p className='copyright'>&copy;{copyright}</p>
     </footer>
   )
 }
