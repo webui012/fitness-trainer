@@ -34,7 +34,8 @@ const NutritionData = {
     },
   ],
 
-  foodPic: 'https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Food-Dome-128.png'
+  foodPic: 'https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Food-Dome-128.png',
+  foodText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ducimus nisi modi soluta inventore corrupti. Laborum magni veniam facere eius, ut similique ratione et quidem dignissimos. Minus, omnis ducimus necessitatibus consequuntur iusto, vero fuga optio ab. Laudantium harum minima obcaecati sapiente maiores molestiae, totam laboriosam. Molestiae repellat debitis veniam sed?'
 }
 
 export default NutritionData;
