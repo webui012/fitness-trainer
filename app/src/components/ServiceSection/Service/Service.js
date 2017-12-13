@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import './Service.scss';
+import PropTypes from 'prop-types';
 
 const Service = props => {
     const imgSource = {
@@ -14,4 +15,9 @@ const Service = props => {
     )
 }
 
+Service.propTypes = {
+  imgSrc: PropTypes.string,
+  path: PropTypes.string,
+  serviceName: PropTypes.string
+}
 export default Service;

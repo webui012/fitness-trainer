@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Button} from 'Components';
+import PropTypes from 'prop-types';
 import './MotivationSection.scss';
 
 const MotivationSection = props => {
@@ -13,4 +14,7 @@ const MotivationSection = props => {
     )
 }
 
+MotivationSection.propTypes = {
+    data: PropTypes.object
+}
 export default MotivationSection
