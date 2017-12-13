@@ -1,7 +1,17 @@
 const TrainingPlanSectionData = {
   videoId: 'duXyGlVSacM',
-  image: [{imgPath: '../src/images/imageTrainingPlan.jpg', description: 'training plan img' }, {imgPath: '../src/images/imageTrainingPlan.jpg', description: 'training plan img'}],
-  text: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'],
+  image: [
+    {
+      imgPath: '../src/images/imageTrainingPlan.jpg',
+      description: 'training plan img'
+    }
+  ],
+  textPlan: [
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
+  ],
+  textReview: [
+    'Sed ut perspiciatis, unde omnis iste natus error sit voluptatem. '
+  ],
   slider: {
     slides: [
       {
