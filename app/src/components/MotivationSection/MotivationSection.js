@@ -17,6 +17,11 @@ const MotivationSection = props => {
 }
 
 MotivationSection.propTypes = {
-    data: PropTypes.object
+    data: PropTypes.shape({
+      text: PropTypes.string,
+      heading: PropTypes.string,
+      sectionStyle: PropTypes.string,
+      buttonStyle: PropTypes.string
+    })
 }
 export default MotivationSection
