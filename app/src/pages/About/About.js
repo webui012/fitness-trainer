@@ -5,8 +5,6 @@ import {
   Text
 } from 'Components';
 
-/*import Image from '../../components/Image/Image';
-import Text from '../../components/Text/Text';*/
 import YouTube from '@u-wave/react-youtube';
 import photo from '../../images/about_image.jpg';
 

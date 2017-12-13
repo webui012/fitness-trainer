@@ -5,10 +5,6 @@ import {
   Button,
   Slider
 } from 'Components';
-/*import Image from '../../components/Image/Image'
-import Text from '../../components/Text/Text'
-import Button from '../../components/Button/Button'
-import Slider from '../../components/Slider/Slider'*/
 import YouTube from '@u-wave/react-youtube';
 import './TrainingPlanSection.scss';
 

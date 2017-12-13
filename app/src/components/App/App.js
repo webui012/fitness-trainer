@@ -5,12 +5,6 @@ import {
 } from 'react-router-dom';
 
 import {
-  Header,
-  Main,
-  Footer
-} from 'Components';
-
-import {
   Homepage,
   About,
   Services,

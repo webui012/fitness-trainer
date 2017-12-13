@@ -4,8 +4,7 @@ import {
   ReviewSection,
   MotivationSection
 } from 'Components';
-import './Online.scss'
-import ServicesData from './../Services/ServicesData';
+import './Online.scss';
 
 const Online = props =>
   <div className='online'>
