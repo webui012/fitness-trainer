@@ -3,8 +3,9 @@ import './ContactsField.scss';
 
 
 const ContactsField = props =>
-  <div className='text'>
-    <p><span className='textTitle'>{props.title}</span>
+
+  <div className='ContactsFieldText'>
+    <p><span className='ContactsFieldTextTitle'>{props.title}</span>
       {props.data}
     </p>
   </div>

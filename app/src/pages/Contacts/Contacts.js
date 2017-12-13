@@ -7,40 +7,49 @@ import {
   ContactsField
 } from 'Components';
 
-const dataContacts = {
-  adressTitle: 'ADRESS',
-  adress: '123, Rev Avenu, Hawai',
+const dataContacts = [
+  {
+    Title: 'ADRESS',
+    data: '123, Rev Avenu, Hawai'
+  },
 
-  phoneTitle: 'PHONE',
-  phone: '+81 2345854646',
+  {
+    Title: 'PHONE',
+    data: '+81 2345854646'
+  },
 
-  emailTitle: 'EMAIL',
-  email: 'email@email.com',
+  {
+    Title: 'EMAIL',
+    data: 'email@email.com'
+  },
 
-  storeTitle: 'STORE',
-  store: '123, Rev Avenu, Hawai'
+  {
+    Title: 'STORE',
+    data: '123, Rev Avenu, Hawai'
+  }
+]
+
+class Contacts extends Conponent{
+  constructor(props) {
+    super(props)
+    this.dataContacts = dataContacts
+  }
+
+  render() {
+
+    return (
+      <div className='contacts'>
+        <Map />
+        <h1>CONTACTS</h1>
+        {this.dataContacts.map( item, i =>
+          <ContactsField
+              key={i}
+              title={this.dataContacts.Title}
+              data={this.dataContacts.data}
+          />)
+        }
+      </div>)
+  }
 }
-
-const Contacts = () =>
-  <div className='contacts'>
-    <Map />
-    <h1>CONTACTS</h1>
-    <ContactsField
-        title={dataContacts.adressTitle}
-        data={dataContacts.adress}
-    />
-    <ContactsField
-        title={dataContacts.phoneTitle}
-        data={dataContacts.phone}
-    />
-    <ContactsField
-        title={dataContacts.emailTitle}
-        data={dataContacts.email}
-    />
-    <ContactsField
-        title={dataContacts.storeTitle}
-        data={dataContacts.store}
-    />
-  </div>
 
 export default Contacts
