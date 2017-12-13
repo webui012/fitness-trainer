@@ -1,6 +1,6 @@
 const OnlineData = {
 
-    videoId: 'duXyGlVSacM',
+    videoId: 'd8Cmw1UyViQ',
     texting: 'Если вы до сих пор не занимаетесь спортом, значит, вы не создали для этого подходящих условий. Лень, сила воли, отсутствие времени — всё это не имеет значения. Мы подготовили для вас онлайн-программу «Я могу»',
 
     photo: 'https://www.bodybuilding.com/images/2016/november/karina-baymiller-fitness-360-desktop-training2.jpg',
@@ -51,13 +51,7 @@ const OnlineData = {
             el: '.swiper-pagination',
             clickable: true,
         }
-    },
-
-
-                    motivations: [{
-                        text: 'Начать тренироваться онлайн',
-                        heading: 'Тренировки онлайн лучший выбор для занятых людей'
-                    }]
+    }
 };
 
 export default OnlineData;

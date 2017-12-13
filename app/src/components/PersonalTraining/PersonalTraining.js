@@ -7,12 +7,13 @@ const PersonalTraining = props  => {
     const {videoId, texting, photo} = props.data;
     return(
     <section className='PersonalTraining'>
-        <YouTube video={videoId} className='video-online'  /* autoplay*//>
+        <YouTube video={videoId} className='video-online'  autoplay />
         <p className='training-text'>{texting}</p>
         <img className='training-photo' src={photo}/>
     </section>
     )
 }
+
 PersonalTraining.propTypes = {
     videoId: PropTypes.string,
     texting: PropTypes.string,

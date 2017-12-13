@@ -1,20 +1,27 @@
 import React, {Component} from 'react';
-import {Button} from 'Components';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './MotivationSection.scss';
 
 const MotivationSection = props => {
-    const data = props.data;
+    const {text, heading, sectionStyle, buttonStyle} = props.data;
 
     return (
-      <section className='motivation-section'>
-        <h3>{data.heading}</h3>
-        <Button text={data.text} classStyle='service-button' />
+      <section className={sectionStyle}>
+        <h3>{heading}</h3>
+        <Link to='/signup'>
+          <button className={buttonStyle}>{text}</button>
+        </Link>
       </section>
     )
 }
 
 MotivationSection.propTypes = {
-    data: PropTypes.object
+    data: PropTypes.shape({
+      text: PropTypes.string,
+      heading: PropTypes.string,
+      sectionStyle: PropTypes.string,
+      buttonStyle: PropTypes.string
+    })
 }
 export default MotivationSection

@@ -33,7 +33,15 @@ const ServicesData = {
   motivations: [
     {
       text: 'Начать тренироваться',
-      heading: 'Стань лучше прямо сейчас!'
+      heading: 'Стань лучше прямо сейчас!',
+      sectionStyle: 'motivation-section',
+      buttonStyle: 'service-button',
+    },
+    {
+        text: 'Начать тренироваться онлайн',
+        heading: 'Тренировки онлайн лучший выбор для занятых людей',
+        sectionStyle: 'motivation-section',
+        buttonStyle: 'online-button'
     }
   ]
 

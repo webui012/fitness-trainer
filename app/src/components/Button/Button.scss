@@ -19,3 +19,25 @@
     box-shadow: 1px 3px 3px #545454;
   }
 }
+
+.online-button{
+  width: 500px;
+  height: 50px;
+  border-radius: 5px;
+  transform: none;
+  border: none;
+  background-color: #008b18;
+  color: #fff;
+  font-size: 22px;
+  outline: none;
+  box-shadow: 1px 3px 3px #545454;
+  cursor: pointer;
+
+  &:hover{
+    background-color: #078b66;
+  }
+  &:active{
+    background-color: #111111;
+    box-shadow: 1px 3px 3px #545454;
+  }
+}
