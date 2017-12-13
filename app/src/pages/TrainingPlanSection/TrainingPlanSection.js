@@ -1,7 +1,7 @@
 import React from 'react'
 import {
-  Image,
-  Text,
+ // Image,
+ // Text,
   Button,
   Slider
 } from 'Components';
@@ -13,19 +13,28 @@ function TrainingPlanSection(){
 
   const {
     videoId,
-    image:{imgPath, description},
+    image,
     text,
     slider,
     btnText } = TrainingPlanSectionData;
+
+  //const trainigImage =
+  const trainingText = text.map(snippet=>
+    <p>{snippet}</p>
+  )
+
+  const trainingImage = image.map(pic=>
+    <img src={pic.imgPath} alt={pic.description} />
+    )
 
   return (
     <div>
       <section className='training-plan'>
         <YouTube video={videoId} className='video' />
-        <Image path={imgPath} description={description} />
-        <Text content={text} />
+        <div>{trainingImage}</div>
+        <div>{trainingText}</div>
         <Slider data={slider} />
-        <Text content={text} />
+        <div>{trainingText}</div>
       </section>
       <section className='motivation'>
         <Button text={btnText} />
