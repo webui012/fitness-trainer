@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import Swiper from 'react-id-swiper';
-/*import {
-  Text,
-  Image
-} from 'Components';*/
+import PropTypes from 'prop-types';
 import './ReviewSection.scss';
 
 
-const Review = props => {
+const ReviewSection = props => {
    const params = props.data.sliderParams,
         slides = props.data.slides
 
@@ -27,26 +24,14 @@ const Review = props => {
             </Swiper>
         </div>
     )
-
-
-
-
-
-/*  return (
-      <Swiper {...params} className='swiper-wrapper'>
-          {reviewsData.map((review, i) => {
-              return (
-                  <div key={i} className='review-slide'>
-                      <div className='slide-content'>
-                          <span className='review-name'>{review.name}</span>
-                          <Text textClass='review-text' content={review.text} />
-                      </div>
-                      <Image imageClass='review-avatar' path={review.photo} />
-                  </div>
-              )
-          })}
-      </Swiper>
-  )*/
 }
 
-export default Review
+ReviewSection.propTypes = {
+    title: PropTypes.string,
+    name: PropTypes.string,
+    alt: PropTypes.string,
+    url: PropTypes.string,
+    text: PropTypes.string
+};
+
+export default ReviewSection;

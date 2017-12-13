@@ -5,7 +5,7 @@ import {
   MotivationSection
 } from 'Components';
 import './Online.scss';
-import OnlineData from './OnlineData'
+import OnlineData from './OnlineData';
 
 
 const Online = props =>
