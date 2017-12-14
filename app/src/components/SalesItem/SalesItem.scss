@@ -1,4 +1,4 @@
-.itemWrap{
+.item-wrap{
 	margin-top:20px;
 	margin-bottom:20px;
 	display: inline-block;
@@ -6,7 +6,7 @@
 
 
 }
-.itemInfo{
+.item-info{
 	width:35%;
 	margin-left:15%;
 	float:left;
@@ -18,12 +18,12 @@
 	text-align: justify;
 	opacity: 0.8;
 }
-.infoHeader{
+.info-header{
 	font-size: 200%;
 	text-shadow:1px 1px 3px grey;
 	margin-bottom:2%;
 }
-.infoContent{
+.info-content{
 	text-shadow:1px 1px 4px grey;
 }
 .expires{
@@ -33,13 +33,13 @@
 	text-shadow:1px 1px 4px grey;
 
 }
-.itemImgMask{
+.item-img-mask{
 	width:100%;
 	height:250px;
 	background-color: black;
 	opacity: 0.6;
 }
-.itemImg h1{
+.item-img h1{
 	position:relative;
 	bottom:15%;
 	float:right;
@@ -50,7 +50,7 @@
 
 
 }
-.itemImg{
+.item-img{
 	width:35%;
 	margin-right:15%;
 	float:right;

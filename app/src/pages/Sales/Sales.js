@@ -5,7 +5,7 @@ import './Sales.scss';
 
 const Sales = props => {
   return (
-    <div className='SalesWrap'>
+    <div className='sales-wrap'>
       {
         SalesData.map(item => <SalesItem key={item.id}
             salesHeadline={item.salesHeadline}
