@@ -10,4 +10,13 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.swiper-container-horizontal {
+  overflow-x: hidden;
+}
+
+.nutrition-slider{
+  overflow: hidden;
+  height: 100vh;
+}
+
 .slider {position: relative;}
