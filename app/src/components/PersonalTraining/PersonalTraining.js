@@ -1,22 +1,25 @@
 import React from 'react';
 import YouTube from '@u-wave/react-youtube';
-import {
-  Text,
-  Image
-} from 'Components';
+import PropTypes from 'prop-types';
+import './PersonalTraining.scss';
 
-import './PersonalTraining.scss'
 
-const PersonalTraining = () =>
-  <section className='PersonalTraining'>
-    <YouTube video='duXyGlVSacM' className='video' />
-    <Text />
-    <div className='online-img'>
-      <Image />
-      <Image />
+const PersonalTraining = props => {
+    const {videoId, texting, photo} = props.data;
+    return (
+      <section className='personal-training'>
+        <YouTube video={videoId} className='video-online' autoplay />
+        <p className='training-text'>{texting}</p>
+        <img className='training-photo' src={photo} />
+      </section>
+    )
+}
 
-    </div> <Image />
-    <Text />
-  </section>
+PersonalTraining.propTypes = {
+    videoId: PropTypes.string,
+    texting: PropTypes.string,
+    photo: PropTypes.string
+};
 
-export default PersonalTraining
+
+export default PersonalTraining;

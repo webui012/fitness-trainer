@@ -11,6 +11,10 @@ body {
 }
 
 .swiper-container-horizontal {
+  overflow-x: hidden;
+}
+
+.nutrition-slider{
   overflow: hidden;
   height: 100vh;
 }

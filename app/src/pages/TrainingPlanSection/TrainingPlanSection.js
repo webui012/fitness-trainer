@@ -14,16 +14,16 @@ const TrainingPlanSection = () => {
     slider,
     motivations } = TrainingPlanSectionData;
 
-  const textUpper = textPlan.map((snippet,index)=>
+  const textUpper = textPlan.map((snippet,index) =>
     <p key={index}>{snippet}</p>
   )
 
-  const textLower = textReview.map((snippet,index)=>
+  const textLower = textReview.map((snippet,index) =>
     <p key={index}>{snippet}</p>
   )
 
-  const trainingImage = image.map((pic, index)=>
-    <img key ={index} src={pic.imgPath} alt={pic.description} />
+  const trainingImage = image.map((pic, index) =>
+    <img key={index} src={pic.imgPath} alt={pic.description} />
     )
 
   return (
@@ -35,7 +35,7 @@ const TrainingPlanSection = () => {
         <Slider data={slider} />
         <div>{textLower}</div>
       </section>
-      <MotivationSection data={motivations}/>
+      <MotivationSection data={motivations} />
     </div>
   )
 }

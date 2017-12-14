@@ -30,21 +30,13 @@ const ServicesData = {
       imgSrc: khudaev2
     }
   ],
-  motivations: [
-    {
-      text: 'Начать тренироваться',
-      heading: 'Стань лучше прямо сейчас!',
-      sectionStyle: 'motivation-section',
-      buttonStyle: 'service-button',
-    },
-    {
-      text: 'Заказать онлайн тренировку',
-      heading: 'Стань лучше прямо здесь!',
-      sectionStyle: '',
-      buttonStyle: '',
-    }
-  ]
-
+  motivations:
+  {
+    text: 'Начать тренироваться',
+    heading: 'Стань лучше прямо сейчас!',
+    sectionStyle: 'motivation-section',
+    buttonStyle: 'service-button',
+  }
 };
 
 export default ServicesData;

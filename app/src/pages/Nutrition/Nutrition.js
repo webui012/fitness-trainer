@@ -22,7 +22,7 @@ const Nutrition = () => {
 
     return (
             <section className='nutrition'>
-                <Slider data={slider} />
+                <Slider data={slider} className='nutrition-slider' />
                 <div className='nutrition-content'>
                     <div className='nut-section-row'>
                         <h2 className='nut-row-title'>{text}</h2>
