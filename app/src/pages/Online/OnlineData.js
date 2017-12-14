@@ -56,9 +56,9 @@ const OnlineData = {
     motivations:
     {
       text: 'Начать тренироваться',
-      heading: 'Стань лучше прямо сейчас!',
+      heading: 'Тренировки онлайн лучший выбор для занятых люде',
       sectionStyle: 'motivation-section',
-      buttonStyle: 'service-button',
+      buttonStyle: 'online-button',
     }
 };
 
