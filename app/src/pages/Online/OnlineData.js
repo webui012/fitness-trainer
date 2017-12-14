@@ -51,6 +51,14 @@ const OnlineData = {
             el: '.swiper-pagination',
             clickable: true,
         }
+    },
+
+    motivations:
+    {
+      text: 'Начать тренироваться',
+      heading: 'Тренировки онлайн лучший выбор для занятых люде',
+      sectionStyle: 'motivation-section',
+      buttonStyle: 'online-button',
     }
 };
 
