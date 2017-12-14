@@ -38,10 +38,10 @@ const ServicesData = {
       buttonStyle: 'service-button',
     },
     {
-      text: 'Заказать онлайн тренировку',
-      heading: 'Стань лучше прямо здесь!',
-      sectionStyle: '',
-      buttonStyle: '',
+        text: 'Начать тренироваться онлайн',
+        heading: 'Тренировки онлайн лучший выбор для занятых людей',
+        sectionStyle: 'motivation-section',
+        buttonStyle: 'online-button'
     }
   ]
 
