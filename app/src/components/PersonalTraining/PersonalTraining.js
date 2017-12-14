@@ -3,14 +3,14 @@ import YouTube from '@u-wave/react-youtube';
 import PropTypes from 'prop-types';
 import './PersonalTraining.scss';
 
-const PersonalTraining = props  => {
+const PersonalTraining = props => {
     const {videoId, texting, photo} = props.data;
-    return(
-    <section className='PersonalTraining'>
-        <YouTube video={videoId} className='video-online'  autoplay />
+    return (
+      <section className='personal-training'>
+        <YouTube video={videoId} className='video-online' autoplay />
         <p className='training-text'>{texting}</p>
-        <img className='training-photo' src={photo}/>
-    </section>
+        <img className='training-photo' src={photo} />
+      </section>
     )
 }
 

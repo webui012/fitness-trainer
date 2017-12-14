@@ -10,7 +10,7 @@ import './Services.scss';
 const Services = props =>
   <div className='services'>
     <ServiceSection data={ServicesData.services} />
-    <MotivationSection data={ServicesData.motivations[0]} />
+    <MotivationSection data={ServicesData.motivations} />
   </div>;
 
 export default Services

@@ -11,9 +11,9 @@ import ServicesData from './../Services/ServicesData';
 
 const Online = props =>
   <div className='online'>
-    <PersonalTraining data={OnlineData}/>
-    <ReviewSection data={OnlineData}/>
-   <MotivationSection data={ServicesData.motivations[1]} />
+    <PersonalTraining data={OnlineData} />
+    <ReviewSection data={OnlineData} />
+    <MotivationSection data={ServicesData.motivations} />
   </div>
 
 export default Online

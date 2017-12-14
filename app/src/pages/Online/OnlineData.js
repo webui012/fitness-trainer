@@ -51,6 +51,14 @@ const OnlineData = {
             el: '.swiper-pagination',
             clickable: true,
         }
+    },
+
+    motivations:
+    {
+      text: 'Начать тренироваться',
+      heading: 'Стань лучше прямо сейчас!',
+      sectionStyle: 'motivation-section',
+      buttonStyle: 'service-button',
     }
 };
 
