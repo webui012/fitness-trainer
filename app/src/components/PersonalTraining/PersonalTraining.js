@@ -14,8 +14,8 @@ const PersonalTraining = () =>
     <div className='online-img'>
       <Image />
       <Image />
-      <Image />
-    </div>
+
+    </div> <Image />
     <Text />
   </section>
 
