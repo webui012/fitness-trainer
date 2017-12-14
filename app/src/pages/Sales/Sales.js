@@ -1,16 +1,20 @@
 import React from 'react';
 import {SalesItem} from 'Components';
+import SalesData from './SalesData';
+import './Sales.scss';
 
 const Sales = props => {
-  const salesHeadline = 'Lorem',
-        content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc molestie accumsan viverra.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc molestie accumsan viverra.',
-        expireDate = '01.01.2017',
-        salesImgCaption = 'Lorem'
   return (
-    <div>
-      <SalesItem salesHeadline={salesHeadline} content={content} expireDate={expireDate} salesImgCaption={salesImgCaption} />
-      <SalesItem salesHeadline={salesHeadline} content={content} expireDate={expireDate} salesImgCaption={salesImgCaption} />
-      <SalesItem salesHeadline={salesHeadline} content={content} expireDate={expireDate} salesImgCaption={salesImgCaption} />
+    <div className='SalesWrap'>
+      {
+        SalesData.map(item => <SalesItem key={item.id}
+            salesHeadline={item.salesHeadline}
+            content={item.content}
+            expireDate={item.expireDate}
+            salesImgCaption={item.salesImgCaption}
+                               />
+        )
+      }
     </div>
   )
 }
