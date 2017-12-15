@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const Marker = props => {
+    const { textClass, text} = props
     return (
-      <div className={props.textClass}>
-        <span>{props.text}</span>
+      <div className={textClass}>
+        <span>{text}</span>
       </div>
     )
 }

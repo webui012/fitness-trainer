@@ -8,35 +8,24 @@ import {
 } from 'Components';
 
 
-class Contacts extends Component{
-  constructor(props) {
-    super(props)
-    this.dataContacts = dataContacts
-  }
+const {mapData, fields} = dataContacts
 
-  render() {
-    const fields = this.dataContacts.fields
-    const mapData = this.dataContacts.mapData
-
-    return (
-      <div className='contacts'>
-        <p className='contactsTitle'>CONTACTS</p>
+const Contacts = () => {
+  return (
+    <div className='contacts'>
+      <p className='contacts-title'>Контактная информация</p>
+      <div className='wrap-contactsInfo'>
+        <div className='wrap-contactsFields '>
+          {fields.map( item =>
+            <ContactsField
+                key={item.id}
+                title={item.Title}
+                data={item.data}
+            />)}
+        </div>
         <Map data={mapData} />
-        {fields.map( item =>
-          <ContactsField
-              key={item.id}
-              title={item.Title}
-              data={item.data}
-          />)
-        }
-      </div>)
-  }
+      </div>
+    </div>)
 }
-
-Contacts.propTypes = {
-  key: PropTypes.number,
-  title: PropTypes.string,
-  data: PropTypes.string
-};
 
 export default Contacts

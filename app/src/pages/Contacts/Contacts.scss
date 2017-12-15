@@ -9,7 +9,15 @@
     background-position: 50% 50%;
 }
 
-.contactsTitle {
+.wrap-contactsInfo {
+    display: flex;
+}
+
+.wrap-contactsFields {
+    width: 35%;
+}
+
+.contacts-title {
     color: #000;
     font-size: 50px;
     text-align: center;
