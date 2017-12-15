@@ -3,33 +3,34 @@ const dataContacts = {
     [
         {
             id: 1,
-            Title: 'ADRESS',
-            data: '123, Rev Avenu, Hawai'
+            Title: 'Адрес',
+            data: 'Украина, г.Харьков, ул.Сумская 10'
         },
 
         {
             id: 2,
-            Title: 'PHONE',
-            data: '+81 2345854646'
+            Title: 'Тел./факс',
+            data: '+38 057 999-99-99'
         },
 
         {
             id: 3,
-            Title: 'EMAIL',
+            Title: 'Эл.почта',
             data: 'email@email.com'
         },
 
         {
             id: 4,
-            Title: 'STORE',
-            data: '123, Rev Avenu, Hawai'
+            Title: 'Магазин',
+            data: 'Украина, г.Харьков, ул.Сумская 10'
         }
     ],
 
     mapData: {
         center: { lat: 49.97, lng: 36.25 },
         zoom: 11,
-        bootstrapURLKeys: { key: 'AIzaSyB-7Fn2cGaiF3_2zTedyusFSiYHGn9RfMQ' }
+        bootstrapURLKeys: { key: 'AIzaSyB-7Fn2cGaiF3_2zTedyusFSiYHGn9RfMQ' },
+        text: 'Тренировочный зал'
     }
 }
 
