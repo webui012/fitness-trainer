@@ -20,23 +20,21 @@ class Contacts extends Component{
 
     return (
       <div className='contacts'>
-        <p className='contactsTitle'>CONTACTS</p>
-        <Map data={mapData} />
-        {fields.map( item =>
-          <ContactsField
-              key={item.id}
-              title={item.Title}
-              data={item.data}
-          />)
-        }
+        <p className='contactsTitle'>Контактная информация</p>
+        <div className='wrap-contactsInfo'>          
+          <div className='wrap-contactsFields '>
+            {fields.map( item =>
+              <ContactsField
+                  key={item.id}
+                  title={item.Title}
+                  data={item.data}
+              />)}
+          </div>
+          <Map data={mapData} />
+        </div>
       </div>)
   }
 }
 
-Contacts.propTypes = {
-  key: PropTypes.number,
-  title: PropTypes.string,
-  data: PropTypes.string
-};
 
 export default Contacts

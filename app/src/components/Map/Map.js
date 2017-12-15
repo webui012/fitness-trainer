@@ -16,7 +16,7 @@ const Map = props => {
               textClass='marker'
               lat={props.data.center.lat}
               lng={props.data.center.lng}
-              text={'WorkShop'}
+              text={props.data.text}
                 />
         </GoogleMapReact>
       </div>
@@ -26,6 +26,7 @@ const Map = props => {
 Map.propTypes = {
     center: PropTypes.number,
     zoom: PropTypes.number,
+    text: PropTypes.string,
     key: PropTypes.string,
     bootstrapURLKeys: PropTypes.string
 };
