@@ -7,8 +7,8 @@ import {
   ContactsField
 } from 'Components';
 
-const fields = dataContacts.fields
-const mapData = dataContacts.mapData
+
+const {mapData, fields} = dataContacts
 
 const Contacts = () => {
   return (
