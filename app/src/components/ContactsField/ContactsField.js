@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import './ContactsField.scss';
 
 
-const ContactsField = props =>
-
-  <div className='contacts-field-text'>
-    <p><span className='contacts-field-textTitle'>{props.title}</span>
-      {props.data}
-    </p>
-  </div>
-
+const ContactsField = props => {
+  const { title, data } = props
+  return (
+    <div className='contacts-field-text'>
+      <p><span className='contacts-field-textTitle'>{title}</span>
+        {data}
+      </p>
+    </div>)
+}
 ContactsField.propTypes = {
   title: PropTypes.string.isRequired,
   data: PropTypes.string.isRequired
