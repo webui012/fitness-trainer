@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import NutritionData from './NutritionData';
 import {
-  NutritionItem,
-    Slider,
+      NutritionItem,
+      Slider,
 } from 'Components';
 import './Nutrition.scss';
-
 
 const Nutrition = () => {
     const { nutritions,
