@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './AboutUs.scss';
+import { MeasuredData } from '../MeasuredData/MeasuredData';
 
 class AboutUs extends Component {
   constructor(props) {
