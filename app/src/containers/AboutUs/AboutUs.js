@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import FullName from '../FullName/FullName';
+import { fullNameFields, fullNameAvatar } from './data';
 import './AboutUs.scss';
 
 class AboutUs extends Component {
@@ -10,7 +12,7 @@ class AboutUs extends Component {
     return (
       <div className='About-us'>
         <div className='columns-wrap'>
-          <FullName />
+          <FullName fields={fullNameFields} path={fullNameAvatar} />
           <MeasuredData />
           <img src='' alt='instructions for measuring points' />
         </div>
