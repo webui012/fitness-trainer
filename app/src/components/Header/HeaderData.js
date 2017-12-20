@@ -50,6 +50,10 @@ const HeaderData = {
       name: 'Контакты',
       url: '/contacts',
     },
+    {
+      name: 'Форма заказа услуги',
+      url: '/service-order',
+    }
   ],
 }
 

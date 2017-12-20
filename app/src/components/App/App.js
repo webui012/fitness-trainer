@@ -8,6 +8,7 @@ import {
   Homepage,
   About,
   Services,
+  ServiceOrder,
   Sales,
   Online,
   Forum,
@@ -36,6 +37,7 @@ const App = () =>
         <Route exact path='/contacts' component={Contacts} />
         <Route exact path='/login' component={LoginPage} />
         <Route exact path='/signup' component={SignupPage} />
+        <Route exact path='/service-order' component={ServiceOrder} />
       </MainLayout>
     </div>
   </Router>

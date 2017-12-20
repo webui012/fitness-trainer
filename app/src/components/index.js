@@ -1,4 +1,5 @@
 export {default as App} from './App/App';
+export {default as AdditionalInfoFields} from './AdditionalInfoFields/AdditionalInfoFields';
 export {default as Button} from './Button/Button';
 export {default as ContactsField} from './ContactsField/ContactsField';
 export {default as Footer} from './Footer/Footer';
@@ -18,6 +19,7 @@ export {default as PersonalTraining} from './PersonalTraining/PersonalTraining';
 export {default as ReviewSection} from './ReviewSection/ReviewSection';
 export {default as SalesItem} from './SalesItem/SalesItem';
 export {default as ServiceSection} from './ServiceSection/ServiceSection';
+export {default as ServiceToogleFields} from './ServiceToogleFields/ServiceToogleFields';
 export {default as Service} from './ServiceSection/Service/Service';
 export {default as Signup} from './Signup/Signup';
 export {default as Slider} from './Slider/Slider';
