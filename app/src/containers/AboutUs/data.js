@@ -1,6 +1,31 @@
 import avatar from '../../images/about_us_avatar.png';
 
 export const fullNameAvatar = {
+<<<<<<< HEAD
+    defaultAvatar: avatar,
+    userAvatar: null
+}
+
+export const fullNameFields = [
+    {
+        type: 'text',
+        placeholder: 'Имя',
+        ref: 'name',
+        id: 'ecl09xzvrm'
+    },
+    {
+        type: 'text',
+        placeholder: 'Отчество',
+        ref: 'patronymic',
+        id: '9gwqnfzri6'
+    },
+    {
+        type: 'text',
+        placeholder: 'Фамилия',
+        ref: 'surname',
+        id: '6cl4w8pu86'
+    },
+=======
   defaultAvatar: avatar,
   userAvatar: null
 }
@@ -24,42 +49,73 @@ export const fullNameFields = [
     ref: 'surname',
     id: '6cl4w8pu86'
   },
+>>>>>>> b1e930b4437dc6add4e5ef516d32da6ad2bc196f
 ];
 
 export const data = {
     fieldsMeasuredDataForm:
         [
             {
-                nameField: 'Age',
-                placeholder: 'Enter your'
+                type: 'text',
+                nameField: 'возраст',
+                placeholder: 'Введите '
             },
             {
-                nameField: 'Height',
-                placeholder: 'Enter your'
+                type: 'text',
+                nameField: 'рост',
+                placeholder: 'Введите '
             },
             {
-                nameField: 'Weight',
-                placeholder: 'Enter your'
+                type: 'text',
+                nameField: 'вес',
+                placeholder: 'Введите '
             },
             {
-                nameField: 'Neck',
-                placeholder: 'Enter your'
+                type: 'text',
+                nameField: 'обхват шеи',
+                placeholder: 'Введите '
             },
             {
-                nameField: 'Breast',
-                placeholder: 'Enter your'
+                type: 'text',
+                nameField: 'обхват груди',
+                placeholder: 'Введите '
             },
             {
-                nameField: 'Waist',
-                placeholder: 'Enter your'
+                type: 'text',
+                nameField: 'обхват талии',
+                placeholder: 'Введите '
             },
             {
-                nameField: 'Hips',
-                placeholder: 'Enter your'
+                type: 'text',
+                nameField: 'обхват бедер',
+                placeholder: 'Введите '
             },
             {
-                nameField: 'Height of legs',
-                placeholder: 'Enter your'
+                type: 'text',
+                nameField: 'высоту ног',
+                placeholder: 'Введите '
             }
-        ]
+        ],
+
+    MeasuredData: {
+        name: 'form',
+        action: '#',
+        method: 'POST',
+        legendName: 'Замеры тела'
+    }
 }
+
+export const aimsFormData = {
+    nameField: 'Цель тренировок',
+    selectName: 'aimsSelect',
+    options:[
+        { optionValue: 'Похудеть' },
+        { optionValue: 'Набрать вес' },
+        { optionValue: 'Рельеф' }
+    ]
+}
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> b1e930b4437dc6add4e5ef516d32da6ad2bc196f

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import FullName from '../FullName/FullName';
-import { fullNameFields, fullNameAvatar } from './data';
+import { fullNameFields, fullNameAvatar, data, aimsFormData } from './data';
 import './AboutUs.scss';
-import { MeasuredData } from '../MeasuredData/MeasuredData';
+import { MeasuredData } from '../containers/MeasuredData/MeasuredData';
+import Aims from '../containers/Aims';
+
 
 class AboutUs extends Component {
   constructor(props) {
@@ -13,11 +15,11 @@ class AboutUs extends Component {
     return (
       <div className='About-us'>
         <div className='columns-wrap'>
-          <FullName fields={fullNameFields} path={fullNameAvatar} />
-          <MeasuredData />
+          <FullName fields={fullNameFields} path={fullNameAvatar} />        
+          <MeasuredData data={data} />
           <img src='' alt='instructions for measuring points' />
         </div>
-        <Aims />
+        <Aims data={aimsFormData} />
         <Contraindications />
       </div>
     );

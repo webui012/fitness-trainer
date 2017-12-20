@@ -2,17 +2,19 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const MeasuredDataForm = props => {
-  const { nameField, placeholder } = props
+  const { type, nameField, placeholder } = props
   return (
-    <label>{nameField}
-      <input type='text' placeholder={`${placeholder} ${nameField}`} />
-    </label>
+    <div>
+      <label>{nameField.toUpperCase()}</label>
+      <input type={type} placeholder={`${placeholder} ${nameField}`} />
+    </div>
   )
 }
 
 MeasuredDataForm.propTypes = {
-    nameField: PropTypes.string,
-    placeholder: PropTypes.string
+  type: PropTypes.string,
+  nameLabel: PropTypes.string,
+  placeholder: PropTypes.string
 }
 
 export default MeasuredDataForm
