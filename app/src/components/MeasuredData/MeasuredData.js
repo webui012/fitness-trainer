@@ -6,7 +6,7 @@ import { MeasuredDataForm } from './MeasuredDataForm';
 const MeasuredData = () =>
   <form name="form" action="#" method="POST">
     <fieldset>
-      <legend>Form NAme</legend>
+      <legend>Замеры тела</legend>
       {data.fieldsMeasuredDataForm.map((items, i) =>
         <MeasuredDataForm
             key={i}

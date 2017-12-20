@@ -1,39 +1,65 @@
-const data = {
+import avatar from '../../images/about_us_avatar.png';
+
+export const fullNameAvatar = {
+    defaultAvatar: avatar,
+    userAvatar: null
+}
+
+export const fullNameFields = [
+    {
+        type: 'text',
+        placeholder: 'Имя',
+        ref: 'name',
+        id: 'ecl09xzvrm'
+    },
+    {
+        type: 'text',
+        placeholder: 'Отчество',
+        ref: 'patronymic',
+        id: '9gwqnfzri6'
+    },
+    {
+        type: 'text',
+        placeholder: 'Фамилия',
+        ref: 'surname',
+        id: '6cl4w8pu86'
+    },
+];
+
+export const data = {
     fieldsMeasuredDataForm:
         [
             {
-                nameField: 'Age',
-                placeholder: 'Enter your'
+                nameField: 'возраст',
+                placeholder: 'Введите '
             },
             {
-                nameField: 'Height',
-                placeholder: 'Enter your'
+                nameField: 'рост',
+                placeholder: 'Введите '
             },
             {
-                nameField: 'Weight',
-                placeholder: 'Enter your'
+                nameField: 'вес',
+                placeholder: 'Введите '
             },
             {
-                nameField: 'Neck',
-                placeholder: 'Enter your'
+                nameField: 'обхват шеи',
+                placeholder: 'Введите '
             },
             {
-                nameField: 'Breast',
-                placeholder: 'Enter your'
+                nameField: 'обхват груди',
+                placeholder: 'Введите '
             },
             {
-                nameField: 'Waist',
-                placeholder: 'Enter your'
+                nameField: 'обхват талии',
+                placeholder: 'Введите '
             },
             {
-                nameField: 'Hips',
-                placeholder: 'Enter your'
+                nameField: 'обхват бедер',
+                placeholder: 'Введите '
             },
             {
-                nameField: 'Height of legs',
-                placeholder: 'Enter your'
+                nameField: 'высоту ног',
+                placeholder: 'Введите '
             }
         ]
 }
-
-export default data;
