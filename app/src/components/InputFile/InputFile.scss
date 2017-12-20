@@ -1,36 +1,30 @@
-.InputFile > button{
-    float: right;
-    width: 8em;            /* example */
-    height: 100%
-}
+.InputFile {
+  width: 100%;
+  position: relative;
 
-.InputFile{
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    transition: box-shadow 0.1s linear
-}
-.InputFile.focus{
-    box-shadow: 0 0 5px rgba(0,30,255,0.4)
-}
-.InputFile > button{
-    background: #7300df;
-    transition: background 0.2s;
-    border: 1px solid rgba(0,0,0,0.1);
-    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
-    border-radius: 2px;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+  .file-address {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    font-size: 16px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background: #33cc33;
     color: #fff;
-    text-shadow: #6200bd 0 -1px 0;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis
-}
-.InputFile:hover > button{
-    background: #6200bd;
-    text-shadow: #5d00b3 0 -1px 0
-}
-.InputFile:active > button{
-    background: #5d00b3;
-    box-shadow: 0 0 3px rgba(0,0,0,0.3) inset
+    margin-top: 20px;
+  }
+
+  .load-avatar {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    position: absolute;
+    left: 0 ;
+    top: 0;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
 }

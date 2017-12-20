@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import InputFile from '../../components/InputFile/InputFile';
 import './FullName.scss';
 
 class FullName extends Component {
@@ -43,7 +44,9 @@ class FullName extends Component {
       <div className='FullName'>
         {this.getAvatar()}
         <form className='full-name-form'>
+          <InputFile />
           {this.getInputs()}
+          <input type='submit' value='Сохранить данные' className='submit-full-name' />
         </form>
       </div>
     )

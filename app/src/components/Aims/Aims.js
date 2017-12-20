@@ -22,10 +22,10 @@ const Aims = props => {
 }
 
 Aims.propTypes = {
-    nameField: propTypes.string,
-    selectName: propTypes.string,
-    optionValue: propTypes.string,
-    options: propTypes.array
+    nameField: PropTypes.string,
+    selectName: PropTypes.string,
+    optionValue: PropTypes.string,
+    options: PropTypes.array
 }
 
 export default Aims
