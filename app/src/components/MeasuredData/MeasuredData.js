@@ -5,7 +5,7 @@ import MeasuredDataForm from './MeasuredDataForm';
 
 const MeasuredData = props => {
 
-    const { name, action, method, legendName, fieldsMeasuredDataForm } = props.data
+    const { name, action, method, legendName, fieldsMeasuredDataForm } = data;
 
     return (
       <form name={name} action={action} method={method}>
