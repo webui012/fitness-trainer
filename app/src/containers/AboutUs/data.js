@@ -71,11 +71,22 @@ export const data = {
             }
         ],
 
-    MeasuredData: [
-        {
-            type: 'text',
-            nameField: 'высоту ног',
-            placeholder: 'Введите '
-        }
+    MeasuredData: {
+        name: 'form',
+        action: '#',
+        method: 'POST',
+        legendName: 'Замеры тела'
+    }
+}
+
+export const aimsFormData = {
+    nameField: 'Цель тренировок',
+    selectName: 'aimsSelect',
+    options:[
+        { optionValue: 'Похудеть' },
+        { optionValue: 'Набрать вес' },
+        { optionValue: 'Рельеф' }
     ]
 }
+
+

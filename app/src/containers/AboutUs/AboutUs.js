@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './AboutUs.scss';
-import { MeasuredData } from '../MeasuredData/MeasuredData';
+import { MeasuredData } from '../containers/MeasuredData/MeasuredData';
+import Aims from '../containers/Aims';
+import { data, aimsFormData } from '../../containers/AboutUs/data';
 
 class AboutUs extends Component {
   constructor(props) {
@@ -12,10 +14,14 @@ class AboutUs extends Component {
       <div className='About-us'>
         <div className='columns-wrap'>
           <FullName />
-          <MeasuredData />
+          <MeasuredData
+              data={data}
+          />
           <img src='' alt='instructions for measuring points' />
         </div>
-        <Aims />
+        <Aims
+            data={aimsFormData}
+        />
         <Contraindications />
       </div>
     );
