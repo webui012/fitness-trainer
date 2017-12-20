@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './MeasuredData.scss';
 import { data } from '../../containers/AboutUs/data';
-import { MeasuredDataForm } from './MeasuredDataForm';
+import MeasuredDataForm from './MeasuredDataForm';
 
 const MeasuredData = () =>
   <form name="form" action="#" method="POST">

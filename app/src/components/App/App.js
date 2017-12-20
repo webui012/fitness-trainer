@@ -20,6 +20,7 @@ import {
 
 import './App.scss';
 import MainLayout from '../../layouts/MainLayout'
+import AboutUs from '../../pages/AboutUs/AboutUs';
 
 const App = () =>
   <Router>
@@ -36,6 +37,7 @@ const App = () =>
         <Route exact path='/contacts' component={Contacts} />
         <Route exact path='/login' component={LoginPage} />
         <Route exact path='/signup' component={SignupPage} />
+        <Route exact path='/aboutus' component={AboutUs} />
       </MainLayout>
     </div>
   </Router>
