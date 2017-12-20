@@ -5,8 +5,7 @@ const MeasuredDataForm = props => {
   const { type, nameField, placeholder } = props
   return (
     <div>
-      <label>{nameField.toUpperCase()}</label>
-      <input type={type} placeholder={`${placeholder} ${nameField}`} />
+      <input type={type} placeholder={`${placeholder}${nameField}`} />
     </div>
   )
 }

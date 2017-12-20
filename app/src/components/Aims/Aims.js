@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Aims.scss';
 
 const Aims = props => {
-    const { nameField, selectName, options } = props.aimsFormData
+    const { nameField, options } = props.aimsFormData
     return (
       <div className='aims-wrap'>
         <label>{nameField}</label>
         <div>
-          <select name={selectName} >
-            <option selected />
+          <select>
+            <option>Выберите цель ваших тренировок...</option>
             {options.map((items, i) =>
               <option
                   key={i}
@@ -17,6 +18,7 @@ const Aims = props => {
             )}
           </select>
         </div>
+        <input type='submit' value='Сохранить данные' className='submit-full-name' />
       </div>
     )
 }

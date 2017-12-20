@@ -23,7 +23,7 @@ export const fullNameFields = [
     placeholder: 'Фамилия',
     ref: 'surname',
     id: '6cl4w8pu86'
-  }
+  },
 ];
 
 export const data = {
@@ -81,10 +81,14 @@ export const data = {
 
 export const aimsFormData = {
     nameField: 'Цель тренировок',
-    selectName: 'aimsSelect',
     options:[
+        { optionValue: 'Попку подкачать' },
         { optionValue: 'Похудеть' },
         { optionValue: 'Набрать вес' },
-        { optionValue: 'Рельеф' }
+        { optionValue: 'Рельеф' },
+        { optionValue: 'Пресс' },
+        { optionValue: 'Бицeпс' }
     ]
 }
+
+
