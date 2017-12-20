@@ -1,6 +1,7 @@
 import avatar from '../../images/about_us_avatar.png';
 
 export const fullNameAvatar = {
+<<<<<<< HEAD
     defaultAvatar: avatar,
     userAvatar: null
 }
@@ -24,6 +25,31 @@ export const fullNameFields = [
         ref: 'surname',
         id: '6cl4w8pu86'
     },
+=======
+  defaultAvatar: avatar,
+  userAvatar: null
+}
+
+export const fullNameFields = [
+  {
+    type: 'text',
+    placeholder: 'Имя',
+    ref: 'name',
+    id: 'ecl09xzvrm'
+  },
+  {
+    type: 'text',
+    placeholder: 'Отчество',
+    ref: 'patronymic',
+    id: '9gwqnfzri6'
+  },
+  {
+    type: 'text',
+    placeholder: 'Фамилия',
+    ref: 'surname',
+    id: '6cl4w8pu86'
+  },
+>>>>>>> b1e930b4437dc6add4e5ef516d32da6ad2bc196f
 ];
 
 export const data = {
@@ -88,5 +114,8 @@ export const aimsFormData = {
         { optionValue: 'Рельеф' }
     ]
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> b1e930b4437dc6add4e5ef516d32da6ad2bc196f

@@ -1,0 +1,34 @@
+.FullName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border: 50%;
+  }
+
+  .full-name-form {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+      border: 1px solid #999;
+      border-radius: 5px;
+      margin-top: 20px;
+      background: transparent;
+
+      &:focus {
+        border: 1px solid #54a4d4;
+        box-shadow: 0 0 5px rgba(84, 164, 212, 1);
+      }
+    }
+  }
+
+}
