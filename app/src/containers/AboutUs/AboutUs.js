@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import FullName from '../FullName/FullName';
-import { fullNameFields, fullNameAvatar } from './data';
+import { fullNameFields, fullNameAvatar, data, aimsFormData } from './data';
 import './AboutUs.scss';
 import { MeasuredData } from '../containers/MeasuredData/MeasuredData';
 import Aims from '../containers/Aims';
-import { data, aimsFormData } from '../../containers/AboutUs/data';
+
 
 class AboutUs extends Component {
   constructor(props) {
