@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FullName from '../FullName/FullName';
 import { fullNameFields, fullNameAvatar } from './data';
 import './AboutUs.scss';
+import { MeasuredData } from '../MeasuredData/MeasuredData';
 
 class AboutUs extends Component {
   constructor(props) {
