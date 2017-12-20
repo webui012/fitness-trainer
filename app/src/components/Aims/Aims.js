@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Aims = props => {
     const { nameField, selectName, options } = props.aimsFormData
     return (
-      <div>
+      <div className='aims-wrap'>
         <label>{nameField}</label>
         <div>
           <select name={selectName} >
