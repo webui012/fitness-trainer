@@ -30,36 +30,52 @@ export const data = {
     fieldsMeasuredDataForm:
         [
             {
+                type: 'text',
                 nameField: 'возраст',
                 placeholder: 'Введите '
             },
             {
+                type: 'text',
                 nameField: 'рост',
                 placeholder: 'Введите '
             },
             {
+                type: 'text',
                 nameField: 'вес',
                 placeholder: 'Введите '
             },
             {
+                type: 'text',
                 nameField: 'обхват шеи',
                 placeholder: 'Введите '
             },
             {
+                type: 'text',
                 nameField: 'обхват груди',
                 placeholder: 'Введите '
             },
             {
+                type: 'text',
                 nameField: 'обхват талии',
                 placeholder: 'Введите '
             },
             {
+                type: 'text',
                 nameField: 'обхват бедер',
                 placeholder: 'Введите '
             },
             {
+                type: 'text',
                 nameField: 'высоту ног',
                 placeholder: 'Введите '
             }
-        ]
+        ],
+
+    MeasuredData: [
+        {
+            type: 'text',
+            nameField: 'высоту ног',
+            placeholder: 'Введите '
+        }
+    ]
 }
