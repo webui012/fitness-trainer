@@ -26,7 +26,8 @@ export const sendDataError = data => ({
 export const givePersonalData = () => ({///////
     type: actions.GIVE_PERSONAL_DATA
 });
-// import * from '../constants';
+
+// import * as actions from '../constants';
 
 
 // //Actions FullName form
@@ -75,11 +76,11 @@ export const givePersonalData = () => ({///////
 
 // //Actions page loading
 // export const pageLoading = data => ({
-//     type: PAGE_ABOUTUS_REQUEST,
+//     type: PAGE_ABOUTUS_REQUEST
 // });
 
 // export const pageLoadingEnd = data => ({
-//     type: PAGE_ABOUTUS_SUCCESS,
+//     type: PAGE_ABOUTUS_SUCCESS
 // });
 
 // //Action ERROR
