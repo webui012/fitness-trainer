@@ -4,23 +4,27 @@ import MeasuredDataForm from './MeasuredDataForm';
 
 const MeasuredData = props => {
 
-    const { name, action, method, legendName, fieldsMeasuredDataForm } = props.data;
+    const { name, action, method, fieldsMeasuredDataForm } = props.data;
+    const { legendName } = props.data.MeasuredData
 
     return (
-      <form name={name} action={action} method={method}>
-        <fieldset>
-          <legend>{legendName}</legend>
+      <div className='form-wrap'>
+        <form name={name} action={action} method={method}>
+          <fieldset>
+            <legend>{legendName}</legend>
 
-          {fieldsMeasuredDataForm.map((items, i) =>
-            <MeasuredDataForm
-                key={i}
-                nameField={items.nameField}
-                placeholder={items.placeholder}
-            />
-          )}
-
-        </fieldset>
-      </form>
+            {fieldsMeasuredDataForm.map((items, i) =>
+              <MeasuredDataForm
+                  key={i}
+                  type={items.type}
+                  nameField={items.nameField}
+                  placeholder={items.placeholder}
+              />
+            )}
+            <input type='submit' value='Сохранить данные' className='submit-full-name' />
+          </fieldset>
+        </form>
+      </div>
     )
 }
 

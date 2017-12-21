@@ -16,10 +16,10 @@ class AboutUs extends Component {
         <div className='columns-wrap'>
           <FullName fields={fullNameFields} path={fullNameAvatar} />
           <MeasuredData data={data} />
-          <img src='' alt='instructions for measuring points' />
+          <img src='../../images/body-sizes.jpeg' alt='instructions for measuring points' />
         </div>
         <Aims aimsFormData={aimsFormData} />
-        {/*<Contraindications />*/}
+        <Contraindications />
       </div>
     );
   }
