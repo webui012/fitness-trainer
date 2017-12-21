@@ -37,7 +37,7 @@ class LoginForm extends Component {
             </label>
 
             <button className='btn-login' type='submit'>
-              <p className='btn'> Войти </p>
+              <Link to='/cabinet' className='btn'>Войти</Link>
             </button>
 
             <label className='link-to'>
