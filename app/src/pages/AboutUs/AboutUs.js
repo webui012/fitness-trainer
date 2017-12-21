@@ -6,6 +6,7 @@ import MeasuredData from '../../components/MeasuredData/MeasuredData';
 import Aims from '../../components/Aims/Aims';
 import Contraindications from '../../containers/Contraindications/Contraindications';
 
+
 class AboutUs extends Component {
   constructor(props) {
     super(props);

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import InputFile from '../../components/InputFile/InputFile';
+import { connect } from 'react-redux';
+import { waitSendData } from '../../redux/actions';
 import './FullName.scss';
 
 class FullName extends Component {
@@ -39,13 +41,19 @@ class FullName extends Component {
     return image;
   }
 
+  formHandler = event => {
+    this.props.waitSendData();
+    event.preventDefault();
+  }
+
   render() {
     return (
       <div className='FullName'>
         {this.getAvatar()}
-        <form className='full-name-form'>
+        <form className='full-name-form' onSubmit={this.formHandler}>
           <InputFile />
           {this.getInputs()}
+          {this.props.spinner ? <div>{this.props.spinner}</div> : null}
           <input type='submit' value='Сохранить данные' className='submit-full-name' />
         </form>
       </div>
@@ -53,4 +61,16 @@ class FullName extends Component {
   }
 }
 
-export default FullName;
+const mapStateToProps = state => {
+  return {
+    spinner: state.spinner
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    waitSendData: () => dispatch(waitSendData())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FullName);

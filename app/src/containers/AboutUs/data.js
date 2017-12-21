@@ -85,6 +85,6 @@ export const aimsFormData = {
     options:[
         { optionValue: 'Похудеть' },
         { optionValue: 'Набрать вес' },
-        { optionValue: 'Рельеф' }
+        { optionValue: 'Рельеф' },
     ]
 }
