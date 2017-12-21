@@ -1,4 +1,4 @@
-.About-us {
+.about-us {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -8,5 +8,11 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+  }
+
+  .body-sizes {
+    margin: 10px 30px 10px;
+    width: 25%;
+    height: 460px;
   }
 }

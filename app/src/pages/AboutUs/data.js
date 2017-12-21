@@ -1,9 +1,12 @@
 import avatar from '../../images/about_us_avatar.png';
+import bodyImg from '../../images/body-sizes.jpg';
 
 export const fullNameAvatar = {
   defaultAvatar: avatar,
   userAvatar: null
 }
+
+export const bodySizesImg = bodyImg
 
 export const fullNameFields = [
   {

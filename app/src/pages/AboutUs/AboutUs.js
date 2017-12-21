@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FullName from '../../containers/FullName/FullName';
-import { fullNameFields, fullNameAvatar, data, aimsFormData } from './data';
+import { fullNameFields, fullNameAvatar, data, aimsFormData, bodySizesImg } from './data';
 import './AboutUs.scss';
 import MeasuredData from '../../components/MeasuredData/MeasuredData';
 import Aims from '../../components/Aims/Aims';
@@ -14,11 +14,11 @@ class AboutUs extends Component {
 
   render() {
     return (
-      <div className='About-us'>
+      <div className='about-us'>
         <div className='columns-wrap'>
           <FullName fields={fullNameFields} path={fullNameAvatar} />
           <MeasuredData data={data} />
-          <img src='' alt='instructions for measuring points' />
+          <img className='body-sizes' src={bodySizesImg} alt='instructions for measuring points' />
         </div>
         <Aims aimsFormData={aimsFormData} />
         <Contraindications />
