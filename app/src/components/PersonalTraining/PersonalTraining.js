@@ -3,6 +3,7 @@ import YouTube from '@u-wave/react-youtube';
 import PropTypes from 'prop-types';
 import './PersonalTraining.scss';
 
+
 const PersonalTraining = props => {
     const {videoId, texting, photo} = props.data;
     return (
@@ -19,5 +20,6 @@ PersonalTraining.propTypes = {
     texting: PropTypes.string,
     photo: PropTypes.string
 };
+
 
 export default PersonalTraining;
