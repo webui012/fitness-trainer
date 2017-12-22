@@ -4,6 +4,7 @@ import InputFile from '../InputFile/InputFile';
 import { connect } from 'react-redux';
 import { formReguest } from '../../redux/actions';
 import './FullName.scss';
+import Loading from '../../components/Loading/Loading';
 
 class FullName extends Component {
   constructor(props) {
@@ -37,7 +38,6 @@ class FullName extends Component {
   getAvatar = () => this.props.path.userAvatar ?
       <img className='avatar' src={this.props.path.userAvatar} alt='user avatar' /> :
       <img className='avatar' src={this.props.path.defaultAvatar} alt='user avatar' />
-
 
   getLocation = data => this.setState({location: data});
 

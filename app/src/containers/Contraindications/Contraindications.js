@@ -38,4 +38,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Contraindications);
+export default connect(mapStateToProps, mapDispatchToProps)(Contraindications)

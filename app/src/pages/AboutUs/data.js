@@ -86,11 +86,26 @@ export const aimsFormData = {
     nameField: 'Цель тренировок',
     selectName: 'aimsSelect',
     options:[
-        { optionValue: 'Похудеть' },
-        { optionValue: 'Набрать вес' },
-        { optionValue: 'Рельеф' },
-        { optionValue: 'Пресс' },
-        { optionValue: 'Бицeпс' }
+        {
+            optionValue:'weightDown',
+            optionInfo: 'Похудеть'
+        },
+        {
+            optionValue:'weightUp',
+            optionInfo: 'Набрать вес'
+        },
+        {
+            optionValue:'relief',
+            optionInfo: 'Рельеф'
+        },
+        {
+            optionValue:'press',
+            optionInfo: 'Пресс'
+        },
+        {
+            optionValue:'biceps',
+            optionInfo: 'Бицeпс'
+        }
     ]
 }
 
