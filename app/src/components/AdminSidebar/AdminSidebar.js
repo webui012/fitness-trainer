@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import AdminSidebarData from './AdminSidebarData';
 
 class AdminSidebar extends Component {
@@ -10,7 +10,7 @@ class AdminSidebar extends Component {
   }
 
   render() {
-    return 
+    return
   }
 }
 
