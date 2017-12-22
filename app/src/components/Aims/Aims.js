@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Aims.scss';
+import Loading from '../../components/Loading/Loading';
+import { connect } from 'react-redux';
+import { waitSendData } from '../../redux/actions';
 
-const Aims = props => {
-    const { nameField, options } = props.aimsFormData
+class Aims extends Component {
+  formHandler = event => {
+    this.props.waitSendData()
+    event.preventDefault()
+  }
+
+  render() {
+    const { nameField, options } = this.props.aimsFormData
     return (
       <div className='aims-wrap'>
         <label>{nameField}</label>
@@ -14,13 +23,20 @@ const Aims = props => {
               <option
                   key={i}
                   value={items.optionValue}
-              >{items.optionValue}</option>
+              >{items.optionInfo}</option>
             )}
           </select>
         </div>
-        <input type='submit' value='Сохранить данные' className='submit-full-name' />
+        {this.props.spinner ? <Loading /> : null}
+        <input
+            type='submit'
+            value='Сохранить данные'
+            className='submit-full-name'
+            onClick={this.formHandler}
+        />
       </div>
     )
+  }
 }
 
 Aims.propTypes = {
@@ -30,4 +46,16 @@ Aims.propTypes = {
     options: PropTypes.array
 }
 
-export default Aims
+const mapStateToProps = state => {
+  return {
+    spinner: state.spinner
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    waitSendData: () => dispatch(waitSendData())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Aims)

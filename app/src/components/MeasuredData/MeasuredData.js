@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
 import './MeasuredData.scss';
 import MeasuredDataForm from './MeasuredDataForm';
+import Loading from '../../components/Loading/Loading';
+import { connect } from 'react-redux';
+import { waitSendData } from '../../redux/actions';
 
-const MeasuredData = props => {
+class MeasuredData extends Component {
+  formHandler = event => {
+    this.props.waitSendData()
+    event.preventDefault()
+  }
 
-    const { name, action, method, fieldsMeasuredDataForm } = props.data;
-    const { legendName } = props.data.MeasuredData
+  render() {
+
+    const { name, action, method, fieldsMeasuredDataForm } = this.props.data;
+    const { legendName } = this.props.data.MeasuredData
 
     return (
       <div className='form-wrap'>
-        <form name={name} action={action} method={method}>
+        <form name={name} action={action} method={method} onSubmit={this.formHandler}>
           <fieldset>
             <legend>{legendName}</legend>
-
+            {this.props.spinner ? <Loading /> : null}
             {fieldsMeasuredDataForm.map((items, i) =>
               <MeasuredDataForm
                   key={i}
@@ -26,6 +35,19 @@ const MeasuredData = props => {
         </form>
       </div>
     )
+  }
 }
 
-export default MeasuredData;
+const mapStateToProps = state => {
+  return {
+    spinner: state.spinner
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    waitSendData: () => dispatch(waitSendData())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MeasuredData)
