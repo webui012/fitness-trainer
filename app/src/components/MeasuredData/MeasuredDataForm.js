@@ -5,6 +5,7 @@ const MeasuredDataForm = props => {
   const { type, nameField, placeholder } = props
   return (
     <div>
+      <label>{nameField}</label>
       <input type={type} placeholder={`${placeholder}${nameField}`} />
     </div>
   )
