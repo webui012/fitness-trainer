@@ -4,6 +4,7 @@ import InputFile from '../../components/InputFile/InputFile';
 import { connect } from 'react-redux';
 import { waitSendData } from '../../redux/actions';
 import './FullName.scss';
+import Loading from '../../components/Loading/Loading';
 
 class FullName extends Component {
   constructor(props) {
@@ -42,12 +43,6 @@ class FullName extends Component {
     return image;
   }
 
-  getSpinner = () => <div style={{
-                        position: 'absolute', color: 'white', background: 'red', opacity: 0.25, fontSize: 50, padding: 500,
-                        height: 1000, width: 2000, top: 0, left: 0}}>LOADING....
-  </div>
-//<Spinner />
-
   formHandler = event => {
       this.props.waitSendData()
       event.preventDefault()
@@ -59,12 +54,9 @@ class FullName extends Component {
         {this.getAvatar()}
         <form className='full-name-form' onSubmit={this.formHandler}>
           <InputFile />
-
-          {/* {this.loading ? this.getSpinner() : console.log('oops') } */}
-
           {this.getInputs()}
           {/* {this.props.spinner ? <div>{this.props.spinner}</div> : null} */}
-          {this.props.spinner ? this.getSpinner() : null }
+          {this.props.spinner ? <Loading /> : null }
           <input type='submit' value='Сохранить данные' className='submit-full-name' />
         </form>
       </div>

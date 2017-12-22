@@ -4,7 +4,7 @@ import actions from '../constants';
 
 export function* fetchAsyncData() {//action
   //const data =
-  yield call(delay, 2000);//API.sendData(data);
+  yield call(delay, 5000);//API.sendData(data);
   yield put({ type: 'DELETE_WAIT_SEND_DATA' });//, payload: data
 }
 
