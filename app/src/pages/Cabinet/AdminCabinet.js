@@ -10,6 +10,7 @@ const AdminCabinet = () =>
   <Router>
     <div className='admin-cabinet'>
       <AdminLayout>
+        <h1>ADMIN</h1>
         <Switch>
           <Route exact path='/cabinet/admin/home' component={AdminHomepage} />
           <Route path='/cabinet/admin/about' component={AdminAbout} />

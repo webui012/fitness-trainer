@@ -10,6 +10,7 @@ const UserCabinet = () =>
   <Router>
     <div className='user-cabinet'>
       <UserLayout>
+        <h1>USER</h1>
         <Switch>
           <Route path='/cabinet/user/home' component={UserHomepage} />
           <Route path='/cabinet/user/about' component={UserAbout} />

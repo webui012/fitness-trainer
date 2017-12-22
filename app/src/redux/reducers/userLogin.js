@@ -1,10 +1,10 @@
 import React from 'react';
 
 const initState = {
-  userRole: user
+  userRole: 'user'
 }
 
-export default function(state=initState, action) {
+export default function login(state=initState, action) {
   switch (action.type){
     case 'USER_LOGIN':
       return {...state, userRole: action.payload}

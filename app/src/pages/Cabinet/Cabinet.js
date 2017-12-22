@@ -22,7 +22,11 @@ class Cabinet extends Component {
   }
 
   render(){
-    return <div>{this.layoutChecker(this.props.UserRole)}</div>
+    return
+      <div>
+        {this.layoutChecker(this.props.userRole)};
+        <h1>CABINET</h1>
+      </div>
   }
 }
 
