@@ -1,0 +1,26 @@
+.error-loading-data {
+  width: 500px;
+  height: 200px;
+  padding: 0 20px;
+  line-height: 30px;
+  background: #f5f5ea;
+  background-image: url('../../images/error.jpg');
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 250px);
+
+  button[name='agree'] {
+    padding: 10px 15px;
+    margin-top: 15px;
+    background: #33cc33;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    font-size: 14px;
+  }
+}

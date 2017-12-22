@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import error from './sendDataErrorMessage';
-import spinner from './waitSendData';
+import spinner from './sendData';
 
 const rootReducer = combineReducers({
   error,

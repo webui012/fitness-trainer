@@ -93,3 +93,5 @@ export const aimsFormData = {
         { optionValue: 'Бицeпс' }
     ]
 }
+
+export const formData = {}

@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import InputFile from '../../components/InputFile/InputFile';
+import InputFile from '../InputFile/InputFile';
 import { connect } from 'react-redux';
-import { waitSendData } from '../../redux/actions';
+import { formReguest } from '../../redux/actions';
 import './FullName.scss';
 
 class FullName extends Component {
   constructor(props) {
     super(props);
-    this.loading = true;//state props for rendering spinner component
+    this.state = {
+      location: ''
+    }
   }
 
   static defaultProps = {
@@ -25,46 +27,44 @@ class FullName extends Component {
     })),
   }
 
-  getInputs = () => {
-    const allFields = this.props.fields.map(
+  getInputs = () => this.props.fields.map(
       field => <input type={field.type}
           placeholder={field.placeholder}
           ref={field.ref}
-          key={field.id} />
-    );
-    return allFields;
-  }
+          key={field.id} />);
 
-  getAvatar = () => {
-    const image = this.props.path.userAvatar ?
+
+  getAvatar = () => this.props.path.userAvatar ?
       <img className='avatar' src={this.props.path.userAvatar} alt='user avatar' /> :
       <img className='avatar' src={this.props.path.defaultAvatar} alt='user avatar' />
-    return image;
-  }
 
-  getSpinner = () => <div style={{
-                        position: 'absolute', color: 'white', background: 'red', opacity: 0.25, fontSize: 50, padding: 500,
-                        height: 1000, width: 2000, top: 0, left: 0}}>LOADING....
-  </div>
-//<Spinner />
+
+  getLocation = data => this.setState({location: data});
 
   formHandler = event => {
-      this.props.waitSendData()
-      event.preventDefault()
+    event.preventDefault();
+    const data = {
+      avatar: this.state.location,
+      name: this.refs.name.value,
+      patronymic: this.refs.patronymic.value,
+      surname: this.refs.surname.value,
+      userId: 'personalData'
+    }
+    this.props.formReguest(data);
+    this.refs.name.value = '';
+    this.refs.patronymic.value = '';
+    this.refs.surname.value = '';
   }
 
   render() {
+    console.log(this.props.formData);
     return (
       <div className='FullName'>
         {this.getAvatar()}
         <form className='full-name-form' onSubmit={this.formHandler}>
-          <InputFile />
-
-          {/* {this.loading ? this.getSpinner() : console.log('oops') } */}
-
+          <InputFile location={this.getLocation}/>
           {this.getInputs()}
-          {/* {this.props.spinner ? <div>{this.props.spinner}</div> : null} */}
-          {this.props.spinner ? this.getSpinner() : null }
+          {this.props.spinner ? <div>{this.props.spinner}</div> : null}
           <input type='submit' value='Сохранить данные' className='submit-full-name' />
         </form>
       </div>
@@ -80,7 +80,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    waitSendData: () => dispatch(waitSendData())
+    formReguest: data => dispatch(formReguest(data))
   }
 }
 
