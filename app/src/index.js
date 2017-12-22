@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import {App} from 'Components';
 import { createStore } from 'redux';
-import reducer from './redux/reducers';
+import * as reducer from './redux/reducers/userLogin';
 import { Provider } from 'react-redux';
 import './styles/reset.scss';
 import './styles/fonts.scss';

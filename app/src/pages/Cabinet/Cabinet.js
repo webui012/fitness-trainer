@@ -4,15 +4,25 @@ import UserCabinet from 'UserCabinet';
 import AdminCabinet from 'AdminCabinet';
 
 class Cabinet extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  layoutChecker(userRole) {
+    if (userRole === 'USER') {
+      return (
+        <UserCabinet />
+      )
+    };
+    else if (userRole === 'ADMIN') {
+      return (
+        <AdminCabinet />
+      )
+    }
+  }
+
   render(){
-    return(
-      switch(props.user){
-        case 'USER':
-          return <UserCabinet />;
-        case 'ADMIN':
-          return <AdminCabinet />;
-      }
-    )
+    return <div>{this.layoutChecker(this.props.UserRole)}</div>
   }
 }
 
