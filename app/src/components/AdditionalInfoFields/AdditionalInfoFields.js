@@ -13,13 +13,24 @@ const AdditionalInfoFields = ({prevStep, step}) => {
           <option value='beautybody'>Создание рельефа тела</option>
         </Field>
 
-        <Field name='height' component='input' type='number' placeholder='Рост в см' />
-        <Field name='weight' component='input' type='number' placeholder='Вес в кг' />
-        <Field name='age' component='input' type='number' placeholder='Возраст' />
-        <Field name='waist' component='input' type='number' placeholder='Талия в см' />
-        <Field name='brest' component='input' type='number' placeholder='Грудь в см' />
-        <Field name='hip' component='input' type='number' placeholder='Бедро в см' />
-        <Field name='biceps' component='input' type='number' placeholder='Бицепс в см' />
+        <div>
+          <Field name='age' component='input' type='number' placeholder='Возраст' />
+          <Field name='height' component='input' type='number' placeholder='Рост в см' />
+        </div>
+        <div>
+          <Field name='weight' component='input' type='number' placeholder='Вес в кг' />
+          <Field name='waist' component='input' type='number' placeholder='Талия в см' />
+        </div>
+        <div>
+          <Field name='brest' component='input' type='number' placeholder='Грудь в см' />
+          <Field name='hip' component='input' type='number' placeholder='Бедро в см' />
+        </div>
+
+        <div>
+          <Field name='biceps' component='input' type='number' placeholder='Бицепс в см' />
+          <Field name='neck' component='input' type='number' placeholder='Шея в см' />
+        </div>
+
         <Field name='contradiction' component='textarea' placeholder='Противопоказания' />
 
         <button onClick={() => prevStep(step)}>Назад</button>

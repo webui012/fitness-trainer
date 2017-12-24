@@ -33,7 +33,7 @@ class ServiceOrder extends Component {
     return (
       <div className='service-order'>
         <span className='progress-step'>Step {this.props.step}</span>
-        <progress className='progress' max={2} value={this.props.step} />
+        <progress max={2} value={this.props.step} />
         <form className='service-order-form'>
           {this.chooseStep()}
         </form>
