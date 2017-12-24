@@ -46,6 +46,10 @@ const HeaderData = {
       name: 'Форум',
       url: '/forum',
     },
+      {
+          name: 'Заказы',
+          url: '/order',
+      },
     {
       name: 'Контакты',
       url: '/contacts',

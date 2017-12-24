@@ -9,3 +9,4 @@ export {default as Sales} from './Sales/Sales';
 export {default as Services} from './Services/Services';
 export {default as SignupPage} from './SignupPage/SignupPage';
 export {default as TrainingPlanSection} from './TrainingPlanSection/TrainingPlanSection';
+export {default as Order} from './Order/Order';

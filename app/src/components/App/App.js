@@ -11,6 +11,7 @@ import {
   Sales,
   Online,
   Forum,
+    Order,
   Contacts,
   LoginPage,
   SignupPage,
@@ -35,6 +36,7 @@ const App = () =>
         <Route exact path='/forum' component={Forum} />
         <Route exact path='/contacts' component={Contacts} />
         <Route exact path='/login' component={LoginPage} />
+        <Route exact path='/order' component={Order} />
         <Route exact path='/signup' component={SignupPage} />
       </MainLayout>
     </div>

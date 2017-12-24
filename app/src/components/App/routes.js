@@ -9,7 +9,8 @@ import {
   LoginPage,
   SignupPage,
   Nutrition,
-  TrainingPlanSection
+  TrainingPlanSection,
+    Order,
 } from 'Pages';
 
 import MainLayout from '../../layouts/MainLayout'
@@ -57,6 +58,11 @@ const routes = [
     component: Contacts,
     layout: MainLayout
   },
+    {
+        path: '/order',
+        component: Order,
+        layout: MainLayout
+    },
   {
     path: '/login',
     component: LoginPage,
