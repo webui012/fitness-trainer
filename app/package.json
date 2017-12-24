@@ -48,6 +48,8 @@
     "react-router-dom": "4.2.2",
     "redux": "3.7.2",
     "redux-devtools": "3.4.1",
+    "redux-form": "^7.2.0",
+    "redux-thunk": "^2.2.0",
     "start": "^5.1.0"
   }
 }
