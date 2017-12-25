@@ -8,12 +8,17 @@ class LoginForm extends Component {
     super(props);
     this.state = {user: ''};
     this.handleChange = this.handleChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  onSubmit(){
-    //this.props.newUser(this.state.user)
-    ::this.props.setRole(this.state.user)
-}
+  onSubmit(e){
+    e.preventDefault();
+  }
+
+  handleClick(){
+    this.props.setRole(this.state.user);
+  }
 
   handleChange(event){
     this.setState(
@@ -41,11 +46,9 @@ class LoginForm extends Component {
                   //onChange={this.handleChange('password')}
                   />
             </label>
-
-            <button className='btn-login' type='submit'>
-              <Link to='/cabinet' className='btn'>Войти</Link>
-            </button>
-
+            <Link to='/cabinet' className='btn'>
+              <button className='btn-login' type='submit' onClick={this.handleClick}>Войти</button>
+            </Link>
             <label className='link-to'>
               <Link to='/passwordreset' className='linkto'>Забыли пароль?</Link>
             </label>
