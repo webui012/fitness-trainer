@@ -39,6 +39,7 @@
     "@babel/preset-env": "7.0.0-beta.32",
     "@u-wave/react-youtube": "0.4.1",
     "babel-loader": "8.0.0-beta.0",
+    "babel-polyfill": "^6.26.0",
     "google-map-react": "0.25.0",
     "prop-types": "15.6.0",
     "react": "16.1.1",
@@ -48,6 +49,7 @@
     "react-router-dom": "4.2.2",
     "redux": "3.7.2",
     "redux-devtools": "3.4.1",
+    "redux-saga": "^0.16.0",
     "start": "^5.1.0"
   }
 }

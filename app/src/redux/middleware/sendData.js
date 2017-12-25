@@ -1,6 +1,6 @@
 import { delay } from 'redux-saga';
 import { put, takeEvery, call } from 'redux-saga/effects';
-import actions from '../constants';
+import ActionTypes from '../constants';
 
 export function* sendAsyncData() {
     yield call(delay, 2500);
