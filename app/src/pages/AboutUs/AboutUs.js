@@ -14,8 +14,9 @@ import Aims from '../../components/Aims/Aims';
 import Loading from '../../components/Loading/Loading';
 import Contraindications from '../../containers/Contraindications/Contraindications';
 import { connect } from 'react-redux';
-import { pageLoading } from '../../redux/actions';
+import { pageLoading, pageLoadingEnd } from '../../redux/actions';
 import ErrorLoadingData from '../../components/ErrorLoadingData/ErrorLoadingData';
+import Api from '../../redux/Api';
 
 
 class AboutUs extends Component {
@@ -27,21 +28,23 @@ class AboutUs extends Component {
     this.props.pageLoading()
   }
 
-  componentDidMount() {
-    this.props.pageLoadingEnd()
+  componentDidMount() { 
+    setTimeout(() => {
+      this.props.pageLoadingEnd()
+    }, 2000);   
   }
 
   render() {
     return (
       <div className='about-us'>
         <div className='columns-wrap'>
-          <FullName fields={fullNameFields} path={fullNameAvatar} formData={formData}/>
+          <FullName fields={fullNameFields} path={fullNameAvatar} formData={formData} />
           <MeasuredData data={data} />
           <img className='body-sizes' src={bodySizesImg} alt='instructions for measuring points' />
         </div>
         <Aims aimsFormData={aimsFormData} />
         <Contraindications />
-        {this.props.spinner ? <Loading /> : null}
+        {this.props.loading ? <Loading /> : null}
       </div>
     );
   }
@@ -49,14 +52,13 @@ class AboutUs extends Component {
 
 const mapStateToProps = state => {
   return {
-    spinner: state.spinner
+    loading: state.load
   }
 }
-
 const mapDispatchToProps = dispatch => {
   return {
-    pageLoading: () => dispatch(pageLoading()),
-    pageLoadingEnd: () => dispatch(pageLoadingEnd())
+    pageLoading: data => dispatch(pageLoading(data)),
+    pageLoadingEnd: data => dispatch(pageLoadingEnd(data))
   }
 }
 

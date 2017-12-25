@@ -85,12 +85,14 @@ export const formSuccess = data => ({
 // });
 
 //Actions page loading
-export const pageLoading = () => ({
-    type: PAGE_ABOUTUS_REQUEST
+export const pageLoading = data => ({
+    type: PAGE_ABOUTUS_REQUEST,
+    payload: data
 });
 
 export const pageLoadingEnd = data => ({
-    type: PAGE_ABOUTUS_SUCCESS
+    type: PAGE_ABOUTUS_SUCCESS,
+    payload: data
 });
 
 // //Action ERROR
