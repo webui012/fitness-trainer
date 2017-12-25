@@ -1,19 +1,32 @@
 import React, { Component } from 'react';
 import './MeasuredData.scss';
-import MeasuredDataForm from './MeasuredDataForm';
+import PropTypes from 'prop-types';
 import Loading from '../../components/Loading/Loading';
 import { connect } from 'react-redux';
-import { waitSendData } from '../../redux/actions';
+import { formReguest } from '../../redux/actions';
 
 class MeasuredData extends Component {
+
   formHandler = event => {
-    this.props.waitSendData()
-    event.preventDefault()
+    event.preventDefault();
+    const data = {
+      age: this.refs.age.value,
+      height: this.refs.height.value,
+      weight: this.refs.weight.value,
+      neck: this.refs.neck.value,
+      breast: this.refs.breast.value,
+      tail: this.refs.tail.value,
+      hips: this.refs.hips.value,
+      legs: this.refs.legs.value,
+      userId: 'measuredData'
+    }
+    this.props.formReguest(data);
+    console.log(data)
   }
 
   render() {
 
-    const { name, action, method, fieldsMeasuredDataForm } = this.props.data;
+    const { name, action, method, ref, fieldsMeasuredDataForm } = this.props.data;
     const { legendName } = this.props.data.MeasuredData
 
     return (
@@ -23,12 +36,13 @@ class MeasuredData extends Component {
             <legend>{legendName}</legend>
             {this.props.spinner ? <Loading /> : null}
             {fieldsMeasuredDataForm.map((items, i) =>
-              <MeasuredDataForm
-                  key={i}
-                  type={items.type}
-                  nameField={items.nameField}
-                  placeholder={items.placeholder}
-              />
+              <div className='wrap-measured-data' key={i}>
+                <label>{items.nameField}</label>
+                <input
+                    type={items.type}
+                    ref={items.ref}
+                    placeholder={items.placeholder} />
+              </div>
             )}
             <input type='submit' value='Сохранить данные' className='submit-full-name' />
           </fieldset>
@@ -36,6 +50,19 @@ class MeasuredData extends Component {
       </div>
     )
   }
+}
+
+MeasuredData.PropTypes = {
+  type: PropTypes.string,
+  nameLabel: PropTypes.string,
+  ref: PropTypes.string,
+  nameField: PropTypes.string,
+  placeholder: PropTypes.string,
+  legendName: PropTypes.string,
+  name: PropTypes.string,
+  action: PropTypes.string,
+  method: PropTypes.string,
+  fieldsMeasuredDataForm: PropTypes.array
 }
 
 const mapStateToProps = state => {
@@ -46,7 +73,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    waitSendData: () => dispatch(waitSendData())
+    formReguest: data => dispatch(formReguest(data))
   }
 }
 

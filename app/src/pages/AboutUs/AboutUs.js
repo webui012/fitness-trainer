@@ -4,12 +4,23 @@ import { fullNameFields, fullNameAvatar, data, aimsFormData, bodySizesImg } from
 import './AboutUs.scss';
 import MeasuredData from '../../components/MeasuredData/MeasuredData';
 import Aims from '../../components/Aims/Aims';
+import Loading from '../../components/Loading/Loading';
 import Contraindications from '../../containers/Contraindications/Contraindications';
+import { connect } from 'react-redux';
+import { pageLoading } from '../../redux/actions';
 
 
 class AboutUs extends Component {
   constructor(props) {
     super(props);
+  }
+
+  componentWillMount() {
+    this.props.pageLoading()
+  }
+
+  componentDidMount() {
+    this.props.pageLoadingEnd()
   }
 
   render() {
@@ -22,9 +33,23 @@ class AboutUs extends Component {
         </div>
         <Aims aimsFormData={aimsFormData} />
         <Contraindications />
+        {this.props.spinner ? <Loading /> : null}
       </div>
     );
   }
 }
 
-export default AboutUs;
+const mapStateToProps = state => {
+  return {
+    spinner: state.spinner
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    pageLoading: () => dispatch(pageLoading()),
+    pageLoadingEnd: () => dispatch(pageLoadingEnd())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AboutUs)

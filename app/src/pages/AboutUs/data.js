@@ -33,44 +33,52 @@ export const data = {
     fieldsMeasuredDataForm:
         [
             {
-                type: 'text',
-                nameField: 'возраст',
-                placeholder: 'Введите '
+                type: 'number',
+                nameField: 'Возраст(лет)',
+                ref: 'age',
+                placeholder: 'Введите возраст'
             },
             {
-                type: 'text',
-                nameField: 'рост',
-                placeholder: 'Введите '
+                type: 'number',
+                nameField: 'Рост(см)',
+                ref: 'height',
+                placeholder: 'Введите рост'
             },
             {
-                type: 'text',
-                nameField: 'вес',
-                placeholder: 'Введите '
+                type: 'number',
+                nameField: 'Вес(кг)',
+                ref: 'weight',
+                placeholder: 'Введите вес'
             },
             {
-                type: 'text',
-                nameField: 'обхват шеи',
-                placeholder: 'Введите '
+                type: 'number',
+                nameField: 'Шея(см)',
+                ref: 'neck',
+                placeholder: 'Введите обхват шеи'
             },
             {
-                type: 'text',
-                nameField: 'обхват груди',
-                placeholder: 'Введите '
+                type: 'number',
+                nameField: 'Грудь(см)',
+                ref: 'breast',
+                placeholder: 'Введите обхват груди'
             },
             {
-                type: 'text',
-                nameField: 'обхват талии',
-                placeholder: 'Введите '
+                type: 'number',
+                nameField: 'Талия(см)',
+                ref: 'tail',
+                placeholder: 'Введите обхват талии'
             },
             {
-                type: 'text',
-                nameField: 'обхват бедер',
-                placeholder: 'Введите '
+                type: 'number',
+                nameField: 'Бедра(см)',
+                ref: 'hips',
+                placeholder: 'Введите обхват бедер'
             },
             {
-                type: 'text',
-                nameField: 'высоту ног',
-                placeholder: 'Введите '
+                type: 'number',
+                nameField: 'Высота ног(см)',
+                ref: 'legs',
+                placeholder: 'Введите высоту ног'
             }
         ],
 
@@ -108,3 +116,5 @@ export const aimsFormData = {
         }
     ]
 }
+
+export const formData = {}

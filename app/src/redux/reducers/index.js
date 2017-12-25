@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux';
 import error from './sendDataErrorMessage';
-import spinner from './waitSendData';
+import spinner from './sendData';
+import load from './pageLoading';
+
 
 const rootReducer = combineReducers({
   error,
-  spinner
+  spinner,
+  load
 });
 
 export default rootReducer;

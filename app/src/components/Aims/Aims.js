@@ -3,12 +3,16 @@ import PropTypes from 'prop-types';
 import './Aims.scss';
 import Loading from '../../components/Loading/Loading';
 import { connect } from 'react-redux';
-import { waitSendData } from '../../redux/actions';
+import { formReguest } from '../../redux/actions';
 
 class Aims extends Component {
   formHandler = event => {
-    this.props.waitSendData()
     event.preventDefault()
+    const data = {
+      aims: this.refs.select.value,
+      userId:'aimsData'
+    }
+    this.props.formReguest(data)
   }
 
   render() {
@@ -17,8 +21,8 @@ class Aims extends Component {
       <div className='aims-wrap'>
         <label>{nameField}</label>
         <div>
-          <select>
-            <option>Выберите цель ваших тренировок...</option>
+          <select ref='select'>
+            <option className='default-option'>Выберите цель ваших тренировок...</option>
             {options.map((items, i) =>
               <option
                   key={i}
@@ -54,7 +58,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    waitSendData: () => dispatch(waitSendData())
+    formReguest: data => dispatch(formReguest(data))
   }
 }
 
