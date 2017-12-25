@@ -14,7 +14,7 @@ class SignupPage extends Component{
 		this.props.send(value);
 	}
 
-	getStore(){console.log(this.props.storage)}
+	getStore() {console.log(this.props.storage)}
 
   	render(){
     return (<div>

@@ -6,3 +6,11 @@ return {
 }
 
 }
+
+export function searchUser(value) {
+return {
+	type: 'SEARCH_USER',
+	value: value
+}
+
+}

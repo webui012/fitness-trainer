@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import {LoginForm} from 'Components';
 import {connect} from 'react-redux';
+import {searchUser} from '../../redux/actions/index'
 
 class LoginPage extends Component{
 
@@ -11,7 +12,7 @@ class LoginPage extends Component{
   }
 
 	onSubmitSignInData(value){
-		console.log(value);
+		this.props.send(value);
 	}
 
   render(){
@@ -27,8 +28,8 @@ export default connect(
 		}),
 	dispatch => ({
 		send(value){
-			sendData = () => dispatch => {
-				dispatch({}) //передаем данные из формы в стор
+			const sendData = () => dispatch => {
+				dispatch(searchUser(value)) //передаем данные из формы в стор
 			}
 			dispatch(sendData())
 		}

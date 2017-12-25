@@ -7,6 +7,14 @@ const initialState ={};
 				...state,
 				[action.value.username]: action.value
 			}
+
+		case 'SEARCH_USER':
+			for( var key in state){
+				if(action.value.login == state[key].username || action.value.login == state[key].email && action.value.password == state[key].password1){
+					alert('Welcome' + ' ' + key);
+				}
+			}
+			return state;
 		default: return state;
 	}
 }
