@@ -41,7 +41,7 @@ export default connect(
                 dispatch(addUser(value))
                 },4000)//передаем данные из формы в стор
                 }
-            }) //передаем данные из формы в стор
+            })
 			}
 			dispatch(sendData())
 		}
