@@ -1,4 +1,4 @@
-export function userLogin(role){
+export default function userLogin(role){
 
   return {
     type: 'USER_LOGIN',

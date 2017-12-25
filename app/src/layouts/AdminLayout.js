@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Header } from 'Components';
 
-const LoginLayout = props => (
+const AdminLayout = props => (
   <div className='login-layout'>
     <Header />
     <div className='layout-content'>

@@ -1,42 +1,34 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import UserCabinet from 'UserCabinet';
-import AdminCabinet from 'AdminCabinet';
+import UserCabinet from './UserCabinet';
+import AdminCabinet from './AdminCabinet';
 
 class Cabinet extends Component {
   constructor(props) {
     super(props);
+    this.state={};
   }
 
-  layoutChecker(userRole) {
+ layoutChecker(userRole) {
     if (userRole === 'USER') {
-      return (
-        <UserCabinet />
-      )
-    };
-    else if (userRole === 'ADMIN') {
-      return (
-        <AdminCabinet />
-      )
+      return <UserCabinet />
+    } else if (userRole === 'ADMIN') {
+      return <AdminCabinet />
     }
   }
 
   render(){
-    return
-      <div>
-        {this.layoutChecker(this.props.userRole)};
-        <h1>CABINET</h1>
-      </div>
+    return <div>
+      {this.layoutChecker(this.props.userRole)}
+    </div>
   }
 }
 
 function mapStateToProps (state) {
   return {
-    userRole: state.userRole
+    userRole: state.login.userRole
   }
 }
-
-
 
 
 export default connect(mapStateToProps)(Cabinet)

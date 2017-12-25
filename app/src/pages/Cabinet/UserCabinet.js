@@ -1,5 +1,9 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch} from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+  } from 'react-router-dom';
 import UserLayout from '../../layouts/UserLayout'
 
 const UserHomepage = () => <div><h1>UserHomepage</h1></div>

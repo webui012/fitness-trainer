@@ -2,9 +2,13 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import LoginForm from '../components/LoginForm/LoginForm';
-import * as userLogin from '../redux/actions'
+import userLogin from '../redux/actions';
 
 class LoginContainer extends Component{
+  constructor(props){
+    super(props);
+    this.state = {};
+  }
 
   render(){
     const userLogin = this.props.userLogin;
@@ -14,9 +18,13 @@ class LoginContainer extends Component{
 
 const mapDispatchToProps = dispatch => {
   return {
-    userLogin: bindActionCreators(userLogin, dispatch)
+    userLogin: role => {
+      dispatch(userLogin(role))
+    }
   }
 }
 
 
 export default connect(null, mapDispatchToProps)(LoginContainer)
+
+//bindActionCreators(userLogin, dispatch)
