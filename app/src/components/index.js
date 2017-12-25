@@ -24,3 +24,4 @@ export {default as Slider} from './Slider/Slider';
 export {default as Text} from './Text/Text';
 export {default as Video} from './Video/Video';
 export {default as Socials} from './Socials/Socials';
+export {default as OrderItem} from './OrderItem/OrderItem';

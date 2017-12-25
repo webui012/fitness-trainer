@@ -8,4 +8,5 @@ export {default as Online} from './Online/Online';
 export {default as Sales} from './Sales/Sales';
 export {default as Services} from './Services/Services';
 export {default as SignupPage} from './SignupPage/SignupPage';
+export {default as AdminOrders} from './AdminOrders/AdminOrders';
 export {default as TrainingPlanSection} from './TrainingPlanSection/TrainingPlanSection';
