@@ -4,7 +4,8 @@ const initialState ={};
 	switch (action.type){
 		case 'ADD_USER':
 		return {
-				...state
+				...state,
+				[action.value.username]: action.value
 			}
 		default: return state;
 	}

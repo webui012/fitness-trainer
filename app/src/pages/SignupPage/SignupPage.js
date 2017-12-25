@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Signup} from 'Components';
 import {connect} from 'react-redux';
+import {addUser} from '../../redux/actions/index'
 
 class SignupPage extends Component{
 
@@ -10,12 +11,15 @@ class SignupPage extends Component{
   }
 
 	onSubmitRegistrationData(value){
-		console.log(value);
+		this.props.send(value);
 	}
 
-  render(){
-    return (
-      <Signup onSubmit={this.onSubmitRegistrationData} />
+	getStore(){console.log(this.props.storage)}
+
+  	render(){
+    return (<div>
+      <button onClick={this.getStore.bind(this)}>vdsvsd</button>
+      <Signup onSubmit={this.onSubmitRegistrationData} /></div>
     )
   }
 }
@@ -26,8 +30,18 @@ export default connect(
 		}),
 	dispatch => ({
 		send(value){
-			sendData = () => dispatch => {
-				dispatch({}) //передаем данные из формы в стор
+			const sendData = () => dispatch => {
+				fetch('https://jsonplaceholder.typicode.com/posts')// Add .catch !
+          .then(function(response) {
+            return response.status;
+          })
+            .then(function(status) {
+              if (status == 200){
+                setTimeout(() => {
+                dispatch(addUser(value))
+                },4000)//передаем данные из формы в стор
+                }
+            }) //передаем данные из формы в стор
 			}
 			dispatch(sendData())
 		}

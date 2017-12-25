@@ -11,7 +11,7 @@ let LoginForm = props => {
           <legend className='login-form-caption'> Войти </legend>
 
           <label className='input-area'>
-            <Field className='form' name='name' type='text' component='input' placeholder='Введите имя или адрес эл. почты' />
+            <Field className='form' name='login' type='text' component='input' placeholder='Введите имя или адрес эл. почты' />
           </label>
 
           <label className='input-area'>
