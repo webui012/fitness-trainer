@@ -8,6 +8,7 @@ import { formReguest } from '../../redux/actions';
 class MeasuredData extends Component {
 
   formHandler = event => {
+<<<<<<< HEAD
     event.preventDefault();
     const data = {
       age: this.refs.age.value,
@@ -22,6 +23,13 @@ class MeasuredData extends Component {
     }
     this.props.formReguest(data);
     console.log(data)
+=======
+    const data = {
+      userId: 'measuredForm'
+    }
+    this.props.formReguest(data)
+    event.preventDefault()
+>>>>>>> 6baacf934cf5e81ec22d5d5671671aca37de5f0d
   }
 
   render() {
@@ -73,7 +81,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+<<<<<<< HEAD
     formReguest: data => dispatch(formReguest(data))
+=======
+    formReguest: () => dispatch(formReguest())
+>>>>>>> 6baacf934cf5e81ec22d5d5671671aca37de5f0d
   }
 }
 

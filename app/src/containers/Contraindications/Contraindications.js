@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
-import './Contraindications.scss';
 import { connect } from 'react-redux';
-import { waitSendData } from '../../redux/actions';
+import { formReguest } from '../../redux/actions';
+import './Contraindications.scss';
 
 class Contraindications extends Component {
+
   formHandler = event => {
-    this.props.waitSendData()
-    event.preventDefault()
-  }
+      event.preventDefault();
+      const data = {
+        contraindications: this.refs.textarea.value,
+        userId: 'contraindications'
+      }
+      this.props.formReguest(data);
+      this.refs.textarea.value = '';
+    }
 
   render() {
     return (
       <form className='Contraindications' onSubmit={this.formHandler}>
-        <textarea className='text' placeholder='Введите противопоказания'></textarea>
+        <textarea className='text' placeholder='Введите противопоказания' ref='textarea'></textarea>
+        {this.props.spinner ? <div>{this.props.spinner}</div> : null}
         <input type='submit' value='Сохранить данные' className='submit-contraindications' />
       </form>
     )
   }
 }
-
 
 const mapStateToProps = state => {
   return {
@@ -28,7 +34,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    waitSendData: () => dispatch(waitSendData())
+    formReguest: data => dispatch(formReguest(data))
   }
 }
 

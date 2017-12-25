@@ -1,12 +1,18 @@
 import {
   FORM_REQUEST,
   FORM_UCCESS,
+<<<<<<< HEAD
   ACTION_FAILURE,
   PAGE_ABOUTUS_REQUEST,
   PAGE_ABOUTUS_SUCCESS
 } from '../constants';
 
 
+=======
+  ACTION_FAILURE
+} from '../constants';
+
+>>>>>>> 6baacf934cf5e81ec22d5d5671671aca37de5f0d
 export const formReguest = data => ({
     type: FORM_REQUEST,
     payload: data

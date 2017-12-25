@@ -11,6 +11,7 @@ class InputFile extends Component {
 
   loadHandler = event => {
     this.setState({value: event.target.value})
+    this.props.location(event.target.value);
   }
 
   render() {
