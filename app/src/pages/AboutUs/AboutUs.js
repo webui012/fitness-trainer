@@ -13,12 +13,9 @@ import MeasuredData from '../../components/MeasuredData/MeasuredData';
 import Aims from '../../components/Aims/Aims';
 import Loading from '../../components/Loading/Loading';
 import Contraindications from '../../containers/Contraindications/Contraindications';
-<<<<<<< HEAD
 import { connect } from 'react-redux';
 import { pageLoading } from '../../redux/actions';
-=======
 import ErrorLoadingData from '../../components/ErrorLoadingData/ErrorLoadingData';
->>>>>>> 6baacf934cf5e81ec22d5d5671671aca37de5f0d
 
 
 class AboutUs extends Component {
