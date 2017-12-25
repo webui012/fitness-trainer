@@ -1,58 +1,49 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './LoginForm.scss';
 import { Link } from 'react-router-dom';
+import { Field, reduxForm } from 'redux-form'
 
-class LoginForm extends Component {
-  constructor(props){
-    super(props)
+let LoginForm = props => {
+   const { handleSubmit } = props;
+    return <section className='login-page'>
+      <form onSubmit={handleSubmit}>
+        <fieldset className='login-form'>
+          <legend className='login-form-caption'> Войти </legend>
 
-    this.state = {user: {}}
-  }
+          <label className='input-area'>
+            <Field className='form' name='name' type='text' component='input' placeholder='Введите имя или адрес эл. почты' />
+          </label>
 
-  onSubmit(){
-    this.props.newUser(this.state.user)
+          <label className='input-area'>
+            <Field className='form' name='password' type='password' component='input' placeholder='Введите пароль' />
+          </label>
+
+          <button className='btn-login' type='submit'>
+            <p className='btn'> Войти </p>
+          </button>
+
+          <label className='link-to'>
+            <Link to='/passwordreset' className='linkto'>Забыли пароль?</Link>
+          </label>
+
+          <label className='link-to'>
+            <Link to='/signup' className='linkto'>Создать аккаунт</Link>
+          </label>
+
+        </fieldset>
+      </form>
+    </section>
 }
 
-  handleChange(){
-  }
-
-  render(){
-    return (
-      <section className='login-page'>
-
-        <form onSubmit={this.onSubmit}>
-          <fieldset className='login-form'>
-            <legend className='login-form-caption'> Войти </legend>
-
-            <label className='input-area'>
-              <input className='form' type='text'
-                  placeholder='Введите имя или адрес эл. почты'
-                  onChange={this.handleChange('username')} />
-            </label>
-
-            <label className='input-area'>
-              <input className='form' type='password'
-                  placeholder='Введите пароль'
-                  onChange={this.handleChange('password')} />
-            </label>
-
-            <button className='btn-login' type='submit'>
-              <p className='btn'> Войти </p>
-            </button>
-
-            <label className='link-to'>
-              <Link to='/passwordreset' className='linkto'>Забыли пароль?</Link>
-            </label>
-
-            <label className='link-to'>
-              <Link to='/signup' className='linkto'>Создать аккаунт</Link>
-            </label>
-
-          </fieldset>
-        </form>
-      </section>
-    )
-  }
-}
+LoginForm = reduxForm({
+  form: 'registration'
+})(LoginForm)
 
 export default LoginForm
+
+
+
+
+
+
+
