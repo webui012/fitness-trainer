@@ -15,7 +15,8 @@ import {
   LoginPage,
   SignupPage,
   Nutrition,
-  TrainingPlanSection
+  TrainingPlanSection,
+  Cabinet
 } from 'Pages';
 
 import './App.scss';
@@ -26,16 +27,18 @@ const App = () =>
     <div className='app'>
       <MainLayout>
         <Route exact path='/' component={Homepage} />
-        <Route exact path='/about' component={About} />
+        <Route path='/about' component={About} />
         <Route exact path='/services' component={Services} />
-        <Route exact path='/services/online-training' component={Online} />
-        <Route exact path='/services/training-plan' component={TrainingPlanSection} />
-        <Route exact path='/services/nutrition-plan' component={Nutrition} />
-        <Route exact path='/sales' component={Sales} />
-        <Route exact path='/forum' component={Forum} />
-        <Route exact path='/contacts' component={Contacts} />
-        <Route exact path='/login' component={LoginPage} />
-        <Route exact path='/signup' component={SignupPage} />
+        <Route path='/services/online-training' component={Online} />
+        <Route path='/services/training-plan' component={TrainingPlanSection} />
+        <Route path='/services/nutrition-plan' component={Nutrition} />
+        <Route path='/sales' component={Sales} />
+        <Route path='/forum' component={Forum} />
+        <Route path='/contacts' component={Contacts} />
+        <Route path='/login' component={LoginPage} />
+        <Route path='/signup' component={SignupPage} />
+        <Route path='/cabinet' component={Cabinet} />
+
       </MainLayout>
     </div>
   </Router>
