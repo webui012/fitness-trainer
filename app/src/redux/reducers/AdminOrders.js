@@ -1,35 +1,45 @@
 import ActionTypes from '../constants';
 
-const initialState = [
-  {
-    id: 487,
-    date: '21.08.2017',
-    status: 'Оплачен',
-    customer: 'Игорь Курченко',
-    services: ['Правильное питание', 'Тренировка 1х1']
-  },
-  {
-    id: 391,
-    date: '21.08.2017',
-    status: 'Ожидает оплаты',
-    customer: 'Денис Слущенко',
-    services: ['Правильное питание', 'Тренировка 1х1']
-  },
-  {
-    id: 851,
-    date: '19.08.2011',
-    status: 'Оплачен',
-    customer: 'Андрей Хлебников',
-    services: ['Правильное питание', 'Тренировка 1х1']
-  },
-  {
-    id: 298,
-    date: '01.02.2016',
-    status: 'Оплачен',
-    customer: 'Никита Лебединский',
-    services: ['Правильное питание', 'Тренировка 1х1']
-  },
-]
+const initialState = {
+  orders: [
+    {
+      id: 487,
+      date: '21.08.2017',
+      price: 200,
+      payment: 'Privat 24',
+      status: 'Оплачен',
+      customer: 'Игорь Курченко',
+      service: ['Правильное питание']
+    },
+    {
+      id: 391,
+      date: '21.08.2017',
+      price: 300,
+      payment: 'Privat 24',
+      status: 'Ожидает оплаты',
+      customer: 'Денис Слущенко',
+      service: 'Тренировка 1х1'
+    },
+    {
+      id: 851,
+      date: '19.08.2011',
+      price: 400,
+      payment: 'Privat 24',
+      status: 'Ожидает оплаты',
+      customer: 'Андрей Хлебников',
+      service: 'Программа тренировок'
+    },
+    {
+      id: 298,
+      date: '01.02.2016',
+      price: 500,
+      payment: 'Privat 24',
+      status: 'Оплачен',
+      customer: 'Никита Лебединский',
+      service: 'Правильное питание'
+    },
+  ]
+}
 
 const AdminOrders = (state = initialState, action) => {
   switch (action.type) {
@@ -42,8 +52,8 @@ const AdminOrders = (state = initialState, action) => {
 }
 
 // Selector
-export function getAllOrders(state) {
-  return state.AdminOrders
-}
+
+ export const getAllOrdersSelector = state => state.AdminOrders.orders
+// const getPurchasedOrdersSelector = state =>
 
 export default AdminOrders
