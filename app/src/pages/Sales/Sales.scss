@@ -3,3 +3,16 @@
  	background-repeat: no-repeat;
     background-size: cover;
 }
+
+.spinner-wrap{
+	color: red;
+	background: lightskyblue;
+	position: absolute;
+	/*z-index: 999999;*/
+}
+
+.spinner-text{
+	position: relative;
+	top: 100px;
+	left: 500px;
+}
