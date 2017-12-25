@@ -7,10 +7,7 @@ class Api {
       setTimeout(() => {
         formData[`${data.userId}`] = data;
         resolve(formData);
-<<<<<<< HEAD
-          console.log(formData);
-=======
->>>>>>> 6baacf934cf5e81ec22d5d5671671aca37de5f0d
+        console.log(formData);
       }, 2000);
     });
   }
