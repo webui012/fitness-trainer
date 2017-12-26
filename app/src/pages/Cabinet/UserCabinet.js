@@ -4,7 +4,8 @@ import {
   Route,
   Switch
   } from 'react-router-dom';
-import UserLayout from '../../layouts/UserLayout'
+import UserLayout from '../../layouts/UserLayout';
+import './UserCabinet.scss';
 
 const UserHomepage = () => <div><h1>UserHomepage</h1></div>
 
@@ -14,7 +15,7 @@ const UserCabinet = () =>
   <Router>
     <div className='user-cabinet'>
       <UserLayout>
-        <h1>USER</h1>
+        <h1>USER CABINET</h1>
         <Switch>
           <Route path='/cabinet/user/home' component={UserHomepage} />
           <Route path='/cabinet/user/about' component={UserAbout} />

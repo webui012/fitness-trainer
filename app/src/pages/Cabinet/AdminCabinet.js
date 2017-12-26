@@ -4,6 +4,7 @@ import {
   Route,
   Switch} from 'react-router-dom';
 import AdminLayout from '../../layouts/AdminLayout';
+import './AdminCabinet.scss';
 
 const AdminHomepage = () => <div><h1>AdminHomepage</h1></div>
 
@@ -13,7 +14,7 @@ const AdminCabinet = () =>
   <Router>
     <div className='admin-cabinet'>
       <AdminLayout>
-        <h1>ADMIN</h1>
+        <h1>ADMIN CABINET</h1>
         <Switch>
           <Route exact path='/cabinet/admin/home' component={AdminHomepage} />
           <Route path='/cabinet/admin/about' component={AdminAbout} />
