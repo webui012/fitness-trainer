@@ -13,4 +13,9 @@ const AdminSidebar = () => {
   )
 }
 
+AdminSidebar.propTypes = {
+  title: PropTypes.string,
+  url: PropTypes.string
+};
+
 export default AdminSidebar;

@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './AdminSidebar.scss';
 
-const Navigation = props => {
+const NavSidebar = props => {
   const links = props.data;
   return (
     <nav className='admin-sidebar'>
@@ -22,4 +22,4 @@ const Navigation = props => {
   )
 };
 
-export default Navigation
+export default NavSidebar;

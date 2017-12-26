@@ -14,7 +14,12 @@ const AdminCabinet = () =>
   <Router>
     <div className='admin-cabinet'>
       <AdminLayout>
-        <h1>ADMIN CABINET</h1>
+        <div>
+          <h1>ADMIN CABINET</h1>
+          <p> Hello, admin! </p>
+
+        </div>
+
         <Switch>
           <Route exact path='/cabinet/admin/home' component={AdminHomepage} />
           <Route path='/cabinet/admin/about' component={AdminAbout} />
