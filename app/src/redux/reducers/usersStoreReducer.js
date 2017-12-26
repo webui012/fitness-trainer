@@ -9,8 +9,10 @@ const initialState ={};
 			}
 
 		case 'SEARCH_USER':
-			for( var key in state){
-				if(action.value.login == state[key].username || action.value.login == state[key].email && action.value.password == state[key].password1){
+			for( let key in state){
+				if (action.value.login == state[key].username ||
+					 action.value.login == state[key].email
+					 && action.value.password == state[key].password1) {
 					alert('Welcome' + ' ' + key);
 				}
 			}
