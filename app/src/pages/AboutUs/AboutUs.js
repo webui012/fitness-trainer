@@ -28,10 +28,13 @@ class AboutUs extends Component {
     this.props.pageLoading()
   }
 
-  componentDidMount() { 
+  componentDidMount() {
     setTimeout(() => {
       this.props.pageLoadingEnd()
-    }, 2000);   
+      //console.log(this.props.pageLoadingEnd(Api.dataArray().then(data => data[0].name)))
+      console.log(Api.dataArray());
+      console.log(Api.dataLocal());
+    }, 2000);
   }
 
   render() {

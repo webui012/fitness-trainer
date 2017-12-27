@@ -8,8 +8,8 @@ import Api from '../Api';
 
 function* pageDataLoadingAsync(action) {
     try {
-        const pageData = yield call(Api.ServerPageData);
-        yield put({ type: PAGE_ABOUTUS_SUCCESS, payload: pageData});
+        const pageData = yield call(Api.dataArray());
+        yield put({ type: PAGE_ABOUTUS_SUCCESS, payload: pageData});        
     } catch (e) {
         // yield put({type: ACTION_FAILURE});
         console.log('error');
