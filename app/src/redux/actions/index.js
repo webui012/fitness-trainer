@@ -2,6 +2,7 @@ import {
   FORM_REQUEST,
   FORM_UCCESS,
   ACTION_FAILURE,
+  CLOSE_ACTION_FAILURE,
   PAGE_ABOUTUS_REQUEST,
   PAGE_ABOUTUS_SUCCESS,
   WARNING_MESSAGE
@@ -20,7 +21,15 @@ export const formSuccess = data => ({
 export const warningMessage = data => ({
   type: WARNING_MESSAGE,
   payload: data
-})
+});
+
+export const showErrorMessage = () => ({
+    type: ACTION_FAILURE,
+});
+
+export const closeErrorMessage = () => ({
+    type: CLOSE_ACTION_FAILURE
+});
 
 // export const sendFullName = data => ({//////////
 //     type: actions.SEND_FULLNAME,

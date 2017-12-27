@@ -34,7 +34,6 @@ class MeasuredData extends Component {
         <form name={name} action={action} method={method} onSubmit={this.formHandler}>
           <fieldset>
             <legend>{legendName}</legend>
-            {this.props.spinner ? <Loading /> : null}
             {fieldsMeasuredDataForm.map((items, i) =>
               <div className='wrap-measured-data' key={i}>
                 <label>{items.nameField}</label>
@@ -44,6 +43,7 @@ class MeasuredData extends Component {
                     placeholder={items.placeholder} />
               </div>
             )}
+            {this.props.spinner ? <div>{this.props.spinner}</div> : null}
             <input type='submit' value='Сохранить данные' className='submit-full-name' />
           </fieldset>
         </form>

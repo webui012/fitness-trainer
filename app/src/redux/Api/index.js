@@ -7,8 +7,7 @@ class Api {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         formData[`${data.userId}`] = data;
-        resolve(formData);
-        console.log(formData);
+        reject(formData);
       }, 2000);
     });
   }

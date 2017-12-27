@@ -6,12 +6,13 @@ import {
 } from '../constants';
 import Api from '../Api';
 
-function* sendDataAsync(action) {
+function * sendDataAsync(action) {
    try {
       const userData = yield call(Api.fetchUserData, action.payload);
       yield put({type: FORM_SUCCESS});
    } catch (e) {
-      // yield put({type: ACTION_FAILURE});
+      yield put({type: FORM_SUCCESS});
+      yield put({type: ACTION_FAILURE});
       console.log('error');
    }
 }

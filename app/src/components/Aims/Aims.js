@@ -31,7 +31,7 @@ class Aims extends Component {
             )}
           </select>
         </div>
-        {this.props.spinner ? <Loading /> : null}
+        {this.props.spinner ? <div>{this.props.spinner}</div> : null}
         <input
             type='submit'
             value='Сохранить данные'

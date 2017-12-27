@@ -14,7 +14,12 @@ import Aims from '../../components/Aims/Aims';
 import Loading from '../../components/Loading/Loading';
 import Contraindications from '../../containers/Contraindications/Contraindications';
 import { connect } from 'react-redux';
-import { pageLoading, pageLoadingEnd } from '../../redux/actions';
+import {
+  pageLoading,
+  pageLoadingEnd,
+  showErrorMessage,
+  closeErrorMessage
+} from '../../redux/actions';
 import ErrorLoadingData from '../../components/ErrorLoadingData/ErrorLoadingData';
 import Api from '../../redux/Api';
 
@@ -45,6 +50,7 @@ class AboutUs extends Component {
         </div>
         <Aims aimsFormData={aimsFormData} />
         <Contraindications />
+        {this.props.errorMessage ? <ErrorLoadingData closeMessage={this.props.closeErrorMessage} /> : null}
         {this.props.loading ? <Loading /> : null}
       </div>
     );
@@ -53,13 +59,15 @@ class AboutUs extends Component {
 
 const mapStateToProps = state => {
   return {
-    loading: state.load
+    loading: state.load,
+    errorMessage: state.errorMessage
   }
 }
 const mapDispatchToProps = dispatch => {
   return {
     pageLoading: data => dispatch(pageLoading(data)),
-    pageLoadingEnd: data => dispatch(pageLoadingEnd(data))
+    pageLoadingEnd: data => dispatch(pageLoadingEnd(data)),
+    closeErrorMessage: data => dispatch(closeErrorMessage(data))
   }
 }
 
