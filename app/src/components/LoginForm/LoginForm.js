@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './LoginForm.scss';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+
 
 class LoginForm extends Component {
   constructor(props){
@@ -64,4 +64,4 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm
+export default LoginForm;
