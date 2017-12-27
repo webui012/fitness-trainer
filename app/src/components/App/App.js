@@ -19,6 +19,7 @@ import {
   TrainingPlanSection,
   Cabinet
 } from 'Pages';
+import routes from './routes';
 
 import './App.scss';
 import MainLayout from '../../layouts/MainLayout';
@@ -28,19 +29,13 @@ const App = () =>
   <Router>
     <div className='app'>
       <Switch>
-        <Route path='/login' component={LoginPage} />
-        <Route path='/signup' component={SignupPage} />
-        <Route path='/cabinet' render={() => (
-          <AdminLayout>
-            <Cabinet />
-          </AdminLayout>
-        )} />
-        <Route exact path='/' render={() => (
-          <MainLayout>
-            <Homepage />
-          </MainLayout>
-        )} />
-        <Route path='/login' component={LoginPage} />
+        {routes.map({path, exact, component: Component, layout: Layout} => (
+          <Route exact={exact} path={path} render={ () => (
+          <Layout>
+            <Component />
+          </Layout>
+          )}
+        } />
       </Switch>
     </div>
   </Router>
