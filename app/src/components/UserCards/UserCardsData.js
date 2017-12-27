@@ -1,4 +1,12 @@
 const UserCardsData = {
+  rows: [
+    {
+      firstname: 'Name',
+      lastname: 'Фамилия',
+      date: 'Дата регистрации',
+      status: 'Статус'
+    }
+  ],
   users: [
     {
       firstname: 'John',

@@ -4,11 +4,11 @@ import UserCardsData from './UserCardsData';
 import './UserCards.scss';
 
 const UserCards = () => {
-  const users = UserCardsData.users;
+  const data = UserCardsData.users;
 
     return (
       <div className='wrap-user-cards'>
-        <UserCard data={users} />
+        <UserCard data={data} />
       </div>
     )
   }
