@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import InputFile from '../InputFile/InputFile';
 import { connect } from 'react-redux';
-import {
-  formReguest,
-  validationNameWarning,
-  validationPatronymicWarning,
-  validationSurnameWarning
-} from '../../redux/actions';
+import { formReguest, warningMessage } from '../../redux/actions';
 import './FullName.scss';
 import Loading from '../../components/Loading/Loading';
 import '../../redux/Api/validation/validation.scss';
@@ -58,20 +53,20 @@ class FullName extends Component {
     event.preventDefault();
     const name = validate(
       this.refs.name.value,
-      name,
-      this.props.validationNameWarning,
+      'name',
+      this.props.warningMessage,
       this.props.validation
     );
     const patronymic = validate(
       this.refs.patronymic.value,
-      patronymic,
-      this.props.validationPatronymicWarning,
+      'patronymic',
+      this.props.warningMessage,
       this.props.validation
     );
     const surname = validate(
       this.refs.surname.value,
-      surname,
-      this.props.validationSurnameWarning,
+      'surname',
+      this.props.warningMessage,
       this.props.validation
     );
 
@@ -92,7 +87,6 @@ class FullName extends Component {
   }
 
   render() {
-    console.log('render');
     return (
       <div className='FullName'>
         {this.getAvatar()}
@@ -117,9 +111,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     formReguest: data => dispatch(formReguest(data)),
-    validationNameWarning: data => dispatch(validationNameWarning(data)),
-    validationPatronymicWarning: data => dispatch(validationPatronymicWarning(data)),
-    validationSurnameWarning: data => dispatch(validationSurnameWarning(data))
+    warningMessage: data => dispatch(warningMessage(data))
   }
 }
 

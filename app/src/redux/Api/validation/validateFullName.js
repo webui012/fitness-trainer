@@ -1,44 +1,43 @@
 import Validation from './index';
-const validation = new Validation();
 
 export default (value, fieldName, action, store) => {
   let storeName = store[fieldName];
   let previousValue = value;
-  let currentValue = validation.checkEmptyString(previousValue);
+  let currentValue = Validation.checkEmptyString(previousValue);
 
   if (previousValue !== currentValue) {
-    action(currentValue);
+    action({[fieldName]: currentValue});
     return;
   } else if (storeName !== null) {
-    action(null);
+    action({[fieldName]: null});
   }
-  previousValue = validation.deleteSpacesAroundEdges(previousValue);
-  currentValue = validation.checkNotMoreOneDash(previousValue);
+  previousValue = Validation.deleteSpacesAroundEdges(previousValue);
+  currentValue = Validation.checkNotMoreOneDash(previousValue);
 
   if (previousValue !== currentValue) {
-    action(currentValue);
+    action({[fieldName]: currentValue});
     return;
   } else if (storeName !== null) {
-    action(null);
+    action({[fieldName]: null});
   }
 
-  currentValue = validation.checkRussianLettersAndDash(previousValue);
+  currentValue = Validation.checkRussianLettersAndDash(previousValue);
 
   if (previousValue !== currentValue) {
-    action(currentValue);
+    action({[fieldName]: currentValue});
     return;
   } else if (storeName !== null) {
-    action(null);
+    action({[fieldName]: null});
   }
 
   previousValue = currentValue;
-  currentValue = validation.maxLength(previousValue, 30);
+  currentValue = Validation.maxLength(previousValue, 30);
 
   if (previousValue !== currentValue) {
-    action(currentValue);
+    action({[fieldName]: currentValue});
     return;
   } else if (storeName !== null) {
-    action(null);
+    action({[fieldName]: null});
   }
   return currentValue;
 }

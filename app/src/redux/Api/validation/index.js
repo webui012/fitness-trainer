@@ -1,83 +1,85 @@
+import { VALIDATION_WARNING } from '../../../utils/constants';
+
 class Validation {
 
-  checkEmptyString(str) {
+  static checkEmptyString(str) {
     if (str === '') {
-      return 'Данное поле не должно быть пустым';
+      return VALIDATION_WARNING.emptyString;
     } else {
       return str;
     }
   }
 
-  deleteSpacesAroundEdges(str) {
+  static deleteSpacesAroundEdges(str) {
     return str.replace(/^\s*/,'').replace(/\s*$/,'');
   }
 
-  checkSpaces(str) {
+  static checkSpaces(str) {
     if (str.match(/ /i) === null) {
       return str;
     } else {
-      return 'Данное поле не должно включать пробелы';
+      return VALIDATION_WARNING.notSpaces;
     }
   }
 
-  checkNotMoreOneDash(str) {
+  static checkNotMoreOneDash(str) {
     if (str.search(/^\-/)!==-1 || str.search(/-$/)!==-1){
-      return 'Данное поле не должно содержать дефисы в начале и в конце строки';
+      return VALIDATION_WARNING.notBeginAndEndDash;
     }
 
     if (str.match(/-/g) !== null && str.match(/-/g).length > 1) {
-      return 'Данное поле не должно содержать более одного дефиса';
+      return VALIDATION_WARNING.notMoreOneDash;
     }
     return str;
   }
 
-  checkRussianLettersAndDash(str) {
+  static checkRussianLettersAndDash(str) {
     if (/^[а-яё\-]*$/i.test(str)) {
       return str;
     } else {
-      return 'Данное поле должно содержать только буквы русского алфавита';
+      return VALIDATION_WARNING.rusLettersAndDash;
     }
   }
 
-  checkOnlyRussianLetters(str) {
+  static checkOnlyRussianLetters(str) {
     if (/^[а-яё]*$/i.test(str)) {
       return str;
     } else {
-      console.log('Данное поле должно содержать только буквы русского алфавита');
+      return VALIDATION_WARNING.rusLettersAndDash;
     }
   }
 
-  checkNonNegativeInteger() {
+  static checkNonNegativeInteger(str) {
     if (!(/^[0-9]*$/.test(str))) {
-      return console.log('Данное поле может содержать только целое неотрицательное число');
+      return VALIDATION_WARNING.nonNegativeInteger;
     }
   }
 
-  checkNotBeginZero(str) {
+  static checkNotBeginZero(str) {
     if (/^0[0-9]*$/.test(str)) {
-      return console.log('Число не должно начинаться с 0');
+      return VALIDATION_WARNING.notBeginZero;
     }
   }
 
-  checkRange(str, item1, item2) {
+  static checkRange(str, item1, item2) {
     if (arguments.length === 3) {
       if (item1 <= +str && +str <= item2) {
         return str;
       } else {
-        return (`Введите число в промежутке между ${item1} и ${item2}`);
+        return `Введите число в промежутке между ${item1} и ${item2}`;
       }
     } else {
-      return console.log('The field must contain one or three parameters');
+      return console.log(VALIDATION_WARNING.rangeArguments);
     }
   }
 
-  checkIntegerAndFractionalNumber(str, item1, item2) {
+  static checkIntegerAndFractionalNumber(str, item1, item2) {
     if (!(/^[0-9]*[.,]?[0-9]+(?:[eE][-+]?[0-9]+)?$/.test(str))) {
-      return console.log('Данное поле может содержать только целое или дробное число');
+      return VALIDATION_WARNING.fractionalNumber;
     }
   }
 
-  roundNumber(str, roundOrder) {
+  static roundNumber(str, roundOrder) {
     const isNumeric = str => !isNaN(parseFloat(+str)) && isFinite(+str);
     if (isNumeric(str)) {
       const number = +str;
@@ -87,9 +89,9 @@ class Validation {
     }
   }
 
-  maxLength(str, length) {
+  static maxLength(str, length) {
     if (arguments.length !== 2) {
-      return 'You must specify two parameters in the function';
+      return console.log(VALIDATION_WARNING.maxLengthArguments);
     }
 
     if (str.length > length) {

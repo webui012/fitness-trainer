@@ -1,26 +1,25 @@
 import Validation from './index';
-const validation = new Validation();
 
 export default (value, fieldName, action, store) => {
   let storeName = store[fieldName];
   let previousValue = value;
-  let currentValue = validation.checkEmptyString(previousValue);
+  let currentValue = Validation.checkEmptyString(previousValue);
 
   if (previousValue !== currentValue) {
     currentValue = `${currentValue}. Если у Вас противопоказания отсутствуют - просто укажите фразу "Противопоказаний нет"`;
-    action(currentValue);
+    action({[fieldName]: currentValue});
     return;
   } else if (storeName !== null) {
-    action(null);
+    action({[fieldName]: null});
   }
 
-  currentValue = validation.maxLength(previousValue, 30);
+  currentValue = Validation.maxLength(previousValue, 30);
 
   if (previousValue !== currentValue) {
-    action(currentValue);
+    action({[fieldName]: currentValue});
     return;
   } else if (storeName !== null) {
-    action(null);
+    action({[fieldName]: null});
   }
   return currentValue;
 }

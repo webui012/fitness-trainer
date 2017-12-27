@@ -4,10 +4,7 @@ import {
   ACTION_FAILURE,
   PAGE_ABOUTUS_REQUEST,
   PAGE_ABOUTUS_SUCCESS,
-  NAME_WARNING,
-  PATRONYMIC_WARNING,
-  SURNAME_WARNING,
-  CONTRAINDICATIONS_WARNING
+  WARNING_MESSAGE
 } from '../constants';
 
 export const formReguest = data => ({
@@ -20,25 +17,10 @@ export const formSuccess = data => ({
     payload: data
 });
 
-export const validationNameWarning = data => ({
-    type: NAME_WARNING,
-    payload: data
-});
-
-export const validationPatronymicWarning = data => ({
-    type: PATRONYMIC_WARNING,
-    payload: data
-});
-
-export const validationSurnameWarning = data => ({
-    type: SURNAME_WARNING,
-    payload: data
-});
-
-export const validationContraindicationsWarning = data => ({
-    type: CONTRAINDICATIONS_WARNING,
-    payload: data
-});
+export const warningMessage = data => ({
+  type: WARNING_MESSAGE,
+  payload: data
+})
 
 // export const sendFullName = data => ({//////////
 //     type: actions.SEND_FULLNAME,

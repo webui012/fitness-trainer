@@ -1,6 +1,5 @@
 import { formData } from '../../pages/AboutUs/data';
 
-
 class Api {
 
   fetchUserData(data) {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { formReguest, validationContraindicationsWarning } from '../../redux/actions';
+import { formReguest, warningMessage } from '../../redux/actions';
 import '../../redux/Api/validation/validation.scss';
 import validate from '../../redux/Api/validation/validateContraindications';
 import './Contraindications.scss';
@@ -11,8 +11,8 @@ class Contraindications extends Component {
     event.preventDefault();
     const contraindications = validate(
       this.refs.textarea.value,
-      contraindications,
-      this.props.validationContraindicationsWarning,
+      'contraindications',
+      this.props.warningMessage,
       this.props.validation
     );
 
@@ -54,7 +54,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     formReguest: data => dispatch(formReguest(data)),
-    validationContraindicationsWarning: data => dispatch(validationContraindicationsWarning(data))
+    warningMessage: data => dispatch(warningMessage(data))
   }
 }
 
