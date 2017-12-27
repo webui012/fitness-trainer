@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import FullName from '../../containers/FullName/FullName';
-import {
-  fullNameFields,
-  fullNameAvatar,
-  data,
-  aimsFormData,
-  bodySizesImg,
-  formData
-} from './data';
+// import {
+//   fullNameFields,
+//   fullNameAvatar,
+//   aimsFormData, dataFields,
+//   bodySizesImg,
+//   formData
+// } from './data';
 import './AboutUs.scss';
 import MeasuredData from '../../components/MeasuredData/MeasuredData';
 import Aims from '../../components/Aims/Aims';
@@ -20,51 +19,51 @@ import Api from '../../redux/Api';
 
 
 class AboutUs extends Component {
-  constructor(props) {
-    super(props);
-    this.props.pageLoading();
-  }
-
-  // componentWillMount() {
-  //   this.props.pageLoading()
-  // }
 
   componentDidMount() {
     setTimeout(() => {
-      this.props.pageLoadingEnd()
-<<<<<<< HEAD
-      //console.log(this.props.pageLoadingEnd(Api.dataArray().then(data => data[0].name)))
-      console.log(Api.dataArray());
-      console.log(Api.dataLocal());
-=======
->>>>>>> ab0de3d85c84be6334e0ab38afe6bac6a5ef5f3f
+      this.props.pageLoading()
     }, 2000);
+    this.props.pageLoadingEnd(this.props.data)
   }
 
   render() {
-    return (
+    // const {
+    //         fullNameFields,
+    //         fullNameAvatar,
+    //         aimsFormData,
+    //         dataFields,
+    //         bodySizesImg,
+    //         formData
+    //       } = this.props.data
+
+    return (this.props.data?
       <div className='about-us'>
         <div className='columns-wrap'>
-          <FullName fields={fullNameFields} path={fullNameAvatar} formData={formData} />
-          <MeasuredData data={data} />
-          <img className='body-sizes' src={bodySizesImg} alt='instructions for measuring points' />
+          <FullName
+              fields={this.props.data.fullNameFields}
+              path={this.props.data.fullNameAvatar}
+              formData={this.props.data.formData}
+          />
+          <MeasuredData dataFields={this.props.data.dataFields} />
+          <img className='body-sizes' src={this.props.data.bodySizesImg} alt='instructions for measuring points' />
         </div>
-        <Aims aimsFormData={aimsFormData} />
+        <Aims aimsFormData={this.props.data.aimsFormData} />
         <Contraindications />
-        {this.props.loading ? <Loading /> : null}
-      </div>
+      </div> : <Loading />
     );
   }
 }
 
 const mapStateToProps = state => {
   return {
-    loading: state.load
+    loading: state.AboutUs.loading,
+    data: state.AboutUs.data
   }
 }
 const mapDispatchToProps = dispatch => {
   return {
-    pageLoading: data => dispatch(pageLoading(data)),
+    pageLoading: () => dispatch(pageLoading()),
     pageLoadingEnd: data => dispatch(pageLoadingEnd(data))
   }
 }

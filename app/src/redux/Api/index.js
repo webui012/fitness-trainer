@@ -1,4 +1,4 @@
-import { formData } from '../../pages/AboutUs/data';
+import {dataAll} from '../../pages/AboutUs/data1';
 
 class Api {
 
@@ -13,16 +13,12 @@ class Api {
     });
   }
 
-  dataArray() {
-   let data = fetch('https://jsonplaceholder.typicode.com/users/')
-          .then(data => data.json())
-    return data
-  }
-
   dataLocal() {
-    return fetch('../../pages/AboutUs/data1.json')
-      .then(data => data.json())
-      .then(data => JSON.parse(data))
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(dataAll);
+      }, 2000);
+    });
   }
 }
 

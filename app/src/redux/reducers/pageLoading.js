@@ -1,12 +1,19 @@
-export default (loading = true, action) => {
+const init = {
+    loading: false,
+    data: null,
+    error: null
+};
+
+export default (state = init, action) => {
     switch (action.type) {
         case 'PAGE_ABOUTUS_REQUEST':
-            return loading
+            return { ...state, loading: true }
 
         case 'PAGE_ABOUTUS_SUCCESS':
-            return loading = false
+            console.log('d',action.payload);
+            return { ...state, loading: false, data: action.payload }
 
         default:
-            return loading;
+            return state;
     }
 }

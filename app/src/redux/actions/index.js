@@ -91,9 +91,8 @@ export const warningMessage = data => ({
 // });
 
 //Actions page loading
-export const pageLoading = data => ({
+export const pageLoading = () => ({
     type: PAGE_ABOUTUS_REQUEST,
-    payload: data
 });
 
 export const pageLoadingEnd = data => ({

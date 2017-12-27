@@ -1,35 +1,37 @@
 import avatar from '../../images/about_us_avatar.png';
 import bodyImg from '../../images/body-sizes.jpg';
 
-export const fullNameAvatar = {
-  defaultAvatar: avatar,
-  userAvatar: null
-}
 
-export const bodySizesImg = bodyImg
+export const dataAll = {
+fullNameAvatar : {
+    defaultAvatar: avatar,
+    userAvatar: null
+},
 
-export const fullNameFields = [
-  {
-    type: 'text',
-    placeholder: 'Имя',
-    ref: 'name',
-    id: 'ecl09xzvrm'
-  },
-  {
-    type: 'text',
-    placeholder: 'Отчество',
-    ref: 'patronymic',
-    id: '9gwqnfzri6'
-  },
-  {
-    type: 'text',
-    placeholder: 'Фамилия',
-    ref: 'surname',
-    id: '6cl4w8pu86'
-  }
-];
+bodySizesImg : bodyImg,
 
-export const dataFields = {
+fullNameFields : [
+    {
+        type: 'text',
+        placeholder: 'Имя',
+        ref: 'name',
+        id: 'ecl09xzvrm'
+    },
+    {
+        type: 'text',
+        placeholder: 'Отчество',
+        ref: 'patronymic',
+        id: '9gwqnfzri6'
+    },
+    {
+        type: 'text',
+        placeholder: 'Фамилия',
+        ref: 'surname',
+        id: '6cl4w8pu86'
+    }
+],
+
+dataFields : {
     fieldsMeasuredDataForm:
         [
             {
@@ -88,33 +90,34 @@ export const dataFields = {
         method: 'POST',
         legendName: 'Замеры тела'
     }
-}
+},
 
-export const aimsFormData = {
+aimsFormData : {
     nameField: 'Цель тренировок',
     selectName: 'aimsSelect',
-    options:[
+    options: [
         {
-            optionValue:'weightDown',
+            optionValue: 'weightDown',
             optionInfo: 'Похудеть'
         },
         {
-            optionValue:'weightUp',
+            optionValue: 'weightUp',
             optionInfo: 'Набрать вес'
         },
         {
-            optionValue:'relief',
+            optionValue: 'relief',
             optionInfo: 'Рельеф'
         },
         {
-            optionValue:'press',
+            optionValue: 'press',
             optionInfo: 'Пресс'
         },
         {
-            optionValue:'biceps',
+            optionValue: 'biceps',
             optionInfo: 'Бицeпс'
         }
     ]
-}
+},
 
-export const formData = {}
+formData : {}
+}

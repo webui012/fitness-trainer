@@ -21,13 +21,12 @@ class MeasuredData extends Component {
       userId: 'measuredData'
     }
     this.props.formReguest(data);
-    console.log(data)
   }
 
   render() {
 
-    const { name, action, method, ref, fieldsMeasuredDataForm } = this.props.data;
-    const { legendName } = this.props.data.MeasuredData
+    const { fieldsMeasuredDataForm } = this.props.dataFields
+    const { legendName, name, action, method } = this.props.dataFields.MeasuredData
 
     return (
       <div className='form-wrap'>

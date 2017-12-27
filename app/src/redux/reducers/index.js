@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 import error from './sendDataErrorMessage';
 import spinner from './sendData';
-import load from './pageLoading';
+import AboutUs from './pageLoading';
 import validationAboutUs from './validationAboutUs';
 
 const rootReducer = combineReducers({
   error,
   spinner,
-  load,
+  AboutUs,
   validationAboutUs
 });
 

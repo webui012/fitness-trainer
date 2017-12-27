@@ -8,10 +8,10 @@ import Api from '../Api';
 
 function* pageDataLoadingAsync(action) {
     try {
-        const pageData = yield call(Api.dataArray());
-        yield put({ type: PAGE_ABOUTUS_SUCCESS, payload: pageData});        
+        const pageData = yield call(Api.dataLocal);
+        yield put({ type: PAGE_ABOUTUS_SUCCESS, payload: pageData});
     } catch (e) {
-        // yield put({type: ACTION_FAILURE});
+        yield put({type: ACTION_FAILURE});
         console.log('error');
     }
 }
