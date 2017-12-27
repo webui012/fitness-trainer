@@ -29,13 +29,13 @@ const App = () =>
   <Router>
     <div className='app'>
       <Switch>
-        {routes.map({path, exact, component: Component, layout: Layout} => (
-          <Route exact={exact} path={path} render={ () => (
-          <Layout>
-            <Component />
-          </Layout>
-          )}
-        } />
+        {routes.map(({path, exact, component: Component, layout: Layout}) => (
+          <Route exact={exact} path={path} render={() => (
+            <Layout>
+              <Component />
+            </Layout>
+          )} />
+        ))}
       </Switch>
     </div>
   </Router>

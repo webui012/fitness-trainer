@@ -41,9 +41,15 @@ const routes = [
     layout: MainLayout
   },
   {
-    path: '/services/online-plan',
+    path: '/services/online-training',
     exact: true,
     component: Online,
+    layout: MainLayout
+  },
+  {
+    path: '/services/nutrition-plan',
+    exact: true,
+    component: Nutrition,
     layout: MainLayout
   },
   {
