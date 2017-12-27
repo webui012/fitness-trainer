@@ -3,7 +3,11 @@ import {
   FORM_UCCESS,
   ACTION_FAILURE,
   PAGE_ABOUTUS_REQUEST,
-  PAGE_ABOUTUS_SUCCESS
+  PAGE_ABOUTUS_SUCCESS,
+  NAME_WARNING,
+  PATRONYMIC_WARNING,
+  SURNAME_WARNING,
+  CONTRAINDICATIONS_WARNING
 } from '../constants';
 
 export const formReguest = data => ({
@@ -13,6 +17,26 @@ export const formReguest = data => ({
 
 export const formSuccess = data => ({
     type: FORM_SUCCESS,
+    payload: data
+});
+
+export const validationNameWarning = data => ({
+    type: NAME_WARNING,
+    payload: data
+});
+
+export const validationPatronymicWarning = data => ({
+    type: PATRONYMIC_WARNING,
+    payload: data
+});
+
+export const validationSurnameWarning = data => ({
+    type: SURNAME_WARNING,
+    payload: data
+});
+
+export const validationContraindicationsWarning = data => ({
+    type: CONTRAINDICATIONS_WARNING,
     payload: data
 });
 
@@ -85,12 +109,14 @@ export const formSuccess = data => ({
 // });
 
 //Actions page loading
-export const pageLoading = () => ({
-    type: PAGE_ABOUTUS_REQUEST
+export const pageLoading = data => ({
+    type: PAGE_ABOUTUS_REQUEST,
+    payload: data
 });
 
 export const pageLoadingEnd = data => ({
-    type: PAGE_ABOUTUS_SUCCESS
+    type: PAGE_ABOUTUS_SUCCESS,
+    payload: data
 });
 
 // //Action ERROR

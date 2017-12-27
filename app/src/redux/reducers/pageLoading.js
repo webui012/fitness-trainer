@@ -1,12 +1,12 @@
-export default (spinner = console.log('boommmmmmm'), action) => {
+export default (loading = true, action) => {
     switch (action.type) {
         case 'PAGE_ABOUTUS_REQUEST':
-            return console.log('boom start')
+            return loading
 
         case 'PAGE_ABOUTUS_SUCCESS':
-            return console.log('boom end')
-            
+            return loading = false
+
         default:
-            return spinner;
+            return loading;
     }
 }

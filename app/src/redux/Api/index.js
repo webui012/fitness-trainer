@@ -1,4 +1,6 @@
 import { formData } from '../../pages/AboutUs/data';
+
+
 class Api {
 
   fetchUserData(data) {
@@ -10,6 +12,16 @@ class Api {
         console.log(formData);
       }, 2000);
     });
+  }
+
+  dataArray() {
+    return fetch('https://jsonplaceholder.typicode.com/users')
+          .then(data => data.json())
+  }
+
+  dataLocal() {
+    return fetch('../../pages/AboutUs/data')
+      .then(data => data.json())
   }
 }
 
