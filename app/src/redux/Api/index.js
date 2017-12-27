@@ -1,6 +1,5 @@
 import { formData } from '../../pages/AboutUs/data';
 
-
 class Api {
 
   fetchUserData(data) {
@@ -9,6 +8,7 @@ class Api {
       setTimeout(() => {
         formData[`${data.userId}`] = data;
         resolve(formData);
+        console.log(formData);
       }, 2000);
     });
   }

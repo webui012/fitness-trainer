@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import InputFile from '../InputFile/InputFile';
 import { connect } from 'react-redux';
-import { formReguest } from '../../redux/actions';
+import { formReguest, warningMessage } from '../../redux/actions';
 import './FullName.scss';
 import Loading from '../../components/Loading/Loading';
+import '../../redux/Api/validation/validation.scss';
+import validate from '../../redux/Api/validation/validateFullName';
 
 class FullName extends Component {
   constructor(props) {
@@ -29,10 +31,16 @@ class FullName extends Component {
   }
 
   getInputs = () => this.props.fields.map(
-      field => <input type={field.type}
-          placeholder={field.placeholder}
-          ref={field.ref}
-          key={field.id} />);
+      field =>
+      <span key={field.id}>
+        <input type={field.type}
+            placeholder={field.placeholder}
+            ref={field.ref}
+            className={this.props.validation[`${field.ref}`] ? 'input-warning' : null}/>
+        <span className={this.props.validation[`${field.ref}`] ? 'active-warning' : 'not-active-warning'}>
+          {this.props.validation[`${field.ref}`]}
+        </span>
+      </span>);
 
 
   getAvatar = () => this.props.path.userAvatar ?
@@ -43,21 +51,42 @@ class FullName extends Component {
 
   formHandler = event => {
     event.preventDefault();
+    const name = validate(
+      this.refs.name.value,
+      'name',
+      this.props.warningMessage,
+      this.props.validation
+    );
+    const patronymic = validate(
+      this.refs.patronymic.value,
+      'patronymic',
+      this.props.warningMessage,
+      this.props.validation
+    );
+    const surname = validate(
+      this.refs.surname.value,
+      'surname',
+      this.props.warningMessage,
+      this.props.validation
+    );
+
     const data = {
       avatar: this.state.location,
-      name: this.refs.name.value,
-      patronymic: this.refs.patronymic.value,
-      surname: this.refs.surname.value,
+      name,
+      patronymic,
+      surname,
       userId: 'personalData'
     }
-    this.props.formReguest(data);
-    this.refs.name.value = '';
-    this.refs.patronymic.value = '';
-    this.refs.surname.value = '';
+
+    if (name && patronymic && surname) {
+      this.props.formReguest(data);
+      this.refs.name.value = '';
+      this.refs.patronymic.value = '';
+      this.refs.surname.value = '';
+    }
   }
 
   render() {
-    console.log(this.props.formData);
     return (
       <div className='FullName'>
         {this.getAvatar()}
@@ -74,13 +103,15 @@ class FullName extends Component {
 
 const mapStateToProps = state => {
   return {
-    spinner: state.spinner
+    spinner: state.spinner,
+    validation: state.validationAboutUs
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    formReguest: data => dispatch(formReguest(data))
+    formReguest: data => dispatch(formReguest(data)),
+    warningMessage: data => dispatch(warningMessage(data))
   }
 }
 

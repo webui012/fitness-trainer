@@ -3,7 +3,8 @@ import {
   FORM_UCCESS,
   ACTION_FAILURE,
   PAGE_ABOUTUS_REQUEST,
-  PAGE_ABOUTUS_SUCCESS
+  PAGE_ABOUTUS_SUCCESS,
+  WARNING_MESSAGE
 } from '../constants';
 
 export const formReguest = data => ({
@@ -15,6 +16,11 @@ export const formSuccess = data => ({
     type: FORM_SUCCESS,
     payload: data
 });
+
+export const warningMessage = data => ({
+  type: WARNING_MESSAGE,
+  payload: data
+})
 
 // export const sendFullName = data => ({//////////
 //     type: actions.SEND_FULLNAME,

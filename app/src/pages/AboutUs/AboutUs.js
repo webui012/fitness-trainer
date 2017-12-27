@@ -22,18 +22,22 @@ import Api from '../../redux/Api';
 class AboutUs extends Component {
   constructor(props) {
     super(props);
+    this.props.pageLoading();
   }
 
-  componentWillMount() {
-    this.props.pageLoading()
-  }
+  // componentWillMount() {
+  //   this.props.pageLoading()
+  // }
 
   componentDidMount() {
     setTimeout(() => {
       this.props.pageLoadingEnd()
+<<<<<<< HEAD
       //console.log(this.props.pageLoadingEnd(Api.dataArray().then(data => data[0].name)))
       console.log(Api.dataArray());
       console.log(Api.dataLocal());
+=======
+>>>>>>> ab0de3d85c84be6334e0ab38afe6bac6a5ef5f3f
     }, 2000);
   }
 

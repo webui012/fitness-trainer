@@ -1,24 +1,42 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { formReguest } from '../../redux/actions';
+import { formReguest, warningMessage } from '../../redux/actions';
+import '../../redux/Api/validation/validation.scss';
+import validate from '../../redux/Api/validation/validateContraindications';
 import './Contraindications.scss';
 
 class Contraindications extends Component {
 
   formHandler = event => {
-      event.preventDefault();
-      const data = {
-        contraindications: this.refs.textarea.value,
-        userId: 'contraindications'
-      }
+    event.preventDefault();
+    const contraindications = validate(
+      this.refs.textarea.value,
+      'contraindications',
+      this.props.warningMessage,
+      this.props.validation
+    );
+
+    const data = {
+      contraindications,
+      userId: 'contraindications'
+    }
+
+    if (contraindications) {
       this.props.formReguest(data);
       this.refs.textarea.value = '';
     }
+  }
 
   render() {
     return (
       <form className='Contraindications' onSubmit={this.formHandler}>
-        <textarea className='text' placeholder='Введите противопоказания' ref='textarea'></textarea>
+        <textarea
+          className={this.props.validation['contraindications'] ? 'text input-warning' : 'text'}
+          placeholder='Введите противопоказания'
+          ref='textarea'></textarea>
+        <span className={this.props.validation['contraindications'] ? 'active-warning' : 'not-active-warning'}>
+            {this.props.validation['contraindications']}
+        </span>
         {this.props.spinner ? <div>{this.props.spinner}</div> : null}
         <input type='submit' value='Сохранить данные' className='submit-contraindications' />
       </form>
@@ -28,13 +46,15 @@ class Contraindications extends Component {
 
 const mapStateToProps = state => {
   return {
-    spinner: state.spinner
+    spinner: state.spinner,
+    validation: state.validationAboutUs
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    formReguest: data => dispatch(formReguest(data))
+    formReguest: data => dispatch(formReguest(data)),
+    warningMessage: data => dispatch(warningMessage(data))
   }
 }
 
