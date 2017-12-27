@@ -4,7 +4,6 @@ import InputFile from '../InputFile/InputFile';
 import { connect } from 'react-redux';
 import { formReguest, warningMessage } from '../../redux/actions';
 import './FullName.scss';
-import Loading from '../../components/Loading/Loading';
 import '../../redux/Api/validation/validation.scss';
 import validate from '../../redux/Api/validation/validateFullName';
 

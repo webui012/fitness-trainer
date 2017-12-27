@@ -1,4 +1,5 @@
 .error-loading-data {
+  font-weight: 600;
   width: 500px;
   height: 200px;
   padding: 0 20px;
@@ -15,12 +16,13 @@
   left: calc(50% - 250px);
 
   button[name='agree'] {
-    padding: 10px 15px;
+    padding: 10px 40px;
     margin-top: 15px;
     background: #33cc33;
     color: #fff;
     cursor: pointer;
     border: 0;
     font-size: 14px;
+    text-transform: uppercase;
   }
 }
