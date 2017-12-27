@@ -1,20 +1,16 @@
 import React, { PropTypes } from 'react';
+import UserCard from './UserCard';
 import UserCardsData from './UserCardsData';
 import './UserCards.scss';
 
-const UsersTable = props => {
-  let state = UserCardsData;
-  const { data } = state;
+const UserCards = () => {
+  const users = UserCardsData.users;
 
-  // return ()
-};
-
-UserCards.propTypes = {
-  name: PropTypes.string,
-  lastName: PropTypes.string,
-  registrationDate: Proptypes.string,
-  status: PropTypes.string,
-  id: PropTypes.number
-};
+    return (
+      <div className='wrap-user-cards'>
+        <UserCard data={users} />
+      </div>
+    )
+  }
 
 export default UserCards;

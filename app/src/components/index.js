@@ -25,3 +25,4 @@ export {default as Text} from './Text/Text';
 export {default as Video} from './Video/Video';
 export {default as Socials} from './Socials/Socials';
 export {default as AdminSidebar} from './AdminSidebar/AdminSidebar';
+export {default as UserCards} from './UserCards/UserCards';

@@ -1,6 +1,10 @@
 import React from 'react';
-import { AdminSidebar } from 'Components';
+import { AdminSidebar, UserCards } from 'Components';
 
-const Forum = props => <AdminSidebar />
+const Forum = props =>
+<div>
+<UserCards />
+<AdminSidebar />
 
+</div>
 export default Forum;
