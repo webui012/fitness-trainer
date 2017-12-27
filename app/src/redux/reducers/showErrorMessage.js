@@ -1,10 +1,10 @@
 export default (messageText = false, action) => {
   switch (action.type) {
     case 'ACTION_FAILURE':
-      return !messageText;
+      return true;
 
     case 'CLOSE_ACTION_FAILURE':
-      return !messageText;
+      return false;
 
     default:
       return messageText;
