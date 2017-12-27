@@ -4,6 +4,7 @@ import './AdminSidebar.scss';
 
 const NavSidebar = props => {
   const links = props.data;
+
   return (
     <nav className='admin-sidebar'>
       <ul className='admin-sidebar-tab'>

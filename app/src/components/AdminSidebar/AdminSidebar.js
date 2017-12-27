@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
-import { NavSidebar } from 'Components';
+import React from 'react';
+import NavSidebar from './NavSidebar';
 import AdminSidebarData from './AdminSidebarData';
 import './AdminSidebar.scss';
 
 const AdminSidebar = () => {
-  const tabs = AdminSidebarData.tabs
+  const tabs = AdminSidebarData.tabs;
 
   return (
     <div className='admin-sidebar'>
@@ -13,9 +13,6 @@ const AdminSidebar = () => {
   )
 }
 
-AdminSidebar.propTypes = {
-  title: PropTypes.string,
-  url: PropTypes.string
-};
+
 
 export default AdminSidebar;

@@ -1,8 +1,6 @@
 import React from 'react';
+import { AdminSidebar } from 'Components';
 
-const Forum = props =>
-  <div>
-    Forum
-  </div>
+const Forum = props => <AdminSidebar />
 
-export default Forum
+export default Forum;

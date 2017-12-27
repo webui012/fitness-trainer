@@ -2,16 +2,16 @@ const AdminSidebarData = {
   tabs: [
     {
       title: 'Пользователи',
-      url: '#'
+      url: '/cabinet'
       },
     {
       title: 'Редактировать разделы',
-      url: '#'
+      url: '/cabinet'
     },
 
     {
       title: 'Создать новую страницу',
-      url: '#'
+      url: '/cabinet'
     }
   ]
 }
