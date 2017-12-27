@@ -7,12 +7,10 @@ const AdminSidebar = () => {
   const tabs = AdminSidebarData.tabs;
 
   return (
-    <div className='admin-sidebar'>
+    <div className='wrap-admin-sidebar'>
       <NavSidebar data={tabs} />
     </div>
   )
 }
-
-
 
 export default AdminSidebar;

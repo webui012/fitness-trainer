@@ -1,7 +1,16 @@
-.admin-sidebar {
+.wrap-admin-sidebar {
   height: 700px;
+    width: 20%;
+    border: 2px solid black;
 }
 
 .admin-sidebar-item {
-  height: 30px;
+  height: 100px;
+  border-bottom: 1px solid red;
+
+  &:hover {
+    background: #757575;
+    color: #fff;
+  }
+
 }
