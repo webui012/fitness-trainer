@@ -1,0 +1,25 @@
+.active-warning {
+  font-size: 12px;
+  display: block;
+  color: red;
+  margin-top: 5px;
+  margin-left: 0;
+  display: block;
+}
+
+.not-active-warning {
+  display: none;
+}
+
+.input-warning {
+  border-color: red !important;
+}
+
+.select-warning {
+  border-color: red !important;
+}
+
+.input-warning-data {
+  border-color: red !important;
+  padding: 8px 0;
+}

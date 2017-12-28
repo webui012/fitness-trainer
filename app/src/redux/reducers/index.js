@@ -1,8 +1,20 @@
 import { combineReducers } from 'redux';
-import login from './userLogin';
+import spinner from './sendData';
+import AboutUs from './pageLoading';
+import errorMessage from './showErrorMessage';
+import validationAboutUs from './validationAboutUs';
+
+const rootReducer = combineReducers({
+  spinner,
+  AboutUs,
+  validationAboutUs,
+  errorMessage
+});
+
 
 const rootReducer = combineReducers({
   login,
 })
+
 
 export default rootReducer;

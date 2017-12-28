@@ -5,6 +5,10 @@ const HeaderData = {
 
   navigation: [
     {
+      name: 'AboutUs',
+      url: '/aboutus',
+    },
+    {
       name: 'Главная',
       url: '/',
     },
