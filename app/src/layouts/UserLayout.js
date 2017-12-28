@@ -8,6 +8,8 @@ const UserLayout = props => (
     <div className='layout-content'>
       {props.children}
     </div>
+    </div>
+  )
 
 
 export default UserLayout;

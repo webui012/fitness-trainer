@@ -1,9 +1,11 @@
 import React from 'react';
+import { AdminSidebar, UserCards } from 'Components';
 
 
 const AdminCabinet = () =>
   <div className='admin-cabinet'>
-    <h1>ADMIN</h1>
+    <UserCards />
+    <AdminSidebar />
   </div>
 
 export default AdminCabinet;
