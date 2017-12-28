@@ -3,24 +3,93 @@ import './MeasuredData.scss';
 import PropTypes from 'prop-types';
 import Loading from '../../components/Loading/Loading';
 import { connect } from 'react-redux';
-import { formReguest } from '../../redux/actions';
+import { formReguest, warningMessage } from '../../redux/actions';
+import '../../redux/Api/validation/validation.scss';
+import validate from '../../redux/Api/validation/validateMeasuredData';
 
 class MeasuredData extends Component {
 
   formHandler = event => {
     event.preventDefault();
+
+    const age = validate(
+      this.refs.age.value,
+      'age',
+      this.props.warningMessage,
+      this.props.validation
+    )
+
+    const height = validate(
+      this.refs.height.value,
+      'height',
+      this.props.warningMessage,
+      this.props.validation
+    )
+
+    const weight = validate(
+      this.refs.weight.value,
+      'weight',
+      this.props.warningMessage,
+      this.props.validation
+    )
+
+    const neck = validate(
+      this.refs.neck.value,
+      'neck',
+      this.props.warningMessage,
+      this.props.validation
+    )
+
+    const breast = validate(
+      this.refs.breast.value,
+      'breast',
+      this.props.warningMessage,
+      this.props.validation
+    )
+
+    const tail = validate(
+      this.refs.tail.value,
+      'tail',
+      this.props.warningMessage,
+      this.props.validation
+    )
+
+    const hips = validate(
+      this.refs.hips.value,
+      'hips',
+      this.props.warningMessage,
+      this.props.validation
+    )
+
+    const legs = validate(
+      this.refs.legs.value,
+      'legs',
+      this.props.warningMessage,
+      this.props.validation
+    )
+
     const data = {
-      age: this.refs.age.value,
-      height: this.refs.height.value,
-      weight: this.refs.weight.value,
-      neck: this.refs.neck.value,
-      breast: this.refs.breast.value,
-      tail: this.refs.tail.value,
-      hips: this.refs.hips.value,
-      legs: this.refs.legs.value,
+      age,
+      height,
+      weight,
+      neck,
+      breast,
+      tail,
+      hips,
+      legs,
       userId: 'measuredData'
     }
-    this.props.formReguest(data);
+
+    if (age &&
+        height &&
+        weight &&
+        neck &&
+        breast &&
+        tail &&
+        hips &&
+        legs) {
+      this.props.formReguest(data)
+    }
   }
 
   render() {
@@ -34,12 +103,16 @@ class MeasuredData extends Component {
           <fieldset>
             <legend>{legendName}</legend>
             {fieldsMeasuredDataForm.map((items, i) =>
-              <div className='wrap-measured-data' key={i}>
+              <div className='wrap-measured-data' key={i} >
                 <label>{items.nameField}</label>
                 <input
                     type={items.type}
                     ref={items.ref}
-                    placeholder={items.placeholder} />
+                    placeholder={items.placeholder}
+                    className={this.props.validation[`${items.ref}`] ? 'input-warning-data' : null}/>
+                <span className={this.props.validation[`${items.ref}`] ? 'active-warning input-warning-data' : 'not-active-warning'}>
+                  {this.props.validation[`${items.ref}`]}
+                </span>
               </div>
             )}
             {this.props.spinner ? <div>{this.props.spinner}</div> : null}
@@ -66,13 +139,15 @@ MeasuredData.PropTypes = {
 
 const mapStateToProps = state => {
   return {
-    spinner: state.spinner
+    spinner: state.spinner,
+    validation: state.validationAboutUs
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    formReguest: data => dispatch(formReguest(data))
+    formReguest: data => dispatch(formReguest(data)),
+    warningMessage: data => dispatch(warningMessage(data))
   }
 }
 

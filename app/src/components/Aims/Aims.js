@@ -9,6 +9,7 @@ import validate from '../../redux/Api/validation/validateAims';
 class Aims extends Component {
   formHandler = event => {
     event.preventDefault()
+
     const aims = validate(
       this.refs.select.value,
       'aims',
@@ -17,12 +18,13 @@ class Aims extends Component {
     );
 
     const data = {
-      aims: this.refs.select.value,
+      aims,
       userId:'aimsData'
     }
 
     if (aims) {
       this.props.formReguest(data)
+      this.refs.select.value = '';
     }
   }
 
@@ -32,8 +34,8 @@ class Aims extends Component {
       <div className='aims-wrap'>
         <label>{nameField}</label>
         <div>
-          <select ref='select' className={this.props.validation['aims'] ? 'text input-warning' : 'text'}>
-            <option className='default-option'>Выберите цель ваших тренировок...</option>
+          <select ref='select' className={this.props.validation['aims'] ? 'select-warning' : null}>
+            <option id='default-option'>Выберите цель ваших тренировок...</option>
             {options.map((items, i) =>
               <option
                   key={i}
@@ -45,6 +47,7 @@ class Aims extends Component {
             {this.props.validation['aims']}
           </span>
         </div>
+        {this.props.spinner ? <div>{this.props.spinner}</div> : null}
         <input
             type='submit'
             value='Сохранить данные'
@@ -65,6 +68,7 @@ Aims.propTypes = {
 
 const mapStateToProps = state => {
   return {
+    spinner: state.spinner,
     validation: state.validationAboutUs
   }
 }

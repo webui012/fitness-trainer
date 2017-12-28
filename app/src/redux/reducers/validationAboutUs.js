@@ -10,7 +10,6 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case 'WARNING_MESSAGE':
       return Object.assign({}, state, action.payload)
-  
     default:
       return state;
   }

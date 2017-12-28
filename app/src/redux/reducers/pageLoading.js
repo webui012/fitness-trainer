@@ -10,7 +10,6 @@ export default (state = init, action) => {
             return { ...state, loading: true }
 
         case 'PAGE_ABOUTUS_SUCCESS':
-            console.log('d',action.payload);
             return { ...state, loading: false, data: action.payload }
 
         default:
