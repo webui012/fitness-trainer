@@ -6,9 +6,10 @@ import './UserCards.scss';
 
 
 const UserCard = props => {
+
   const rows = UserCardsData.rows[0];
   const users = props.data;
-{console.log(rows)}
+
   return (
     <div className='user-table-main'>
       <Table className='user-table'>
@@ -20,18 +21,21 @@ const UserCard = props => {
             <th className='first-row-status'>{rows.status}</th>
           </tr>
         </thead>
+
         {users.map((user, i) => {
-        return (
-          <tbody key={i}>
-            <tr
-                Link to={user.url}
-                className='users-row'>
-              <th className='user-firstname'>{user.firstname}</th>
-              <th className='user-lastname'>{user.lastname}</th>
-              <th className='user-registration-date'>{user.registrationDate}</th>
-              <th className='user-status'>{user.status}</th>
-            </tr>
-          </tbody>
+          return (
+            <tbody key={i}>
+              <tr className='users-row'>
+                <th className='user-firstname'>
+                  <Link to={user.url} className='users-row'>
+                    {user.firstname}
+                  </Link>
+                </th>
+                <th className='user-lastname'>{user.lastname}</th>
+                <th className='user-registration-date'>{user.registrationDate}</th>
+                <th className='user-status'>{user.status}</th>
+              </tr>
+            </tbody>
         )
       })
     }

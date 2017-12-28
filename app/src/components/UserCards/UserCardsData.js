@@ -1,7 +1,7 @@
 const UserCardsData = {
   rows: [
     {
-      firstname: 'Name',
+      firstname: 'Имя',
       lastname: 'Фамилия',
       date: 'Дата регистрации',
       status: 'Статус'
@@ -13,7 +13,7 @@ const UserCardsData = {
       lastname: 'Doe',
       registrationDate: '22.12.2017',
       status: 'online',
-      url: '/cabinet'
+      url: '/login'
       },
     {
       firstname: 'Ivan',
