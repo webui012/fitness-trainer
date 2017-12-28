@@ -12,7 +12,8 @@ import {
   LoginPage,
   SignupPage,
   Nutrition,
-  TrainingPlanSection
+  TrainingPlanSection,
+  AboutUs
 } from 'Pages';
 
 import MainLayout from '../../layouts/MainLayout';
@@ -105,7 +106,12 @@ const routes = [
     component: Cabinet,
     layout: AdminLayout
   },
-
+  // {
+  //   path: '/aboutus',
+  //   exact: true,
+  //   component: AboutUs,
+  //   layout: MainLayout
+  // },
 ]
 
 export default routes;

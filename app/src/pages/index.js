@@ -12,3 +12,4 @@ export {default as TrainingPlanSection} from './TrainingPlanSection/TrainingPlan
 export {default as Cabinet} from './Cabinet/Cabinet';
 export {default as AdminCabinet} from './Cabinet/AdminCabinet';
 export {default as UserCabinet} from './Cabinet/UserCabinet';
+export {default as AboutUs} from './AboutUs/AboutUs';

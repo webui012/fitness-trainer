@@ -5,7 +5,7 @@ import {App} from 'Components';
 import { createStore, applyMiddleware } from 'redux';
 import reducer from './redux/reducers';
 
-import rootReducer from './redux/reducers';
+// import rootReducer from './redux/reducers';
 
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
@@ -20,7 +20,7 @@ const store = createStore(reducer, applyMiddleware(sagaMiddleware));
 
 sagaMiddleware.run(rootSaga);
 
-let store = createStore(rootReducer);
+// let store = createStore(rootReducer);
 
 
 render(

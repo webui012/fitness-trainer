@@ -18,7 +18,7 @@ import {
   Nutrition,
   TrainingPlanSection,
   UserCabinet,
-  AdminCabinet,
+  AdminCabinet
 } from 'Pages';
 import routes from './routes';
 
