@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './LoginForm.scss';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+
 
 class LoginForm extends Component {
   constructor(props){
@@ -9,20 +9,20 @@ class LoginForm extends Component {
     this.state = {user: ''};
     this.handleChange = this.handleChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
   }
 
   onSubmit(e){
     e.preventDefault();
   }
 
-  handleClick(){
+  handleFocus(){
     this.props.setRole(this.state.user);
   }
 
   handleChange(event){
     this.setState(
-      { user: event.target.value}
+      { user: event.target.value }
     )
   }
 
@@ -42,12 +42,12 @@ class LoginForm extends Component {
 
             <label className='input-area'>
               <input className='form' type='password'
-                  placeholder='Введите пароль'
+                  placeholder='Введите пароль' onFocus={this.handleFocus}
                   //onChange={this.handleChange('password')}
                   />
             </label>
-            <Link to='/cabinet' className='btn'>
-              <button className='btn-login' type='submit' onClick={this.handleClick}>Войти</button>
+            <Link to={`/cabinet/${this.props.path}`} className='btn'>
+              <button className='btn-login' type='submit'>Войти</button>
             </Link>
             <label className='link-to'>
               <Link to='/passwordreset' className='linkto'>Забыли пароль?</Link>
@@ -64,4 +64,4 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm
+export default LoginForm;

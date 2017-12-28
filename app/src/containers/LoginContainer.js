@@ -8,15 +8,31 @@ class LoginContainer extends Component{
   constructor(props){
     super(props);
     this.state = {};
+   // this.layoutChecker = this.layoutChecker.bind(this);
+  }
+
+  layoutChecker(userRole) {
+    if (userRole === 'USER') {
+      return 'user'
+    } else if (userRole === 'ADMIN') {
+      return 'admin'
+    }
   }
 
   render(){
     const userLogin = this.props.userLogin;
-    return <LoginForm setRole={userLogin} />
+    const userRole = this.props.userRole;
+    return <LoginForm setRole={userLogin} path={this.layoutChecker(userRole)} />
   }
 }
 
-const mapDispatchToProps = dispatch => {
+function mapStateToProps (state) {
+  return {
+    userRole: state.login.userRole
+  }
+}
+
+function mapDispatchToProps (dispatch) {
   return {
     userLogin: role => {
       dispatch(userLogin(role))
@@ -25,6 +41,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(null, mapDispatchToProps)(LoginContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer)
 
 //bindActionCreators(userLogin, dispatch)
