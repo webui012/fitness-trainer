@@ -11,4 +11,10 @@ const rootReducer = combineReducers({
   errorMessage
 });
 
+
+const rootReducer = combineReducers({
+  login,
+})
+
+
 export default rootReducer;

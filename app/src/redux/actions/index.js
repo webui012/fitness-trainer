@@ -1,3 +1,4 @@
+
 import {
   FORM_REQUEST,
   FORM_UCCESS,
@@ -114,3 +115,12 @@ export const pageLoadingEnd = data => ({
 //     type: ACTION_FAILURE,
 //     payload: data //message error
 // });
+
+export default function userLogin(role){
+
+  return {
+    type: 'USER_LOGIN',
+    payload: role
+  }
+}
+
