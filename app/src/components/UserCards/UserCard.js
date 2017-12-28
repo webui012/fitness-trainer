@@ -26,11 +26,7 @@ const UserCard = props => {
           return (
             <tbody key={i}>
               <tr className='users-row'>
-                <th className='user-firstname'>
-                  <Link to={user.url} className='users-row'>
-                    {user.firstname}
-                  </Link>
-                </th>
+                <th className='user-firstname'>{user.firstname}</th>
                 <th className='user-lastname'>{user.lastname}</th>
                 <th className='user-registration-date'>{user.registrationDate}</th>
                 <th className='user-status'>{user.status}</th>
