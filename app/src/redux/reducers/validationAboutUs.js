@@ -2,7 +2,8 @@ let initialState = {
   name: null,
   patronymic: null,
   surname: null,
-  contraindications: null
+  contraindications: null,
+  aims: null
 }
 
 export default (state = initialState, action) => {

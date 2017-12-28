@@ -26,9 +26,7 @@ import Api from '../../redux/Api';
 class AboutUs extends Component {
 
   componentDidMount() {
-    setTimeout(() => {
-      this.props.pageLoading()
-    }, 2000);
+    this.props.pageLoading()
     this.props.pageLoadingEnd(this.props.data)
   }
 
@@ -56,8 +54,7 @@ class AboutUs extends Component {
         <Aims aimsFormData={this.props.data.aimsFormData} />
         <Contraindications />
         {this.props.errorMessage ? <ErrorLoadingData closeMessage={this.props.closeErrorMessage} /> : null}
-
-      </div>
+      </div> : <Loading />
     );
   }
 }

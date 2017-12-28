@@ -6,8 +6,8 @@ class Api {
      //return fetch('http://asdas.asdasd').then((res) => res.json())
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        formData[`${data.userId}`] = data;
-        reject(formData);
+        dataAll.formData[`${data.userId}`] = data;
+        reject(dataAll.formData);
       }, 2000);
     });
   }
