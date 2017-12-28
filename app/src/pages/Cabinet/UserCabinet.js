@@ -1,8 +1,6 @@
 import React from 'react';
+import { AboutUs } from 'Pages';
 
-const UserCabinet = () =>
-  <div className='user-cabinet'>
-    <h1>USER</h1>
-  </div>
+const UserCabinet = () => <AboutUs />
 
 export default UserCabinet;

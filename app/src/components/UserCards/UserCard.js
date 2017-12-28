@@ -32,9 +32,9 @@ const UserCard = props => {
                 <th className='user-status'>{user.status}</th>
               </tr>
             </tbody>
-        )
-      })
-    }
+          )
+        })
+        }
       </Table>
     </div>
     )

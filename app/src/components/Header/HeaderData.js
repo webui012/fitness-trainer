@@ -4,6 +4,10 @@ const HeaderData = {
   logo: Logo,
 
   navigation: [
+    // {
+    //   name: 'AboutUs',
+    //   url: '/aboutus',
+    // },
     {
       name: 'Главная',
       url: '/',
@@ -32,20 +36,20 @@ const HeaderData = {
           name: 'Одежда для фитнесса',
           url: '/services/fitness-clothing',
         },
-        {
-          name: 'Другие услуги',
-          url: '/services/',
-        },
+        // {
+        //   name: 'Другие услуги',
+        //   url: '/services/',
+        // },
       ]
     },
     {
       name: 'Акции',
       url: '/sales',
     },
-    {
-      name: 'Форум',
-      url: '/forum',
-    },
+    // {
+    //   name: 'Форум',
+    //   url: '/forum',
+    // },
     {
       name: 'Контакты',
       url: '/contacts',

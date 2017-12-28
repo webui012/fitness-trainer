@@ -18,17 +18,20 @@ import {
   Nutrition,
   TrainingPlanSection,
   UserCabinet,
-  AdminCabinet,
+  AdminCabinet
 } from 'Pages';
 import routes from './routes';
 
 import './App.scss';
+
 import MainLayout from '../../layouts/MainLayout';
 import AdminLayout from '../../layouts/AdminLayout';
+
 
 const App = () =>
   <Router>
     <div className='app'>
+
       <Switch>
         {routes.map(({path, exact, component: Component, layout: Layout}) => (
           <Route exact={exact} path={path} render={() => (

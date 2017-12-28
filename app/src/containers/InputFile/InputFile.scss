@@ -1,0 +1,30 @@
+.InputFile {
+  width: 100%;
+  position: relative;
+
+  .file-address {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    font-size: 16px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background: #33cc33;
+    color: #fff;
+    margin-top: 20px;
+  }
+
+  .load-avatar {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    position: absolute;
+    left: 0 ;
+    top: 0;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
+}
