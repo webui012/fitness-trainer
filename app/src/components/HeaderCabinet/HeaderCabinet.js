@@ -1,20 +1,16 @@
 import React from 'react';
-import {
-  Logo,
-  Navigation,
-  Login
-} from 'Components';
+import { Navigation } from 'Components';
+import HeaderCabinetUserData from './HeaderCabinetUserData';
 import './HeaderCabinet.scss';
 
 
 const HeaderCabinet = props => {
-  const {logo, navigation} = props.data;
+  const navigation = HeaderCabinetUserData.navigation;
+{console.log(navigation)}
 
   return (
-    <header className='header'>
-      <Logo data={logo} />
+    <header className='header-user-cabinet'>
       <Navigation data={navigation} />
-      <Login />
     </header>
   )
 }

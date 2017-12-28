@@ -1,10 +1,10 @@
 import React from 'react';
-import { Header } from 'Components';
-import HeaderCabinetUserData from '../components/HeaderCabinet/HeaderCabinetUserData';
+import { Header, HeaderCabinet } from 'Components';
 
 const UserLayout = props => (
   <div className='login-layout'>
     <Header />
+    <HeaderCabinet />
     <div className='layout-content'>
       {props.children}
     </div>
