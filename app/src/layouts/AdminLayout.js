@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { HeaderCabinet } from 'Components';
 import HeaderCabinetAdminData from '../components/HeaderCabinet/HeaderCabinetAdminData';
 
@@ -9,7 +8,5 @@ const AdminLayout = props => (
     <div className='layout-content'>
       {props.children}
     </div>
-  </div>
-)
 
 export default AdminLayout;
