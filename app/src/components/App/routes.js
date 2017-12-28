@@ -88,21 +88,21 @@ const routes = [
     layout: LoginLayout
   },
   {
-    path: '/cabinet',
-    exact: true,
-    component: Cabinet,
-    layout: LoginLayout
-  },
-  {
-    path: '',
+    path: '/cabinet/user',
     exact: true,
     component: UserCabinet,
     layout: UserLayout
   },
   {
-    path: '',
+    path: '/cabinet/admin',
     exact: true,
     component: AdminCabinet,
+    layout: AdminLayout
+  },
+  {
+    path: '/cabinet/admin/home',
+    exact: true,
+    component: Cabinet,
     layout: AdminLayout
   },
 

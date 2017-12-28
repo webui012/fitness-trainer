@@ -5,10 +5,10 @@ import {
   Login
 } from 'Components';
 import './HeaderCabinet.scss';
-import HeaderCabinetData from './HeaderCabinetData'
 
-const HeaderCabinet = () => {
-  const { logo, navigation } = HeaderCabinetData;
+
+const HeaderCabinet = props => {
+  const {logo, navigation} = props.data;
 
   return (
     <header className='header'>

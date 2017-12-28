@@ -1,6 +1,6 @@
 import Logo from 'Components'
 
-const HeaderCabinetData = {
+const HeaderCabinetAdminData = {
   logo: Logo,
 
   navigation: [
@@ -9,10 +9,14 @@ const HeaderCabinetData = {
       url: '/cabinet/admin/home',
     },
     {
-      name: 'О тренере',
+      name: 'Заказы',
       url: '/cabinet/admin/about',
+    },
+    {
+      name: 'Пользователи',
+      url: '/cabinet/admin/users',
     },
   ],
 }
 
-export default HeaderCabinetData;
+export default HeaderCabinetAdminData;
