@@ -10,3 +10,5 @@ export {default as Services} from './Services/Services';
 export {default as SignupPage} from './SignupPage/SignupPage';
 export {default as TrainingPlanSection} from './TrainingPlanSection/TrainingPlanSection';
 export {default as Cabinet} from './Cabinet/Cabinet';
+export {default as AdminCabinet} from './Cabinet/AdminCabinet';
+export {default as UserCabinet} from './Cabinet/UserCabinet';

@@ -1,6 +1,9 @@
 import {
   Homepage,
   About,
+  Cabinet,
+  AdminCabinet,
+  UserCabinet,
   Services,
   Sales,
   Online,
@@ -12,8 +15,10 @@ import {
   TrainingPlanSection
 } from 'Pages';
 
-import MainLayout from '../../layouts/MainLayout'
-import LoginLayout from '../../layouts/LoginLayout'
+import MainLayout from '../../layouts/MainLayout';
+import LoginLayout from '../../layouts/LoginLayout';
+import UserLayout from '../../layouts/UserLayout';
+import AdminLayout from '../../layouts/AdminLayout';
 
 const routes = [
   {
@@ -81,6 +86,24 @@ const routes = [
     exact: true,
     component: SignupPage,
     layout: LoginLayout
+  },
+  {
+    path: '/cabinet',
+    exact: true,
+    component: Cabinet,
+    layout: LoginLayout
+  },
+  {
+    path: '',
+    exact: true,
+    component: UserCabinet,
+    layout: UserLayout
+  },
+  {
+    path: '',
+    exact: true,
+    component: AdminCabinet,
+    layout: AdminLayout
   },
 
 ]
