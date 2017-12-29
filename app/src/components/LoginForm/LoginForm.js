@@ -2,18 +2,28 @@ import React, {Component} from 'react';
 import './LoginForm.scss';
 import { Link } from 'react-router-dom';
 
+
 class LoginForm extends Component {
   constructor(props){
-    super(props)
-
-    this.state = {user: {}}
+    super(props);
+    this.state = {user: ''};
+    this.handleChange = this.handleChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
   }
 
-  onSubmit(){
-    this.props.newUser(this.state.user)
-}
+  onSubmit(e){
+    e.preventDefault();
+  }
 
-  handleChange(){
+  handleFocus(){
+    this.props.setRole(this.state.user);
+  }
+
+  handleChange(event){
+    this.setState(
+      { user: event.target.value }
+    )
   }
 
   render(){
@@ -27,19 +37,18 @@ class LoginForm extends Component {
             <label className='input-area'>
               <input className='form' type='text'
                   placeholder='Введите имя или адрес эл. почты'
-                  onChange={this.handleChange('username')} />
+                  onChange={this.handleChange} />
             </label>
 
             <label className='input-area'>
               <input className='form' type='password'
-                  placeholder='Введите пароль'
-                  onChange={this.handleChange('password')} />
+                  placeholder='Введите пароль' onFocus={this.handleFocus}
+                  //onChange={this.handleChange('password')}
+                  />
             </label>
-
-            <button className='btn-login' type='submit'>
-              <p className='btn'> Войти </p>
-            </button>
-
+            <Link to={`/cabinet/${this.props.path}`} className='btn'>
+              <button className='btn-login' type='submit'>Войти</button>
+            </Link>
             <label className='link-to'>
               <Link to='/passwordreset' className='linkto'>Забыли пароль?</Link>
             </label>
@@ -55,4 +64,4 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm
+export default LoginForm;

@@ -1,0 +1,39 @@
+.header-user-cabinet {
+  z-index: 1000;
+  width: 100%;
+  top: 0;
+  background-color: #33cc33;
+  display: flex;
+  padding: 0 50px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.75);
+
+  .nav-list-item:hover .nav-link-menu {
+    display: flex;
+  }
+
+  .nav-list-item {
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #fff;
+      transform: translateY(2px);
+      transition-property: transform;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-out;
+    }
+
+    &:hover:after {
+      transform: translateY(0);
+    }
+
+    &:hover .nav-link-menu {
+      display: flex;
+    }
+  }
+}
