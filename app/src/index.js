@@ -9,7 +9,7 @@ import './styles/fonts.scss';
 import './styles/common.scss';
 
 let store = createStore(reducer);
-
+window.s = store
 render(
   <Provider store={store}>
     <App />
