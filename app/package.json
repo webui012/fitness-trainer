@@ -51,6 +51,7 @@
     "reactstrap": "^4.8.0",
     "redux": "3.7.2",
     "redux-devtools": "3.4.1",
+    "reselect": "^3.0.1",
     "redux-saga": "^0.16.0",
     "start": "^5.1.0"
   }

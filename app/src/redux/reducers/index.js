@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux';
+import AdminOrders from './AdminOrders';
+import visibilityFilter from './visibilityFilter';
 import spinner from './sendData';
 import AboutUs from './pageLoading';
 import errorMessage from './showErrorMessage';
@@ -10,7 +12,9 @@ const rootReducer = combineReducers({
   AboutUs,
   validationAboutUs,
   errorMessage,
-  login
+  login,
+  AdminOrders,
+  visibilityFilter
 });
 
 export default rootReducer;
