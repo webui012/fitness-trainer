@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Signup} from 'Components';
 import {connect} from 'react-redux';
-import {addUser} from '../../redux/actions/index'
-import { SubmissionError } from 'redux-form'
+import {addUser} from '../../redux/actions/index';
+import { SubmissionError } from 'redux-form';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -12,23 +12,18 @@ class SignupPage extends Component{
     super(props);
     this.routStatus = false;
     this.onSubmitRegistrationData = this.onSubmitRegistrationData.bind(this);
-    this.getStore = this.getStore.bind(this);
   }
 
 	onSubmitRegistrationData(value){
-
-
 		console.log(value);
 		this.props.send(value);
 		this.routStatus = true;
 	}
 
-	getStore() {console.log(this.props.storage)}
 
   	render(){
     return (
       <div>
-        <button onClick={this.getStore}>test</button>
         <Signup
             onSubmit={this.onSubmitRegistrationData}
             routStatus={this.routStatus}
@@ -61,7 +56,7 @@ export default connect(
             				})
 				}
 				dispatch(sendData())
-			}
+			},
 		}
 	)
 

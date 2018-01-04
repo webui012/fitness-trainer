@@ -1,36 +1,10 @@
 import React from 'react';
 import './LoginForm.scss';
 import { Link } from 'react-router-dom';
-import { Field, reduxForm } from 'redux-form'
+import { Field, reduxForm } from 'redux-form';
+import {validate} from './validate';
+import {renderField} from './renderField';
 
-const validate = values => {
-  const errors = {}
-    if (!values.login) {
-      errors.login = 'Required'
-    }
-    if (!values.password) {
-      errors.password = 'Required'
-    }
-    return errors
-}
-
-const renderField = ({
-  input,
-  label,
-  type,
-  className,
-  meta: { touched, error }
-}) => (
-  <div>
-    <input {...input}
-        placeholder={label}
-        type={type}
-        className={className}
-    />
-    {touched &&
-        ((error && <span className='error-message'>{error}</span>))}
-  </div>
-)
 
 let LoginForm = props => {
    const { handleSubmit } = props;
@@ -81,7 +55,7 @@ let LoginForm = props => {
 
 LoginForm = reduxForm(
   {
-    form: 'registration',
+    form: 'loginForm',
     validate
   }
 )(LoginForm)

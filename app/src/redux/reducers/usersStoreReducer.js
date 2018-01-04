@@ -16,7 +16,7 @@ const initialState ={};
 					alert('Welcome' + ' ' + key);
 				}
 			}
-			return state;
+		
 		default: return state;
 	}
 }
