@@ -1,15 +1,19 @@
 import React, {Component} from 'react';
 import './LoginForm.scss';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 
 class LoginForm extends Component {
   constructor(props){
     super(props);
-    this.state = {user: ''};
+    this.state = {
+      user: '',
+      authorized: false
+    };
     this.handleChange = this.handleChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   onSubmit(e){
@@ -26,7 +30,18 @@ class LoginForm extends Component {
     )
   }
 
+ handleClick(){
+   this.setState(
+      { authorized: true }
+    )
+ }
+
   render(){
+    if (this.state.authorized) {
+      return (
+        <Redirect to={this.props.from} />
+      )
+    }
     return (
       <section className='login-page'>
 
@@ -46,9 +61,7 @@ class LoginForm extends Component {
                   //onChange={this.handleChange('password')}
                   />
             </label>
-            <Link to={`/cabinet/${this.props.path}`} className='btn'>
-              <button className='btn-login' type='submit'>Войти</button>
-            </Link>
+            <button className='btn-login' type='submit' onClick={this.handleClick}>Войти</button>
             <label className='link-to'>
               <Link to='/passwordreset' className='linkto'>Забыли пароль?</Link>
             </label>

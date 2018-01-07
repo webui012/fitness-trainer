@@ -1,7 +1,5 @@
-import React from 'react';
-
 const initState = {
-  userRole: 'USER'
+  userRole: 'ALL'
 }
 
 export default function login(state=initState, action) {

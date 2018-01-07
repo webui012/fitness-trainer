@@ -116,7 +116,7 @@ export const pageLoadingEnd = data => ({
 //     payload: data //message error
 // });
 
-export default function userLogin(role){
+export function userLogin(role){
 
   return {
     type: 'USER_LOGIN',
