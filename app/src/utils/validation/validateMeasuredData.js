@@ -11,8 +11,9 @@ export default (value, fieldName, action, store) => {
     } else if (storeName !== null) {
         action({ [fieldName]: null });
     }
-    previousValue = Validation.deleteSpacesAroundEdges(previousValue);
-    currentValue = Validation.checkNotMoreOneDash(previousValue);
+
+    previousValue = currentValue
+    currentValue = Validation.deleteSpacesAroundEdges(previousValue);
 
     if (previousValue !== currentValue) {
         action({ [fieldName]: currentValue });
@@ -21,6 +22,17 @@ export default (value, fieldName, action, store) => {
         action({ [fieldName]: null });
     }
 
+    previousValue = currentValue
+    currentValue = Validation.maxLength(previousValue, 3);
+
+    if (previousValue !== currentValue) {
+        action({ [fieldName]: currentValue });
+        return;
+    } else if (storeName !== null) {
+        action({ [fieldName]: null });
+    }
+
+    previousValue = currentValue
     currentValue = Validation.checkNonNegativeInteger(previousValue);
 
     if (previousValue !== currentValue) {
@@ -30,18 +42,7 @@ export default (value, fieldName, action, store) => {
         action({ [fieldName]: null });
     }
 
-    previousValue = currentValue;
-    currentValue = Validation.maxLength(previousValue, 3);
-
-    if (previousValue !== currentValue) {
-        action({ [fieldName]: currentValue });
-        return;
-    } else if (storeName !== null) {
-        action({ [fieldName]: null });
-    }
-    return currentValue;
-
-    previousValue = currentValue;
+    previousValue = currentValue
     currentValue = Validation.checkNotBeginZero(previousValue);
 
     if (previousValue !== currentValue) {
@@ -50,5 +51,5 @@ export default (value, fieldName, action, store) => {
     } else if (storeName !== null) {
         action({ [fieldName]: null });
     }
-    return currentValue;
+    return currentValue
 }

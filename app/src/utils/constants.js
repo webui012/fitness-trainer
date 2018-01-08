@@ -8,5 +8,6 @@ export const VALIDATION_WARNING = {
   notBeginZero: 'Число не должно начинаться с 0',
   rangeArguments: 'The function must take three arguments',
   fractionalNumber: 'Данное поле может содержать только целое или дробное неотрицательное число',
-  maxLengthArguments: 'You must specify two parameters in the function'
+  maxLengthArguments: 'You must specify two parameters in the function',
+  pngJpgJpegExtension: 'Используйте для загрузки файлы с расширением "jpg", "jpeg", "png"'
 }

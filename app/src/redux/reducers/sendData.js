@@ -1,12 +1,26 @@
-export default (spinner = null, action) => {
+const initialState = {
+  personalData: null,
+  contraindications: null,
+  measuredData: null,
+  aimsData: null,
+  errorMessage: false
+};
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case 'FORM_REQUEST':
-      return 'Данные отправляются...'
+      return { ...state, [action.payload.userId]: 'Данные отправляются...' }
 
     case 'FORM_SUCCESS':
-      return null;
+      return { ...state, [action.payload.userId]: null }
+
+    case 'ACTION_FAILURE':
+      return { ...state, [action.payload.userId]: null, errorMessage: true }
+
+    case 'CLOSE_ACTION_FAILURE':
+      return { ...state, errorMessage: false }
 
     default:
-      return spinner;
+      return state;
   }
 }

@@ -2,7 +2,8 @@ import avatar from '../../images/about_us_avatar.png';
 import bodyImg from '../../images/body-sizes.jpg';
 
 
-export const dataAll = {
+export const dataAboutUs = {
+    
 fullNameAvatar : {
     defaultAvatar: avatar,
     userAvatar: null

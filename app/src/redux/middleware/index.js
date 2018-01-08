@@ -1,10 +1,12 @@
 import { all } from 'redux-saga/effects';
 import sendData from './sendData';
 import pageLoading from './pageLoading';
+import pageLoadingContacts from './pageLoadingContacts';
 
-export default function* rootSaga() {
+export default function * rootSaga() {
   yield all([
     sendData(),
-    pageLoading()
+    pageLoading(),
+    pageLoadingContacts()
   ])
 }

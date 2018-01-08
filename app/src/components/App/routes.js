@@ -1,6 +1,7 @@
 import {
   Homepage,
   About,
+  AboutUs,
   Cabinet,
   AdminCabinet,
   UserCabinet,
@@ -12,8 +13,7 @@ import {
   LoginPage,
   SignupPage,
   Nutrition,
-  TrainingPlanSection,
-  AboutUs
+  TrainingPlanSection
 } from 'Pages';
 import LoginContainer from '../../containers/LoginContainer';
 
@@ -118,6 +118,13 @@ const routes = [
     path: '/cabinet',
     exact: true,
     component: UserCabinet,
+    role: 'USER',
+    layout: UserLayout
+  },
+  {
+    path: '/cabinet/user/metrics',
+    exact: true,
+    component: AboutUs,
     role: 'USER',
     layout: UserLayout
   },

@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import './Aims.scss';
 import { connect } from 'react-redux';
 import { formReguest, warningMessage } from '../../redux/actions';
-import '../../redux/Api/validation/validation.scss';
-import validate from '../../redux/Api/validation/validateAims';
+import '../../utils/validation/validation.scss';
+import validate from '../../utils/validation/validateAims';
 
 class Aims extends Component {
   formHandler = event => {
     event.preventDefault()
 
     const aims = validate(
-      this.refs.select.value,
+      this.select.value,
       'aims',
       this.props.warningMessage,
       this.props.validation
@@ -24,7 +24,6 @@ class Aims extends Component {
 
     if (aims) {
       this.props.formReguest(data)
-      this.refs.select.value = '';
     }
   }
 
@@ -34,7 +33,7 @@ class Aims extends Component {
       <div className='aims-wrap'>
         <label>{nameField}</label>
         <div>
-          <select ref='select' className={this.props.validation['aims'] ? 'select-warning' : null}>
+          <select ref={select => this.select = select} className={this.props.validation['aims'] ? 'select-warning' : null}>
             <option id='default-option'>Выберите цель ваших тренировок...</option>
             {options.map((items, i) =>
               <option
@@ -47,7 +46,7 @@ class Aims extends Component {
             {this.props.validation['aims']}
           </span>
         </div>
-        {this.props.spinner ? <div>{this.props.spinner}</div> : null}
+        {this.props.sendDataSpinner.aimsData ? <div>{this.props.sendDataSpinner.aimsData}</div> : null}
         <input
             type='submit'
             value='Сохранить данные'
@@ -68,7 +67,7 @@ Aims.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    spinner: state.spinner,
+    sendDataSpinner: state.sendDataSpinner,
     validation: state.validationAboutUs
   }
 }

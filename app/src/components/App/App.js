@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import {
   Homepage,
   About,
+  AboutUs,
   Services,
   Sales,
   Online,

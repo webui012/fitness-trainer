@@ -1,4 +1,4 @@
-import { VALIDATION_WARNING } from '../../../utils/constants';
+import { VALIDATION_WARNING } from '../constants';
 
 class Validation {
 
@@ -52,12 +52,16 @@ class Validation {
   static checkNonNegativeInteger(str) {
     if (!(/^[0-9]*$/.test(str))) {
       return VALIDATION_WARNING.nonNegativeInteger;
+    } else {
+      return str;
     }
   }
 
   static checkNotBeginZero(str) {
     if (/^0[0-9]*$/.test(str)) {
       return VALIDATION_WARNING.notBeginZero;
+    } else {
+      return str;
     }
   }
 
@@ -76,6 +80,8 @@ class Validation {
   static checkIntegerAndFractionalNumber(str, item1, item2) {
     if (!(/^[0-9]*[.,]?[0-9]+(?:[eE][-+]?[0-9]+)?$/.test(str))) {
       return VALIDATION_WARNING.fractionalNumber;
+    } else {
+      return str;
     }
   }
 
@@ -95,13 +101,18 @@ class Validation {
     }
 
     if (str.length > length) {
-      return `Данное поле не должно включать более ${length} символов, в данный момент вы ввели ${str.length} символов`;
+      return `Данное поле не должно включать более ${length} символов, в данный момент количество введённых символов равно ${str.length}`;
     }
     return str;
   }
-}
 
-// const validation = new Validation();
-// validation.checkRussianLettersAndDash('ррпр?опопор');
+  static checkPngJpgJpegExtension(str) {
+    if (!(/(\.jpg|\.jpeg|\.png)$/i.test(str))) {
+      return VALIDATION_WARNING.pngJpgJpegExtension;
+    } else {
+      return str;
+    }
+  }
+}
 
 export default Validation;
