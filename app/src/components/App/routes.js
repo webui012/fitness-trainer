@@ -101,13 +101,6 @@ const routes = [
     layout: LoginLayout
   },
   {
-    path: '/cabinet',
-    exact: true,
-    component: LoginContainer,
-    role: 'ALL',
-    layout: MainLayout
-  },
-  {
     path: '/cabinet/user',
     exact: true,
     component: UserCabinet,
@@ -122,11 +115,11 @@ const routes = [
     layout: AdminLayout
   },
   {
-    path: '/cabinet/admin/home',
+    path: '/cabinet',
     exact: true,
-    component: Cabinet,
-    role: 'ADMIN',
-    layout: AdminLayout
+    component: UserCabinet,
+    role: 'USER',
+    layout: UserLayout
   },
 ]
 

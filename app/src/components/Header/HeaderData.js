@@ -54,6 +54,10 @@ const HeaderData = {
       name: 'Контакты',
       url: '/contacts',
     },
+    {
+      name: 'Кабинет',
+      url: '/cabinet',
+    },
   ],
 }
 

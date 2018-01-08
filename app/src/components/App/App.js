@@ -73,14 +73,3 @@ function mapStateToProps (state) {
 }
 
 export default connect(mapStateToProps)(App);
-
-/*
-<Route path='/about' component={About} />
-            <Route exact path='/services' component={Services} />
-            <Route path='/services/online-training' component={Online} />
-            <Route path='/services/training-plan' component={TrainingPlanSection} />
-            <Route path='/services/nutrition-plan' component={Nutrition} />
-            <Route path='/sales' component={Sales} />
-            <Route path='/forum' component={Forum} />
-            <Route path='/contacts' component={Contacts} />
-            */

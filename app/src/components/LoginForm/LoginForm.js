@@ -12,7 +12,7 @@ class LoginForm extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -20,8 +20,8 @@ class LoginForm extends Component {
     e.preventDefault();
   }
 
-  handleFocus(){
-    this.props.setRole(this.state.user);
+  handleBlur(){
+    this.props.setRole(this.state.user.toUpperCase());
   }
 
   handleChange(event){
@@ -52,12 +52,12 @@ class LoginForm extends Component {
             <label className='input-area'>
               <input className='form' type='text'
                   placeholder='Введите имя или адрес эл. почты'
-                  onChange={this.handleChange} />
+                  onChange={this.handleChange} onBlur={this.handleBlur} />
             </label>
 
             <label className='input-area'>
               <input className='form' type='password'
-                  placeholder='Введите пароль' onFocus={this.handleFocus}
+                  placeholder='Введите пароль'
                   //onChange={this.handleChange('password')}
                   />
             </label>
