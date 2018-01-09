@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
             return { ...state, spinner: true };
 
         case ActionTypes.PAGE_SALES_SUCCESS:
-            return { ...state, spinner: false, data: action.payload };
+            return { ...state, spinner: false, data: action.data };
 
         case ActionTypes.ERROR:
             return { ...state, spinner: false, error:false};

@@ -7,7 +7,7 @@ function* pageDataLoadingAsync(action) {
     try {
         const data = yield call(Api.dataSales);
 
-        yield put({ type: ActionTypes.PAGE_SALES_SUCCESS, data});
+        yield put({ type: ActionTypes.PAGE_SALES_SUCCESS, data });
     } catch (e) {
         yield put({type: ActionTypes.ERROR});
     }
