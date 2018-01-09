@@ -1,14 +1,19 @@
+export {default as Aims} from './Aims/Aims';
 export {default as App} from './App/App';
 export {default as Button} from './Button/Button';
 export {default as ContactsField} from './ContactsField/ContactsField';
+export {default as ErrorLoadingData} from './ErrorLoadingData/ErrorLoadingData';
 export {default as Footer} from './Footer/Footer';
 export {default as Header} from './Header/Header';
 export {default as Image} from './Image/Image';
+export {default as InputFile} from './InputFile/InputFile';
+export {default as Loading} from './Loading/Loading';
 export {default as Login} from './Login/Login';
 export {default as LoginForm} from './LoginForm/LoginForm';
 export {default as Logo} from './Logo/Logo';
 export {default as Main} from './Main/Main';
 export {default as Map} from './Map/Map';
+export {default as MeasuredData} from './MeasuredData/MeasuredData';
 export {default as MotivationSection} from './MotivationSection/MotivationSection';
 export {default as Navigation} from './Navigation/Navigation';
 export {default as NutritionItem} from './NutritionItem/NutritionItem';
@@ -27,4 +32,3 @@ export {default as Socials} from './Socials/Socials';
 export {default as HeaderCabinet} from './HeaderCabinet/HeaderCabinet';
 export {default as AdminSidebar} from './AdminSidebar/AdminSidebar';
 export {default as UserCards} from './UserCards/UserCards';
-
