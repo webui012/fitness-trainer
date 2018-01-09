@@ -1,8 +1,7 @@
 const ActionTypes = {
-    WAIT_PAGE: 'WAIT_PAGE',
-    DELETE_WAIT_PAGE: 'DELETE_WAIT_PAGE',
-    ADD_SALES: 'ADD_SALES',
-    DELETE_SALES: 'DELETE_SALES'
+    PAGE_SALES_WAIT: 'PAGE_SALES_WAIT',
+    PAGE_SALES_SUCCESS: 'PAGE_SALES_SUCCESS',
+    ERROR: 'ERROR'
 };
 
 export default ActionTypes;

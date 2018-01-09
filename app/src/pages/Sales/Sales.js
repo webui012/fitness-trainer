@@ -4,19 +4,16 @@ import Spinner from '../../components/Spinner/Spinner';
 import SalesData from './SalesData';
 import './Sales.scss';
 import { connect } from 'react-redux';
-import { waitPage } from '../../redux/actions';
+import Api from '../../redux/Api';
+import { waitSalesPage, waitSalesPageEnd, showError } from '../../redux/actions';
 
 class Sales extends Component{
-    constructor(props){
-        super(props)
-    }
-
     componentDidMount(){
-        this.props.waitPage()
+        this.props.waitSalesPage();
     }
 
     render(){
-        return (
+        return ( this.props.data ?
 
           <div className='sales-wrap'>
             {
@@ -28,24 +25,25 @@ class Sales extends Component{
                             />
                         )
                     }
-            {this.props.spinner ? <Spinner /> : null}
-          </div>
-
-
+          </div> : <Spinner />
         );
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        spinner: state.spinner
-    }
-}
+const mapStateToProps = state => ({
+        spinner: state.spinner,
+        data: state.data
+     /*   showMessage: state.sendDataSpinner.showMessage*/
+    });
 
-const mapDispatchToProps = dispatch => {
-    return {
-        waitPage : () => dispatch(waitPage())
-    }
-}
+
+
+const mapDispatchToProps = dispatch => ({
+        waitSalesPage: () => dispatch(waitSalesPage()),
+        waitSalesPageEnd: data => dispatch(waitSalesPageEnd(data))
+    });
+
+
+/*showError: data => dispatch(showMessage(data))*/
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sales)

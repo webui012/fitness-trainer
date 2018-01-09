@@ -1,14 +1,21 @@
 import ActionTypes from '../constants';
 
-export const waitPage = () => ({
-    type: ActionTypes.WAIT_PAGE
+export const waitSalesPage = () => ({
+    type: ActionTypes.PAGE_SALES_WAIT
 });
 
-export const deleteWaitSendData = () => ({
-    type: ActionTypes.DELETE_WAIT_PAGE
+export const waitSalesPageEnd = data => ({
+    type: ActionTypes.PAGE_SALES_SUCCESS,
+    data
 });
 
 
+export const showError = () => ({
+    type: ActionTypes.ERROR
+});
+
+
+/*
 export const addSales = data => ({
     type: ActionTypes.ADD_SALES
 });
@@ -16,4 +23,4 @@ export const addSales = data => ({
 export const deleteSales = data => ({
     type: ActionTypes.DELETE_SALES,
     payload: data
-});
+});*/

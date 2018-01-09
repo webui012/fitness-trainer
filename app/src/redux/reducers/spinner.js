@@ -1,10 +1,24 @@
-export default (spinner = null, action) => {
+import ActionTypes from '../constants';
+
+
+const initialState = {
+    spinner: false,
+    data: null,
+    error: null
+};
+
+export default (state = initialState, action) => {
     switch (action.type) {
-        case 'WAIT_PAGE':
-            return 'Ожидайте, пожалуйста, акции загружаются...';
-        case 'DELETE_WAIT_PAGE':
-            return null;
+        case ActionTypes.PAGE_SALES_WAIT:
+            return { ...state, spinner: true };
+
+        case ActionTypes.PAGE_SALES_SUCCESS:
+            return { ...state, spinner: false, data: action.payload };
+
+        case ActionTypes.ERROR:
+            return { ...state, spinner: false, error:false};
+
         default:
-            return spinner;
+            return state;
     }
 }
