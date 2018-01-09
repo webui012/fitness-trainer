@@ -17,7 +17,6 @@ import {
   SignupPage,
   Nutrition,
   TrainingPlanSection,
-  AdminOrders
   UserCabinet,
   AdminCabinet
 } from 'Pages';
@@ -33,7 +32,6 @@ const App = () =>
   <Router>
     <div className='app'>
 
-
       <Switch>
         {routes.map(({path, exact, component: Component, layout: Layout}) => (
           <Route exact={exact} path={path} render={() => (
@@ -43,7 +41,6 @@ const App = () =>
           )} />
         ))}
       </Switch>
-
     </div>
   </Router>
 

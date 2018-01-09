@@ -1,10 +1,4 @@
 
-export const setVisibilityFilter = (filter) => ({
-  type: 'SET_VISIBILITY_FILTER',
-  filter
-})
-
-
 import {
   FORM_REQUEST,
   FORM_UCCESS,

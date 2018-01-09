@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import {App} from 'Components';
+
 import { createStore, applyMiddleware } from 'redux';
 import reducer from './redux/reducers';
 
@@ -16,12 +17,10 @@ import './styles/common.scss';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(reducer, applyMiddleware(sagaMiddleware));
-window.s = store
 
 sagaMiddleware.run(rootSaga);
 
 // let store = createStore(rootReducer);
-
 
 
 render(
