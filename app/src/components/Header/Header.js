@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Logo,
   Navigation,
   Login
 } from 'Components';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getHeaderData } from '../../redux/reducers/Header';
 import './Header.scss';
 
-import HeaderData from './HeaderData'
-
-const Header = () => {
-  const logo = HeaderData.logo,
-        navigation = HeaderData.navigation
+const Header = props => {
+  const { logo, navigation } = props.header
 
   return (
     <header className='header'>
@@ -21,5 +21,14 @@ const Header = () => {
   )
 }
 
+function mapStateToProps(state) {
+  return {
+    header: getHeaderData(state)
+  }
+}
 
-export default Header
+Header.propTypes = {
+  header: PropTypes.object
+};
+
+export default connect(mapStateToProps, null)(Header)

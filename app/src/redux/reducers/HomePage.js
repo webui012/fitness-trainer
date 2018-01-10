@@ -1,4 +1,7 @@
-const HomepageData = {
+import ActionTypes from '../constants';
+import { createSelector } from 'reselect'
+
+const initialState = {
   slides: [
     {
       url: 'https://www.hdwallpapers.in/walls/pushup_workout-HD.jpg',
@@ -35,4 +38,13 @@ const HomepageData = {
   }
 }
 
-export default HomepageData
+// Selector
+export const getHomePageData = state => state.HomePage
+
+// Reducer
+export default HomePage = (state = initialState, action) => {
+  switch (action.type) {
+    default:
+      return state
+  }
+}
