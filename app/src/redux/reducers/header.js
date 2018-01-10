@@ -1,13 +1,10 @@
-import Logo from 'Components'
+import ActionTypes from '../constants';
+import { createSelector } from 'reselect'
+import Logo from '../../components/Logo/Logo';
 
-const HeaderData = {
-  logo: Logo,
-
+const initialState = {
+  logo: "Fintess",
   navigation: [
-    // {
-    //   name: 'AboutUs',
-    //   url: '/aboutus',
-    // },
     {
       name: 'Главная',
       url: '/',
@@ -36,29 +33,36 @@ const HeaderData = {
           name: 'Одежда для фитнесса',
           url: '/services/fitness-clothing',
         },
-        // {
-        //   name: 'Другие услуги',
-        //   url: '/services/',
-        // },
+        {
+          name: 'Другие услуги',
+          url: '/services/',
+        },
       ]
     },
     {
       name: 'Акции',
       url: '/sales',
     },
-    // {
-    //   name: 'Форум',
-    //   url: '/forum',
-    // },
+    {
+      name: 'Форум',
+      url: '/forum',
+    },
     {
       name: 'Контакты',
       url: '/contacts',
     },
-    {
-      name: 'Кабинет',
-      url: '/cabinet',
-    },
   ],
 }
 
-export default HeaderData;
+// Selector
+export const getHeaderData = state => state.header
+
+// Reducer
+const header = (state = initialState, action) => {
+  switch (action.type) {
+    default:
+      return state
+  }
+}
+
+export default header

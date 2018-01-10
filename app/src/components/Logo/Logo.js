@@ -4,7 +4,7 @@ import './Logo.scss';
 
 const Logo = props =>
   <div className='logo-wrapper'>
-    <Link to='/' className='logo'>Fitness</Link>
+    <Link to='/' className='logo'>{props.data}</Link>
   </div>;
 
-export default Logo;
+export default Logo
