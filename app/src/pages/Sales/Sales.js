@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { SalesItem } from 'Components';
 import Spinner from '../../components/Spinner/Spinner';
 import SalesData from './SalesData';
 import './Sales.scss';
 import { connect } from 'react-redux';
 import Api from '../../redux/Api';
-import { waitSalesPage, waitSalesPageEnd, showError } from '../../redux/actions';
+import { waitSalesPage, waitSalesPageEnd } from '../../redux/actions';
 
 class Sales extends Component{
+
+    static propTypes = {
+        spinner: PropTypes.bool,
+        data: PropTypes.object
+    }
+
+
     componentDidMount(){
         this.props.waitSalesPage();
     }

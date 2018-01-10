@@ -1,6 +1,5 @@
 import ActionTypes from '../constants';
 
-
 const initialState = {
     spinner: false,
     data: null,
