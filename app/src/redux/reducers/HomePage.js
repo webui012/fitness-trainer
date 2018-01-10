@@ -41,7 +41,7 @@ const initialState = {
 }
 
 // Selector
-export const getSliderData = state => state.HomePage.sliderData
+export const getHomePageData = state => state.HomePage
 
 // Reducer
 const HomePage = (state = initialState, action) => {

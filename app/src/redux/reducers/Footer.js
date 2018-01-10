@@ -56,7 +56,7 @@ const initialState = {
       icon: instagram
     },
   ],
-  copyright: '&copy;2017 All Rights Reserved',
+  copyright: '© 2017 All Rights Reserved',
 }
 
 // Selector
