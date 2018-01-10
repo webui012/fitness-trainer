@@ -1,10 +1,9 @@
 import ActionTypes from '../constants';
 import { createSelector } from 'reselect'
-import Logo from 'Components'
+import Logo from '../../components/Logo/Logo';
 
 const initialState = {
-  logo: Logo,
-
+  logo: "Fintess",
   navigation: [
     {
       name: 'Главная',

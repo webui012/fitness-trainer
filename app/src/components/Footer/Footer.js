@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
-import {
-  Logo,
-  Navigation,
-  Socials
-} from 'Components';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getFooterData } from '../../redux/reducers/Footer';
 import './Footer.scss'
+
+import {
+  Logo,
+  Navigation,
+  Socials
+} from 'Components'
 
 const Footer = props => {
   const { logo, caption, socials, copyright, navigation } = props.footer
@@ -23,11 +24,9 @@ const Footer = props => {
   )
 }
 
-function mapStateToProps(state) {
-  return {
-    footer: getFooterData(state)
-  }
-}
+const mapStateToProps = state =>({
+  footer: getFooterData(state)
+})
 
 Footer.propTypes = {
   footer: PropTypes.object

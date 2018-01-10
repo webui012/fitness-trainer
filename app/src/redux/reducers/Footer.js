@@ -1,15 +1,13 @@
 import ActionTypes from '../constants';
 import { createSelector } from 'reselect'
-import Logo from 'Components'
+import Logo  from '../../components/Logo/Logo';
 import facebook from '../../images/facebook.svg';
 import twitter from '../../images/twitter.svg';
 import instagram from '../../images/instagram.svg';
 
 const initialState = {
-  logo: Logo,
-
+  logo: "Fintess",
   caption: 'Find your perfect body!',
-
   navigation: [
     {
       name: 'Главная',

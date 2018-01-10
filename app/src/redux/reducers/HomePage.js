@@ -11,7 +11,7 @@ const initialState = {
 
        {
         url: 'https://media.self.com/photos/5867a314bf5e49f716efe864/2:1/pass/workout-package_1.png',
-        alt: 'Workout Pakage'
+        alt: 'Workout Package'
       },
 
        {
