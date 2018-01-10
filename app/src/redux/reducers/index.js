@@ -3,6 +3,7 @@ import header from './header';
 import footer from './footer';
 import homePage from './homePage';
 import sendDataSpinner from './sendData';
+import pageAboutGetStaticData from './page_About_getStaticData';
 import AboutUs from './pageLoading';
 import Contacts from './pageLoadingContacts';
 import validationAboutUs from './validationAboutUs';
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   footer,
   homePage,
   sendDataSpinner,
+  pageAboutGetStaticData,
   AboutUs,
   Contacts,
   validationAboutUs,
