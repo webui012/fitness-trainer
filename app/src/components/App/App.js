@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
+  Redirect,
+  Switch,
 } from 'react-router-dom';
-
+import { connect } from 'react-redux';
 import {
   Homepage,
   About,
+  AboutUs,
   Services,
   Sales,
   Online,
@@ -15,29 +18,59 @@ import {
   LoginPage,
   SignupPage,
   Nutrition,
-  TrainingPlanSection
+  TrainingPlanSection,
+  UserCabinet,
+  AdminCabinet
 } from 'Pages';
-
+import routes from './routes';
+//import isAuthorized from '../../utils/isAuthorized';
 import './App.scss';
-import MainLayout from '../../layouts/MainLayout'
 
-const App = () =>
-  <Router>
-    <div className='app'>
-      <MainLayout>
-        <Route exact path='/' component={Homepage} />
-        <Route exact path='/about' component={About} />
-        <Route exact path='/services' component={Services} />
-        <Route exact path='/services/online-training' component={Online} />
-        <Route exact path='/services/training-plan' component={TrainingPlanSection} />
-        <Route exact path='/services/nutrition-plan' component={Nutrition} />
-        <Route exact path='/sales' component={Sales} />
-        <Route exact path='/forum' component={Forum} />
-        <Route exact path='/contacts' component={Contacts} />
-        <Route exact path='/login' component={LoginPage} />
-        <Route exact path='/signup' component={SignupPage} />
-      </MainLayout>
-    </div>
-  </Router>
+import MainLayout from '../../layouts/MainLayout';
+import AdminLayout from '../../layouts/AdminLayout';
 
-export default App;
+
+class App extends Component {
+
+  isAuthorized(pageRole, stateRole){
+   if (pageRole !== stateRole && pageRole !== 'ALL'){
+      return false
+    } else {
+      return true
+    }
+  }
+
+  render(){
+    const { userRole } = this.props;
+    return (
+      <Router>
+        <div className='app'>
+          <Switch>
+            {routes.map(({path, exact, component: Component, layout: Layout, role: role}) => (
+              <Route exact={exact} path={path} render={props => (
+                this.isAuthorized(role, userRole)?(
+                  <Layout>
+                    <Component {...props} />
+                  </Layout>
+                ):(
+                  <Redirect to={{
+                    pathname: '/login',
+                    state: { from: props.location }
+                  }} />
+                )
+              )} />
+            ))}
+          </Switch>
+        </div>
+      </Router>
+    )
+  }
+}
+
+function mapStateToProps (state) {
+  return {
+    userRole: state.login.userRole
+  }
+}
+
+export default connect(mapStateToProps)(App);
