@@ -2,8 +2,6 @@ export { default as Aims } from './Aims/Aims';
 export { default as App } from './App/App';
 export { default as ContactsField } from './ContactsField/ContactsField';
 export { default as ErrorLoadingData } from './ErrorLoadingData/ErrorLoadingData';
-export { default as Footer } from './Footer/Footer';
-export { default as Header } from './Header/Header';
 export { default as InputFile } from './InputFile/InputFile';
 export { default as Loading } from './Loading/Loading';
 export { default as Login } from './Login/Login';

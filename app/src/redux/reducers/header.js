@@ -55,14 +55,14 @@ const initialState = {
 }
 
 // Selector
-export const getHeaderData = state => state.Header
+export const getHeaderData = state => state.header
 
 // Reducer
-const Header = (state = initialState, action) => {
+const header = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state
   }
 }
 
-export default Header
+export default header

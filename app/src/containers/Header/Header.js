@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getHeaderData } from '../../redux/reducers/Header';
-import './Header.scss';
-
+import { getHeaderData } from '../../redux/reducers/header';
 import {
   Logo,
   Navigation,
   Login
 } from 'Components'
+import './Header.scss';
 
 const Header = props => {
   const { logo, navigation } = props.header
@@ -23,7 +22,7 @@ const Header = props => {
 }
 
 const mapStateToProps = state =>({
-    header: getHeaderData(state)
+  header: getHeaderData(state)
 })
 
 Header.propTypes = {

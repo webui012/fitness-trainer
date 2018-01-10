@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getFooterData } from '../../redux/reducers/Footer';
-import './Footer.scss'
-
+import { getFooterData } from '../../redux/reducers/footer';
 import {
   Logo,
   Navigation,
   Socials
 } from 'Components'
+import './Footer.scss'
 
 const Footer = props => {
   const { logo, caption, socials, copyright, navigation } = props.footer

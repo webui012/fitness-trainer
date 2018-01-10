@@ -41,14 +41,14 @@ const initialState = {
 }
 
 // Selector
-export const getHomePageData = state => state.HomePage
+export const getHomePageData = state => state.homePage
 
 // Reducer
-const HomePage = (state = initialState, action) => {
+const homePage = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state
   }
 }
 
-export default HomePage
+export default homePage

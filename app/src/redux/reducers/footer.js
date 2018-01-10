@@ -58,14 +58,14 @@ const initialState = {
 }
 
 // Selector
-export const getFooterData = state => state.Footer
+export const getFooterData = state => state.footer
 
 // Reducer
-const Footer = (state = initialState, action) => {
+const footer = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state
   }
 }
 
-export default Footer
+export default footer
