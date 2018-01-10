@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import spinner from './spinner'
+import sales from './Sales/sales';
 
 const rootReducer = combineReducers({
-    spinner
+    sales
 })
 
 export default rootReducer;
