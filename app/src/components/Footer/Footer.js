@@ -1,18 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getFooterData } from '../../redux/reducers/Footer';
+import './Footer.scss'
+
 import {
   Logo,
   Navigation,
   Socials
-} from 'Components';
-import './Footer.scss'
-import FooterData from './FooterData'
+} from 'Components'
 
-const Footer = () => {
-  const logo = FooterData.logo,
-        caption = FooterData.caption,
-        socials = FooterData.socials,
-        copyright = FooterData. copyright,
-        navigation = FooterData.navigation
+const Footer = props => {
+  const { logo, caption, socials, copyright, navigation } = props.footer
 
   return (
     <footer className='footer'>
@@ -25,4 +24,12 @@ const Footer = () => {
   )
 }
 
-export default Footer
+const mapStateToProps = state =>({
+  footer: getFooterData(state)
+})
+
+Footer.propTypes = {
+  footer: PropTypes.object
+};
+
+export default connect(mapStateToProps, null)(Footer)

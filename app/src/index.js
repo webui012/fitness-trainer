@@ -15,7 +15,7 @@ import './styles/common.scss';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(reducer, applyMiddleware(sagaMiddleware));
-
+window.store = store
 sagaMiddleware.run(rootSaga);
 
 render(
