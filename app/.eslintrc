@@ -1,0 +1,63 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "React": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "arrow-spacing": ["error", { "before": true, "after": true }],
+    "array-bracket-spacing": ["error", "always", { "objectsInArrays": false, "arraysInArrays": false }],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "jsx-quotes": [1, "prefer-single"],
+    "lines-between-class-members": ["error", "always"],
+    "no-trailing-spaces": "error",
+    "quote-props": ["error", "as-needed"],
+    "semi": 0,
+    "no-eq-null": "error",
+    "no-cond-assign": ["error", "always"],
+    "no-empty": "error",
+    "no-template-curly-in-string": "error",
+    "curly": "error",
+    "eqeqeq": ["error", "always"],
+    "no-alert": "error",
+    "no-multi-spaces": "error",
+    "arrow-parens": ["error", "as-needed"],
+    "constructor-super": "error",
+    "no-const-assign": "error",
+    "no-dupe-class-members": "error",
+    "no-duplicate-imports": "error",
+    "no-this-before-super": "error",
+    "no-useless-constructor": "error",
+    "no-var": "error",
+    "object-shorthand": [2, "consistent-as-needed"],
+    "prefer-template": "error",
+    "template-curly-spacing": "error",
+    "keyword-spacing": ["error", { "overrides": {
+      "if": { "after": true, "before": true },
+      "for": { "after": false },
+      "while": { "after": false }
+    } }],
+    "brace-style": "error",
+    "array-bracket-newline": ["error", { "multiline": true }],
+    "func-call-spacing": ["error", "never"],
+    "computed-property-spacing": ["error", "never"],
+    "react/no-unused-state": 1,
+    "react/require-render-return": 1,
+    "react/prefer-stateless-function": [1, { "ignorePureComponents": true }],
+    "react/jsx-equals-spacing": [1, "never"],
+    "react/jsx-curly-spacing": [1, {"when": "never"}],
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "react/jsx-indent": [2, 2],
+    "react/jsx-indent-props": [2, 4],
+    "react/jsx-key": 1,
+    "react/jsx-no-duplicate-props": 1,
+    "react/jsx-no-bind": 1,
+    "react/jsx-tag-spacing": 1,
+  }
+}
