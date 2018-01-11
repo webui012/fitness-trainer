@@ -46,8 +46,8 @@ class App extends Component {
       <Router>
         <div className='app'>
           <Switch>
-            {routes.map(({path, exact, component: Component, layout: Layout, role: role}) => (
-              <Route exact={exact} path={path} render={props => (
+            {routes.map(({path, exact, id, component: Component, layout: Layout, role: role}) => (
+              <Route key={id} exact={exact} path={path} render={props => (
                 this.isAuthorized(role, userRole)?(
                   <Layout>
                     <Component {...props} />
