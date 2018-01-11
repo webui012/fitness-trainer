@@ -32,6 +32,31 @@ const initialState = {
                     "action": "SHOW_UNPAYED"
                 },
             ]
+        },
+        {
+            "type": "Тип услуги",
+            "options": [
+                {
+                    "value": "Все",
+                    "action": "SHOW_ALL_SERVICES"
+                },
+                {
+                    "value": "Онлайн тренировка",
+                    "action": "SHOW_ONLINE_SERVICE"
+                },
+                {
+                    "value": "Правильное питание",
+                    "action": "SHOW_NUTRITION_SERVICE"
+                },
+                {
+                    "value": "Программа тренировок",
+                    "action": "SHOW_PROGRAM_SERVICE"
+                },
+                {
+                    "value": "Одежда для фитнесса",
+                    "action": "SHOW_CLOTHES_SERVICE"
+                },
+            ]
         }
     ],
 
@@ -42,7 +67,7 @@ const initialState = {
             price: 200,
             payment: 'Privat 24',
             status: 'Оплачен',
-            service: ['Правильное питание']
+            service: 'Правильное питание'
         },
         {
             id: 1,
@@ -66,7 +91,7 @@ const initialState = {
             price: 100,
             payment: 'Privat 24',
             status: 'Оплачен',
-            service: 'Правильное питание'
+            service: 'Одежда для фитнесса'
         },
     ]
 };
@@ -81,6 +106,8 @@ const userOrders = (state = initialState, action) => {
 const getUserOrders = state => state.userOrders.orders;
 export const getUserSelections = state => state.userOrders.selections;
 
+const getOrdersVisibilityFilter = state => state.ordersVisibilityFilter;
+
 export const getVisibleOrders = createSelector(
   [getOrdersVisibilityFilter, getUserOrders],
   (ordersVisibilityFilter, orders) => {
@@ -93,12 +120,32 @@ export const getVisibleOrders = createSelector(
         return [...orders.sort( (a, b) => a.price - b.price)];
       break;
 
-      case 'SHOW_PAYED':
+      case 'SHOW_PAID':
         return orders.filter(o => o.status === 'Оплачен');
       break;
 
-      case 'SHOW_UNPAYED':
+      case 'SHOW_UNPAID':
         return orders.filter(o => o.status === 'Ожидает оплаты');
+      break;
+
+      case 'SHOW_ALL_SERVICES':
+        return orders;
+      break;
+
+      case 'SHOW_ONLINE_SERVICE':
+          return orders.filter(o => o.service === 'Тренировка 1х1');
+      break;
+
+      case 'SHOW_NUTRITION_SERVICE':
+          return orders.filter(o => o.service === 'Правильное питание');
+      break;
+
+      case 'SHOW_PROGRAM_SERVICE':
+          return orders.filter(o => o.service === 'Программа тренировок');
+      break;
+
+      case 'SHOW_CLOTHES_SERVICE':
+          return orders.filter(o => o.service === 'Одежда для фитнесса');
       break;
 
       default:

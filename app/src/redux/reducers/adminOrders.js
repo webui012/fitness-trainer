@@ -100,11 +100,11 @@ export const getVisibleOrders = createSelector(
         return [...orders.sort( (a, b) => a.price - b.price)];
       break;
 
-      case 'SHOW_PAYED':
+      case 'SHOW_PAID':
         return orders.filter(o => o.status === 'Оплачен');
       break;
 
-      case 'SHOW_UNPAYED':
+      case 'SHOW_UNPAID':
         return orders.filter(o => o.status === 'Ожидает оплаты');
       break;
 

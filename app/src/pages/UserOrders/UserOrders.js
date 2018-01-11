@@ -49,16 +49,35 @@ class UserOrders extends Component {
     switch (e.target.value) {
       case 'По цене':
         this.props.setOrdersVisibilityFilter('SORT_BY_PRICE');
-        break;
+      break;
+
       case 'По id':
         this.props.setOrdersVisibilityFilter('SORT_BY_ID');
-        break;
+      break;
+
       case 'Оплачен':
-        this.props.setOrdersVisibilityFilter('SHOW_PAYED');
-        break;
+        this.props.setOrdersVisibilityFilter('SHOW_PAID');
+      break;
+
       case 'Ожидает оплаты':
-        this.props.setOrdersVisibilityFilter('SHOW_UNPAYED');
+        this.props.setOrdersVisibilityFilter('SHOW_UNPAID');
+      break;
+
+      case 'Онлайн тренировка':
+        this.props.setOrdersVisibilityFilter('SHOW_ONLINE_SERVICE');
         break;
+
+      case 'Правильное питание':
+          this.props.setOrdersVisibilityFilter('SHOW_NUTRITION_SERVICE');
+      break;
+
+      case 'Программа тренировок':
+          this.props.setOrdersVisibilityFilter('SHOW_PROGRAM_SERVICE');
+      break;
+
+      case 'Одежда для фитнесса':
+          this.props.setOrdersVisibilityFilter('SHOW_CLOTHES_SERVICE');
+      break;
     }
   };
 
