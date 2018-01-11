@@ -1,5 +1,6 @@
 import {
   Homepage,
+  AdminOrders,
   About,
   AboutUs,
   Cabinet,
@@ -142,6 +143,14 @@ const routes = [
     role: 'USER',
     layout: UserLayout,
     id: 'fcJpTBRz6N'
+  },
+  {
+    path: '/cabinet/admin/orders',
+    exact: true,
+    component: AdminOrders,
+    role: 'ADMIN',
+    layout: AdminLayout,
+    id: 'fcJpTaRz6N'
   },
 ]
 
