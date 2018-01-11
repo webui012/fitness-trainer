@@ -1,5 +1,7 @@
 import {
   Homepage,
+  AdminOrders,
+  UserOrders,
   About,
   AboutUs,
   Cabinet,
@@ -143,6 +145,22 @@ const routes = [
     layout: UserLayout,
     id: 'fcJpTBRz6N'
   },
-]
+  {
+    path: '/cabinet/admin/orders',
+    exact: true,
+    component: AdminOrders,
+    role: 'ADMIN',
+    layout: AdminLayout,
+    id: 'fcJpTaRz6N'
+  },
+  {
+    path: '/cabinet/user/orders',
+    exact: true,
+    component: UserOrders,
+    role: 'USER',
+    layout: UserLayout,
+    id: 'fcJpTaRz6Nsq'
+  },
+];
 
 export default routes;

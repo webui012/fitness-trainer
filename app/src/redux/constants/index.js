@@ -18,3 +18,5 @@ export const DELETE_WAIT_SEND_DATA = 'DELETE_WAIT_SEND_DATA';
 
 export const PAGE_ABOUT_GETDATA_REQUEST = 'PAGE_ABOUT_GETDATA_REQUEST';
 export const PAGE_ABOUT_GETDATA_SUCCESS = 'PAGE_ABOUT_GETDATA_SUCCESS';
+
+export * from './ordersVisibilityFilter';

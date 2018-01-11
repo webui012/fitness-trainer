@@ -62,3 +62,4 @@ export function userLogin(role){
 }
 
 export * from './sales';
+export * from './setOrdersVisibilityFilter';
