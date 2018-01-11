@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import sales from './Sales/sales';
 import header from './header';
 import footer from './footer';
 import homePage from './homePage';
@@ -18,7 +19,9 @@ const rootReducer = combineReducers({
   AboutUs,
   Contacts,
   validationAboutUs,
-  login
+  login,
+  sales
 });
 
 export default rootReducer;
+

@@ -1,0 +1,4 @@
+export const PAGE_SALES_WAIT = 'PAGE_SALES_WAIT';
+export const PAGE_SALES_SUCCESS = 'PAGE_SALES_SUCCESS';
+
+
