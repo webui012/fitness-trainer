@@ -4,32 +4,35 @@
   position: fixed;
   flex-direction: column;
   justify-content: center;
+  top: 0;
+  background: #fff;
 
   .error-loading-data {
     font-weight: 600;
     width: 500px;
     height: 200px;
-    padding: 0 20px;
+    padding: 50px 20px;
     line-height: 30px;
-    background: #f5f5ea;
-    background-image: url('../../images/error.jpg');
+    background: #2c2c2a;
+    /* background-image: url(/images/error.jpg); */
     text-align: center;
-    display: flex;
-    align-items: center;
-    
-    // position: fixed;
-    // top: calc(50% - 100px);
-    // left: calc(50% - 250px);
+    position: fixed;
+    top: calc(50% - 100px);
+    left: calc(50% - 250px);
+    border-radius: 20px;
+    color: #fff;
 
     button[name='agree'] {
       padding: 10px 40px;
       margin-top: 15px;
-      background: #33cc33;
+      background: #2db82d;;
       color: #fff;
       cursor: pointer;
       border: 0;
       font-size: 14px;
+      font-weight: 700;
       text-transform: uppercase;
+      border-radius: 8px;
     }
   }
 }
