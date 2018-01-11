@@ -27,7 +27,7 @@ class AdminOrders extends Component {
   }
 
   // Render options for each select item
-  renderOptions = options => {setOrdersVisibilityFilter
+  renderOptions = options => {
     return options.map((o, i) =>
       <option key={i} value={o.value}>{o.value}</option>
     )
