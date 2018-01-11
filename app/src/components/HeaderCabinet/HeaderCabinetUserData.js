@@ -16,6 +16,10 @@ const HeaderCabinetUserData = {
       name: 'Мои тренеровки',
       url: '/cabinet/user/trainings',
     },
+    {
+      name: 'Заказать услугу',
+      url: '/cabinet/user/service-order',
+    },
   ],
 }
 
