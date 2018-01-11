@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+
 import sales from './Sales/sales';
 import header from './header';
 import footer from './footer';
@@ -12,6 +13,8 @@ import AboutUs from './pageLoading';
 import Contacts from './pageLoadingContacts';
 import validationAboutUs from './validationAboutUs';
 import login from './userLogin';
+import {orderForm} from './serviceOrderForm'
+import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
   header,
@@ -26,7 +29,8 @@ const rootReducer = combineReducers({
   Contacts,
   validationAboutUs,
   login,
-  sales
+  sales,
+  form: formReducer
 });
 
 export default rootReducer;

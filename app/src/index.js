@@ -10,11 +10,9 @@ import './styles/reset.scss';
 import './styles/fonts.scss';
 import './styles/common.scss';
 
-
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(reducer, applyMiddleware(sagaMiddleware));
+const store = createStore(reducer, applyMiddleware(sagaMiddleware), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 sagaMiddleware.run(rootSaga);
-
 
 render(
   <Provider store={store}>
