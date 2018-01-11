@@ -1,4 +1,6 @@
 export { default as Homepage } from './Homepage/Homepage';
+export { default as AdminOrders } from './AdminOrders/AdminOrders';
+export { default as UserOrders } from './UserOrders/UserOrders';
 export { default as About } from './About/About';
 export { default as Contacts } from './Contacts/Contacts';
 export { default as Forum } from './Forum/Forum';
