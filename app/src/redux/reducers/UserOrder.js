@@ -9,7 +9,7 @@ const initialState = {
             price: 200,
             payment: 'Privat 24',
             status: 'Оплачен',
-            service: ['Правильное питание']
+            service: 'Правильное питание'
         },
         {
             id: 23,

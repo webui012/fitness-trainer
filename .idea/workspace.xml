@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aac99a8b-585a-4bf2-aadd-74d9cbbfd870" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/components/UserOrderItem/UserOrderItem.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/components/UserOrderItem/UserOrderItem.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/UserOrder/UserOrder.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/UserOrder/UserOrder.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/redux/reducers/UserOrder.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/redux/reducers/visibilityFilter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/package.json" afterPath="$PROJECT_DIR$/app/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/App/App.js" afterPath="$PROJECT_DIR$/app/src/components/App/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/App/routes.js" afterPath="$PROJECT_DIR$/app/src/components/App/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Header/HeaderData.js" afterPath="$PROJECT_DIR$/app/src/components/Header/HeaderData.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/index.js" afterPath="$PROJECT_DIR$/app/src/components/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/index.js" afterPath="$PROJECT_DIR$/app/src/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/pages/index.js" afterPath="$PROJECT_DIR$/app/src/pages/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/redux/actions/index.js" afterPath="$PROJECT_DIR$/app/src/redux/actions/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/redux/reducers/UserOrder.js" afterPath="$PROJECT_DIR$/app/src/redux/reducers/UserOrder.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/redux/reducers/index.js" afterPath="$PROJECT_DIR$/app/src/redux/reducers/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -31,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="UserOrder.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserOrder.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/redux/reducers/UserOrder.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+            <state relative-caret-position="96">
+              <caret line="49" column="48" lean-forward="true" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -43,56 +29,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserOrder.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/pages/UserOrder/UserOrder.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1980">
-              <caret line="66" column="37" lean-forward="false" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserOrder.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/pages/UserOrder/UserOrder.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="visibilityFilter.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/redux/reducers/visibilityFilter.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserOrderItem.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/UserOrderItem/UserOrderItem.js">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/redux/reducers/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#40#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserOrderItem.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/UserOrderItem/UserOrderItem.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-200">
-              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -119,17 +63,17 @@
         <option value="$PROJECT_DIR$/app/src/components/App/routes.js" />
         <option value="$PROJECT_DIR$/app/src/components/Header/HeaderData.js" />
         <option value="$PROJECT_DIR$/app/src/components/App/App.js" />
-        <option value="$PROJECT_DIR$/app/src/redux/reducers/index.js" />
         <option value="$PROJECT_DIR$/app/src/redux/reducers/visibilityFilter.js" />
         <option value="$PROJECT_DIR$/app/src/components/index.js" />
         <option value="$PROJECT_DIR$/app/src/pages/index.js" />
         <option value="$PROJECT_DIR$/app/package.json" />
         <option value="$PROJECT_DIR$/app/src/index.js" />
-        <option value="$PROJECT_DIR$/app/src/redux/reducers/UserOrder.js" />
         <option value="$PROJECT_DIR$/app/src/pages/UserOrder/UserOrder.js" />
         <option value="$PROJECT_DIR$/app/src/pages/UserOrder/UserOrder.scss" />
         <option value="$PROJECT_DIR$/app/src/components/UserOrderItem/UserOrderItem.scss" />
         <option value="$PROJECT_DIR$/app/src/components/UserOrderItem/UserOrderItem.js" />
+        <option value="$PROJECT_DIR$/app/src/redux/reducers/UserOrder.js" />
+        <option value="$PROJECT_DIR$/app/src/redux/reducers/index.js" />
       </list>
     </option>
   </component>
@@ -276,14 +220,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="redux" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="fitness-trainer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fitness-trainer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="redux" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -332,18 +268,17 @@
       <option name="presentableId" value="Default" />
       <updated>1515621762300</updated>
       <workItem from="1515621766155" duration="3917000" />
-      <workItem from="1515657452319" duration="8123000" />
+      <workItem from="1515657452319" duration="8504000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12040000" />
+    <option name="totallyTimeSpent" value="12421000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14225277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14225277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -666,22 +601,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/redux/reducers/index.js">
+    <entry file="file://$PROJECT_DIR$/app/src/redux/reducers/UserOrder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        <state relative-caret-position="96">
+          <caret line="49" column="48" lean-forward="true" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/redux/reducers/UserOrder.js">
+    <entry file="file://$PROJECT_DIR$/app/src/redux/reducers/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        <state relative-caret-position="270">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
