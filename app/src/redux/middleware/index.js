@@ -10,10 +10,7 @@ export default function* rootSaga() {
     sendData(),
     pageLoading(),
     pageLoadingContacts(),
-<<<<<<< HEAD
-    showSalesPage()
-=======
+    showSalesPage(),
     pageAboutGetStaticData()
->>>>>>> ebf1dd8ae7f2b7e185e3840feee1aeed9f596882
   ])
 }
