@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getVisibleOrders, getSelections } from '../../redux/reducers/adminOrders';
+import { getVisibleOrders, getAdminSelections } from '../../redux/reducers/adminOrders';
 import { setOrdersVisibilityFilter } from '../../redux/actions';
 import OrderItem from '../../components/OrderItem/OrderItem';
 import './AdminOrders.scss';
@@ -13,7 +13,7 @@ class AdminOrders extends Component {
   // Select items render
   renderSelections = selections => {
     return selections.map((select, i) => {
-      const { type, options } = select
+      const { type, options } = select;
 
       return (
         <div key={i} className='select-item'>
@@ -24,14 +24,14 @@ class AdminOrders extends Component {
         </div>
       )
     })
-  }
+  };
 
   // Render options for each select item
   renderOptions = options => {
     return options.map((o, i) =>
       <option key={i} value={o.value}>{o.value}</option>
     )
-  }
+  };
 
   // Orders list render
   renderOrders = orders => {
@@ -49,22 +49,22 @@ class AdminOrders extends Component {
   handleSelect = e => {
     switch (e.target.value) {
       case 'По цене':
-        this.props.setOrdersVisibilityFilter('SORT_BY_PRICE')
+        this.props.setOrdersVisibilityFilter('SORT_BY_PRICE');
         break;
       case 'По id':
-        this.props.setOrdersVisibilityFilter('SORT_BY_ID')
+        this.props.setOrdersVisibilityFilter('SORT_BY_ID');
         break;
       case 'Оплачен':
-        this.props.setOrdersVisibilityFilter('SHOW_PAYED')
+        this.props.setOrdersVisibilityFilter('SHOW_PAID');
         break;
       case 'Ожидает оплаты':
-        this.props.setOrdersVisibilityFilter('SHOW_UNPAYED')
+        this.props.setOrdersVisibilityFilter('SHOW_UNPAID');
         break;
     }
-  }
+  };
 
   render() {
-    const { orders, selections } = this.props
+    const { orders, selections } = this.props;
 
     return (
       <div className='orders-wrapper'>
@@ -82,9 +82,9 @@ class AdminOrders extends Component {
 
 const mapStateToProps = state => {
   return {
-    selections: getSelections(state),
+    selections: getAdminSelections(state),
     orders: getVisibleOrders(state)
   }
-}
+};
 
 export default connect(mapStateToProps, { setOrdersVisibilityFilter })(AdminOrders);

@@ -26,11 +26,11 @@ const initialState = {
         },
         {
           "value": "Оплачен",
-          "action": "SHOW_PAYED"
+          "action": "SHOW_PAID"
         },
         {
           "value": "Ожидает оплаты",
-          "action": "SHOW_UNPAYED"
+          "action": "SHOW_UNPAID"
         },
       ]
     }
