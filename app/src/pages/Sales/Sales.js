@@ -5,13 +5,14 @@ import Spinner from '../../components/Spinner/Spinner';
 import SalesData from './SalesData';
 import './Sales.scss';
 import { connect } from 'react-redux';
-import { waitSalesPage, waitSalesPageEnd } from '../../redux/actions/sales';
+import { waitSalesPage } from '../../redux/actions';
 
 class Sales extends Component{
 
     static propTypes = {
         spinner: PropTypes.bool,
-        data: PropTypes.array
+        data: PropTypes.array,
+        waitSalesPage: PropTypes.func
     };
 
 
@@ -21,7 +22,7 @@ class Sales extends Component{
     render(){
         return ( this.props.data ?
                 <div className='sales-wrap'>
-                    { SalesData.map( item =>
+                    { this.props.data.map( item =>
                         <SalesItem key={item.id}
                                    salesHeadline={item.salesHeadline}
                                    content={item.content}
