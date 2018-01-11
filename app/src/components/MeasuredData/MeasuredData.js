@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './MeasuredData.scss';
 import PropTypes from 'prop-types';
-import { Loading } from 'Components';
+import { Spinner } from 'Components';
 import { connect } from 'react-redux';
 import { formReguest, warningMessage } from '../../redux/actions';
 import '../../utils/validation/validation.scss';
@@ -108,7 +108,7 @@ class MeasuredData extends Component {
                 </span>
               </div>
             )}
-            {this.props.sendDataSpinner.measuredData ? <div>{this.props.sendDataSpinner.measuredData}</div> : null}
+            {this.props.sendDataSpinner.measuredData ? <Spinner /> : null}
             <input type='submit' value='Сохранить данные' className='submit-full-name' />
           </fieldset>
         </form>

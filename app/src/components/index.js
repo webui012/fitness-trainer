@@ -23,6 +23,7 @@ export { default as ServiceSection } from './ServiceSection/ServiceSection';
 export { default as Service } from './ServiceSection/Service/Service';
 export { default as Signup } from './Signup/Signup';
 export { default as Slider } from './Slider/Slider';
+export { default as Spinner } from './Spinner/Spinner';
 export { default as Socials } from './Socials/Socials';
 export { default as HeaderCabinet } from './HeaderCabinet/HeaderCabinet';
 export { default as AdminSidebar } from './AdminSidebar/AdminSidebar';

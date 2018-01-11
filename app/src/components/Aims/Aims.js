@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Aims.scss';
 import { connect } from 'react-redux';
+import { Spinner } from 'Components';
 import { formReguest, warningMessage } from '../../redux/actions';
 import '../../utils/validation/validation.scss';
 import validate from '../../utils/validation/validateAims';
@@ -46,7 +47,7 @@ class Aims extends Component {
             {this.props.validation['aims']}
           </span>
         </div>
-        {this.props.sendDataSpinner.aimsData ? <div>{this.props.sendDataSpinner.aimsData}</div> : null}
+        {this.props.sendDataSpinner.aimsData ? <Spinner /> : null}
         <input
             type='submit'
             value='Сохранить данные'

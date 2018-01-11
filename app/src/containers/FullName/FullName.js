@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { InputFile } from 'Components';
 import { connect } from 'react-redux';
+import { Spinner } from 'Components';
 import { formReguest, warningMessage } from '../../redux/actions';
 import './FullName.scss';
 import '../../utils/validation/validation.scss';
@@ -111,7 +112,7 @@ class FullName extends Component {
               name={this.props.validation.avatar}
           />
           {this.getInputs()}
-          {this.props.sendDataSpinner.personalData ? <div>{this.props.sendDataSpinner.personalData}</div> : null}
+          {this.props.sendDataSpinner.personalData ? <Spinner /> : null}
           <input type='submit' value='Сохранить данные' className='submit-full-name' />
         </form>
       </div>

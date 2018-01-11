@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Spinner } from 'Components';
 import { formReguest, warningMessage } from '../../redux/actions';
 import validate from '../../utils/validation/validateContraindications';
 import './Contraindications.scss';
@@ -49,7 +50,7 @@ class Contraindications extends Component {
           {this.props.validation['contraindications']}
         </span>
         {this.props.sendDataSpinner.contraindications ?
-          <div>{this.props.sendDataSpinner.contraindications}</div> : null}
+          <Spinner />: null}
         <input type='submit' value='Сохранить данные' className='submit-contraindications' />
       </form>
     )

@@ -6,10 +6,10 @@ const init = {
 export default (state = init, action) => {
     switch (action.type) {
         case 'PAGE_CONTACTS_REQUEST':
-            return { ...state, loading: true }
+            return { ...state }
 
         case 'PAGE_CONTACTS_SUCCESS':
-            return { ...state, loading: false, data: action.payload }
+            return { ...state, data: action.payload }
 
         default:
             return state;

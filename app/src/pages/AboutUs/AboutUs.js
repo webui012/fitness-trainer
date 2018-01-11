@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Aims, MeasuredData, Loading, ErrorLoadingData } from 'Components';
+import { Aims, MeasuredData, Spinner, ErrorLoadingData } from 'Components';
 import { Contraindications, FullName } from 'Containers';
 import { connect } from 'react-redux';
 import { pageLoading, pageLoadingEnd, closeErrorMessage } from '../../redux/actions';
@@ -41,7 +41,7 @@ class AboutUs extends Component {
         <Contraindications />
         {this.props.errorMessage ?
           <ErrorLoadingData closeMessage={this.props.closeErrorMessage} /> : null}
-      </div> : <Loading />
+      </div> : <Spinner />
     )
   }
 }
