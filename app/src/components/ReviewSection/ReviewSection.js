@@ -10,19 +10,19 @@ const ReviewSection = props => {
 
 
     return (
-        <div>
-            <h3 className='title-name'>{props.data.title}</h3>
-            <Swiper {...params} className='swiper-wrapper'>
-                {slides.map((slider, i) =>
-                    <div key={i} className='review-slide'>
-                        <div className='slide-content'>
-                            <span className='review-name'>{slider.name}</span>
-                            <p  className='review-text'>{slider.text}</p>
-                        </div>
-                        <img className='review-avatar' src={slider.url} alt={slider.alt} />
-                    </div>)}
-            </Swiper>
-        </div>
+      <div>
+        <h3 className='title-name'>{props.data.title}</h3>
+        <Swiper {...params} className='swiper-wrapper'>
+          {slides.map((slider, i) =>
+            <div key={i} className='review-slide'>
+              <div className='slide-content'>
+                <span className='review-name'>{slider.name}</span>
+                <p className='review-text'>{slider.text}</p>
+              </div>
+              <img className='review-avatar' src={slider.url} alt={slider.alt} />
+            </div>)}
+        </Swiper>
+      </div>
     )
 }
 
