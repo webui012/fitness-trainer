@@ -74,44 +74,44 @@ const initialState = {
       service: 'Правильное питание'
     },
   ]
-}
+};
 
 const adminOrders = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state
   }
-}
+};
 
-const getAdminOrders = state => state.adminOrders.orders
-const getOrdersVisibilityFilter = state => state.ordersVisibilityFilter
+const getAdminOrders = state => state.adminOrders.orders;
+const getOrdersVisibilityFilter = state => state.ordersVisibilityFilter;
 
-export const getSelections = state => state.adminOrders.selections
+export const getAdminSelections = state => state.adminOrders.selections;
 
 export const getVisibleOrders = createSelector(
   [getOrdersVisibilityFilter, getAdminOrders],
   (ordersVisibilityFilter, orders) => {
     switch (ordersVisibilityFilter) {
       case 'SORT_BY_ID':
-        return [...orders.sort( (a, b) => a.id - b.id)]
+        return [...orders.sort( (a, b) => a.id - b.id)];
       break;
 
       case 'SORT_BY_PRICE':
-        return [...orders.sort( (a, b) => a.price - b.price)]
+        return [...orders.sort( (a, b) => a.price - b.price)];
       break;
 
       case 'SHOW_PAYED':
-        return orders.filter(o => o.status === 'Оплачен')
+        return orders.filter(o => o.status === 'Оплачен');
       break;
 
       case 'SHOW_UNPAYED':
-        return orders.filter(o => o.status === 'Ожидает оплаты')
+        return orders.filter(o => o.status === 'Ожидает оплаты');
       break;
 
       default:
         return orders
     }
   }
-)
+);
 
 export default adminOrders
