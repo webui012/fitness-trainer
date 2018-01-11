@@ -11,6 +11,7 @@ import {
   Nutrition,
   TrainingPlanSection,
     Order,
+    UserOrder,
 } from 'Pages';
 
 import MainLayout from '../../layouts/MainLayout'
@@ -61,6 +62,11 @@ const routes = [
     {
         path: '/order',
         component: Order,
+        layout: MainLayout
+    },
+    {
+        path: '/user-order',
+        component: UserOrder,
         layout: MainLayout
     },
   {

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { render } from 'react-dom';
 import {App} from 'Components';
@@ -8,7 +9,8 @@ import './styles/reset.scss';
 import './styles/fonts.scss';
 import './styles/common.scss';
 
-let store = createStore(reducer);
+const store = createStore(reducer);
+window.s = store
 
 render(
   <Provider store={store}>
