@@ -44,7 +44,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
         waitSalesPage: () => dispatch(waitSalesPage()),
-        waitSalesPageEnd: data => dispatch(waitSalesPageEnd(data))
+       /* waitSalesPageEnd: data => dispatch(waitSalesPageEnd(data))*/
     });
 
 

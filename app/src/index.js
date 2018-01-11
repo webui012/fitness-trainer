@@ -1,5 +1,4 @@
 import React from 'react';
-import 'regenerator-runtime/runtime';
 import { render } from 'react-dom';
 import {App} from 'Components';
 import { createStore, applyMiddleware } from 'redux';
@@ -14,7 +13,6 @@ import './styles/common.scss';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(reducer, applyMiddleware(sagaMiddleware));
-window.store = store;
 sagaMiddleware.run(rootSaga);
 
 

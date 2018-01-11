@@ -3,7 +3,7 @@ import './Spinner.scss';
 
 const Spinner =props =>
   <div className='page-wrap'>
-    <div className='spinner'>
+    <div className='spinner-wrap'>
       <div className='wrap'>
         <div className='bar1'></div>
         <div className='bar2'></div>
