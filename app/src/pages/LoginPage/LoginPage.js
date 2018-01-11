@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {LoginForm} from 'Components';
+import LoginContainer from '../../containers/LoginContainer';
 
-const LoginPage = props => <LoginForm />
+const LoginPage = props => <LoginContainer />
 
 export default LoginPage;

@@ -13,7 +13,7 @@ function* pageDataLoadingAsync(action) {
     }
 }
 
-export default function* sendData() {
+export default function* showSalesPage() {
     yield takeEvery(PAGE_SALES_WAIT, pageDataLoadingAsync);
 }
 
