@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
-import './LoginForm.scss';
+import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-
+import './LoginForm.scss';
 
 class LoginForm extends Component {
   constructor(props){
@@ -16,27 +15,27 @@ class LoginForm extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  onSubmit(e){
+  onSubmit(e) {
     e.preventDefault();
   }
 
-  handleBlur(){
+  handleBlur() {
     this.props.setRole(this.state.user.toUpperCase());
   }
 
-  handleChange(event){
+  handleChange(event) {
     this.setState(
       { user: event.target.value }
     )
   }
 
- handleClick(){
+ handleClick() {
    this.setState(
       { authorized: true }
     )
  }
 
-  render(){
+  render() {
     if (this.state.authorized) {
       return (
         <Redirect to={this.props.from} />
@@ -51,15 +50,14 @@ class LoginForm extends Component {
 
             <label className='input-area'>
               <input className='form' type='text'
-                  placeholder='Введите имя или адрес эл. почты'
-                  onChange={this.handleChange} onBlur={this.handleBlur} />
+                placeholder='Введите имя или адрес эл. почты'
+                onChange={this.handleChange} onBlur={this.handleBlur} />
             </label>
 
             <label className='input-area'>
               <input className='form' type='password'
-                  placeholder='Введите пароль'
-                  //onChange={this.handleChange('password')}
-                  />
+                placeholder='Введите пароль'
+              />
             </label>
             <button className='btn-login' type='submit' onClick={this.handleClick}>Войти</button>
             <label className='link-to'>
