@@ -5,6 +5,7 @@ export { default as ErrorLoadingData } from './ErrorLoadingData/ErrorLoadingData
 export { default as InputFile } from './InputFile/InputFile';
 export { default as Loading } from './Loading/Loading';
 export { default as Login } from './Login/Login';
+export { default as OrderItem } from './OrderItem/OrderItem';
 export { default as LoginForm } from './LoginForm/LoginForm';
 export { default as Logo } from './Logo/Logo';
 export { default as Main } from './Main/Main';
