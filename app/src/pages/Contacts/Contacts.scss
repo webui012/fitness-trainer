@@ -4,28 +4,31 @@
     background-image: url('../../images/pexels-photo.jpg');
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    display: flex;  
-    flex-flow: row wrap;
-    justify-content: space-around;
 
-    .wrap-contacts-field{
-        position: relative;
-        width: 30%;
-        border-radius: 20px;
-        box-shadow: 5px 6px 14px;
-        background: rgba(244,244,244,0.5);
-        font-size: 20px;
-        padding: 20px;
+    .wrap-contacts-info {
+        display: flex;  
+        flex-flow: row wrap;
+        justify-content: space-around;
 
-        .contacts-field-text-title {
-            position: absolute;
-            left: 18px;
-            top: -15px;
-            background: #0c0c0c;
-            padding: 7px 14px;
-            border-radius: 8px;
-            font-weight: normal;
-            color: #fff;
+        .wrap-contacts-field {
+            position: relative;
+            width: 30%;
+            border-radius: 20px;
+            box-shadow: 5px 6px 14px;
+            background: rgba(244,244,244,0.5);
+            font-size: 20px;
+            padding: 20px;
+
+            .contacts-field-text-title {
+                position: absolute;
+                left: 18px;
+                top: -15px;
+                background: #0c0c0c;
+                padding: 7px 14px;
+                border-radius: 8px;
+                font-weight: normal;
+                color: #fff;
+            }
         }
     }
 }

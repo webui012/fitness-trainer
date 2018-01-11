@@ -9,6 +9,19 @@ import validate from '../../utils/validation/validateMeasuredData';
 
 class MeasuredData extends Component {
 
+  static propTypes = {
+    type: PropTypes.string,
+    nameLabel: PropTypes.string,
+    ref: PropTypes.string,
+    nameField: PropTypes.string,
+    placeholder: PropTypes.string,
+    legendName: PropTypes.string,
+    name: PropTypes.string,
+    action: PropTypes.string,
+    method: PropTypes.string,
+    fieldsMeasuredDataForm: PropTypes.array
+  }
+
   formHandler = event => {
     event.preventDefault();
 
@@ -115,19 +128,6 @@ class MeasuredData extends Component {
       </div>
     )
   }
-}
-
-MeasuredData.PropTypes = {
-  type: PropTypes.string,
-  nameLabel: PropTypes.string,
-  ref: PropTypes.string,
-  nameField: PropTypes.string,
-  placeholder: PropTypes.string,
-  legendName: PropTypes.string,
-  name: PropTypes.string,
-  action: PropTypes.string,
-  method: PropTypes.string,
-  fieldsMeasuredDataForm: PropTypes.array
 }
 
 const mapStateToProps = state => {

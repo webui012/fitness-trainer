@@ -8,44 +8,46 @@ import Api from '../../redux/Api';
 
 class Contacts extends Component{
 
+  static propTypes = {
+    key: PropTypes.number,
+    title: PropTypes.string,
+    mainTitle: PropTypes.string,
+    fields: PropTypes.array,
+    data: PropTypes.object,
+    mapData: PropTypes.object
+  };
+
   componentDidMount() {
-    this.props.pageLoadingContacts()
+    this.props.pageLoadingContacts();
   }
 
   render() {
-
-    return (this.props.data ?
-      <div className='contacts'>
+    return (this.props.data
+      ?<div className='contacts'>
         <p className='contacts-title'>{this.props.data.mainTitle}</p>
-        <div className='wrap-contacts-field'>
-          <span className='contacts-field-text-title'>{this.props.data.title}</span>
-          {this.props.data.fields.map( item =>
-            <ContactsField
-                key={item.id}
-                data={item.data}
-          />)}
+        <div className='wrap-contacts-info'>
+          <div className='wrap-contacts-field'>
+            <span className='contacts-field-text-title'>{this.props.data.title}</span>
+            {this.props.data.fields.map( item =>
+              <ContactsField
+                  key={item.id}
+                  data={item.data}
+            />)}
+          </div>
+          <Map data={this.props.data.mapData} />
         </div>
-        <Map data={this.props.data.mapData} />
-      </div> : <Spinner />
+      </div>
+      : <Spinner />
     )
   }
 }
-
-Contacts.propTypes = {
-  key: PropTypes.number,
-  title: PropTypes.string,
-  mainTitle: PropTypes.string,
-  fields: PropTypes.array,
-  data: PropTypes.object,
-  mapData: PropTypes.object
-};
 
 const mapStateToProps = state => ({
   data: state.Contacts.data
 });
 
 const mapDispatchToProps = dispatch => ({
-  pageLoadingContacts: () => dispatch(pageLoadingContacts()),
+  pageLoadingContacts: () => dispatch(pageLoadingContacts())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contacts);
