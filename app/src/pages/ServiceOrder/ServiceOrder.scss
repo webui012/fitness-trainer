@@ -4,10 +4,29 @@
   align-items: center;
   padding: 20px 0;
   justify-content: center;
-  height: 70.86vh;
+  height: 92.86vh;
 
   h2{
     font-weight: 600;
+  }
+
+  .service-order-button{
+    border-radius: 3px;
+    transform: none;
+    border: none;
+    background-color: #008b18;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 1px 3px 3px #545454;
+    cursor: pointer;
+
+    &:hover{
+      background-color: #078b66;
+    }
+    &:active{
+      background-color: #008b18;
+    }
   }
 
   progress{
@@ -71,26 +90,35 @@
     width: 25%;
     height: 90%;
 
+    button:disabled{
+      opacity: 0.5;
+      background-color: #008b18;
+    }
+
+    .service-order-error{
+      color: darkred;
+      font-size: 12px;
+      height: 20px;
+      margin-top: 2px;
+    }
+
     select, input, textarea{
       width: 100%;
-      height: 50px;
+      min-height: 30px;
       border-radius: 3px;
       border: 1px solid darkgray;
       padding: 5px 0 5px 10px;
       font-size: 16px;
     }
 
-    div{
-      display: flex;
-      justify-content: space-between;
-
-      input{
-        width: 48%;
-      }
+    select{
+      min-height: 40px;
     }
 
     button{
-      height: 40px;
+      min-height: 30px;
+      height: 7%;
+      max-height: 40px;
     }
   }
 }

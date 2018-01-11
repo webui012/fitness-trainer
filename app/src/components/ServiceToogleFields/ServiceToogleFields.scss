@@ -5,4 +5,8 @@
   justify-content: space-around;
   height: 20%;
   margin-top: 15px;
+
+  option[value=default]{
+    color: grey;
+  }
 }

@@ -4,4 +4,35 @@
   justify-content: space-between;
   height: 100%;
   margin-top: 15px;
+
+
+  div{
+    display: flex;
+    justify-content: space-between;
+
+    input, button{
+      width: 48%;
+    }
+  }
+
+  textarea {
+    overflow: hidden;
+    height: 75px;
+  }
+
+  .service-order-renderfield,
+  .service-order-renderselect{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    width: 48%;
+
+    label{
+      margin-bottom: 5px;
+    }
+  }
+
+  .service-order-renderselect{
+    width: 100%;
+  }
 }

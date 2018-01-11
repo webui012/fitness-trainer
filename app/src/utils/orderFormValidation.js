@@ -1,54 +1,74 @@
-const require = 'This field is required',
-      positiveNumber = 'Must be a positive number',
-      wholeNumber = 'Must be a whole number',
-      isNumber = 'Must be a number',
-      symbols = 'Unnecessary symbol(s)',
-      minAge = 'You should be at least 18',
-      correctValue = 'Please input correct value';
+import {
+  require,
+  positiveNumber,
+  wholeNumber,
+  isNumber,
+  symbols,
+  minAge,
+  notBeginZero,
+  nonNegativeInteger,
+  chooseService,
+  chooseAim
+} from '../utils/constants';
 
 // checking required field
-export const required = value =>
+const required = value =>
   value ? undefined : require;
 
 // checking for negative number
-export const negativeNumber = value =>
+const negativeNumber = value =>
   value < 0 ? positiveNumber : undefined;
 
 // checking for fractional number
-export const fractionalNumber = value =>
-  (Number(value) ^ 0) === Number(value) ? undefined : wholeNumber;
+const fractionalNumber = value =>
+  (parseInt(value) === parseFloat(value)) ? undefined : wholeNumber;
 
 // checking for string in number
-export const stringInNumber = value =>
+const stringInNumber = value =>
   isNaN(Number(value)) ? isNumber : undefined;
 
 // checking for symbols
-export const specialSymbols = value =>
+const specialSymbols = value =>
   !/^\d+$/.test(value) ? symbols : undefined;
 
 // checking for minimum age
-export const minMaxAge = value =>
+const minMaxAge = value =>
   value < 18 ? minAge : undefined;
 
-// checking for minimum or maximum height
-export const minMaxHeight = value =>
-  (value < 80 || value > 250) ? correctValue : undefined;
+// checking for number begin from 0
+const checkNotBeginZero = value =>
+  /^0[0-9]*$/.test(value) ? notBeginZero : undefined;
 
-// checking for minimum or maximum weight
-export const minMaxWeight = value =>
-  (value < 20 || value > 250) ? correctValue : undefined;
-
-// checking for minimum or maximum measurements
-export const minMaxBodyParameters = value =>
-  (value < 10 || value > 200) ? correctValue : undefined;
+// checking for number begin from 0
+const checkNonNegativeInteger = value =>
+  (!(/^[0-9]*$/.test(value))) ? nonNegativeInteger : undefined;
 
 // checking for maximum number length
 const maxLength = max => value =>
-  value && value.length > max ? `Maximum ${max} digits or less` : undefined;
+  value && value.length > max ? `максимум ${max}-х значное число` : undefined;
+const maxLength2 = maxLength(2);
 
-export const maxLength2 = maxLength(2);
+// checking for minimum value
+const minValue = min => value =>
+  value && value < min ? `минимальное значение ${min}` : undefined;
+const minValue80 = minValue(80);
+const minValue20 = minValue(20);
+const minValue10 = minValue(10);
 
-export const ageValidation = [ negativeNumber, fractionalNumber, specialSymbols, required, stringInNumber, minMaxAge, maxLength2 ];
-export const weightValidation = [ negativeNumber, fractionalNumber, specialSymbols, required, stringInNumber, minMaxWeight ];
-export const heightValidation = [ negativeNumber, fractionalNumber, specialSymbols, required, stringInNumber, minMaxHeight ];
-export const bodyParams = [ negativeNumber, fractionalNumber, specialSymbols, required, stringInNumber, minMaxBodyParameters ];
+const maxValue = max => value =>
+  value && value > max ? `максимальное значение ${max}` : undefined;
+const maxValue250 = maxValue(250);
+const maxValue200 = maxValue(200);
+
+// checking for option selected
+export const checkOptionSelected = value =>
+  value === 'default' ? chooseService : undefined;
+// checking for option selected
+export const checkAimSelected = value =>
+  value === 'default' ? chooseAim : undefined;
+
+// combining validation rules
+export const ageValidation = [ negativeNumber, checkNotBeginZero, checkNonNegativeInteger, stringInNumber, minMaxAge, maxLength2 ];
+export const weightValidation = [ negativeNumber, checkNotBeginZero, checkNonNegativeInteger, stringInNumber, minValue20, maxValue250 ];
+export const heightValidation = [ negativeNumber, checkNotBeginZero, checkNonNegativeInteger, stringInNumber, minValue80, maxValue250 ];
+export const bodyParams = [ negativeNumber, checkNotBeginZero, checkNonNegativeInteger, stringInNumber, minValue10, maxValue200 ];

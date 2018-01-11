@@ -1,18 +1,22 @@
-import * as ActionType from '../constants';
+import {
+  NEXT_STEP_ORDER_FORM,
+  PREV_STEP_ORDER_FORM,
+  LOAD_ORDER_FORM
+} from '../constants';
 
 export const orderForm = (state = {step: 1, isRegistered: true}, action) => {
   switch (action.type) {
-    case ActionType.NEXT_STEP_ORDER_FORM:
+    case NEXT_STEP_ORDER_FORM:
       return {
         ...state,
         step: action.step + 1
       };
-    case ActionType.PREV_STEP_ORDER_FORM:
+    case PREV_STEP_ORDER_FORM:
       return {
         ...state,
         step: action.step - 1
       };
-    case ActionType.LOAD_ORDER_FORM:
+    case LOAD_ORDER_FORM:
       return {
         ...state,
         data: action.data

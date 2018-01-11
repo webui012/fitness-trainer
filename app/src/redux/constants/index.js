@@ -1,3 +1,4 @@
-export const PAGE_LOAD = 'PAGE_LOAD';
-export const NEXT_STEP = 'NEXT_STEP';
-export const PREV_STEP = 'PREV_STEP';
+export const LOAD_ORDER_FORM = 'LOAD_ORDER_FORM';
+export const NEXT_STEP_ORDER_FORM = 'NEXT_STEP_ORDER_FORM';
+export const PREV_STEP_ORDER_FORM = 'PREV_STEP_ORDER_FORM';
+
