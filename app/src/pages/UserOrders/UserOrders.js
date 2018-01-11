@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getVisibleOrders, getSelections } from '../../redux/reducers/adminOrders';
-import { setOrdersVisibilityFilter } from '../../redux/actions';
+import { getVisibleOrders, getSelections } from '../../redux/reducers/userOrders';
+import { setOrdersVisibilityFilter } from '../../redux/actions/setOrdersVisibilityFilter';
 import OrderItem from '../../components/OrderItem/OrderItem';
-import './AdminOrders.scss';
+import './UserOrders.scss';
 
 class AdminOrders extends Component {
   constructor(props) {
@@ -87,4 +87,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { setOrdersVisibilityFilter })(AdminOrders);
+export default connect(mapStateToProps, { setOrdersVisibilityFilter })(UserOrders);
