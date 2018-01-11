@@ -10,11 +10,7 @@ const HeaderCabinetAdminData = {
     },
     {
       name: 'Заказы',
-      url: '/cabinet/admin/about',
-    },
-    {
-      name: 'Пользователи',
-      url: '/cabinet/admin/users',
+      url: '/cabinet/admin/orders',
     },
   ],
 }

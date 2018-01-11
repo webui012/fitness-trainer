@@ -2,9 +2,8 @@ import React from 'react';
 import './NotFound.scss'
 
 const NotFound = () =>
-  <div className='not-found'>
-    <h1>404</h1> <br />
-    <h2>Страница не найдена. Попробуйте еще</h2>
+  <div className='not-found-div'>
+    <h1 className='not-found-text'>Страница не найдена. Попробуйте еще</h1>
   </div>;
 
 export default NotFound
