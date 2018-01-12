@@ -3,7 +3,7 @@ import './MeasuredData.scss';
 import PropTypes from 'prop-types';
 import { Spinner } from 'Components';
 import { connect } from 'react-redux';
-import { formReguest, warningMessage } from '../../redux/actions';
+import { aboutUsFormReguest, aboutUsWarningMessage } from '../../redux/actions';
 import '../../utils/validation/validation.scss';
 import validate from '../../utils/validation/validateMeasuredData';
 
@@ -28,49 +28,49 @@ class MeasuredData extends Component {
     const age = validate(
       this.age.value,
       'age',
-      this.props.warningMessage,
+      this.props.aboutUsWarningMessage,
       this.props.validation
     );
 
     const height = validate(
       this.height.value,
       'height',
-      this.props.warningMessage,
+      this.props.aboutUsWarningMessage,
       this.props.validation
     );
 
     const weight = validate(
       this.weight.value,
       'weight',
-      this.props.warningMessage,
+      this.props.aboutUsWarningMessage,
       this.props.validation
     );
 
     const neck = validate(
       this.neck.value,
       'neck',
-      this.props.warningMessage,
+      this.props.aboutUsWarningMessage,
       this.props.validation
     );
 
     const breast = validate(
       this.breast.value,
       'breast',
-      this.props.warningMessage,
+      this.props.aboutUsWarningMessage,
       this.props.validation
     );
 
     const tail = validate(
       this.tail.value,
       'tail',
-      this.props.warningMessage,
+      this.props.aboutUsWarningMessage,
       this.props.validation
     );
 
     const hips = validate(
       this.hips.value,
       'hips',
-      this.props.warningMessage,
+      this.props.aboutUsWarningMessage,
       this.props.validation
     );
 
@@ -119,7 +119,7 @@ class MeasuredData extends Component {
                 
               </div>
             )}
-            {this.props.sendDataSpinner.measuredData ? <Spinner /> : null}
+            {this.props.aboutUsSendDataForm.measuredData ? <Spinner /> : null}
             <input type='submit' value='Сохранить данные' className='submit-full-name' />
           </fieldset>
         </form>
@@ -130,7 +130,7 @@ class MeasuredData extends Component {
 
 const mapStateToProps = state => {
   return {
-    sendDataSpinner: state.sendDataSpinner,
+    aboutUsSendDataForm: state.aboutUsSendDataForm,
     validation: state.validationAboutUs
   }
 }
@@ -138,7 +138,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     formReguest: data => dispatch(formReguest(data)),
-    warningMessage: data => dispatch(warningMessage(data))
+    aboutUsWarningMessage: data => dispatch(aboutUsWarningMessage(data))
   }
 }
 

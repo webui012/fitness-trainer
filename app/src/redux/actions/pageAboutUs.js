@@ -1,13 +1,4 @@
 import {
-    // FORM_REQUEST,
-    // FORM_UCCESS,
-    // ACTION_FAILURE,
-    // CLOSE_ACTION_FAILURE,
-    // PAGE_ABOUTUS_REQUEST,
-    // PAGE_ABOUTUS_SUCCESS,
-    // PAGE_CONTACTS_REQUEST,
-    // PAGE_CONTACTS_SUCCESS,
-    // WARNING_MESSAGE
     PAGE_ABOUTUS_WARNING_MESSAGE,
     ABOUTUS_FORM_REQUEST,
     ABOUTUS_FORM_ABOUTUS_SUCCESS,
@@ -19,17 +10,17 @@ import {
     PAGE_CONTACTS_GETDATA_SUCCESS
 } from '../constants';
 
-export const formReguest = data => ({
+export const aboutUsFormReguest = data => ({
     type: ABOUTUS_FORM_REQUEST,
     payload: data
 });
 
-export const formSuccess = data => ({
-    type: PAGE_ABOUTUS_WARNING_MESSAGE,
+export const aboutUsFormSuccess = data => ({
+    type: ABOUTUS_FORM_ABOUTUS_SUCCESS,
     payload: data
 });
 
-export const warningMessage = data => ({
+export const aboutUsWarningMessage = data => ({
     type: PAGE_ABOUTUS_WARNING_MESSAGE,
     payload: data
 });
@@ -44,20 +35,20 @@ export const closeErrorMessage = () => ({
 });
 
 
-export const pageLoading = () => ({
+export const aboutUsGetData = () => ({
     type: PAGE_ABOUTUS_GETDATA_REQUEST,
 });
 
-export const pageLoadingEnd = data => ({
+export const aboutUsGetDataEnd = data => ({
     type: PAGE_ABOUTUS_GETDATA_SUCCESS,
     payload: data
 });
 
-export const pageLoadingContacts = () => ({
+export const constantsGetData = () => ({
     type: PAGE_CONTACTS_GETDATA_REQUEST,
 });
 
-export const pageLoadingEndContacts = data => ({
+export const constantsGetDataEnd = data => ({
     type: PAGE_CONTACTS_GETDATA_SUCCESS,
     payload: data
 });

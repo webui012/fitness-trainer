@@ -6,10 +6,10 @@ import homePage from './homePage';
 import adminOrders from './adminOrders';
 import userOrders from './userOrders';
 import ordersVisibilityFilter from './ordersVisibilityFilter';
-import sendDataSpinner from './sendData';
+import aboutUsSendDataForm from './aboutUsSendDataForm';
 import pageAboutGetStaticData from './page_About_getStaticData';
-import AboutUs from './pageLoading';
-import Contacts from './pageLoadingContacts';
+import aboutUsGetData from './aboutUsGetData';
+import contactsGetData from './contactsGetData';
 import validationAboutUs from './validationAboutUs';
 import login from './userLogin';
 
@@ -20,10 +20,10 @@ const rootReducer = combineReducers({
   adminOrders,
   userOrders,
   ordersVisibilityFilter,
-  sendDataSpinner,
+  aboutUsSendDataForm,//senddata
   pageAboutGetStaticData,
-  AboutUs,
-  Contacts,
+  aboutUsGetData,//aboutus
+  contactsGetData,//contacts
   validationAboutUs,
   login,
   sales

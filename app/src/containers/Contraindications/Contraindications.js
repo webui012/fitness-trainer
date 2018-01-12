@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Spinner } from 'Components';
-import { formReguest, warningMessage } from '../../redux/actions';
+import { aboutUsaboutUsFormReguest, aboutUsWarningMessage } from '../../redux/actions';
 import validate from '../../utils/validation/validateContraindications';
 import './Contraindications.scss';
 import '../../utils/validation/validation.scss';
@@ -10,10 +10,10 @@ import '../../utils/validation/validation.scss';
 class Contraindications extends Component {
 
   static propTypes = {
-    sendDataSpinner: PropTypes.object,
+    aboutUsSendDataForm: PropTypes.object,
     validation: PropTypes.object.isRequired,
-    formReguest: PropTypes.func.isRequired,
-    warningMessage: PropTypes.func.isRequired
+    aboutUsFormReguest: PropTypes.func.isRequired,
+    aboutUsWarningMessage: PropTypes.func.isRequired
   }
 
   formHandler = event => {
@@ -21,7 +21,7 @@ class Contraindications extends Component {
     const contraindications = validate(
       this.textarea.value,
       'contraindications',
-      this.props.warningMessage,
+      this.props.aboutUsWarningMessage,
       this.props.validation
     );
 
@@ -31,7 +31,7 @@ class Contraindications extends Component {
     };
 
     if (contraindications) {
-      this.props.formReguest(data);
+      this.props.aboutUsFormReguest(data);
     };
   }
 
@@ -49,7 +49,7 @@ class Contraindications extends Component {
         ?'active-warning'
         : 'not-active-warning'}> {this.props.validation['contraindications']}
         </span>
-        {this.props.sendDataSpinner.contraindications
+        {this.props.aboutUsSendDataForm.contraindications
         ? <Spinner />
         : null}
         <input type='submit' value='Сохранить данные' className='submit-contraindications' />
@@ -59,13 +59,13 @@ class Contraindications extends Component {
 }
 
 const mapStateToProps = state => ({
-  sendDataSpinner: state.sendDataSpinner,
+  aboutUsSendDataForm: state.aboutUsSendDataForm,
   validation: state.validationAboutUs
 });
 
 const mapDispatchToProps = dispatch => ({
-  formReguest: data => dispatch(formReguest(data)),
-  warningMessage: data => dispatch(warningMessage(data))
+  aboutUsFormReguest: data => dispatch(aboutUsaboutUsFormReguest(data)),
+  aboutUsWarningMessage: data => dispatch(aboutUsWarningMessage(data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contraindications);

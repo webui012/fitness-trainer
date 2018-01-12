@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Aims.scss';
 import { connect } from 'react-redux';
 import { Spinner } from 'Components';
-import { formReguest, warningMessage } from '../../redux/actions';
+import { aboutUsFormReguest, aboutUsWarningMessage } from '../../redux/actions';
 import '../../utils/validation/validation.scss';
 import validate from '../../utils/validation/validateAims';
 
@@ -14,7 +14,7 @@ class Aims extends Component {
     const aims = validate(
       this.select.value,
       'aims',
-      this.props.warningMessage,
+      this.props.aboutUsWarningMessage,
       this.props.validation
     );
 
@@ -24,7 +24,7 @@ class Aims extends Component {
     }
 
     if (aims) {
-      this.props.formReguest(data)
+      this.props.aboutUsFormReguest(data)
     }
   }
 
@@ -47,7 +47,7 @@ class Aims extends Component {
             {this.props.validation['aims']}
           </span>
         </div>
-        {this.props.sendDataSpinner.aimsData ? <Spinner /> : null}
+        {this.props.aboutUsSendDataForm.aimsData ? <Spinner /> : null}
         <input
             type='submit'
             value='Сохранить данные'
@@ -68,15 +68,15 @@ Aims.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    sendDataSpinner: state.sendDataSpinner,
+    aboutUsSendDataForm: state.aboutUsSendDataForm,
     validation: state.validationAboutUs
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    formReguest: data => dispatch(formReguest(data)),
-    warningMessage: data => dispatch(warningMessage(data))
+    aboutUsFormReguest: data => dispatch(aboutUsFormReguest(data)),
+    aboutUsWarningMessage: data => dispatch(aboutUsWarningMessage(data))
   }
 }
 

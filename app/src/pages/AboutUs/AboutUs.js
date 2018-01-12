@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Aims, MeasuredData, Spinner, ErrorLoadingData } from 'Components';
 import { Contraindications, FullName } from 'Containers';
 import { connect } from 'react-redux';
-import { pageLoading, pageLoadingEnd, closeErrorMessage } from '../../redux/actions';
+import { aboutUsGetData, closeErrorMessage } from '../../redux/actions';
 import Api from '../../redux/Api';
 import './AboutUs.scss';
 
@@ -13,13 +13,13 @@ class AboutUs extends Component {
     loading: PropTypes.bool,
     data: PropTypes.object,
     errorMessage: PropTypes.bool,
-    pageLoading: PropTypes.func,
-    pageLoadingEnd: PropTypes.func,
+    aboutUsGetData: PropTypes.func,
+    aboutUsGetDataEnd: PropTypes.func,
     closeErrorMessage: PropTypes.func
   }
 
   componentDidMount() {
-    this.props.pageLoading()
+    this.props.aboutUsGetData()
   }
 
   render() {
@@ -68,12 +68,12 @@ class AboutUs extends Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.AboutUs.data,
-  errorMessage: state.sendDataSpinner.errorMessage
+  data: state.aboutUsGetData.data,
+  errorMessage: state.aboutUsSendDataForm.errorMessage
 });
 
 const mapDispatchToProps = dispatch => ({
-  pageLoading: () => dispatch(pageLoading()),
+  aboutUsGetData: () => dispatch(aboutUsGetData()),
   closeErrorMessage: data => dispatch(closeErrorMessage(data))
 });
 

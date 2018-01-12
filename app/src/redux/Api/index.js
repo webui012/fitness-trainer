@@ -4,7 +4,6 @@ import { dataContacts } from '../../pages/Contacts/contactsData';
 class Api {
 
   static fetchUserData(data) {
-     //return fetch('http://asdas.asdasd').then((res) => res.json())
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         dataAboutUs.formData[`${data.userId}`] = data;
