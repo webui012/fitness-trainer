@@ -10,6 +10,10 @@
       name: 'Мои заказы',
       url: '/cabinet/user/orders',
     },
+    {
+      name: 'Заказать услугу',
+      url: '/cabinet/user/service-order',
+    },
   ],
 }
 

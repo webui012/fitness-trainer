@@ -2,7 +2,7 @@ import ActionTypes from '../constants';
 import { createSelector } from 'reselect'
 
 const initialState = {
-  logo: "Fitness",
+  logo: 'Fitness',
   navigation: [
     {
       name: 'Главная',
