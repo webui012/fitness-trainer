@@ -1,4 +1,5 @@
 export { default as Aims } from './Aims/Aims';
+export { default as App } from './App/App';
 export { default as AdditionalInfoFields } from './AdditionalInfoFields/AdditionalInfoFields';
 export { default as ContactsField } from './ContactsField/ContactsField';
 export { default as ErrorLoadingData } from './ErrorLoadingData/ErrorLoadingData';
