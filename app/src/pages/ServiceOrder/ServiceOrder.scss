@@ -1,0 +1,124 @@
+.service-order{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 20px 0;
+  justify-content: center;
+  height: 92.86vh;
+
+  h2{
+    font-weight: 600;
+  }
+
+  .service-order-button{
+    border-radius: 3px;
+    transform: none;
+    border: none;
+    background-color: #008b18;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 1px 3px 3px #545454;
+    cursor: pointer;
+
+    &:hover{
+      background-color: #078b66;
+    }
+    &:active{
+      background-color: #008b18;
+    }
+  }
+
+  progress{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    margin: 10px 0;
+    // mozila styling
+    height: 20px;
+    width: 15%;
+    border: none;
+    background-color: #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25) inset;
+    border-radius: 3px;
+  }
+
+  progress::-webkit-progress-bar{
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25) inset;
+  }
+
+  progress[value]::-webkit-progress-value{
+    background-image:
+            -webkit-linear-gradient( 135deg,
+                    transparent,
+                    transparent 33%,
+                    rgba(0,0,0,.1) 33%,
+                    rgba(0,0,0,.1) 66%,
+                    transparent 66%),
+            -webkit-linear-gradient( top,
+                    rgba(255, 255, 255, .25),
+                    rgba(0,0,0,.2)),
+            -webkit-linear-gradient( left, #09c, #690);
+
+    border-radius: 2px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+  }
+
+  progress[value]::-moz-progress-bar {
+    background-image:
+            -webkit-linear-gradient( 135deg,
+                    transparent,
+                    transparent 33%,
+                    rgba(0,0,0,.1) 33%,
+                    rgba(0,0,0,.1) 66%,
+                    transparent 66%),
+            -webkit-linear-gradient( top,
+                    rgba(255, 255, 255, .25),
+                    rgba(0,0,0,.2)),
+            -webkit-linear-gradient( left, #09c, #690);
+
+    border-radius: 2px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+  }
+
+  .service-order-form{
+    display: flex;
+    flex-flow: column;
+    width: 25%;
+    height: 90%;
+
+    button:disabled{
+      opacity: 0.5;
+      background-color: #008b18;
+    }
+
+    .service-order-error{
+      color: darkred;
+      font-size: 12px;
+      height: 20px;
+      margin-top: 2px;
+    }
+
+    select, input, textarea{
+      width: 100%;
+      min-height: 30px;
+      border-radius: 3px;
+      border: 1px solid darkgray;
+      padding: 5px 0 5px 10px;
+      font-size: 16px;
+    }
+
+    select{
+      min-height: 40px;
+    }
+
+    button{
+      min-height: 30px;
+      height: 7%;
+      max-height: 40px;
+    }
+  }
+}

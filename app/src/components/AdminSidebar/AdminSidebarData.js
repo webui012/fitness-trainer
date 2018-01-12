@@ -8,6 +8,7 @@ const AdminSidebarData = {
       title: 'Заказы',
       url: '/cabinet/admin/orders'
     }
+
   ]
 }
 

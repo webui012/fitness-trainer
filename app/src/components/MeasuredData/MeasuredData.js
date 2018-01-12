@@ -67,7 +67,7 @@ class MeasuredData extends Component {
       this.props.warningMessage,
       this.props.validation
     )
-    
+
     const data = {
       age,
       height,
@@ -102,7 +102,7 @@ class MeasuredData extends Component {
                     type={items.type}
                     ref={input => this[items.ref] = input}
                     placeholder={items.placeholder}
-                    className={this.props.validation[`${items.ref}`] ? 'input-warning-data' : null}/>
+                    className={this.props.validation[`${items.ref}`] ? 'input-warning-data' : null} />
                 <span className={this.props.validation[`${items.ref}`] ? 'active-warning input-warning-data' : 'not-active-warning'}>
                   {this.props.validation[`${items.ref}`]}
                 </span>

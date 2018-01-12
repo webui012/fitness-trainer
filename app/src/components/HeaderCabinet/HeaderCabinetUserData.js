@@ -1,22 +1,20 @@
-import Logo from 'Components'
-
-const HeaderCabinetUserData = {
-  logo: Logo,
+ const HeaderCabinetUserData = {
+  logo: 'Fitness',
 
   navigation: [
-    {
-      name: 'Главная',
-      url: '/cabinet/user/home',
-    },
     {
       name: 'Замеры',
       url: '/cabinet/user/metrics',
     },
     {
-      name: 'Мои тренеровки',
-      url: '/cabinet/user/trainings',
+      name: 'Мои заказы',
+      url: '/cabinet/user/orders',
+    },
+    {
+      name: 'Заказать услугу',
+      url: '/cabinet/user/service-order',
     },
   ],
 }
 
-export default HeaderCabinetUserData;
+export default HeaderCabinetUserData
