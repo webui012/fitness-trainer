@@ -3,15 +3,10 @@ const AdminSidebarData = {
     {
       title: 'Пользователи',
       url: '/login'
-      },
-    {
-      title: 'Редактировать разделы',
-      url: '/main'
     },
-
     {
-      title: 'Создать новую страницу',
-      url: '/about'
+      title: 'Заказы',
+      url: '/cabinet/admin/orders'
     }
   ]
 }
