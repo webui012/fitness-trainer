@@ -6,29 +6,10 @@ import {
   Switch,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
-import {
-  Homepage,
-  About,
-  AboutUs,
-  Services,
-  Sales,
-  Online,
-  Forum,
-  Contacts,
-  LoginPage,
-  SignupPage,
-  Nutrition,
-  TrainingPlanSection,
-  UserCabinet,
-  AdminCabinet
-} from 'Pages';
 import routes from './routes';
-//import isAuthorized from '../../utils/isAuthorized';
 import './App.scss';
-
 import MainLayout from '../../layouts/MainLayout';
 import AdminLayout from '../../layouts/AdminLayout';
-
 
 class App extends Component {
 

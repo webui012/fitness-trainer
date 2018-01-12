@@ -3,7 +3,7 @@ import { createSelector } from 'reselect'
 import Logo from '../../components/Logo/Logo';
 
 const initialState = {
-  logo: "Fintess",
+  logo: 'Fintess',
   navigation: [
     {
       name: 'Главная',
