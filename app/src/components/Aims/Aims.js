@@ -8,6 +8,14 @@ import '../../utils/validation/validation.scss';
 import validate from '../../utils/validation/validateAims';
 
 class Aims extends Component {
+
+  static propTypes = {
+    nameField: PropTypes.string,
+    selectName: PropTypes.string,
+    optionValue: PropTypes.string,
+    options: PropTypes.array
+  }
+
   formHandler = event => {
     event.preventDefault()
 
@@ -24,7 +32,7 @@ class Aims extends Component {
     }
 
     if (aims) {
-      this.props.aboutUsFormReguest(data)
+      this.props.aboutUsFormReguest(data);
     }
   }
 
@@ -57,13 +65,6 @@ class Aims extends Component {
       </div>
     )
   }
-}
-
-Aims.propTypes = {
-    nameField: PropTypes.string,
-    selectName: PropTypes.string,
-    optionValue: PropTypes.string,
-    options: PropTypes.array
 }
 
 const mapStateToProps = state => {

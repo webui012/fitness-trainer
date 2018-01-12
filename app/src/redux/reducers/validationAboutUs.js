@@ -5,7 +5,6 @@ import {
 const initialState = {
   avatar: null,
   name: null,
-  patronymic: null,
   surname: null,
   contraindications: null,
   aims: null,

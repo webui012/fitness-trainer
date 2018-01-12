@@ -9,6 +9,7 @@ import Api from '../Api';
 function* contactsGetDataAsync(action) {
     try {
         const pageData = yield call(Api.dataLocalContacts);
+        
         yield put({ type: PAGE_CONTACTS_GETDATA_SUCCESS, payload: pageData });
     } catch (e) {
         yield put({ type: ABOUTUS_ACTION_FAILURE });

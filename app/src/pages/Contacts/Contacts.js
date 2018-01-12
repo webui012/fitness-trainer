@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Contacts.scss';
 import { Map, ContactsField, Spinner } from 'Components';
 import { connect } from 'react-redux';
-import { pageLoadingContacts, pageLoadingEndContacts } from '../../redux/actions';
+import { constantsGetData } from '../../redux/actions';
 import Api from '../../redux/Api';
 
 class Contacts extends Component {
@@ -18,7 +18,7 @@ class Contacts extends Component {
   };
 
   componentDidMount() {
-    this.props.pageLoadingContacts();
+    this.props.constantsGetData();
   }
 
   render() {
@@ -43,11 +43,11 @@ class Contacts extends Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.Contacts.data
+  data: state.contactsGetData.data
 });
 
 const mapDispatchToProps = dispatch => ({
-  pageLoadingContacts: () => dispatch(pageLoadingContacts())
+  constantsGetData: () => dispatch(constantsGetData())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contacts);

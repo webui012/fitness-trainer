@@ -86,7 +86,7 @@ class MeasuredData extends Component {
     };
 
     if (age && height && weight && neck && breast && tail && hips) {
-      this.props.aboutUsFormRequest(data)
+      this.props.aboutUsFormRequest(data);
     };
   }
 
@@ -116,7 +116,6 @@ class MeasuredData extends Component {
                   : 'not-active-warning'}> {this.props.validation[`${items.ref}`]}
                   </span>
                 </label>
-                
               </div>
             )}
             {this.props.aboutUsSendDataForm.measuredData ? <Spinner /> : null}
