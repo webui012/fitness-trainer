@@ -1,8 +1,5 @@
-import Logo from '../../components/Logo/Logo';
-
-
-const HeaderCabinetUserData = {
-  logo: Logo,
+ const HeaderCabinetUserData = {
+  logo: 'Fitness',
 
   navigation: [
     {
@@ -16,4 +13,4 @@ const HeaderCabinetUserData = {
   ],
 }
 
-export default HeaderCabinetUserData;
+export default HeaderCabinetUserData

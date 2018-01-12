@@ -1,7 +1,5 @@
-import Logo from 'Components'
-
 const HeaderCabinetAdminData = {
-  logo: Logo,
+  logo: 'Fitness',
 
   navigation: [
     {
