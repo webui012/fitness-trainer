@@ -15,7 +15,8 @@ import {
   LoginPage,
   SignupPage,
   Nutrition,
-  TrainingPlanSection
+  TrainingPlanSection,
+  NotFound
 } from 'Pages';
 import LoginContainer from '../../containers/LoginContainer';
 
@@ -160,6 +161,14 @@ const routes = [
     role: 'USER',
     layout: UserLayout,
     id: 'fcJpTaRz6Nsq'
+  },
+  {
+    path: '',
+    exact: false,
+    component: NotFound,
+    role: 'ALL',
+    layout: LoginLayout,
+    id: 'fcJpT0007N'
   },
 ];
 
