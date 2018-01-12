@@ -5,22 +5,27 @@ import './Map.scss';
 import Marker from './Marker';
 
 const Map = props => {
-    return (
-      <div className='map'>
-        <GoogleMapReact
-            bootstrapURLKeys={props.data.bootstrapURLKeys}
-            defaultCenter={props.data.center}
-            defaultZoom={props.data.zoom}
-            >
-          <Marker
-              textClass='marker'
-              lat={props.data.center.lat}
-              lng={props.data.center.lng}
-              text={'WorkShop'}
-                />
-        </GoogleMapReact>
-      </div>
-    );
+  const { bootstrapURLKeys,
+          center,
+          zoom,
+          text
+        } = props.data
+  return (
+    <div className='map'>
+      <GoogleMapReact
+          bootstrapURLKeys={bootstrapURLKeys}
+          defaultCenter={center}
+          defaultZoom={zoom}
+          >
+        <Marker
+            textClass='marker'
+            lat={center.lat}
+            lng={center.lng}
+            text={text}
+              />
+      </GoogleMapReact>
+    </div>
+  );
 }
 
 Map.propTypes = {

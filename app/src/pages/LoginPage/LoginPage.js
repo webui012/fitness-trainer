@@ -1,5 +1,6 @@
 
 import React, {Component} from 'react';
+<<<<<<< HEAD
 import {LoginForm} from 'Components';
 import {connect} from 'react-redux';
 import {searchUser} from '../../redux/actions/index'
@@ -47,5 +48,10 @@ export default connect(
 			}
 		}
 	)
+=======
+import LoginContainer from '../../containers/LoginContainer';
+
+const LoginPage = props => <LoginContainer />
+>>>>>>> 35eee0e83a5dab622cf7756ab4b99d0460ff42ee
 
 	)(LoginPage);

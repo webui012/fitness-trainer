@@ -1,0 +1,63 @@
+.wrap-user-cards {
+  margin-top: 5px;
+  float: right;
+  display: flex;
+  width: 70%;
+  border-style:dotted;
+}
+
+.user-table-main {
+  text-align: center;
+}
+
+.user-table-head {
+  background-color: #999999;
+}
+
+.first-row-firstname {
+  width: 200px;
+  height: 50px;
+  color: white;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.first-row-lastname {
+  width: 200px;
+  height: 50px;
+  color: white;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.first-row-registration-date {
+  width: 200px;
+  height: 50px;
+  color: white;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.first-row-status {
+  width: 200px;
+  height: 50px;
+  color: white;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.users-row {
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  padding-top: 15px;
+  border: dotted 1px;
+
+  &:hover {
+    background-color: green;
+  }
+}
+
+.user-firstname {
+  padding-top: 15px;
+}

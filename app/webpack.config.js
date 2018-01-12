@@ -9,7 +9,8 @@ const extractSass = new ExtractTextPlugin({
 });
 
 const config = {
-  entry: './src/index.js',
+
+  entry:['babel-polyfill', './src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -84,7 +85,8 @@ const config = {
   resolve: {
     alias: {
       Components: path.resolve(__dirname, 'src/components/'),
-      Pages: path.resolve(__dirname, 'src/pages/')
+      Pages: path.resolve(__dirname, 'src/pages/'),
+      Containers: path.resolve(__dirname, 'src/containers/')
     },
   },
 };
