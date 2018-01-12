@@ -2,10 +2,9 @@ import React from 'react';
 import Swiper from 'react-id-swiper';
 
 const Slider = props => {
-  const { sliderParams, slides }  = props.data;
-
+  const { params, slides }  = props.data
   return (
-    <Swiper {...sliderParams}>
+    <Swiper {...params}>
       {slides.map((slider, i) =>
         <div key={i}>
           <img src={slider.url} alt={slider.alt} />
