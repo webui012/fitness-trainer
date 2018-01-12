@@ -7,9 +7,9 @@ import pageAboutGetStaticData from './page_About_getStaticData';
 
 export default function * rootSaga() {
   yield all([
-    aboutUsSendDataForm(),//senddata
-    aboutUsGetData(),//laoding
-    contactsGetData(),//contasts
+    aboutUsSendDataForm(),
+    aboutUsGetData(),
+    contactsGetData(),
     showSalesPage(),
     pageAboutGetStaticData()
   ])

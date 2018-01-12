@@ -13,17 +13,17 @@
 
     .wrap-measured-data {
       text-align: left;
-      // display: flex;
       width: 100%;
       padding: 0 15px;
 
       label {
           display: block;
-          //width: 30%;
-          // padding: 15px;
+
+          span {
+            width: 15%;
+          }
 
           input[type='number'] {
-            //width: 40%;
             padding: 5px;
             font-size: 16px;
             border: 1px solid #999;

@@ -10,7 +10,7 @@ import {
     PAGE_CONTACTS_GETDATA_SUCCESS
 } from '../constants';
 
-export const aboutUsFormReguest = data => ({
+export const aboutUsFormRequest = data => ({
     type: ABOUTUS_FORM_REQUEST,
     payload: data
 });

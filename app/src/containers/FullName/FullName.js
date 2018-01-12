@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { InputFile, Spinner } from 'Components';
 import { connect } from 'react-redux';
-import { aboutUsFormReguest, aboutUsWarningMessage } from '../../redux/actions';
+import { aboutUsFormRequest, aboutUsWarningMessage } from '../../redux/actions';
 import './FullName.scss';
 import '../../utils/validation/validation.scss';
 import validate from '../../utils/validation/validateFullName';
@@ -30,7 +30,7 @@ class FullName extends Component {
     })),
     aboutUsSendDataForm: PropTypes.object,
     validation: PropTypes.object.isRequired,
-    aboutUsFormReguest: PropTypes.func.isRequired,
+    aboutUsFormRequest: PropTypes.func.isRequired,
     aboutUsWarningMessage: PropTypes.func.isRequired
   }
 
@@ -83,7 +83,7 @@ class FullName extends Component {
     };
 
     if (name && surname && avatar !== undefined) {
-      this.props.aboutUsFormReguest(data);
+      this.props.aboutUsFormRequest(data);
       this.setState({location: 'загрузите фото'})
     };
   };
@@ -113,7 +113,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  aboutUsFormReguest: data => dispatch(aboutUsFormReguest(data)),
+  aboutUsFormRequest: data => dispatch(aboutUsFormRequest(data)),
   aboutUsWarningMessage: data => dispatch(aboutUsWarningMessage(data))
 });
 

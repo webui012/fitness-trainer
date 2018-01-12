@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Spinner } from 'Components';
-import { aboutUsFormReguest, aboutUsWarningMessage } from '../../redux/actions';
+import { aboutUsFormRequest, aboutUsWarningMessage } from '../../redux/actions';
 import validate from '../../utils/validation/validateContraindications';
 import './Contraindications.scss';
 import '../../utils/validation/validation.scss';
@@ -12,7 +12,7 @@ class Contraindications extends Component {
   static propTypes = {
     aboutUsSendDataForm: PropTypes.object,
     validation: PropTypes.object.isRequired,
-    aboutUsFormReguest: PropTypes.func.isRequired,
+    aboutUsFormRequest: PropTypes.func.isRequired,
     aboutUsWarningMessage: PropTypes.func.isRequired
   }
 
@@ -31,7 +31,7 @@ class Contraindications extends Component {
     };
 
     if (contraindications) {
-      this.props.aboutUsFormReguest(data);
+      this.props.aboutUsFormRequest(data);
     };
   }
 
@@ -64,7 +64,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  aboutUsFormReguest: data => dispatch(aboutUsFormReguest(data)),
+  aboutUsFormRequest: data => dispatch(aboutUsFormRequest(data)),
   aboutUsWarningMessage: data => dispatch(aboutUsWarningMessage(data))
 });
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Aims.scss';
 import { connect } from 'react-redux';
 import { Spinner } from 'Components';
-import { aboutUsFormReguest, aboutUsWarningMessage } from '../../redux/actions';
+import { aboutUsFormRequest, aboutUsWarningMessage } from '../../redux/actions';
 import '../../utils/validation/validation.scss';
 import validate from '../../utils/validation/validateAims';
 
@@ -32,7 +32,7 @@ class Aims extends Component {
     }
 
     if (aims) {
-      this.props.aboutUsFormReguest(data);
+      this.props.aboutUsFormRequest(data);
     }
   }
 
@@ -76,7 +76,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    aboutUsFormReguest: data => dispatch(aboutUsFormReguest(data)),
+    aboutUsFormRequest: data => dispatch(aboutUsFormRequest(data)),
     aboutUsWarningMessage: data => dispatch(aboutUsWarningMessage(data))
   }
 }

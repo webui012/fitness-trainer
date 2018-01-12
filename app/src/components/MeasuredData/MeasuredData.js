@@ -102,7 +102,7 @@ class MeasuredData extends Component {
             <legend>{legendName}</legend>
             {fieldsMeasuredDataForm.map((items, i) =>
               <div className='wrap-measured-data' key={i}>
-                <label>{items.nameField}
+                <label><span>{items.nameField}</span>
                   <input
                       type={items.type}
                       ref={input => this[items.ref] = input}

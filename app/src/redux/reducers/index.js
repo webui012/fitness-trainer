@@ -20,10 +20,10 @@ const rootReducer = combineReducers({
   adminOrders,
   userOrders,
   ordersVisibilityFilter,
-  aboutUsSendDataForm,//senddata
+  aboutUsSendDataForm,
   pageAboutGetStaticData,
-  aboutUsGetData,//aboutus
-  contactsGetData,//contacts
+  aboutUsGetData,
+  contactsGetData,
   validationAboutUs,
   login,
   sales
