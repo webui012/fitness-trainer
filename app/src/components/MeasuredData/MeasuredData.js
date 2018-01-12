@@ -102,7 +102,8 @@ class MeasuredData extends Component {
             <legend>{legendName}</legend>
             {fieldsMeasuredDataForm.map((items, i) =>
               <div className='wrap-measured-data' key={i}>
-                <label><span>{items.nameField}</span>
+                <div className='position-wrap'>
+                  <label>{items.nameField}</label>
                   <input
                       type={items.type}
                       ref={input => this[items.ref] = input}
@@ -111,11 +112,11 @@ class MeasuredData extends Component {
                       ? 'input-warning-data'
                       : null}
                   />
-                  <span className={this.props.validation[`${items.ref}`]
+                </div>
+                <span className={this.props.validation[`${items.ref}`]
                   ? 'active-warning input-warning-data'
                   : 'not-active-warning'}> {this.props.validation[`${items.ref}`]}
-                  </span>
-                </label>
+                </span>
               </div>
             )}
             {this.props.aboutUsSendDataForm.measuredData ? <Spinner /> : null}

@@ -8,7 +8,7 @@ class Api {
       setTimeout(() => {
         dataAboutUs.formData[`${data.userId}`] = data;
         reject(dataAboutUs.formData);
-      }, 2000);
+      }, 500);
     });
   }
 
@@ -16,7 +16,7 @@ class Api {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(dataAboutUs);
-      }, 1000);
+      }, 500);
     });
   }
 
@@ -24,7 +24,7 @@ class Api {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(dataContacts);
-      }, 1000);
+      }, 500);
     });
   }
 
