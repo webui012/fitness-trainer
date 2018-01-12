@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Spinner } from 'Components';
-import { aboutUsaboutUsFormReguest, aboutUsWarningMessage } from '../../redux/actions';
+import { aboutUsFormReguest, aboutUsWarningMessage } from '../../redux/actions';
 import validate from '../../utils/validation/validateContraindications';
 import './Contraindications.scss';
 import '../../utils/validation/validation.scss';
@@ -64,7 +64,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  aboutUsFormReguest: data => dispatch(aboutUsaboutUsFormReguest(data)),
+  aboutUsFormReguest: data => dispatch(aboutUsFormReguest(data)),
   aboutUsWarningMessage: data => dispatch(aboutUsWarningMessage(data))
 });
 

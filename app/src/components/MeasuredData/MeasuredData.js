@@ -3,7 +3,7 @@ import './MeasuredData.scss';
 import PropTypes from 'prop-types';
 import { Spinner } from 'Components';
 import { connect } from 'react-redux';
-import { aboutUsFormReguest, aboutUsWarningMessage } from '../../redux/actions';
+import { aboutUsFormRequest, aboutUsWarningMessage } from '../../redux/actions';
 import '../../utils/validation/validation.scss';
 import validate from '../../utils/validation/validateMeasuredData';
 
@@ -86,7 +86,7 @@ class MeasuredData extends Component {
     };
 
     if (age && height && weight && neck && breast && tail && hips) {
-      this.props.formReguest(data)
+      this.props.aboutUsFormRequest(data)
     };
   }
 
@@ -137,7 +137,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    formReguest: data => dispatch(formReguest(data)),
+    aboutUsFormRequest: data => dispatch(aboutUsFormRequest(data)),
     aboutUsWarningMessage: data => dispatch(aboutUsWarningMessage(data))
   }
 }
