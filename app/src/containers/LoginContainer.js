@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-
 import LoginForm from '../components/LoginForm/LoginForm';
 import {userLogin} from '../redux/actions';
 import {ADMIN, USER} from '../redux/constants';
+
 
 class LoginContainer extends Component{
   constructor(props){
@@ -21,8 +21,10 @@ class LoginContainer extends Component{
   }
 
   render(){
+
     const { userLogin, role } = this.props;
     const { from } = this.props.location.state || {from: {pathname : this.condRedirect(role)}};
+
     return <LoginForm setRole={userLogin} from={from} />
   }
 }
@@ -37,4 +39,6 @@ const mapStateToProps = state => ({
   role: state.login.userRole
 })
 
+
 export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer)
+
