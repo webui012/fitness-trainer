@@ -1,7 +1,7 @@
 .form-wrap {
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 65%;
     margin-top: 15px;
     text-align: center;
 
@@ -13,35 +13,51 @@
 
     .wrap-measured-data {
       text-align: left;
-      display: flex;
+      // display: flex;
       width: 100%;
       padding: 0 15px;
 
       label {
           display: block;
-          width: 30%;
-          padding: 15px;
-      }          
-    }
+          //width: 30%;
+          // padding: 15px;
 
-    input[type='number'], .submit-full-name {
-      width: 60%;
-      padding: 5px;
-      font-size: 16px;
-      border: 1px solid #999;
-      border-radius: 5px;
-      margin: 10px;
-      background: transparent;
+          input[type='number'] {
+            //width: 40%;
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #999;
+            border-radius: 5px;
+            margin: 10px;
+            background: transparent;
 
-      &:focus {
-        border: 1px solid #54a4d4;
-        box-shadow: 0 0 5px rgba(84, 164, 212, 1);
+            &:focus {
+              border: 1px solid #54a4d4;
+              box-shadow: 0 0 5px rgba(84, 164, 212, 1);
+            }
+          }
+        }          
       }
-    }
 
-    .submit-full-name {
-      background: #33cc33;
-      color: #fff;
-      cursor: pointer;
+  .submit-full-name {
+    width: 40%;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    margin: 10px;
+    background: #0f6605;
+    color: #fff;
+    cursor: pointer;
+
+    &:focus {
+      border: 1px solid #54a4d4;
+      box-shadow: 0 0 5px rgba(84, 164, 212, 1);
     }
+    &:hover {
+      background: #fff;
+      color: #0f6605;
+      border: 1px solid #0f6605;
+    }
+  }
 }

@@ -34,7 +34,7 @@ class Aims extends Component {
       <div className='aims-wrap'>
         <label>{nameField}</label>
         <div>
-          <select ref={select => this.select = select} className={this.props.validation['aims'] ? 'select-warning' : null}>
+          <select ref={select => this.select = select} id='select-aims' className={this.props.validation['aims'] ? 'select-warning' : null}>
             <option id='default-option'>Выберите цель ваших тренировок...</option>
             {options.map((items, i) =>
               <option

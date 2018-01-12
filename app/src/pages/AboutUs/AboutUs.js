@@ -23,38 +23,57 @@ class AboutUs extends Component {
   }
 
   render() {
-    return (this.props.data?
-      <div className='about-us'>
+    // return (this.props.data
+    //     ?<div className='about-us'>
+    //       <div className='columns-wrap'>
+    //         <FullName
+    //             fields={this.props.data.fullNameFields}
+    //             path={this.props.data.fullNameAvatar}
+    //             formData={this.props.data.formData}
+    //         />
+    //         <MeasuredData dataFields={this.props.data.dataFields} />
+    //         <img className='body-sizes'
+    //             src={this.props.data.bodySizesImg}
+    //             alt='instructions for measuring points'
+    //         />
+    //       </div>
+    //       <Aims aimsFormData={this.props.data.aimsFormData} />
+    //       <Contraindications />
+    //       {this.props.errorMessage ?
+    //         <ErrorLoadingData closeMessage={this.props.closeErrorMessage} /> : null}
+    //     </div>
+    //   : <Spinner />
+    // )
+
+    return (this.props.data
+      ? <div className='about-us'>
         <div className='columns-wrap'>
           <FullName
-              fields={this.props.data.fullNameFields}
-              path={this.props.data.fullNameAvatar}
-              formData={this.props.data.formData}
+            fields={this.props.data.fullNameFields}
+            path={this.props.data.fullNameAvatar}
+            formData={this.props.data.formData}
           />
           <MeasuredData dataFields={this.props.data.dataFields} />
-          <img className='body-sizes'
-              src={this.props.data.bodySizesImg}
-              alt='instructions for measuring points'
-          />
         </div>
-        <Aims aimsFormData={this.props.data.aimsFormData} />
-        <Contraindications />
+        <div className='add-info-wrap'>
+          <Aims aimsFormData={this.props.data.aimsFormData} />
+          <Contraindications />
+        </div>
         {this.props.errorMessage ?
           <ErrorLoadingData closeMessage={this.props.closeErrorMessage} /> : null}
-      </div> : <Spinner />
+      </div>
+      : <Spinner />
     )
   }
 }
 
 const mapStateToProps = state => ({
-  loading: state.AboutUs.loading,
   data: state.AboutUs.data,
   errorMessage: state.sendDataSpinner.errorMessage
 });
 
 const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(pageLoading()),
-  pageLoadingEnd: data => dispatch(pageLoadingEnd(data)),
   closeErrorMessage: data => dispatch(closeErrorMessage(data))
 });
 

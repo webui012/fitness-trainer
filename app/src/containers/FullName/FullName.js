@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { InputFile } from 'Components';
+import { InputFile, Spinner } from 'Components';
 import { connect } from 'react-redux';
-import { Spinner } from 'Components';
 import { formReguest, warningMessage } from '../../redux/actions';
 import './FullName.scss';
 import '../../utils/validation/validation.scss';
@@ -43,17 +42,15 @@ class FullName extends Component {
             ref={input => this[field.ref] = input}
             className={this.props.validation[field.ref] ? 'input-warning' : null}
         />
-        <span className={this.props.validation[field.ref] ?
-            'active-warning' :
-            'not-active-warning'}>
-            {this.props.validation[field.ref]}
+        <span className={this.props.validation[field.ref]
+          ?'active-warning'
+          :'not-active-warning'}> {this.props.validation[field.ref]}
         </span>
       </span>);
 
-
-  getAvatar = () => this.props.path.userAvatar ?
-      <img className='avatar' src={this.props.path.userAvatar} alt='user avatar' /> :
-      <img className='avatar' src={this.props.path.defaultAvatar} alt='user avatar' />
+  getAvatar = () => this.props.path.userAvatar
+      ?<img className='avatar' src={this.props.path.userAvatar} alt='user avatar' />
+      :<img className='avatar' src={this.props.path.defaultAvatar} alt='user avatar' />;
 
   getLocation = data => this.setState({location: data});
 
@@ -71,12 +68,6 @@ class FullName extends Component {
       this.props.warningMessage,
       this.props.validation
     );
-    const patronymic = validate(
-      this.patronymic.value,
-      'patronymic',
-      this.props.warningMessage,
-      this.props.validation
-    );
     const surname = validate(
       this.surname.value,
       'surname',
@@ -87,19 +78,15 @@ class FullName extends Component {
     const data = {
       avatar,
       name,
-      patronymic,
       surname,
       userId: 'personalData'
-    }
+    };
 
-    if (name && patronymic && surname && avatar !== undefined) {
+    if (name && surname && avatar !== undefined) {
       this.props.formReguest(data);
-      this.name.value = '';
-      this.patronymic.value = '';
-      this.surname.value = '';
       this.setState({location: 'загрузите фото'})
-    }
-  }
+    };
+  };
 
   render() {
     return (

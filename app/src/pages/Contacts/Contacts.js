@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { pageLoadingContacts, pageLoadingEndContacts } from '../../redux/actions';
 import Api from '../../redux/Api';
 
-class Contacts extends Component{
+class Contacts extends Component {
 
   static propTypes = {
     key: PropTypes.number,

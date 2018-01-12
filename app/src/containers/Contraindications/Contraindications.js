@@ -28,29 +28,30 @@ class Contraindications extends Component {
     const data = {
       contraindications,
       userId: 'contraindications'
-    }
+    };
 
     if (contraindications) {
       this.props.formReguest(data);
-      this.textarea.value = '';
-    }
+    };
   }
 
   render() {
     return (
       <form className='Contraindications' onSubmit={this.formHandler}>
-        <textarea
-          className={this.props.validation['contraindications'] ?
-            'text input-warning' : 'text'}
-          placeholder='Введите противопоказания'
-          ref={textarea => this.textarea = textarea}>
+        <h2>Противопоказания</h2>
+        <textarea className={this.props.validation['contraindications']
+          ?'text input-warning'
+          : 'text'}
+            placeholder='Введите противопоказания'
+            ref={textarea => this.textarea = textarea}>
         </textarea>
-        <span className={this.props.validation['contraindications'] ?
-          'active-warning' : 'not-active-warning'}>
-          {this.props.validation['contraindications']}
+        <span className={this.props.validation['contraindications']
+        ?'active-warning'
+        : 'not-active-warning'}> {this.props.validation['contraindications']}
         </span>
-        {this.props.sendDataSpinner.contraindications ?
-          <Spinner />: null}
+        {this.props.sendDataSpinner.contraindications
+        ? <Spinner />
+        : null}
         <input type='submit' value='Сохранить данные' className='submit-contraindications' />
       </form>
     )
