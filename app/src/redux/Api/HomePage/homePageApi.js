@@ -1,8 +1,5 @@
-import ActionTypes from '../constants';
-import { createSelector } from 'reselect'
-
-const initialState = {
-  "sliderData": {
+const homePageData = {
+  sliderData: {
     slides: [
       {
         url: 'https://www.hdwallpapers.in/walls/pushup_workout-HD.jpg',
@@ -40,15 +37,7 @@ const initialState = {
   }
 }
 
-// Selector
-export const getHomePageData = state => state.homePage
-
-// Reducer
-const homePage = (state = initialState, action) => {
-  switch (action.type) {
-    default:
-      return state
-  }
-}
-
-export default homePage
+export const loadHomePage = () =>
+  new Promise((res, rej) => {
+    res(homePageData)
+  })

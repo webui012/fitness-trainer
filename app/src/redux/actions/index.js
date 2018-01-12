@@ -64,4 +64,4 @@ export function userLogin(role){
 export * from './sales';
 export * from './setOrdersVisibilityFilter';
 export * from './serviceOrderForm';
-
+export * from './homePage';

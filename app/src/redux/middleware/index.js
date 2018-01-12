@@ -1,4 +1,6 @@
 import { all } from 'redux-saga/effects';
+import homePage from './homePage';
+
 import showSalesPage from './Sales/sales';
 import sendData from './sendData';
 import pageLoading from './pageLoading';
@@ -7,6 +9,7 @@ import pageAboutGetStaticData from './page_About_getStaticData';
 
 export default function* rootSaga() {
   yield all([
+    homePage(),
     sendData(),
     pageLoading(),
     pageLoadingContacts(),

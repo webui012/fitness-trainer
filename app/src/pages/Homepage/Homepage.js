@@ -1,21 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getHomePageData } from '../../redux/reducers/homePage';
 import { Slider } from 'Components';
+import { loadHomePage } from '../../redux/actions';
+import { getHomePageData, getSliderData } from '../../redux/reducers/HomePage/homePage';
 
-const Homepage = props => {
-  const sliderData = props.homePage.sliderData
+class Homepage extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-  return <Slider data={sliderData} />
+  componentDidMount() {
+    this.props.loadHomePage()
+  }
+
+  render() {
+    console.log(this.props.sliderData)
+    return <h1> slider </h1>
+  }
 }
 
-const mapStateToProps = state => ({
-  homePage: getHomePageData(state)
-})
+function mapStateToProps(state) {
+  return {
+    homePageData: getHomePageData(state),
+    sliderData: getSliderData(state)
+  }
+}
 
 Homepage.propTypes = {
   homePage: PropTypes.object
 };
 
-export default connect(mapStateToProps, null)(Homepage)
+export default connect(mapStateToProps, { loadHomePage })(Homepage)

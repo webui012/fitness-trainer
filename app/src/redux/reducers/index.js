@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import sales from './Sales/sales';
 import header from './header';
 import footer from './footer';
-import homePage from './homePage';
+import homePage from './HomePage/homePage';
 import adminOrders from './adminOrders';
 import userOrders from './userOrders';
 import ordersVisibilityFilter from './ordersVisibilityFilter';
@@ -35,4 +35,3 @@ const rootReducer = combineReducers({
 });
 
 export default rootReducer;
-
