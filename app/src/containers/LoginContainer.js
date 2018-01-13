@@ -78,7 +78,7 @@ const mapDispatchToProps = dispatch => ({
                         if (status == 200){
                           setTimeout(() => {
                             dispatch(searchUser(value))
-                          },4000)//передаем данные из формы в стор
+                          },2000)//передаем данные из формы в стор
                         }
                     })
         }
