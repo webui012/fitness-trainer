@@ -1,8 +1,7 @@
 export const dataContacts = {
     title: 'Контактная информация',
     mainTitle: 'КОНТАКТЫ',
-    fields:
-    [
+    fields: [
         {
             id: 1,
             data: '61000, Харков, ул.Сумская 20'

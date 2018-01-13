@@ -2,18 +2,27 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Aims.scss';
 import { connect } from 'react-redux';
-import { formReguest, warningMessage } from '../../redux/actions';
+import { Spinner } from 'Components';
+import { aboutUsFormRequest, aboutUsWarningMessage } from '../../redux/actions';
 import '../../utils/validation/validation.scss';
 import validate from '../../utils/validation/validateAims';
 
 class Aims extends Component {
+
+  static propTypes = {
+    nameField: PropTypes.string,
+    selectName: PropTypes.string,
+    optionValue: PropTypes.string,
+    options: PropTypes.array
+  }
+
   formHandler = event => {
     event.preventDefault()
 
     const aims = validate(
       this.select.value,
       'aims',
-      this.props.warningMessage,
+      this.props.aboutUsWarningMessage,
       this.props.validation
     );
 
@@ -23,7 +32,7 @@ class Aims extends Component {
     }
 
     if (aims) {
-      this.props.formReguest(data)
+      this.props.aboutUsFormRequest(data);
     }
   }
 
@@ -33,7 +42,7 @@ class Aims extends Component {
       <div className='aims-wrap'>
         <label>{nameField}</label>
         <div>
-          <select ref={select => this.select = select} className={this.props.validation['aims'] ? 'select-warning' : null}>
+          <select ref={select => this.select = select} id='select-aims' className={this.props.validation['aims'] ? 'select-warning' : null}>
             <option id='default-option'>Выберите цель ваших тренировок...</option>
             {options.map((items, i) =>
               <option
@@ -46,7 +55,7 @@ class Aims extends Component {
             {this.props.validation['aims']}
           </span>
         </div>
-        {this.props.sendDataSpinner.aimsData ? <div>{this.props.sendDataSpinner.aimsData}</div> : null}
+        {this.props.aboutUsSendDataForm ? <Spinner /> : null}
         <input
             type='submit'
             value='Сохранить данные'
@@ -58,24 +67,17 @@ class Aims extends Component {
   }
 }
 
-Aims.propTypes = {
-    nameField: PropTypes.string,
-    selectName: PropTypes.string,
-    optionValue: PropTypes.string,
-    options: PropTypes.array
-}
-
 const mapStateToProps = state => {
   return {
-    sendDataSpinner: state.sendDataSpinner,
+    aboutUsSendDataForm: state.aboutUsSendDataForm.sendData,
     validation: state.validationAboutUs
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    formReguest: data => dispatch(formReguest(data)),
-    warningMessage: data => dispatch(warningMessage(data))
+    aboutUsFormRequest: data => dispatch(aboutUsFormRequest(data)),
+    aboutUsWarningMessage: data => dispatch(aboutUsWarningMessage(data))
   }
 }
 
