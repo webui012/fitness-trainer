@@ -1,4 +1,4 @@
-import { ADD_USER, SEARCH_USER, USER_LOGOFF } from './constants';
+import { ADD_USER, SEARCH_USER, USER_LOGOFF } from '../constants';
 
 export function addUser(value) {
   return {

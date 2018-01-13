@@ -32,7 +32,7 @@ class LoginContainer extends Component{
 }
 
 const mapDispatchToProps = dispatch => ({
-   send: value = > {
+   send: value => {
         const sendData = () => dispatch => {
           fetch('https://jsonplaceholder.typicode.com/posts')// Add .catch !
                   .then(function(response) {

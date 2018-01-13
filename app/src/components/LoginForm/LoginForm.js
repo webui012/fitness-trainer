@@ -7,7 +7,7 @@ import {renderField} from './renderField';
 import { ALL } from '../../redux/constants';
 
 
-const LoginForm = props => {
+let LoginForm = props => {
 
    const { role, from, handleSubmit } = props;
 

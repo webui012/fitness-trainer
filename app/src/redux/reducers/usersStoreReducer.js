@@ -1,4 +1,4 @@
-import {ALL} from './constants';
+import { ALL } from '../constants';
 
 const initialState ={
 	userRole: ALL
@@ -10,14 +10,14 @@ export default function usersStoreReducer( state = initialState, action){
 		return {
 				...state,
 				[action.value.username]: action.value,
-        userRole: [action.value.username].currentUserRole
+        userRole: [ action.value.username ].currentUserRole
 			}
 
 		case 'SEARCH_USER':
       for(let key in state){
-        if (action.value.login == state[key].username ||
-          action.value.login == state[key].email
-          && action.value.password == state[key].password1) {
+        if (action.value.login === state[key].username ||
+          action.value.login === state[key].email
+          && action.value.password === state[key].password1) {
             return {
               ...state,
               [key]:{ ...state[key], signIn: true },
