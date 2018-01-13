@@ -10,7 +10,7 @@ import '../../utils/validation/validation.scss';
 class Contraindications extends Component {
 
   static propTypes = {
-    aboutUsSendDataForm: PropTypes.object,
+    aboutUsSendDataForm: PropTypes.bool,
     validation: PropTypes.object.isRequired,
     aboutUsFormRequest: PropTypes.func.isRequired,
     aboutUsWarningMessage: PropTypes.func.isRequired
@@ -49,9 +49,7 @@ class Contraindications extends Component {
         ?'active-warning'
         : 'not-active-warning'}> {this.props.validation['contraindications']}
         </span>
-        {this.props.aboutUsSendDataForm.contraindications
-        ? <Spinner />
-        : null}
+        {this.props.aboutUsSendDataForm ? <Spinner /> : null}
         <input type='submit' value='Сохранить данные' className='submit-contraindications' />
       </form>
     )
@@ -59,7 +57,7 @@ class Contraindications extends Component {
 }
 
 const mapStateToProps = state => ({
-  aboutUsSendDataForm: state.aboutUsSendDataForm,
+  aboutUsSendDataForm: state.aboutUsSendDataForm.sendData,
   validation: state.validationAboutUs
 });
 

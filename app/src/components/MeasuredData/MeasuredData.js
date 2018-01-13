@@ -119,7 +119,7 @@ class MeasuredData extends Component {
                 </span>
               </div>
             )}
-            {this.props.aboutUsSendDataForm.measuredData ? <Spinner /> : null}
+            {this.props.aboutUsSendDataForm ? <Spinner /> : null}
             <input type='submit' value='Сохранить данные' className='submit-full-name' />
           </fieldset>
         </form>
@@ -130,7 +130,7 @@ class MeasuredData extends Component {
 
 const mapStateToProps = state => {
   return {
-    aboutUsSendDataForm: state.aboutUsSendDataForm,
+    aboutUsSendDataForm: state.aboutUsSendDataForm.sendData,
     validation: state.validationAboutUs
   }
 }

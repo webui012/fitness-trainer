@@ -55,7 +55,7 @@ class Aims extends Component {
             {this.props.validation['aims']}
           </span>
         </div>
-        {this.props.aboutUsSendDataForm.aimsData ? <Spinner /> : null}
+        {this.props.aboutUsSendDataForm ? <Spinner /> : null}
         <input
             type='submit'
             value='Сохранить данные'
@@ -69,7 +69,7 @@ class Aims extends Component {
 
 const mapStateToProps = state => {
   return {
-    aboutUsSendDataForm: state.aboutUsSendDataForm,
+    aboutUsSendDataForm: state.aboutUsSendDataForm.sendData,
     validation: state.validationAboutUs
   }
 }

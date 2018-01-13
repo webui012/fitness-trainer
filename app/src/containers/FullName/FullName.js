@@ -28,7 +28,7 @@ class FullName extends Component {
       ref: PropTypes.string,
       id: PropTypes.string
     })),
-    aboutUsSendDataForm: PropTypes.object,
+    aboutUsSendDataForm: PropTypes.bool,
     validation: PropTypes.object.isRequired,
     aboutUsFormRequest: PropTypes.func.isRequired,
     aboutUsWarningMessage: PropTypes.func.isRequired
@@ -99,7 +99,7 @@ class FullName extends Component {
               name={this.props.validation.avatar}
           />
           {this.getInputs()}
-          {this.props.aboutUsSendDataForm.personalData ? <Spinner /> : null}
+          {this.props.aboutUsSendDataForm ? <Spinner /> : null}
           <input type='submit' value='Сохранить данные' className='submit-full-name' />
         </form>
       </div>
@@ -108,7 +108,7 @@ class FullName extends Component {
 }
 
 const mapStateToProps = state => ({
-  aboutUsSendDataForm: state.aboutUsSendDataForm,
+  aboutUsSendDataForm: state.aboutUsSendDataForm.sendData,
   validation: state.validationAboutUs
 });
 
