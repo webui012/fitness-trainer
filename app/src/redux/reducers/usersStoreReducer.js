@@ -41,8 +41,8 @@ export default function usersStoreReducer(state = initialState, action){
 		case SEARCH_USER:
       for(let key in state){
         if (action.value.login === state[key].username ||
-          action.value.login === state[key].email
-          && action.value.password === state[key].password1) {
+          action.value.login === state[key].email){
+          if (action.value.password === state[key].password1) {
             localStorage.setItem("cachedData", JSON.stringify(
               {
                 ...state,
@@ -56,6 +56,7 @@ export default function usersStoreReducer(state = initialState, action){
               userRole: state[key].currentUserRole
             }
           }
+        }
       }
 
     case USER_LOGOFF:

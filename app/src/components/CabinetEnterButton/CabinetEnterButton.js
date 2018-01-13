@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {userLogin} from '../../redux/actions';
 import {USER, ADMIN} from '../../redux/constants';
 
 import './CabinetEnterButton.scss';
@@ -20,10 +19,4 @@ const mapStateToProps = state => ({
     userRole: state.usersStoreReducer.userRole
   })
 
-const mapDispatchToProps = dispatch => ({
-  userLogin: role => {
-  dispatch(userLogin(role))
-  }
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(CabinetEnterButton);
+export default connect(mapStateToProps)(CabinetEnterButton);
