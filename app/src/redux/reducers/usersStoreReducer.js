@@ -1,4 +1,10 @@
-import { ALL, ADMIN, ADD_USER, SEARCH_USER, USER_LOGOFF } from '../constants';
+import {
+  ALL,
+  ADMIN,
+  ADD_USER,
+  SEARCH_USER,
+  USER_LOGOFF
+} from '../constants';
 
 const getCachedData = localStorage.getItem("cachedData");
 if (!getCachedData){
