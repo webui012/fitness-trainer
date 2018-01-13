@@ -74,16 +74,6 @@ class MeasuredData extends Component {
       this.props.validation
     );
 
-<<<<<<< HEAD
-    const legs = validate(
-      this.legs.value,
-      'legs',
-      this.props.warningMessage,
-      this.props.validation
-    )
-
-=======
->>>>>>> feature/AboutUs
     const data = {
       age,
       height,
