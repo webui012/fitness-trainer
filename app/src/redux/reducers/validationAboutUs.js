@@ -1,7 +1,10 @@
+import {
+  PAGE_ABOUTUS_WARNING_MESSAGE,
+} from '../constants';
+
 const initialState = {
   avatar: null,
   name: null,
-  patronymic: null,
   surname: null,
   contraindications: null,
   aims: null,
@@ -17,7 +20,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'WARNING_MESSAGE':
+    case PAGE_ABOUTUS_WARNING_MESSAGE:
       return Object.assign({}, state, action.payload);
       
     default:
