@@ -50,7 +50,7 @@ class App extends Component {
 
 function mapStateToProps (state) {
   return {
-    userRole: state.login.userRole
+    userRole: state.usersStoreReducer.userRole
   }
 }
 

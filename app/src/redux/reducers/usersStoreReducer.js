@@ -9,8 +9,8 @@ export default function usersStoreReducer( state = initialState, action){
 		case 'ADD_USER':
 		return {
 				...state,
-				[action.value.username]: action.value,
-        userRole: [ action.value.username ].currentUserRole
+				[action.value.username]: action.value
+        //userRole: [ action.value.username ].currentUserRole
 			}
 
 		case 'SEARCH_USER':
