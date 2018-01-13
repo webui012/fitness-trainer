@@ -1,4 +1,4 @@
-import { ADD_USER, SEARCH_USER, USER_LOGOFF } from '../constants';
+import { ADD_USER, SEARCH_USER, USER_LOGOFF, ERROR_REDIRECT } from '../constants';
 
 export function addUser(value) {
   return {
@@ -19,5 +19,12 @@ export function userLogoff(role){
   return {
     type: USER_LOGOFF,
     payload: role
+  }
+}
+
+export function errorRedirect(){
+
+  return {
+    type: USER_LOGOFF,
   }
 }

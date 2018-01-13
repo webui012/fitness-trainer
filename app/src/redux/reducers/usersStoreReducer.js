@@ -1,34 +1,80 @@
-import { ALL } from '../constants';
+import { ALL, ADMIN, ADD_USER, SEARCH_USER, USER_LOGOFF, ERROR_REDIRECT } from '../constants';
 
-const initialState ={
-	userRole: ALL
-};
+const getCachedData = localStorage.getItem("cachedData");
+if (!getCachedData){
+  localStorage.setItem("cachedData", JSON.stringify(
+    {
+     userRole: ALL,
+      admin:{
+        username: 'admin',
+        password1: 'admin111',
+        currentUserRole: ADMIN
+      }
+    })
+  );
+}
+
+const initialState = JSON.parse(getCachedData);
 
 export default function usersStoreReducer( state = initialState, action){
 	switch (action.type){
-		case 'ADD_USER':
-		return {
+		case ADD_USER:
+     localStorage.setItem("cachedData", JSON.stringify(
+		{
 				...state,
-				[action.value.username]: action.value
+				[action.value.username]: action.value,
+        userRole: action.value.currentUserRole
         //userRole: [ action.value.username ].currentUserRole
-			}
+			})
+   );
+     return {
+        ...state,
+        [action.value.username]: action.value,
+        userRole: action.value.currentUserRole
+      }
 
-		case 'SEARCH_USER':
+		case SEARCH_USER:
       for(let key in state){
-        if (action.value.login === state[key].username ||
-          action.value.login === state[key].email
-          && action.value.password === state[key].password1) {
+        if (action.value.login == state[key].username ||
+          action.value.login == state[key].email
+          && action.value.password == state[key].password1) {
+          localStorage.setItem("cachedData", JSON.stringify(
+              {
+                ...state,
+                [key]:{ ...state[key], signIn: true },
+                userRole: state[key].currentUserRole
+              })
+            );
             return {
               ...state,
               [key]:{ ...state[key], signIn: true },
               userRole: state[key].currentUserRole
             }
-          }
+        }
       }
+      if ( state.userRole == ALL ) {
+        localStorage.setItem("cachedData", JSON.stringify(
+              {
+               ...state,
+             notFound: true
+              })
+            );
+          return {
+            ...state,
+             notFound: true
+          }
+        }
 
-    case 'USER_LOGOFF':
+    case USER_LOGOFF:
       for(let key in state){
       	if (state[key].signIn){
+          localStorage.setItem("cachedData", JSON.stringify(
+            {
+              ...state,
+              [key]:{ ...state[key], signIn: false },
+            userRole: ALL
+            })
+          );
       		return {
       			...state,
       			[key]:{ ...state[key], signIn: false },
@@ -36,6 +82,18 @@ export default function usersStoreReducer( state = initialState, action){
       		}
       	}
       }
+
+    case ERROR_REDIRECT:
+     localStorage.setItem("cachedData", JSON.stringify(
+            {
+               ...state,
+            notFound: false
+            })
+          );
+          return {
+            ...state,
+            notFound: false
+          }
 
     default: return state;
   }
