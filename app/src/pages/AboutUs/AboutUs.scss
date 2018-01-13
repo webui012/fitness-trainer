@@ -1,14 +1,18 @@
 .about-us {
-  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 20px;
 
   .columns-wrap {
-    width: 100%;
     display: flex;
+    width: 63%;
     justify-content: space-between;
+  }
+  .add-info-wrap {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
   }
 
   .body-sizes {

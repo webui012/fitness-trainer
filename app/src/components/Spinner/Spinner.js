@@ -3,6 +3,7 @@ import './Spinner.scss';
 
 const Spinner =props =>
   <div className='page-wrap'>
+  <p>Идет загрузка</p>
     <div className='spinner-wrap'>
       <div className='wrap'>
         <div className='bar1'></div>
