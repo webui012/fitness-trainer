@@ -50,10 +50,6 @@ const initialState = {
       name: 'Контакты',
       url: '/contacts',
     },
-    {
-      name: 'Кабинет',
-      url: '/cabinet',
-    }
   ],
 }
 

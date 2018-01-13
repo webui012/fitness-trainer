@@ -12,8 +12,8 @@ import pageAboutGetStaticData from './page_About_getStaticData';
 import aboutUsGetData from './aboutUsGetData';
 import contactsGetData from './contactsGetData';
 import validationAboutUs from './validationAboutUs';
-import login from './userLogin';
-import { orderForm } from './serviceOrderForm'
+import usersStoreReducer from './usersStoreReducer';
+import { orderForm } from './serviceOrderForm';
 import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
@@ -29,10 +29,9 @@ const rootReducer = combineReducers({
   aboutUsGetData,
   contactsGetData,
   validationAboutUs,
-  login,
+  usersStoreReducer,
   sales,
   form: formReducer
 });
 
 export default rootReducer;
-
