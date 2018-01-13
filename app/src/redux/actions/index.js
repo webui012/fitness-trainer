@@ -53,15 +53,7 @@ export const pageLoadingEndContacts = data => ({
   payload: data
 });
 
-export function userLogin(role){
-
-  return {
-    type: 'USER_LOGIN',
-    payload: role
-  }
-}
-
 export * from './sales';
 export * from './setOrdersVisibilityFilter';
 export * from './serviceOrderForm';
-
+export * from './page_Login';

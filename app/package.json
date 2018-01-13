@@ -54,6 +54,7 @@
     "redux-saga": "^0.16.0",
     "reselect": "^3.0.1",
     "start": "^5.1.0",
-    "redux-form": "^7.2.0"
+    "redux-form": "^7.2.0",
+    "redux-thunk": "^2.2.0"
   }
 }
