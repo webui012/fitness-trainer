@@ -66,8 +66,7 @@ export default connect(
                            .then(function(status) {
                                  if (status == 200){
                                     setTimeout(() => {
-                                        dispatch(addUser(value));
-                                        routStatus();
+                                        dispatch(addUser(value)); routStatus();
                                     },2000)//передаем данные из формы в стор
                                 }
                            })
