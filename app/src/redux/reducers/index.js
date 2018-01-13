@@ -19,11 +19,6 @@ import { orderForm } from './serviceOrderForm'
 import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
-<<<<<<< HEAD
-	usersStoreReducer,
-	form: formReducer
-})
-=======
   header,
   footer,
   homePage,
@@ -36,11 +31,10 @@ const rootReducer = combineReducers({
   AboutUs,
   Contacts,
   validationAboutUs,
-  login,
+  usersStoreReducer,
   sales,
   form: formReducer
 });
 
 export default rootReducer;
->>>>>>> 35eee0e83a5dab622cf7756ab4b99d0460ff42ee
 

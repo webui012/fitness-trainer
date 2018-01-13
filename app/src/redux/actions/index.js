@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-
-export function addUser(value) {
-	return {
-		type: 'ADD_USER',
-		value: value
-	}
-}
-
-export function searchUser(value) {
-	return {
-		type: 'SEARCH_USER',
-		value: value
-	}
-}
-=======
 import {
   FORM_REQUEST,
   FORM_UCCESS,
@@ -69,16 +53,7 @@ export const pageLoadingEndContacts = data => ({
   payload: data
 });
 
-export function userLogin(role){
-
-  return {
-    type: 'USER_LOGIN',
-    payload: role
-  }
-}
-
 export * from './sales';
 export * from './setOrdersVisibilityFilter';
 export * from './serviceOrderForm';
-
->>>>>>> 35eee0e83a5dab622cf7756ab4b99d0460ff42ee
+export * from './page_Login';
