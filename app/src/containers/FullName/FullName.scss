@@ -10,10 +10,11 @@
   }
 
   .full-name-form {
-    width: 200px;
+    width: 223px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 
     input[type='text'], .submit-full-name {
       width: 100%;
@@ -28,10 +29,16 @@
         border: 1px solid #54a4d4;
         box-shadow: 0 0 5px rgba(84, 164, 212, 1);
       }
+
+      &:hover {
+        background: #fff;
+        color: #0f6605;
+        border: 1px solid #0f6605;
+      }
     }
 
     .submit-full-name {
-      background: #33cc33;
+      background: #0f6605;
       color: #fff;
       cursor: pointer;
     }

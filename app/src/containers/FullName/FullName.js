@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { InputFile } from 'Components';
+import { InputFile, Spinner } from 'Components';
 import { connect } from 'react-redux';
-import { formReguest, warningMessage } from '../../redux/actions';
+import { aboutUsFormRequest, aboutUsWarningMessage } from '../../redux/actions';
 import './FullName.scss';
 import '../../utils/validation/validation.scss';
 import validate from '../../utils/validation/validateFullName';
@@ -28,10 +28,10 @@ class FullName extends Component {
       ref: PropTypes.string,
       id: PropTypes.string
     })),
-    sendDataSpinner: PropTypes.object,
+    aboutUsSendDataForm: PropTypes.bool,
     validation: PropTypes.object.isRequired,
-    formReguest: PropTypes.func.isRequired,
-    warningMessage: PropTypes.func.isRequired
+    aboutUsFormRequest: PropTypes.func.isRequired,
+    aboutUsWarningMessage: PropTypes.func.isRequired
   }
 
   getInputs = () => this.props.fields.map(
@@ -42,17 +42,15 @@ class FullName extends Component {
             ref={input => this[field.ref] = input}
             className={this.props.validation[field.ref] ? 'input-warning' : null}
         />
-        <span className={this.props.validation[field.ref] ?
-            'active-warning' :
-            'not-active-warning'}>
-            {this.props.validation[field.ref]}
+        <span className={this.props.validation[field.ref]
+          ?'active-warning'
+          :'not-active-warning'}> {this.props.validation[field.ref]}
         </span>
       </span>);
 
-
-  getAvatar = () => this.props.path.userAvatar ?
-      <img className='avatar' src={this.props.path.userAvatar} alt='user avatar' /> :
-      <img className='avatar' src={this.props.path.defaultAvatar} alt='user avatar' />
+  getAvatar = () => this.props.path.userAvatar
+      ?<img className='avatar' src={this.props.path.userAvatar} alt='user avatar' />
+      :<img className='avatar' src={this.props.path.defaultAvatar} alt='user avatar' />;
 
   getLocation = data => this.setState({location: data});
 
@@ -61,44 +59,34 @@ class FullName extends Component {
     const avatar = validateImageLoad(
       this.state.location,
       'avatar',
-      this.props.warningMessage,
+      this.props.aboutUsWarningMessage,
       this.props.validation
     );
     const name = validate(
       this.name.value,
       'name',
-      this.props.warningMessage,
-      this.props.validation
-    );
-    const patronymic = validate(
-      this.patronymic.value,
-      'patronymic',
-      this.props.warningMessage,
+      this.props.aboutUsWarningMessage,
       this.props.validation
     );
     const surname = validate(
       this.surname.value,
       'surname',
-      this.props.warningMessage,
+      this.props.aboutUsWarningMessage,
       this.props.validation
     );
 
     const data = {
       avatar,
       name,
-      patronymic,
       surname,
       userId: 'personalData'
-    }
+    };
 
-    if (name && patronymic && surname && avatar !== undefined) {
-      this.props.formReguest(data);
-      this.name.value = '';
-      this.patronymic.value = '';
-      this.surname.value = '';
+    if (name && surname && avatar !== undefined) {
+      this.props.aboutUsFormRequest(data);
       this.setState({location: 'загрузите фото'})
-    }
-  }
+    };
+  };
 
   render() {
     return (
@@ -111,7 +99,7 @@ class FullName extends Component {
               name={this.props.validation.avatar}
           />
           {this.getInputs()}
-          {this.props.sendDataSpinner.personalData ? <div>{this.props.sendDataSpinner.personalData}</div> : null}
+          {this.props.aboutUsSendDataForm ? <Spinner /> : null}
           <input type='submit' value='Сохранить данные' className='submit-full-name' />
         </form>
       </div>
@@ -120,13 +108,13 @@ class FullName extends Component {
 }
 
 const mapStateToProps = state => ({
-  sendDataSpinner: state.sendDataSpinner,
+  aboutUsSendDataForm: state.aboutUsSendDataForm.sendData,
   validation: state.validationAboutUs
 });
 
 const mapDispatchToProps = dispatch => ({
-  formReguest: data => dispatch(formReguest(data)),
-  warningMessage: data => dispatch(warningMessage(data))
+  aboutUsFormRequest: data => dispatch(aboutUsFormRequest(data)),
+  aboutUsWarningMessage: data => dispatch(aboutUsWarningMessage(data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FullName);
