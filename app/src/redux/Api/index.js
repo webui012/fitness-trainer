@@ -4,12 +4,11 @@ import { dataContacts } from '../../pages/Contacts/contactsData';
 class Api {
 
   static fetchUserData(data) {
-     //return fetch('http://asdas.asdasd').then((res) => res.json())
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         dataAboutUs.formData[`${data.userId}`] = data;
-        resolve(dataAboutUs.formData);
-      }, 2000);
+        reject(dataAboutUs.formData);
+      }, 500);
     });
   }
 
@@ -17,7 +16,7 @@ class Api {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(dataAboutUs);
-      }, 1000);
+      }, 500);
     });
   }
 
@@ -25,7 +24,7 @@ class Api {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(dataContacts);
-      }, 1000);
+      }, 500);
     });
   }
 
