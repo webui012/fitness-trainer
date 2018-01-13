@@ -84,6 +84,10 @@
     background-size: 35px 20px, 100% 100%, 100% 100%;
   }
 
+  option[value=default]{
+    color: grey;
+  }
+
   .service-order-form{
     display: flex;
     flex-flow: column;

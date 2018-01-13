@@ -1,6 +1,7 @@
 const ServiceOrderData = {
   trainingData: {
-    serviceType: 'default'
+    serviceType: 'default',
+    trainingPurpose: 'default'
   }
 }
 
