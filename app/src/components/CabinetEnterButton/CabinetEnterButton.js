@@ -17,7 +17,7 @@ const CabinetEnterButton = props => {
 }
 
 const mapStateToProps = state => ({
-    userRole: state.login.userRole
+    userRole: state.usersStoreReducer.userRole
   })
 
 const mapDispatchToProps = dispatch => ({
