@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import YouTube from '@u-wave/react-youtube';
-import { Loading } from 'Components';
+import { Spinner } from 'Components';
 import { connect } from 'react-redux';
 import { pageAboutGetDataRequest } from '../../redux/actions/page_About';
 import './About.scss';
@@ -36,7 +36,7 @@ class About extends Component {
         </section>
       )
     } else {
-      return (<Loading />);
+      return (<Spinner />);
     }
   }
 }

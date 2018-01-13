@@ -20,12 +20,6 @@ fullNameFields : [
     },
     {
         type: 'text',
-        placeholder: 'Отчество',
-        ref: 'patronymic',
-        id: '9gwqnfzri6'
-    },
-    {
-        type: 'text',
         placeholder: 'Фамилия',
         ref: 'surname',
         id: '6cl4w8pu86'
@@ -76,12 +70,6 @@ dataFields : {
                 nameField: 'Бедра(см)',
                 ref: 'hips',
                 placeholder: 'Введите обхват бедер'
-            },
-            {
-                type: 'number',
-                nameField: 'Высота ног(см)',
-                ref: 'legs',
-                placeholder: 'Введите высоту ног'
             }
         ],
 

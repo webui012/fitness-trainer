@@ -6,7 +6,7 @@ class Api {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(SalesData);
-            }, 1000);
+            }, 500);
         });
     }
 
