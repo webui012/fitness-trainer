@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   ALL,
   ADMIN,
@@ -5,6 +6,10 @@ import {
   SEARCH_USER,
   USER_LOGOFF
 } from '../constants';
+=======
+
+import { ALL, ADMIN, ADD_USER, SEARCH_USER, USER_LOGOFF } from '../constants';
+>>>>>>> e08d47611fc510c3950ae8ef438c06e3d3fb0edf
 
 const getCachedData = localStorage.getItem("cachedData");
 if (!getCachedData){
@@ -40,9 +45,9 @@ export default function usersStoreReducer(state = initialState, action){
 
 		case SEARCH_USER:
       for(let key in state){
-        if (action.value.login === state[key].username ||
-          action.value.login === state[key].email
-          && action.value.password === state[key].password1) {
+        if ((action.value.login == state[key].username ||
+          action.value.login == state[key].email)
+          && action.value.password == state[key].password1) {
             localStorage.setItem("cachedData", JSON.stringify(
               {
                 ...state,
@@ -55,8 +60,20 @@ export default function usersStoreReducer(state = initialState, action){
               [key]:{ ...state[key], signIn: true },
               userRole: state[key].currentUserRole
             }
-          }
+        }
       }
+      if ( state.userRole == ALL ) {
+        localStorage.setItem("cachedData", JSON.stringify(
+              {
+               ...state,
+             notFound: true
+              })
+            );
+          return {
+            ...state,
+             notFound: true
+          }
+        }
 
     case USER_LOGOFF:
       for(let key in state){
@@ -75,6 +92,18 @@ export default function usersStoreReducer(state = initialState, action){
       		}
       	}
       }
+
+    case 'ERROR_REDIRECT':
+     localStorage.setItem("cachedData", JSON.stringify(
+            {
+               ...state,
+            notFound: false
+            })
+          );
+          return {
+            ...state,
+            notFound: false
+          }
 
     default: return state;
   }
