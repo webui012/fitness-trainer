@@ -12,6 +12,7 @@ export default function usersStoreReducer(state = initialState, action){
 		case 'ADD_USER':
 		  localStorage.setItem("cachedData", JSON.stringify(
         {
+          ...state,
           [action.value.username]: action.value,
           userRole: action.value.currentUserRole
         })
@@ -29,6 +30,7 @@ export default function usersStoreReducer(state = initialState, action){
           && action.value.password === state[key].password1) {
             localStorage.setItem("cachedData", JSON.stringify(
               {
+                ...state,
                 [key]:{ ...state[key], signIn: true },
                 userRole: state[key].currentUserRole
               })
@@ -46,6 +48,7 @@ export default function usersStoreReducer(state = initialState, action){
       	if (state[key].signIn){
       		localStorage.setItem("cachedData", JSON.stringify(
             {
+              ...state,
               [key]:{ ...state[key], signIn: false },
             userRole: ALL
             })
