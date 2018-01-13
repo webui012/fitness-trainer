@@ -1,16 +1,25 @@
 import { ALL } from '../constants';
 
-const initialState ={
-	userRole: ALL
-};
+const getCachedData = localStorage.getItem("cachedData");
+if (!getCachedData){
+  localStorage.setItem("cachedData", JSON.stringify({ userRole: ALL }));
+}
 
-export default function usersStoreReducer( state = initialState, action){
+const initialState = JSON.parse(getCachedData);
+
+export default function usersStoreReducer(state = initialState, action){
 	switch (action.type){
 		case 'ADD_USER':
-		return {
+		  localStorage.setItem("cachedData", JSON.stringify(
+        {
+          [action.value.username]: action.value,
+          userRole: action.value.currentUserRole
+        })
+      );
+    return {
 				...state,
-				[action.value.username]: action.value
-        //userRole: [ action.value.username ].currentUserRole
+				[action.value.username]: action.value,
+        userRole: action.value.currentUserRole
 			}
 
 		case 'SEARCH_USER':
@@ -18,6 +27,12 @@ export default function usersStoreReducer( state = initialState, action){
         if (action.value.login === state[key].username ||
           action.value.login === state[key].email
           && action.value.password === state[key].password1) {
+            localStorage.setItem("cachedData", JSON.stringify(
+              {
+                [key]:{ ...state[key], signIn: true },
+                userRole: state[key].currentUserRole
+              })
+            );
             return {
               ...state,
               [key]:{ ...state[key], signIn: true },
@@ -29,7 +44,13 @@ export default function usersStoreReducer( state = initialState, action){
     case 'USER_LOGOFF':
       for(let key in state){
       	if (state[key].signIn){
-      		return {
+      		localStorage.setItem("cachedData", JSON.stringify(
+            {
+              [key]:{ ...state[key], signIn: false },
+            userRole: ALL
+            })
+          );
+          return {
       			...state,
       			[key]:{ ...state[key], signIn: false },
       			userRole: ALL

@@ -10,12 +10,12 @@ import {renderField} from './renderField';
 
 
 let Signup = props => {
-  const { handleSubmit, routStatus} = props
+  const { handleSubmit, routStatus} = props;
 
-  let routToLogin;
+  //let routToLogin;
 
   if (routStatus){
-    routToLogin = <Redirect to='/login' />;
+    return <Redirect to='/cabinet/user' />;
   }
 
   return <div className='signup-page'>
@@ -75,14 +75,14 @@ let Signup = props => {
         </label>
       </fieldset>
     </form>
-    {routToLogin}
+
   </div>
 }
 
 Signup = reduxForm(
   {
-  form: 'SignUpForm',
-  validate,
+    form: 'SignUpForm',
+    validate,
   }
 )(Signup)
 

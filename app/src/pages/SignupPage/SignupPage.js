@@ -16,7 +16,7 @@ class SignupPage extends Component{
  }
 
     onSubmitRegistrationData(value){
-        value = {...value, currentUserRole: USER};
+        value = {...value, currentUserRole: USER, signIn: true};
         console.log(value);
         this.props.send(value);
         this.routStatus = true;
@@ -53,7 +53,7 @@ export default connect(
                                  if (status == 200){
                                     setTimeout(() => {
                                         dispatch(addUser(value))
-                                    },4000)//передаем данные из формы в стор
+                                    },2000)//передаем данные из формы в стор
                                 }
                            })
                 }
