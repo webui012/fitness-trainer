@@ -1,11 +1,11 @@
 import React,{ Component } from 'react';
 import PropTypes from 'prop-types';
 import './Contacts.scss';
-import { Map, ContactsField, Spinner } from 'Components';
+import { Map, ContactsField} from 'Components';
 import { connect } from 'react-redux';
 import { constantsGetData } from '../../redux/actions';
-import Api from '../../redux/Api';
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Icon, Image, Button, Header, Loader, Dimmer } from 'semantic-ui-react'
+
 
 class Contacts extends Component {
 
@@ -38,7 +38,9 @@ class Contacts extends Component {
           <Map data={this.props.data.mapData} />
         </div>
       </div>
-      : <Spinner />
+      : <Dimmer active inverted>
+          <Loader inverted content='Загрузка' />
+        </Dimmer>
     )
   }
 }
