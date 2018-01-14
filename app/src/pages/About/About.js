@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import YouTube from '@u-wave/react-youtube';
-import { AchievmentItem, Spinner } from 'Components';
+import { AchievmentItem, InfoField, Spinner } from 'Components';
 import { connect } from 'react-redux';
 import { pageAboutGetDataRequest } from '../../redux/actions/page_About';
 import './About.scss';
 import { Divider, Container, List, Segment, Dimmer, Loader, Card, Icon, Image, Button, Header } from 'semantic-ui-react'
 
-const Info = props =>
-  <p className='block'>
-    <span className='block-title'>{props.type}: </span>
-    {props.value}
-    <Divider/>
-  </p>
+
 
 
 class About extends Component {
@@ -52,7 +47,7 @@ class About extends Component {
   render() {
     if (this.props.data) {
       const { title, info, sections, achievments, video } = this.props.data;
-      const { name, photo, sport, category, details } = trainerInfo;
+      const { name, photo, sport, category, details } = info;
 
       return (
         <section className='page-wrapper about-wrapper'>
@@ -73,7 +68,7 @@ class About extends Component {
               </Card>
               <Container text>
                 <Header as='h3'>Основная информация</Header>
-                {details.map(d => <Info type={d.type} value={d.value}/>)}
+                {details.map(d => <InfoField type={d.type} value={d.value}/>)}
               </Container>
             </div>
 

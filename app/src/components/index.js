@@ -1,5 +1,6 @@
 export { default as Aims } from './Aims/Aims';
 export { default as AchievmentItem } from './AchievmentItem/AchievmentItem';
+export { default as InfoField } from './InfoField/InfoField';
 export { default as AdditionalInfoFields } from './AdditionalInfoFields/AdditionalInfoFields';
 export { default as ContactsField } from './ContactsField/ContactsField';
 export { default as ErrorLoadingData } from './ErrorLoadingData/ErrorLoadingData';
