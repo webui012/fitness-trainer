@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import YouTube from '@u-wave/react-youtube';
-import { Spinner } from 'Components';
+import { AchievmentItem, Spinner } from 'Components';
 import { connect } from 'react-redux';
 import { pageAboutGetDataRequest } from '../../redux/actions/page_About';
 import './About.scss';
@@ -14,14 +14,6 @@ const Info = props =>
     <Divider/>
   </p>
 
-const AchievmentItem = props =>
-  <Card>
-    <Image src={props.img}/>
-    <Card.Content>
-      <Card.Header>{props.title}</Card.Header>
-      <Card.Meta>{props.date}</Card.Meta>
-    </Card.Content>
-  </Card>
 
 class About extends Component {
   static propTypes = {
@@ -59,8 +51,8 @@ class About extends Component {
 
   render() {
     if (this.props.data) {
-      const { title, trainerInfo, sections, achievments, video } = this.props.data,
-            { name, photo, sport, category, details } = trainerInfo;
+      const { title, info, sections, achievments, video } = this.props.data;
+      const { name, photo, sport, category, details } = trainerInfo;
 
       return (
         <section className='page-wrapper about-wrapper'>
@@ -84,12 +76,14 @@ class About extends Component {
                 {details.map(d => <Info type={d.type} value={d.value}/>)}
               </Container>
             </div>
+
             <section className='info-sections'>{this.renderSections(sections)}</section>
             <section className='achievments'>
               <Card.Group>
                 {this.renderAchievments(achievments)}
               </Card.Group>
             </section>
+
             <section className='video-section'>
               <YouTube video={video} width='800' height='600' className='video' />
             </section>

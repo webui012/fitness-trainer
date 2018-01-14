@@ -1,6 +1,6 @@
 export default {
   title: 'Информация о тренере',
-  trainerInfo: {
+  info: {
     name: 'Кирилл Худаев',
     photo: 'https://goo.gl/6VPNJL',
     sport: 'бодибилдинг',
