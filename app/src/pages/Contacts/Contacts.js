@@ -5,6 +5,7 @@ import { Map, ContactsField, Spinner } from 'Components';
 import { connect } from 'react-redux';
 import { constantsGetData } from '../../redux/actions';
 import Api from '../../redux/Api';
+import { Card, Icon, Image } from 'semantic-ui-react'
 
 class Contacts extends Component {
 

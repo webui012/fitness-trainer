@@ -51,10 +51,12 @@
     "reactstrap": "^4.8.0",
     "redux": "3.7.2",
     "redux-devtools": "3.4.1",
-    "redux-saga": "^0.16.0",
-    "reselect": "^3.0.1",
-    "start": "^5.1.0",
     "redux-form": "^7.2.0",
-    "redux-thunk": "^2.2.0"
+    "redux-saga": "^0.16.0",
+    "redux-thunk": "^2.2.0",
+    "reselect": "^3.0.1",
+    "semantic-ui-css": "^2.2.12",
+    "semantic-ui-react": "^0.77.2",
+    "start": "^5.1.0"
   }
 }
