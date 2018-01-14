@@ -7,17 +7,17 @@ import {
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 import routes from './routes';
+import { ALL } from '../../redux/constants';
+
 import './App.scss';
-import MainLayout from '../../layouts/MainLayout';
-import AdminLayout from '../../layouts/AdminLayout';
 
 class App extends Component {
 
-  isAuthorized(pageRole, stateRole){
-   if (pageRole !== stateRole && pageRole !== 'ALL'){
-      return false
+  isAuthorized(pageRole, stateRole) {
+   if (pageRole !== stateRole && pageRole !== ALL) {
+      return false;
     } else {
-      return true
+      return true;
     }
   }
 
@@ -34,24 +34,26 @@ class App extends Component {
                     <Component {...props} />
                   </Layout>
                 ):(
-                  <Redirect to={{
-                    pathname: '/login',
-                    state: { from: props.location }
-                  }} />
+                  <Redirect to={
+                    {
+                      pathname: '/login',
+                      state: { from: props.location }
+                    }
+                  } />
                 )
               )} />
             ))}
           </Switch>
         </div>
       </Router>
-    )
+    );
   }
 }
 
-function mapStateToProps (state) {
-  return {
+const mapStateToProps = state => (
+  {
     userRole: state.usersStoreReducer.userRole
   }
-}
+);
 
 export default connect(mapStateToProps)(App);
