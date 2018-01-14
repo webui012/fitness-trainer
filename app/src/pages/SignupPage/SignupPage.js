@@ -5,57 +5,54 @@ import {addUser} from '../../redux/actions/index';
 import { SubmissionError } from 'redux-form';
 import { USER } from '../../redux/constants';
 
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 class SignupPage extends Component{
 
     constructor(props){
-   super(props);
-   this.state = {
-      loadingStatus:'',
-      routStatus: false
+      super(props);
+      this.state = {
+        loadingStatus:'',
+        routStatus: false
+      }
+      this.onSubmitRegistrationData = this.onSubmitRegistrationData.bind(this);
+      this.setRoutAfterSuccess = this.setRoutAfterSuccess.bind(this);
     }
-   this.onSubmitRegistrationData = this.onSubmitRegistrationData.bind(this);
-   this.setRoutAfterSuccess = this.setRoutAfterSuccess.bind(this);
- }
 
     onSubmitRegistrationData(value){
         value = {...value, currentUserRole: USER, signIn: true};
         console.log(value);
-          this.setState({loadingStatus: true});
+        this.setState({loadingStatus: true});
         this.props.send(value, this.setRoutAfterSuccess);
-        //this.routStatus = true;
     }
 
     setRoutAfterSuccess(){
        this.setState({routStatus: true});
     }
 
-
-     render(){
+    render(){
       let addSpinner;
       if (this.state.loadingStatus){
         addSpinner = <Spinner />;
       }
-   return (
-     <div>
-       <Signup
-           onSubmit={this.onSubmitRegistrationData}
-           routStatus={this.state.routStatus}
-        />
-       {addSpinner}
-     </div>
-   )
- }
+       return (
+         <div>
+           <Signup
+               onSubmit={this.onSubmitRegistrationData}
+               routStatus={this.state.routStatus}
+            />
+           {addSpinner}
+         </div>
+       )
+    }
 }
 
-export default connect(
-    state => (
+const mapStateToProps = state => (
         {
          storage: state
         }
-    ),
-    dispatch => (
+)
+
+const mapDispatchToProps = dispatch => (
         {
             send(value, routStatus){
                 const sendData = () => dispatch => {
@@ -74,6 +71,6 @@ export default connect(
                 dispatch(sendData())
             },
         }
-    )
+)
 
-)(SignupPage);
+export default connect(mapStateToProps, mapDispatchToProps)(SignupPage);

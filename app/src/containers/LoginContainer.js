@@ -13,7 +13,8 @@ class LoginContainer extends Component{
     }
     this.condRedirect = this.condRedirect.bind(this);
     this.onSubmitSignInData = this.onSubmitSignInData.bind(this);
-     this.noUserErrorRedirect = this.noUserErrorRedirect.bind(this);
+    this.noUserErrorRedirect = this.noUserErrorRedirect.bind(this);
+    this.changeState = this.changeState.bind(this);
   }
 
   onSubmitSignInData(value){
@@ -44,12 +45,12 @@ class LoginContainer extends Component{
     let noUser;
     let errorRedirect;
     if (this.state.loadingStatus){
-      addSpinner =  <Spinner />;
+      addSpinner = <Spinner />;
     } else {
       addSpinner ='';
     }
     if (this.props.noUser){
-      noUser = <NoUserFoundError closeMessage = {this.noUserErrorRedirect} redraw = {this.changeState.bind(this)} />;
+      noUser = <NoUserFoundError closeMessage={this.noUserErrorRedirect} redraw={this.changeState} />;
     } else {
       noUser = '';
     }
@@ -58,7 +59,7 @@ class LoginContainer extends Component{
     const { from } = this.props.location.state || {from: {pathname : this.condRedirect(role)}};
 
     return (<div>
-      <LoginForm onSubmit={this.onSubmitSignInData} from={from} role ={role} />
+      <LoginForm onSubmit={this.onSubmitSignInData} from={from} role={role} />
       {noUser}
       {addSpinner}
     </div>
