@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
 import NutritionData from './NutritionData';
 import {
       NutritionItem,
@@ -41,7 +43,9 @@ const Nutrition = () => {
                             <p className='nut-description'>{foodText}</p>
                         </div>
                     </div>
-                    <button className='service-button'>{buttonText}</button>
+                    <Link to='/cabinet/user/service-order'>
+                        <button className='service-button'>{buttonText}</button>
+                    </Link>
                 </div>
             </section>
     )
