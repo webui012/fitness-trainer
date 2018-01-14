@@ -21,3 +21,13 @@ body {
 }
 
 .slider {position: relative;}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.layout-content {
+  flex-grow: 1;
+}
