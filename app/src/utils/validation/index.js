@@ -23,13 +23,14 @@ class Validation {
   }
 
   static checkNotMoreOneDash(str) {
-    if (str.search(/^\-/)!==-1 || str.search(/-$/)!==-1){
+    if (str.search(/^\-/) !== -1 || str.search(/-$/) !== -1) {
       return VALIDATION_WARNING.notBeginAndEndDash;
     }
 
     if (str.match(/-/g) !== null && str.match(/-/g).length > 1) {
       return VALIDATION_WARNING.notMoreOneDash;
-    }
+    };
+
     return str;
   }
 
@@ -102,7 +103,8 @@ class Validation {
 
     if (str.length > length) {
       return `Данное поле не должно включать более ${length} символов, в данный момент количество введённых символов равно ${str.length}`;
-    }
+    };
+
     return str;
   }
 
