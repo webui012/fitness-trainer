@@ -1,6 +1,6 @@
 import { ALL, ADMIN, ADD_USER, SEARCH_USER, USER_LOGOFF, ERROR_REDIRECT } from '../constants';
 
-const getCachedData = localStorage.getItem("cachedData");
+let getCachedData = localStorage.getItem("cachedData");
 if (!getCachedData){
   localStorage.setItem("cachedData", JSON.stringify(
     {
@@ -12,6 +12,7 @@ if (!getCachedData){
       }
     })
   );
+   getCachedData = localStorage.getItem("cachedData");
 }
 
 const initialState = JSON.parse(getCachedData);
