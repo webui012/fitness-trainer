@@ -5,10 +5,24 @@ export default {
     photo: 'https://goo.gl/6VPNJL',
     sport: 'бодибилдинг',
     category: 'до 95 кг',
-    growth: 182,
-    birth: '30 сентября 1988 г.',
-    competitiveWeight: 95,
-    offSeasonWeight: 105
+    details: [
+      {
+        type: 'Рост',
+        value: 182
+       },
+      {
+        type: 'Дата рождения',
+        value: '30 сентября 1988 г.'
+       },
+      {
+        type: 'Вес соревновательный',
+        value: 95
+       },
+      {
+        type: 'Вес в межсезонье',
+        value: 105
+       },
+    ]
   },
   sections: [
     {
@@ -22,5 +36,22 @@ export default {
       paragraphs: ['Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, harum?', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dignissimos ipsa modi nihil cum voluptatem eaque officiis quas expedita excepturi.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique sint quae alias officiis distinctio pariatur, rerum possimus. Facere aliquam, sequi enim, cupiditate quia minus obcaecati, libero soluta quidem odit molestiae!']
     }
   ],
-  videoId: 'duXyGlVSacM'
+  achievments: [
+    {
+      title: 'Абсолютный чемпион Olympia 2017',
+      date: '18-21 августа 2012 г.',
+      img: 'https://goo.gl/z6HJu7'
+    },
+    {
+      title: '1-е место. Кубок Украины',
+      date: '21 июля 2015 г.',
+      img: 'https://goo.gl/bQNj44'
+    },
+    {
+      title: '1-е место Арнольд Классик',
+      date: '7 апреля 2017 г.',
+      img: 'https://goo.gl/Jq4DhB'
+    },
+  ],
+  video: 'lwulD5GGPiI'
 }

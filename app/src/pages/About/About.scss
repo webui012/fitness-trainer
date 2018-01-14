@@ -3,12 +3,19 @@
   align-items: flex-start;
 }
 
-.info-fields {
-  margin-left: 40px;
-}
-
 .paragraph {
   margin: 10px 0;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.achievments {
+  width: 902px;
+  margin: 40px auto;
+}
+
+.video-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
