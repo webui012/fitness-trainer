@@ -1,9 +1,9 @@
 import React from 'react';
 import './Spinner.scss';
 
-const Spinner =props =>
+const Spinner = props =>
   <div className='page-wrap'>
-  <p>Идет загрузка</p>
+    <p>Идет загрузка</p>
     <div className='spinner-wrap'>
       <div className='wrap'>
         <div className='bar1'></div>
@@ -20,6 +20,6 @@ const Spinner =props =>
         <div className='bar10'></div>
       </div>
     </div>
-  </div>
+  </div>;
 
 export default Spinner;
