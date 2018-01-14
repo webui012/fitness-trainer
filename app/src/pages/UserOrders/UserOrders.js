@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getVisibleOrders, getUserSelections } from '../../redux/reducers/userOrders';
@@ -8,7 +9,7 @@ import './UserOrders.scss';
 class UserOrders extends Component {
   constructor(props) {
     super(props);
-  }
+  };
 
   // Select items render
   renderSelections = selections => {
@@ -37,12 +38,12 @@ class UserOrders extends Component {
   renderOrders = orders => {
     return orders.map((order, i) =>
       <OrderItem id={order.id}
-                 key={i}
-                 date={order.date}
-                 price={order.price}
-                 payment={order.payment}
-                 status={order.status}
-                 service={order.service}/>)
+          key={i}
+          date={order.date}
+          price={order.price}
+          payment={order.payment}
+          status={order.status}
+          service={order.service} />)
   };
 
   handleSelect = e => {
@@ -75,7 +76,7 @@ class UserOrders extends Component {
           this.props.setOrdersVisibilityFilter('SHOW_PROGRAM_SERVICE');
       break;
 
-      case 'Одежда для фитнесса':
+      case 'Одежда для фитнеса':
           this.props.setOrdersVisibilityFilter('SHOW_CLOTHES_SERVICE');
       break;
     }
