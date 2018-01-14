@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Signup, Loading} from 'Components';
+import {Signup, Spinner} from 'Components';
 import {connect} from 'react-redux';
 import {addUser} from '../../redux/actions/index';
 import { SubmissionError } from 'redux-form';
@@ -35,7 +35,7 @@ class SignupPage extends Component{
      render(){
       let addSpinner;
       if (this.state.loadingStatus){
-        addSpinner = <Loading />;
+        addSpinner = <Spinner />;
       }
    return (
      <div>

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { Loading, NoUserFoundError } from 'Components';
+import { Spinner, NoUserFoundError } from 'Components';
 import LoginForm from '../components/LoginForm/LoginForm';
 import { searchUser, errorRedirect } from '../redux/actions';
 import { ADMIN, USER } from '../redux/constants';
@@ -44,7 +44,7 @@ class LoginContainer extends Component{
     let noUser;
     let errorRedirect;
     if (this.state.loadingStatus){
-      addSpinner = <Loading />;
+      addSpinner =  <Spinner />;
     } else {
       addSpinner ='';
     }

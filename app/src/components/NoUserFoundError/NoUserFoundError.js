@@ -11,12 +11,13 @@ import './NoUserFoundError.scss';
  	}
 
 render() {
-    return (
-	  <div className='error-loading-data'>
-	    Пользователь не найден, попробуйте ещё раз
-	    <button type='button' name='agree' onClick={this.props.closeMessage}>Ок</button>
-	  </div>
-	 )
+    return <div className='wrap-error'>
+      <div className='error-loading-data'>
+        <p>Пользователь не найден, попробуйте ещё раз</p>
+      	<button type='button' name='agree' onClick={this.props.closeMessage}>Ок</button>
+    	</div>
+		</div>
+	 
 
 // ErrorLoadingData.propTypes = {
 //   closeMessage: PropTypes.func.isRequired
