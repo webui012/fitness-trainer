@@ -10,23 +10,21 @@ import {
   Services,
   Sales,
   Online,
-  Forum,
   Contacts,
-  LoginPage,
   SignupPage,
   Nutrition,
-  TrainingPlanSection,
   ServiceOrder,
   NotFound
 } from 'Pages';
 import LoginContainer from '../../containers/LoginContainer';
+import { ALL, USER, ADMIN } from '../../redux/constants';
 
 import MainLayout from '../../layouts/MainLayout';
 import LoginLayout from '../../layouts/LoginLayout';
 import UserLayout from '../../layouts/UserLayout';
 import AdminLayout from '../../layouts/AdminLayout';
 
-const routes = [
+export default [
   {
     path: '/',
     exact: true,
@@ -42,14 +40,6 @@ const routes = [
     role: 'ALL',
     layout: MainLayout,
     id: 'Ukv7NHSQlM'
-  },
-  {
-    path: '/services/training-plan',
-    exact: true,
-    component: TrainingPlanSection,
-    role: 'ALL',
-    layout: MainLayout,
-    id: '73Xol5VEmi'
   },
   {
     path: '/services/online-training',
@@ -84,14 +74,6 @@ const routes = [
     id: 'iFXEEri2iu'
   },
   {
-    path: '/forum',
-    exact: true,
-    component: Forum,
-    role: 'ALL',
-    layout: MainLayout,
-    id: 's872qTU5GF'
-  },
-  {
     path: '/contacts',
     exact: true,
     component: Contacts,
@@ -116,14 +98,6 @@ const routes = [
     id: 'K7RsR4thm1'
   },
   {
-    path: '/cabinet/user',
-    exact: true,
-    component: UserCabinet,
-    role: 'USER',
-    layout: UserLayout,
-    id: 'Nx5r5mLan0'
-  },
-  {
     path: '/cabinet/admin',
     exact: true,
     component: AdminCabinet,
@@ -132,12 +106,20 @@ const routes = [
     id: 'ys8goGn387'
   },
   {
-    path: '/cabinet',
+    path: '/cabinet/admin/orders',
+    exact: true,
+    component: AdminOrders,
+    role: 'ADMIN',
+    layout: AdminLayout,
+    id: 'fcJpTaRz6N'
+  },
+  {
+    path: '/cabinet/user',
     exact: true,
     component: UserCabinet,
     role: 'USER',
     layout: UserLayout,
-    id: 'qU2ZQZ1fSP'
+    id: 'Nx5r5mLan0'
   },
   {
     path: '/cabinet/user/metrics',
@@ -146,14 +128,6 @@ const routes = [
     role: 'USER',
     layout: UserLayout,
     id: 'fcJpTBRz6N'
-  },
-  {
-    path: '/cabinet/admin/orders',
-    exact: true,
-    component: AdminOrders,
-    role: 'ADMIN',
-    layout: AdminLayout,
-    id: 'fcJpTaRz6N'
   },
   {
     path: '/cabinet/user/orders',
@@ -180,5 +154,3 @@ const routes = [
     id: 'fcJpT0007N'
   },
 ];
-
-export default routes;
