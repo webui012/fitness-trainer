@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import YouTube from '@u-wave/react-youtube';
-import { AchievmentItem, InfoField, Spinner } from 'Components';
 import { connect } from 'react-redux';
+import YouTube from '@u-wave/react-youtube';
+import { AchievmentItem, InfoField } from 'Components';
 import { pageAboutGetDataRequest } from '../../redux/actions/page_About';
 import './About.scss';
 import { Divider, Container, List, Segment, Dimmer, Loader, Card, Icon, Image, Button, Header } from 'semantic-ui-react'
-
-
 
 
 class About extends Component {

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Spinner from '../../components/Spinner/Spinner';
 import SalesData from './SalesData';
 import './Sales.scss';
 import { waitSalesPage } from '../../redux/actions';
-import { Card, Icon, Image, Button, Header } from 'semantic-ui-react'
+import { Card, Icon, Image, Button, Header, Loader, Dimmer } from 'semantic-ui-react'
 
 class Sales extends Component {
   static propTypes = {
@@ -43,7 +42,9 @@ class Sales extends Component {
           {this.props.data.saleItems.map((item, i) => this.renderSalesItem(item, i))}
         </div>
       </section>
-      : <Spinner/>);
+      : <Dimmer active inverted>
+          <Loader inverted content='Загрузка' />
+        </Dimmer>);
   }
 }
 
