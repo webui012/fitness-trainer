@@ -1,6 +1,6 @@
-const SalesData = {
+export default {
   title: 'Акции',
-  salesData: [
+  saleItems: [
       {
         id: 0,
         img: 'https://goo.gl/Lea9B3',
@@ -24,5 +24,3 @@ const SalesData = {
       },
   ]
 }
-
-export default SalesData

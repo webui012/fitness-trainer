@@ -5,6 +5,7 @@ import { Spinner } from 'Components';
 import { connect } from 'react-redux';
 import { pageAboutGetDataRequest } from '../../redux/actions/page_About';
 import './About.scss';
+import { Container, List, Segment, Dimmer, Loader, Card, Icon, Image, Button, Header } from 'semantic-ui-react'
 
 class About extends Component {
   static propTypes = {
@@ -21,22 +22,82 @@ class About extends Component {
     this.props.pageAboutGetDataRequest();
   }
 
+  renderParagraphs(paragraphs) {
+    return paragraphs.map((p, i) =>
+      <p className='paragraph'>{p}</p>)
+  }
+
+  renderSections(sections) {
+    return sections.map((s, i) =>
+      <Segment key={i}>
+        <Header as='h3'>{s.title}</Header>
+        {this.renderParagraphs(s.paragraphs)}
+      </Segment>)
+
+  }
+
   render() {
     if (this.props.data) {
-      const { paragrafText, imageSrc, imageAlt, videoId } = this.props.data;
+      const { title, trainerInfo, sections } = this.props.data;
+      const {
+        name,
+        photo,
+        sport,
+        category,
+        growth,
+        birth,
+        competitiveWeight,
+        offSeasonWeight,
+        description
+      } = trainerInfo
+
       return (
-        <section className='about'>
-          <div className='container'>
-            <h3 className='caption'>Биография</h3>
-            <img src={imageSrc} className='photo' alt={imageAlt} />
-            <p className='content first-paragraph'>{paragrafText}</p>
-            <p className='content'>{paragrafText}</p>
-            <YouTube video={videoId} className='video' />
+        <section className='page-wrapper about-wrapper'>
+          <Header as='h1' textAlign='center'>{title}</Header>
+          <div className='page-content about-content'>
+            <div className='trainer-info'>
+              <Card>
+                <Image src={photo} />
+                <Card.Content>
+                  <Card.Header>{name}</Card.Header>
+                  <Card.Meta>{sport} ({category})</Card.Meta>
+                </Card.Content>
+                <Card.Content extra>
+                  <Icon link name='facebook'/>
+                  <Icon link name='twitter'/>
+                  <Icon link name='instagram'/>
+                </Card.Content>
+              </Card>
+              <Segment compact floated='right'>
+                <Container text>
+                  <Header as='h3'>Основная информация</Header>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, eos?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, eos?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, eos?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, eos?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, eos?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, eos?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, eos?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, eos?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, eos?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, eos?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, eos?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, eos?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, eos?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, eos?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, eos?</p>
+                </Container>
+              </Segment>
+            </div>
+            <div className='info-sections'>{this.renderSections(sections)}</div>
           </div>
         </section>
       )
     } else {
-      return (<Spinner />);
+      return (
+      <Dimmer active inverted>
+        <Loader inverted content='Загрузка' />
+      </Dimmer>);
     }
   }
 }

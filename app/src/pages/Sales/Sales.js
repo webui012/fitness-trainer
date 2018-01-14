@@ -21,7 +21,7 @@ class Sales extends Component {
   renderSalesItem(sale, i) {
     return (
       <Card key={i} fluid>
-        <Image src={sale.img}/>
+        <Image src={sale.img} />
         <Card.Content>
           <Card.Header>{sale.title}</Card.Header>
           <Card.Meta>до {sale.expireDate}</Card.Meta>
@@ -37,21 +37,17 @@ class Sales extends Component {
   render() {
     return (
       this.props.data
-      ? <div className='sales-wrapper'>
+      ? <section className='page-wrapper sales-wrapper'>
         <Header as='h1' textAlign='center'>{this.props.data.title}</Header>
         <div className='sales-content'>
-          {this.props.data.salesData.map((item, i) => this.renderSalesItem(item, i))}
+          {this.props.data.saleItems.map((item, i) => this.renderSalesItem(item, i))}
         </div>
-      </div>
+      </section>
       : <Spinner/>);
   }
 }
 
-const mapStateToProps = state => ({
-  sales: state.sales.sales,
-  data: state.sales.data
-  /* showMessage: state.sendDataSpinner.showMessage */
-});
+const mapStateToProps = state => ({ data: state.sales.data });
 
 const mapDispatchToProps = dispatch => ({
   waitSalesPage: () => dispatch(waitSalesPage()),
