@@ -5,7 +5,8 @@ import { getHeaderData } from '../../redux/reducers/header';
 import {
   Logo,
   Navigation,
-  Login
+  Login,
+  CabinetEnterButton
 } from 'Components'
 import './Header.scss';
 
@@ -16,12 +17,13 @@ const Header = props => {
     <header className='header'>
       <Logo data={logo} />
       <Navigation data={navigation} />
+      <CabinetEnterButton />
       <Login />
     </header>
   )
 }
 
-const mapStateToProps = state =>({
+const mapStateToProps = state => ({
   header: getHeaderData(state)
 })
 

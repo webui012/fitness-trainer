@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {userLogin} from '../../redux/actions';
+import {userLogoff} from '../../redux/actions';
 import {ALL} from '../../redux/constants';
 
 import './Login.scss';
@@ -19,7 +19,7 @@ class Login extends Component {
     return (
       <div>
         <Link to='/'>
-          <button className='login-btn' onClick={() => this.props.userLogin(ALL)}>Выход</button>
+          <button className='login-btn' onClick={() => this.props.userLogoff(ALL)}>Выход</button>
         </Link>
       </div>
     )
@@ -27,12 +27,12 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => ({
-    userRole: state.login.userRole
+    userRole: state.usersStoreReducer.userRole
   })
 
 const mapDispatchToProps = dispatch => ({
-  userLogin: role => {
-  dispatch(userLogin(role))
+  userLogoff: role => {
+  dispatch(userLogoff(role))
   }
 })
 
