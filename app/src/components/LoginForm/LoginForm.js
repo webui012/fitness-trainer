@@ -1,58 +1,68 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './LoginForm.scss';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { Field, reduxForm } from 'redux-form';
+import {validate} from './validate';
+import {renderField} from './renderField';
+import { ALL } from '../../redux/constants';
 
-class LoginForm extends Component {
-  constructor(props){
-    super(props)
 
-    this.state = {user: {}}
-  }
+let LoginForm = props => {
 
-  onSubmit(){
-    this.props.newUser(this.state.user)
+   const { role, from, handleSubmit } = props;
+
+   if (role !== ALL) {
+      return (
+        <Redirect to={from} />
+      )
+    }
+
+    return <section className='login-page'>
+      <form onSubmit={handleSubmit}>
+        <fieldset className='login-form'>
+          <legend className='login-form-caption'> Войти </legend>
+
+          <label className='input-area'>
+            <Field
+                className='form'
+                name='login'
+                type='text'
+                component={renderField}
+                label='Введите имя или адрес эл. почты'
+            />
+          </label>
+
+          <label className='input-area'>
+            <Field
+                className='form'
+                name='password'
+                type='password'
+                component={renderField}
+                label='Введите пароль'
+            />
+          </label>
+
+          <button
+              className='btn-login'
+              type='submit'
+          >
+            <p className='btn'> Войти </p>
+          </button>
+
+          <label className='link-to'>
+            <Link to='/signup' className='linkto'>Создать аккаунт</Link>
+          </label>
+
+        </fieldset>
+      </form>
+    </section>
 }
 
-  handleChange(){
+LoginForm = reduxForm(
+  {
+    form: 'loginForm',
+    validate
   }
-
-  render(){
-    return (
-      <section className='login-page'>
-
-        <form onSubmit={this.onSubmit}>
-          <fieldset className='login-form'>
-            <legend className='login-form-caption'> Войти </legend>
-
-            <label className='input-area'>
-              <input className='form' type='text'
-                  placeholder='Введите имя или адрес эл. почты'
-                  onChange={this.handleChange('username')} />
-            </label>
-
-            <label className='input-area'>
-              <input className='form' type='password'
-                  placeholder='Введите пароль'
-                  onChange={this.handleChange('password')} />
-            </label>
-
-            <button className='btn-login' type='submit'>
-              <p className='btn'> Войти </p>
-            </button>
-
-            <label className='link-to'>
-              <Link to='/passwordreset' className='linkto'>Забыли пароль?</Link>
-            </label>
-
-            <label className='link-to'>
-              <Link to='/signup' className='linkto'>Создать аккаунт</Link>
-            </label>
-
-          </fieldset>
-        </form>
-      </section>
-    )
-  }
-}
+)(LoginForm)
 
 export default LoginForm

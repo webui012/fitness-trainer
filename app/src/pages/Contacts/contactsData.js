@@ -1,37 +1,41 @@
-const dataContacts = {
-    fields:
-    [
-        {
-            id: 1,
-            Title: 'ADRESS',
-            data: '123, Rev Avenu, Hawai'
-        },
+export const dataContacts = {
+  title: 'Контактная информация',
+  mainTitle: 'КОНТАКТЫ',
+  fields: [
+    {
+      id: 1,
+      data: 'Lorem ipsum',
+    },
+    {
+      id: 2,
+      data: 'Lorem ipsum',
+    },
+    {
+      id: 3,
+      data: 'Lorem ipsum',
+    },
+    {
+      id: 4,
+      data: 'Lorem ipsum',
+    },
+    {
+      id: 5,
+      data: 'Lorem ipsum',
+    },
+    {
+      id: 6,
+      data: 'Lorem ipsum',
+    },
+    {
+      id: 7,
+      data: 'Lorem ipsum',
+    },
+  ],
 
-        {
-            id: 2,
-            Title: 'PHONE',
-            data: '+81 2345854646'
-        },
-
-        {
-            id: 3,
-            Title: 'EMAIL',
-            data: 'email@email.com'
-        },
-
-        {
-            id: 4,
-            Title: 'STORE',
-            data: '123, Rev Avenu, Hawai'
-        }
-    ],
-
-    mapData: {
-        center: { lat: 49.97, lng: 36.25 },
-        zoom: 11,
-        bootstrapURLKeys: { key: 'AIzaSyB-7Fn2cGaiF3_2zTedyusFSiYHGn9RfMQ' }
-    }
-}
-
-
-export default dataContacts
+  mapData: {
+    center: { lat: 49.9712, lng: 36.2501 },
+    zoom: 11,
+    bootstrapURLKeys: { key: 'AIzaSyB-7Fn2cGaiF3_2zTedyusFSiYHGn9RfMQ' },
+    text: 'Lorem',
+  },
+};

@@ -1,9 +1,8 @@
 import React from 'react';
-
 import {
   Header,
   Footer
-} from 'Components';
+} from 'Containers';
 
 const MainLayout = props => (
   <div className='main-layout'>

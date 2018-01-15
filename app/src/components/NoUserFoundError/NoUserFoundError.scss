@@ -1,0 +1,39 @@
+.wrap-error{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  background: #fff;
+
+  .error-loading-data {
+    font-weight: 600;
+    width: 500px;
+    height: 200px;
+    padding: 50px 20px;
+    line-height: 30px;
+    background: #2c2c2a;
+    /* background-image: url(/images/error.jpg); */
+    text-align: center;
+    position: fixed;
+    top: calc(50% - 100px);
+    left: calc(50% - 250px);
+    border-radius: 20px;
+    color: #fff;
+
+    button[name='agree'] {
+      padding: 10px 40px;
+      margin-top: 15px;
+      background: #2db82d;;
+      color: #fff;
+      cursor: pointer;
+      border: 0;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-radius: 8px;
+    }
+  }
+}

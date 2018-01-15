@@ -9,11 +9,12 @@ const extractSass = new ExtractTextPlugin({
 });
 
 const config = {
-  entry: './src/index.js',
+
+  entry: [ 'babel-polyfill', './src/index.js' ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/',
   },
 
   module: {
@@ -31,15 +32,14 @@ const config = {
           use: [
             {
               loader: 'css-loader',
-              options: {
-                modules: true,
-                localIdentName: '[local]', //--[hash:base64:5]',
-              },
-            }, {
+            },
+            {
               loader: 'sass-loader',
             },
+            {
+              loader: 'postcss-loader',
+            },
           ],
-          // use style-loader in development
           fallback: 'style-loader',
         }),
       },
@@ -84,7 +84,8 @@ const config = {
   resolve: {
     alias: {
       Components: path.resolve(__dirname, 'src/components/'),
-      Pages: path.resolve(__dirname, 'src/pages/')
+      Pages: path.resolve(__dirname, 'src/pages/'),
+      Containers: path.resolve(__dirname, 'src/containers/'),
     },
   },
 };

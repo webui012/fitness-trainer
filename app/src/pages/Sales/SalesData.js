@@ -20,5 +20,7 @@ const SalesData = [
       expireDate: '01.01.2017',
       salesImgCaption: 'Lorem'
     },
-];
-export default SalesData;
+]
+
+
+export default SalesData
