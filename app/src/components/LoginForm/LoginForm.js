@@ -5,7 +5,7 @@ import { Field, reduxForm } from 'redux-form';
 import { validate } from './validate';
 import { renderField } from './renderField';
 import { ALL } from '../../redux/constants';
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+
 
 let LoginForm = props => {
 
@@ -20,31 +20,37 @@ let LoginForm = props => {
     return (
       <form className='login-from' onSubmit={handleSubmit}>
         <fieldset className='login-form'>
-          <legend className='login-form-caption'>Войти</legend>
+          <legend className='login-form-caption page-title'>Вход</legend>
 
-          <div className='input-area'>
-            <label htmlFor='' className='input-label'></label>
+          <div className='input-wrapper'>
+            <label htmlFor='' className='input-label'>Логин</label>
             <Field
                 className='form'
                 name='login'
                 type='text'
                 component={renderField}
-                label='Введите имя или адрес эл. почты'/>
+                label='Введите имя или адрес эл. почты' />
           </div>
 
-          <div className='input-area'>
-            <label htmlFor='' className='input-label'></label>
+          <div className='input-wrapper'>
+            <label htmlFor='' className='input-label'>Пароль</label>
             <Field
                 className='form'
                 name='password'
                 type='password'
                 component={renderField}
-                label='Введите пароль'/>
+                label='Введите пароль' />
           </div>
 
           <button className='btn-login' type='submit'>Войти</button>
-          <Link to='/passwordreset' className='linkto'>Забыли пароль?</Link>
-          <Link to='/signup' className='linkto'>Создать аккаунт</Link>
+
+          <label className='link-to'>
+            <Link to='/passwordreset' className='linkto'>Забыли пароль?</Link>
+          </label>
+
+          <label className='link-to'>
+            <Link to='/signup' className='linkto'>Создать аккаунт</Link>
+          </label>
 
         </fieldset>
       </form>
