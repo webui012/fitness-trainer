@@ -129,39 +129,30 @@ export const getVisibleOrders = createSelector(
     switch (ordersVisibilityFilter) {
       case SORT_BY_ID:
         return [ ...orders.sort( (a, b) => a.id - b.id) ];
-      break;
 
       case SORT_BY_PRICE:
         return [ ...orders.sort( (a, b) => a.price - b.price) ];
-      break;
 
       case SHOW_PAID:
         return [ ...orders.filter(o => o.status === 'Оплачен') ];
-      break;
 
       case SHOW_UNPAID:
         return [ ...orders.filter(o => o.status === 'Ожидает оплаты') ];
-      break;
 
       case SHOW_ALL_SERVICES:
         return [ ...orders ];
-      break;
 
       case SHOW_ONLINE_SERVICE:
           return [ ...orders.filter(o => o.service === 'Тренировка 1х1') ];
-      break;
 
       case SHOW_NUTRITION_SERVICE:
           return [ ...orders.filter(o => o.service === 'Правильное питание') ];
-      break;
 
       case SHOW_PROGRAM_SERVICE:
           return [ ...orders.filter(o => o.service === 'Программа тренировок') ];
-      break;
 
       case SHOW_CLOTHES_SERVICE:
           return [ ...orders.filter(o => o.service === 'Одежда для фитнеса') ];
-      break;
 
       default:
         return [ ...orders ];

@@ -8,12 +8,12 @@ const NutritionItem = props =>
     <img src={props.icon} className='nut-photo' alt='icon' />
     <h2 className='nut-title'>{props.textNutrition}</h2>
     <p className='nut-text'>{props.text}</p>
-  </Link>
+  </Link>;
 
 NutritionItem.propTypes = {
     title: PropTypes.string,
     text: PropTypes.string,
     textNutrition: PropTypes.string,
     icon: PropTypes.string
-}
+};
 export default NutritionItem

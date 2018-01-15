@@ -20,7 +20,7 @@ const Nutrition = () => {
 
     const text = textNutrition.map((snippet,index) =>
       <p key={index}>{snippet}</p>
-    )
+    );
 
     return (
       <section className='nutrition'>
@@ -33,7 +33,7 @@ const Nutrition = () => {
                                 return (
                                   <NutritionItem key={i} title={nutrition.title} text={nutrition.text} icon={nutrition.iconUrl} />
                                 )
-                            })}
+                            })};
             </div>
           </div>
 
@@ -50,5 +50,5 @@ const Nutrition = () => {
         </div>
       </section>
     )
-}
+};
 export default Nutrition
