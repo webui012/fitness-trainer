@@ -4,23 +4,17 @@ import {
   LOAD_ORDER_FORM
 } from '../constants';
 
-export const serviceOrderNextStep = step => {
-  return {
-    type: NEXT_STEP_ORDER_FORM,
-    step
-  }
-};
+export const serviceOrderNextStep = step => ({
+  type: NEXT_STEP_ORDER_FORM,
+  step
+});
 
-export const serviceOrderPrevStep = step => {
-  return {
-    type: PREV_STEP_ORDER_FORM,
-    step
-  }
-};
+export const serviceOrderPrevStep = step => ({
+  type: PREV_STEP_ORDER_FORM,
+  step
+});
 
-export const serviceOrderPageLoad = data => {
-  return {
-    type: LOAD_ORDER_FORM,
-    data
-  }
-};
+export const serviceOrderPageLoad = data => ({
+  type: LOAD_ORDER_FORM,
+  data
+});

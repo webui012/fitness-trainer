@@ -50,13 +50,13 @@ const maxLength2 = maxLength(2);
 
 // checking for minimum value
 const minValue = min => value =>
-  value && value < min ? `минимальное значение ${min}` : undefined;
+  value && value < min ? `минимально допустимое значение ${min}` : undefined;
 const minValue80 = minValue(80);
 const minValue20 = minValue(20);
 const minValue10 = minValue(10);
 
 const maxValue = max => value =>
-  value && value > max ? `максимальное значение ${max}` : undefined;
+  value && value > max ? `максимальное допустимое значение ${max}` : undefined;
 const maxValue250 = maxValue(250);
 const maxValue200 = maxValue(200);
 
@@ -68,7 +68,35 @@ export const checkAimSelected = value =>
   value === 'default' ? chooseAim : undefined;
 
 // combining validation rules
-export const ageValidation = [ negativeNumber, checkNotBeginZero, checkNonNegativeInteger, stringInNumber, minMaxAge, maxLength2 ];
-export const weightValidation = [ negativeNumber, checkNotBeginZero, checkNonNegativeInteger, stringInNumber, minValue20, maxValue250 ];
-export const heightValidation = [ negativeNumber, checkNotBeginZero, checkNonNegativeInteger, stringInNumber, minValue80, maxValue250 ];
-export const bodyParams = [ negativeNumber, checkNotBeginZero, checkNonNegativeInteger, stringInNumber, minValue10, maxValue200 ];
+export const ageValidation = [
+  negativeNumber,
+  checkNotBeginZero,
+  checkNonNegativeInteger,
+  stringInNumber,
+  minMaxAge,
+  maxLength2
+];
+export const weightValidation = [
+  negativeNumber,
+  checkNotBeginZero,
+  checkNonNegativeInteger,
+  stringInNumber,
+  minValue20,
+  maxValue250
+];
+export const heightValidation = [
+  negativeNumber,
+  checkNotBeginZero,
+  checkNonNegativeInteger,
+  stringInNumber,
+  minValue80,
+  maxValue250
+];
+export const bodyParams = [
+  negativeNumber,
+  checkNotBeginZero,
+  checkNonNegativeInteger,
+  stringInNumber,
+  minValue10,
+  maxValue200
+];

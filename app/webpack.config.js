@@ -10,7 +10,7 @@ const extractSass = new ExtractTextPlugin({
 
 const config = {
 
-  entry: ['babel-polyfill', './src/index.js'],
+  entry: [ 'babel-polyfill', './src/index.js' ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -77,7 +77,7 @@ const config = {
 
   plugins: [
     new HtmlWebpackPlugin({ template: './public/index.html' }),
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin([ 'dist' ]),
     extractSass,
   ],
 

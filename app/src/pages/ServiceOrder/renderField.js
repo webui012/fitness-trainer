@@ -1,13 +1,13 @@
 import React from 'react';
 
-export const renderField = ({ input, label, type, meta: { touched, error }}) => (
+export const renderField = ({ input, label, type, placeholder, meta: { touched, error }}) => (
   <div className='service-order-renderfield'>
     <label>{label}</label>
-    <input {...input} type={type} placeholder={label} />
+    <input {...input} type={type} placeholder={placeholder} />
     {touched && error ?
       <span className='service-order-error'>{error}</span>
-      : <span className='service-order-error'></span>}
-    {/*{touched && error && <span className='service-order-error'>{error}</span>}*/}
+      : <span className='service-order-error'></span>
+    }
   </div>
 );
 
@@ -18,6 +18,7 @@ export const renderSelectField = ({ input, meta: { touched, error }, children })
     </select>
     {touched && error ?
       <span className='service-order-error'>{error}</span>
-      : <span className='service-order-error'></span>}
+      : <span className='service-order-error'></span>
+    }
   </div>
-)
+);
