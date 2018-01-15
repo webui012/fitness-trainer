@@ -1,4 +1,4 @@
-import React,{ Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Contacts.scss';
 import { Map, ContactsField, Spinner } from 'Components';
@@ -14,21 +14,21 @@ class Contacts extends Component {
     mainTitle: PropTypes.string,
     fields: PropTypes.array,
     data: PropTypes.object,
-    mapData: PropTypes.object
+    mapData: PropTypes.object,
   };
 
   componentDidMount() {
     this.props.constantsGetData();
-  }
+  };
 
   render() {
-    return (this.props.data
-      ?<div className='contacts'>
+    return (this.props.data ?
+      <div className='contacts'>
         <p className='contacts-title'>{this.props.data.mainTitle}</p>
         <div className='wrap-contacts-info'>
           <div className='wrap-contacts-field'>
             <span className='contacts-field-text-title'>{this.props.data.title}</span>
-            {this.props.data.fields.map( item =>
+            {this.props.data.fields.map(item =>
               <ContactsField
                   key={item.id}
                   data={item.data}
@@ -38,16 +38,16 @@ class Contacts extends Component {
         </div>
       </div>
       : <Spinner />
-    )
+  );
   }
 }
 
 const mapStateToProps = state => ({
-  data: state.contactsGetData.data
+  data: state.contactsGetData.data,
 });
 
 const mapDispatchToProps = dispatch => ({
-  constantsGetData: () => dispatch(constantsGetData())
+  constantsGetData: () => dispatch(constantsGetData()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contacts);

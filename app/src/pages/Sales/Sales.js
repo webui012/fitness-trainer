@@ -15,21 +15,21 @@ class Sales extends Component{
         waitSalesPage: PropTypes.func
     };
 
-
     componentDidMount(){
         this.props.waitSalesPage();
     }
+
     render(){
         return ( this.props.data ?
-                <div className='sales-wrap'>
-                    { this.props.data.map( item =>
-                        <SalesItem key={item.id}
-                                   salesHeadline={item.salesHeadline}
-                                   content={item.content}
-                                   expireDate={item.expireDate}
-                                   salesImgCaption={item.salesImgCaption}
+          <div className='sales-wrap'>
+            { this.props.data.map( item =>
+              <SalesItem key={item.id}
+                  salesHeadline={item.salesHeadline}
+                  content={item.content}
+                  expireDate={item.expireDate}
+                  salesImgCaption={item.salesImgCaption}
                         />) }
-                </div> : <Spinner />
+          </div> : <Spinner />
         );
 
     }

@@ -5,18 +5,18 @@ import {
 
 const initialState = {
   loading: false,
-  data: null
+  data: null,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case PAGE_ABOUT_GETDATA_REQUEST:
-      return { ...state, loading: true }
+      return { ...state, loading: true };
 
     case PAGE_ABOUT_GETDATA_SUCCESS:
-      return { ...state, loading: false, data: action.payload }
+      return { ...state, loading: false, data: action.payload };
 
     default:
       return state;
   }
-}
+};

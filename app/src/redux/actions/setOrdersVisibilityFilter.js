@@ -12,7 +12,7 @@ import { SET_VISIBILITY_FILTER,
     SHOW_PROGRAM_SERVICE,
     SHOW_CLOTHES_SERVICE} from '../constants';
 
-export const setOrdersVisibilityFilter = (filter) => ({
+export const setOrdersVisibilityFilter = filter => ({
   type: SET_VISIBILITY_FILTER,
   filter
 });

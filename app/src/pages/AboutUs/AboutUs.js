@@ -15,21 +15,21 @@ class AboutUs extends Component {
     errorMessage: PropTypes.bool,
     aboutUsGetData: PropTypes.func,
     aboutUsGetDataEnd: PropTypes.func,
-    closeErrorMessage: PropTypes.func
-  }
+    closeErrorMessage: PropTypes.func,
+  };
 
   componentDidMount() {
-    this.props.aboutUsGetData()
-  }
+    this.props.aboutUsGetData();
+  };
 
   render() {
     return (this.props.data
       ? <div className='about-us'>
         <div className='columns-wrap'>
           <FullName
-            fields={this.props.data.fullNameFields}
-            path={this.props.data.fullNameAvatar}
-            formData={this.props.data.formData}
+              fields={this.props.data.fullNameFields}
+              path={this.props.data.fullNameAvatar}
+              formData={this.props.data.formData}
           />
           <MeasuredData dataFields={this.props.data.dataFields} />
         </div>
@@ -41,18 +41,18 @@ class AboutUs extends Component {
           <ErrorLoadingData closeMessage={this.props.closeErrorMessage} /> : null}
       </div>
       : <Spinner />
-    )
+  );
   }
 }
 
 const mapStateToProps = state => ({
   data: state.aboutUsGetData.data,
-  errorMessage: state.aboutUsSendDataForm.errorMessage
+  errorMessage: state.aboutUsSendDataForm.errorMessage,
 });
 
 const mapDispatchToProps = dispatch => ({
   aboutUsGetData: () => dispatch(aboutUsGetData()),
-  closeErrorMessage: data => dispatch(closeErrorMessage(data))
+  closeErrorMessage: data => dispatch(closeErrorMessage(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AboutUs);

@@ -4,15 +4,15 @@ import {
 } from '../constants';
 
 const initialState = {
-  data: null
+  data: null,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case PAGE_CONTACTS_GETDATA_SUCCESS:
-      return { ...state, data: action.payload }
+      return { ...state, data: action.payload };
 
     default:
       return state;
   }
-}
+};

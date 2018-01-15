@@ -7,24 +7,24 @@ import {
 
 const initialState = {
   sendData: false,
-  errorMessage: false
+  errorMessage: false,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case ABOUTUS_FORM_REQUEST:
-      return { ...state, sendData: true }
+      return { ...state, sendData: true };
 
     case ABOUTUS_FORM_ABOUTUS_SUCCESS:
-      return { ...state, sendData: false }
+      return { ...state, sendData: false };
 
     case ABOUTUS_ACTION_FAILURE:
-      return { ...state, sendData: false, errorMessage: true }
+      return { ...state, sendData: false, errorMessage: true };
 
     case ABOUTUS_CLOSE_ACTION_FAILURE:
-      return { ...state, errorMessage: false }
+      return { ...state, errorMessage: false };
 
     default:
       return state;
   }
-}
+};

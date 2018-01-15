@@ -84,6 +84,10 @@
     background-size: 35px 20px, 100% 100%, 100% 100%;
   }
 
+  option[value=default]{
+    color: grey;
+  }
+
   .service-order-form{
     display: flex;
     flex-flow: column;
@@ -99,7 +103,7 @@
       color: darkred;
       font-size: 12px;
       height: 20px;
-      margin-top: 2px;
+      margin-bottom: 10px;
     }
 
     select, input, textarea{

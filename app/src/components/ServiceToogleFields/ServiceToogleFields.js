@@ -6,16 +6,19 @@ import {
 } from '../../utils/orderFormValidation';
 import './ServiceToogleFields.scss';
 
-const ServiceToogleFields = ({nextStep, step, invalid}) => {
+const ServiceToogleFields = ({nextStep, step, invalid, data}) => {
     return (
       <div className='service-toogle'>
         <h2>Выбор услуги </h2>
 
         <Field name='serviceType' component={renderSelectField} validate={checkOptionSelected}>
-          <option value='default'>Выберите услугу...</option>
-          <option value='trainonline'>Онлайн тренировка 1 на 1</option>
-          <option value='trainprogram' >Програма тренировок</option>
-          <option value='nutritionplan'>План питания</option>
+          {
+            data.map(option => {
+              return (
+                <option key={option.value} value={option.value}>{option.text}</option>
+              )
+            })
+          }
         </Field>
 
         <button className='service-order-button' disabled={invalid} onClick={() => nextStep(step)}>
@@ -23,6 +26,6 @@ const ServiceToogleFields = ({nextStep, step, invalid}) => {
         </button>
       </div>
     )
-}
+};
 
 export default ServiceToogleFields

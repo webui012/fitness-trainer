@@ -13,13 +13,13 @@ class About extends Component {
       paragrafText: PropTypes.string,
       imageSrc: PropTypes.string,
       imageAlt: PropTypes.string,
-      videoId: PropTypes.string
-    })
-  }
+      videoId: PropTypes.string,
+    }),
+  };
 
   componentDidMount() {
     this.props.pageAboutGetDataRequest();
-  }
+  };
 
   render() {
     if (this.props.data) {
@@ -34,7 +34,7 @@ class About extends Component {
             <YouTube video={videoId} className='video' />
           </div>
         </section>
-      )
+      );
     } else {
       return (<Spinner />);
     }
@@ -42,11 +42,11 @@ class About extends Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.pageAboutGetStaticData.data
+  data: state.pageAboutGetStaticData.data,
 });
 
 const mapDispatchToProps = dispatch => ({
-  pageAboutGetDataRequest: () => dispatch(pageAboutGetDataRequest())
+  pageAboutGetDataRequest: () => dispatch(pageAboutGetDataRequest()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);

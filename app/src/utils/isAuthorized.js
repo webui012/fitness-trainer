@@ -1,7 +1,10 @@
-export default isAuthorized = (role, userRole) => {
-  if (userRole !== role && (userRole === 'USER' || userRole === '')){
-    return false
-  } else {
-    return true
+import { ALL } from '../redux/constants';
+
+const isAuthorized = (pageRole, stateRole) => {
+   if (pageRole !== stateRole && pageRole !== ALL) {
+      return false;
+    } else {
+      return true;
+    }
   }
-}
+export default isAuthorized

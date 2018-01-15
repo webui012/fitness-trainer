@@ -1,12 +1,12 @@
 import ActionTypes from '../constants';
 import { createSelector } from 'reselect'
-import Logo  from '../../components/Logo/Logo';
+import Logo from '../../components/Logo/Logo';
 import facebook from '../../images/facebook.svg';
 import twitter from '../../images/twitter.svg';
 import instagram from '../../images/instagram.svg';
 
 const initialState = {
-  logo: "Fintess",
+  logo: 'Fitness',
   caption: 'Find your perfect body!',
   navigation: [
     {
@@ -24,10 +24,6 @@ const initialState = {
     {
       name: 'Акции',
       url: '/sales',
-    },
-    {
-      name: 'Форум',
-      url: '/forum',
     },
     {
       name: 'Контакты',
@@ -54,7 +50,7 @@ const initialState = {
       icon: instagram
     },
   ],
-  copyright: '© 2017 All Rights Reserved',
+  copyright: '© 2018 All Rights Reserved',
 }
 
 // Selector

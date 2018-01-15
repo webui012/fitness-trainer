@@ -8,7 +8,6 @@ function handleSubMenu(link) {
   }
 }
 
-
 function renderSubMenu(submenu = []) {
   let menu = submenu.map((link, i) => {
    return <Link key={i} to={link.url} className='dropdown-link'>{link.name}</Link>

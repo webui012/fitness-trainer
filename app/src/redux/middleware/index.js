@@ -11,6 +11,6 @@ export default function * rootSaga() {
     aboutUsGetData(),
     contactsGetData(),
     showSalesPage(),
-    pageAboutGetStaticData()
-  ])
+    pageAboutGetStaticData(),
+  ]);
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import Swiper from 'react-id-swiper';
 
 const Slider = props => {
-  const { sliderParams, slides }  = props.data;
+  const { sliderParams, slides } = props.data;
 
   return (
     <Swiper {...sliderParams}>

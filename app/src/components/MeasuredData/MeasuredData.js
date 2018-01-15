@@ -19,7 +19,7 @@ class MeasuredData extends Component {
     name: PropTypes.string,
     action: PropTypes.string,
     method: PropTypes.string,
-    fieldsMeasuredDataForm: PropTypes.array
+    fieldsMeasuredDataForm: PropTypes.array,
   };
 
   formHandler = event => {
@@ -82,18 +82,18 @@ class MeasuredData extends Component {
       breast,
       tail,
       hips,
-      userId: 'measuredData'
+      userId: 'measuredData',
     };
 
     if (age && height && weight && neck && breast && tail && hips) {
       this.props.aboutUsFormRequest(data);
     };
-  }
+  };
 
   render() {
 
-    const { fieldsMeasuredDataForm } = this.props.dataFields
-    const { legendName, name, action, method } = this.props.dataFields.MeasuredData
+    const { fieldsMeasuredDataForm } = this.props.dataFields;
+    const { legendName, name, action, method } = this.props.dataFields.MeasuredData;
 
     return (
       <div className='form-wrap'>
@@ -108,14 +108,14 @@ class MeasuredData extends Component {
                       type={items.type}
                       ref={input => this[items.ref] = input}
                       placeholder={items.placeholder}
-                      className={this.props.validation[`${items.ref}`]
+                      className={this.props.validation[items.ref]
                       ? 'input-warning-data'
                       : null}
                   />
                 </div>
-                <span className={this.props.validation[`${items.ref}`]
+                <span className={this.props.validation[items.ref]
                   ? 'active-warning input-warning-data'
-                  : 'not-active-warning'}> {this.props.validation[`${items.ref}`]}
+                  : 'not-active-warning'}> {this.props.validation[items.ref]}
                 </span>
               </div>
             )}
@@ -124,22 +124,18 @@ class MeasuredData extends Component {
           </fieldset>
         </form>
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    aboutUsSendDataForm: state.aboutUsSendDataForm.sendData,
-    validation: state.validationAboutUs
-  }
-}
+const mapStateToProps = state => ({
+  aboutUsSendDataForm: state.aboutUsSendDataForm.sendData,
+  validation: state.validationAboutUs,
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    aboutUsFormRequest: data => dispatch(aboutUsFormRequest(data)),
-    aboutUsWarningMessage: data => dispatch(aboutUsWarningMessage(data))
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  aboutUsFormRequest: data => dispatch(aboutUsFormRequest(data)),
+  aboutUsWarningMessage: data => dispatch(aboutUsWarningMessage(data)),
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(MeasuredData)
+export default connect(mapStateToProps, mapDispatchToProps)(MeasuredData);

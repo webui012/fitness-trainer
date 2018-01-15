@@ -32,6 +32,12 @@
     }
   }
 
+  .service-order-inputs{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+  }
+
   .service-order-renderselect{
     width: 100%;
   }
