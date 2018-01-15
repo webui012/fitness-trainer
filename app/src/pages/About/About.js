@@ -7,7 +7,6 @@ import { pageAboutGetDataRequest } from '../../redux/actions/page_About';
 import './About.scss';
 import { Divider, Container, List, Segment, Dimmer, Loader, Card, Icon, Image, Button, Header } from 'semantic-ui-react'
 
-
 class About extends Component {
   static propTypes = {
     pageAboutGetDataRequest: PropTypes.func.isRequired,
@@ -48,7 +47,7 @@ class About extends Component {
       const { name, photo, sport, category, details } = info;
 
       return (
-        <section className='page-wrapper about-wrapper'>
+        <div className='page-wrapper about-wrapper'>
           <h1 className='page-title'>{title}</h1>
           <div className='page-content about-content'>
             <div className='trainer-info'>
@@ -81,7 +80,7 @@ class About extends Component {
               <YouTube video={video} width='800' height='600' className='video' />
             </section>
           </div>
-        </section>
+        </div>
       )
     } else {
       return (

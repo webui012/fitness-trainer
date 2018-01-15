@@ -4,8 +4,7 @@ import './Contacts.scss';
 import { Map, ContactsField} from 'Components';
 import { connect } from 'react-redux';
 import { constantsGetData } from '../../redux/actions';
-import { Card, Icon, Image, Button, Header, Loader, Dimmer } from 'semantic-ui-react'
-
+import { List, Dimmer, Loader } from 'semantic-ui-react'
 
 class Contacts extends Component {
 
@@ -24,16 +23,18 @@ class Contacts extends Component {
 
   render() {
     return (this.props.data
-      ?<div className='contacts'>
-        <p className='contacts-title'>{this.props.data.mainTitle}</p>
-        <div className='wrap-contacts-info'>
-          <div className='wrap-contacts-field'>
-            <span className='contacts-field-text-title'>{this.props.data.title}</span>
-            {this.props.data.fields.map( item =>
-              <ContactsField
-                  key={item.id}
-                  data={item.data}
-            />)}
+      ? <div className='page-wrapper contacts-wrapper'>
+        <div className='page-content contacts-content'>
+          <div className='block contacts-block'>
+            <span className='contacts-block-title'>{this.props.data.title}</span>
+            <List>
+              {this.props.data.fields.map((f,i) =>
+                <List.Item className="s">
+                  <List.Icon name={f.icon} />
+                  <List.Content>{f.data}</List.Content>
+                </List.Item>
+              )}
+            </List>
           </div>
           <Map data={this.props.data.mapData} />
         </div>

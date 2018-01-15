@@ -1,34 +1,25 @@
 export const dataContacts = {
-    title: 'Контактная информация',
-    mainTitle: 'КОНТАКТЫ',
+    title: 'КОНТАКТЫ',
     fields: [
         {
             id: 1,
-            data: '61000, Харков, ул.Сумская 20'
-        },
-        {
-            id: 2,
+            icon: 'phone',
             data: '+38(099)-999-99-99'
         },
         {
-            id: 3,
+            id: 2,
+            icon: 'mail outline',
             data: 'email@email.com'
         },
         {
-            id: 4,
-            data: 'Спортзал:'
-        },
-        {
-            id: 5,
+            id: 3,
+            icon: 'marker',
             data: '61000, Харков, ул.Сумская 20'
         },
         {
             id: 6,
-            data: 'Магазин питания:'
-        },
-        {
-            id: 7,
-            data: '61000, Харков, ул.Сумская 20'
+            icon: 'money',
+            data: '61291, Харков, ул.Cтуденческая 12а'
         }
     ],
 
