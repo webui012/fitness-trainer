@@ -11,7 +11,7 @@ const Slider = props => {
           <img src={slider.url} alt={slider.alt} />
         </div>)}
     </Swiper>
-  )
-}
+  );
+};
 
-export default Slider
+export default Slider;

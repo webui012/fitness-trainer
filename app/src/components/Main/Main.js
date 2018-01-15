@@ -4,6 +4,6 @@ import './Main.scss';
 const Main = props =>
   <div className='main'>
     {props.children}
-  </div>
+  </div>;
 
-export default Main
+export default Main;

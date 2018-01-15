@@ -2,13 +2,13 @@ const AdminSidebarData = {
   tabs: [
     {
       title: 'Главная',
-      url: '/cabinet/admin'
-      },
+      url: '/cabinet/admin',
+    },
     {
       title: 'Заказы',
-      url: '/cabinet/admin/orders'
+      url: '/cabinet/admin/orders',
     },
-  ]
-}
+  ],
+};
 
 export default AdminSidebarData;

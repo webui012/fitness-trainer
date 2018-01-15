@@ -99,7 +99,7 @@ const initialState = {
 const userOrders = (state = initialState, action) => {
     switch (action.type) {
         default:
-            return state
+            return state;
     }
 };
 
@@ -140,9 +140,9 @@ export const getVisibleOrders = createSelector(
           return orders.filter(o => o.service === 'Одежда для фитнесса');
 
       default:
-        return orders
+        return orders;
     }
   }
 );
 
-export default userOrders
+export default userOrders;

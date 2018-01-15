@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -11,7 +11,7 @@ import {
   ServiceToogleFields,
   AdditionalInfoFields
 } from 'Components';
-import {reduxForm, isInvalid} from 'redux-form';
+import { reduxForm, isInvalid } from 'redux-form';
 import data from './serivceOrderData';
 import './ServiceOrder.scss';
 
@@ -24,7 +24,7 @@ class ServiceOrder extends Component {
     data: PropTypes.object,
   };
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.pageLoad(data.orderFormData);
   }
 
@@ -35,19 +35,19 @@ class ServiceOrder extends Component {
             data={data.serviceToogleFields}
             step={this.props.step}
             nextStep={this.props.nextStep}
-            invalid={this.props.invalid} />
+            invalid={this.props.invalid} />;
       case 2:
         return <AdditionalInfoFields
             data={data.additionalInfoFields}
             step={this.props.step}
             prevStep={this.props.prevStep}
-            invalid={this.props.invalid} />
+            invalid={this.props.invalid} />;
       default:
-        return <p>Something go wrong</p>
+        return <p>Something go wrong</p>;
     }
   };
 
-  render(){
+  render() {
     return (
       <div className='service-order'>
         <span className='progress-step'>Step {this.props.step}</span>
@@ -56,31 +56,25 @@ class ServiceOrder extends Component {
           {this.chooseStep()}
         </form>
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    step: state.orderForm.step,
-    initialValues: state.orderForm.data,
-    invalid: isInvalid('service-order')(state),
-  }
-};
+const mapStateToProps = state => ({
+  step: state.orderForm.step,
+  initialValues: state.orderForm.data,
+  invalid: isInvalid('service-order')(state),
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    nextStep: bindActionCreators(serviceOrderNextStep, dispatch),
-    prevStep: bindActionCreators(serviceOrderPrevStep, dispatch),
-    pageLoad: bindActionCreators(serviceOrderPageLoad, dispatch)
-  }
-};
+const mapDispatchToProps = dispatch => ({
+  nextStep: bindActionCreators(serviceOrderNextStep, dispatch),
+  prevStep: bindActionCreators(serviceOrderPrevStep, dispatch),
+  pageLoad: bindActionCreators(serviceOrderPageLoad, dispatch),
+});
 
 ServiceOrder = reduxForm({
   form: 'service-order',
   destroyOnUnmount: false, // a unique name for this form
 })(ServiceOrder);
 
-ServiceOrder = connect(mapStateToProps, mapDispatchToProps)(ServiceOrder);
-
-export default ServiceOrder
+export default connect(mapStateToProps, mapDispatchToProps)(ServiceOrder);

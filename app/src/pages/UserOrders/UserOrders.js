@@ -6,13 +6,10 @@ import OrderItem from '../../components/OrderItem/OrderItem';
 import './UserOrders.scss';
 
 class UserOrders extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   // Select items render
-  renderSelections = selections => {
-    return selections.map((select, i) => {
+  renderSelections = selections =>
+    selections.map((select, i) => {
       const { type, options } = select;
 
       return (
@@ -22,28 +19,26 @@ class UserOrders extends Component {
             {this.renderOptions(options)}
           </select>
         </div>
-      )
-    })
-  };
+      );
+    });
 
   // Render options for each select item
-  renderOptions = options => {
-    return options.map((o, i) =>
+  renderOptions = options =>
+    options.map((o, i) =>
       <option key={i} value={o.value}>{o.value}</option>
-    )
-  };
+    );
 
   // Orders list render
-  renderOrders = orders => {
-    return orders.map((order, i) =>
+  renderOrders = orders =>
+    orders.map((order, i) =>
       <OrderItem id={order.id}
           key={i}
           date={order.date}
           price={order.price}
           payment={order.payment}
           status={order.status}
-          service={order.service} />)
-  };
+          service={order.service} />
+      );
 
   handleSelect = e => {
     switch (e.target.value) {
@@ -65,18 +60,18 @@ class UserOrders extends Component {
 
       case 'Онлайн тренировка':
         this.props.setOrdersVisibilityFilter('SHOW_ONLINE_SERVICE');
-        break;
+      break;
 
       case 'Правильное питание':
-          this.props.setOrdersVisibilityFilter('SHOW_NUTRITION_SERVICE');
+        this.props.setOrdersVisibilityFilter('SHOW_NUTRITION_SERVICE');
       break;
 
       case 'Программа тренировок':
-          this.props.setOrdersVisibilityFilter('SHOW_PROGRAM_SERVICE');
+        this.props.setOrdersVisibilityFilter('SHOW_PROGRAM_SERVICE');
       break;
 
       case 'Одежда для фитнесса':
-          this.props.setOrdersVisibilityFilter('SHOW_CLOTHES_SERVICE');
+        this.props.setOrdersVisibilityFilter('SHOW_CLOTHES_SERVICE');
       break;
     }
   };
@@ -94,15 +89,13 @@ class UserOrders extends Component {
           {this.renderOrders(orders)}
         </div>
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    selections: getUserSelections(state),
-    orders: getVisibleOrders(state)
-  }
-};
+const mapStateToProps = state => ({
+  selections: getUserSelections(state),
+  orders: getVisibleOrders(state),
+});
 
 export default connect(mapStateToProps, { setOrdersVisibilityFilter })(UserOrders);

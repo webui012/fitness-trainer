@@ -126,4 +126,4 @@ const ServiceOrderData = {
   }
 };
 
-export default ServiceOrderData
+export default ServiceOrderData;
