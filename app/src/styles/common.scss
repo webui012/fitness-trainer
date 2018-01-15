@@ -10,6 +10,13 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.page-title {
+  margin: 30px;
+  text-transform: uppercase;
+  font-size: 30px;
+  text-align: center;
+}
+
 .page-content {
   width: 80%;
   margin: 0 auto;
@@ -17,16 +24,16 @@ body {
 
 .page-wrapper {
   margin: 0 auto;
-  max-width: 1280px;
   padding: 50px 0;
 }
 
 .swiper-container-horizontal {
+  height: 92vh;
   overflow-x: hidden;
   overflow-y: hidden;
 }
 
-.nutrition-slider{
+.nutrition-slider {
   overflow: hidden;
   height: 100vh;
 }

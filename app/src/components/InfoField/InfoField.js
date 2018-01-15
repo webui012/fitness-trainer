@@ -3,11 +3,10 @@ import { Divider } from 'semantic-ui-react'
 import './InfoField.scss';
 
 const InfoField = props => (
-  <div>
+  <p className='info-field'>
     <span className='info-title'>{props.type}: </span>
-    <p className='info-block'>{props.value}</p>
-    <Divider/>
-  </div>
+    {props.value}
+  </p>
 )
 
 

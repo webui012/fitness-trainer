@@ -37,7 +37,7 @@ class Sales extends Component {
     return (
       this.props.data
       ? <section className='page-wrapper sales-wrapper'>
-        <Header as='h1' textAlign='center'>{this.props.data.title}</Header>
+        <h1 className='page-title'>{this.props.data.title}</h1>
         <div className='sales-content'>
           {this.props.data.saleItems.map((item, i) => this.renderSalesItem(item, i))}
         </div>

@@ -49,7 +49,7 @@ class About extends Component {
 
       return (
         <section className='page-wrapper about-wrapper'>
-          <Header as='h1' textAlign='center'>{title}</Header>
+          <h1 className='page-title'>{title}</h1>
           <div className='page-content about-content'>
             <div className='trainer-info'>
               <Card>
@@ -64,7 +64,7 @@ class About extends Component {
                   <Icon link name='instagram'/>
                 </Card.Content>
               </Card>
-              <Container text>
+              <Container className='details-info' text>
                 <Header as='h3'>Основная информация</Header>
                 {details.map(d => <InfoField type={d.type} value={d.value}/>)}
               </Container>

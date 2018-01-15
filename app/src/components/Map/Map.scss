@@ -1,17 +1,17 @@
 .map {
     width: 60%;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 5px;
     box-shadow: 5px 6px 14px;
 
     .marker {
-        position: relative; 
+        position: relative;
         color: black;
         background: red;
-        height: 15px; 
-        width: 15px; 
-        top: -20px; 
-        left: -30px; 
+        height: 15px;
+        width: 15px;
+        top: -20px;
+        left: -30px;
         border-radius: 50px;
 
         span {
