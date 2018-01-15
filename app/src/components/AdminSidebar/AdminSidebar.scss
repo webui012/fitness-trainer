@@ -1,7 +1,6 @@
 .wrap-admin-sidebar {
-
   display: flex;
-  height: 1000px;
+  height: 100vh;
   width: 200px;
   border: 2px white;
   background-color: #262626;
@@ -28,6 +27,10 @@
     transform: translateY(2px);
   }
 
+}
+
+.admin-sidebar {
+  width: 100%;
 }
 
 .admin-sidebar-item {

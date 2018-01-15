@@ -1,13 +1,13 @@
 import React from 'react';
 import { Header } from 'Containers';
 import HeaderCabinetAdminData from '../components/HeaderCabinet/HeaderCabinetAdminData';
-// import AdminSidebar from '../components';
+import { AdminSidebar } from '../components';
 
 const AdminLayout = props => (
-  <div className='login-layout'>
+  <div className='admin-layout'>
     <Header />
-    {/* <AdminSidebar /> */}
     <div className='layout-content'>
+      <AdminSidebar />
       {props.children}
     </div>
   </div>

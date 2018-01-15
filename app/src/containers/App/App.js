@@ -8,8 +8,6 @@ import {
 import { connect } from 'react-redux';
 import routes from './routes';
 import './App.scss';
-import MainLayout from '../../layouts/MainLayout';
-import AdminLayout from '../../layouts/AdminLayout';
 
 class App extends Component {
 

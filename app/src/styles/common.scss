@@ -10,6 +10,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.admin-layout .layout-content {
+  display: flex;
+}
+
 .page-title {
   margin: 30px;
   text-transform: uppercase;
