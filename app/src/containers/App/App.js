@@ -6,6 +6,8 @@ import {
   Switch,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import routes from './routes';
 import { ALL } from '../../redux/constants';
 
@@ -50,10 +52,12 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => (
-  {
+App.propTypes = {
+  userRole: PropTypes.string,
+};
+
+const mapStateToProps = state => ({
     userRole: state.usersStoreReducer.userRole
-  }
-);
+});
 
 export default connect(mapStateToProps)(App);
