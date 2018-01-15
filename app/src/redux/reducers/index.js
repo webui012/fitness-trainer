@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import sales from './Sales/sales';
+import sales from './sales';
 import header from './header';
 import footer from './footer';
 import homePage from './homePage';

@@ -1,5 +1,5 @@
 import { all } from 'redux-saga/effects';
-import showSalesPage from './Sales/sales';
+import showSalesPage from './sales';
 import aboutUsSendDataForm from './aboutUsSendDataForm';
 import aboutUsGetData from './aboutUsGetData';
 import contactsGetData from './contactsGetData';

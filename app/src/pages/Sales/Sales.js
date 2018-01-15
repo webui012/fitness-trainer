@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { SalesItem } from 'Components';
 import Spinner from '../../components/Spinner/Spinner';
-import SalesData from './SalesData';
+//import SalesData from './SalesData';
 import './Sales.scss';
 import { connect } from 'react-redux';
 import { waitSalesPage } from '../../redux/actions';

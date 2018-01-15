@@ -1,4 +1,4 @@
-import { PAGE_SALES_WAIT, PAGE_SALES_SUCCESS } from '../../constants/sales';
+import { PAGE_SALES_WAIT, PAGE_SALES_SUCCESS } from '../constants';
 
 const initialState = {
   spinner: false,

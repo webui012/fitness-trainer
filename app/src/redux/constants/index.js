@@ -9,3 +9,4 @@ export * from './page_Login';
 export * from './AboutUs';
 export * from './About';
 export * from './ordersVisibilityFilter';
+export * from './sales';
