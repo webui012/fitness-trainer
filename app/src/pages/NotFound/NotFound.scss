@@ -1,14 +1,37 @@
-.not-found-div {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: url('../../images/aboutBg.jpg');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  font-size: 25px;
+// .not-found-content{
+//   position: fixed;
+//   width: 100%;
+//   height: 100%;
+//   background: url('../../images/aboutBg.jpg');
+//   background-repeat: no-repeat;
+//   background-size: 100% 100%;
+//   font-size: 25px;
+// }
+
+.not-found-code {
+  margin: 7px 0;
+  font-weight: bold;
+  font-size: 50px;
 }
+
 .not-found-text {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.not-found-desc {
+  margin: 10px 0;
+}
+
+
+.not-found-link {
+  margin: 10px 0;
+  color: #1e70bf;
+}
+
+.not-found-content {
   display: flex;
-  justify-content: center;
-  margin: auto;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
 }
