@@ -4,33 +4,33 @@ import { createSelector } from 'reselect'
 const initialState = {
   selections: [
     {
-      "type": "Сортировка",
-      "options": [
+      type: 'Сортировка',
+      options: [
         {
-          "value": "По цене",
-          "action": "SORT_BY_PRICE"
+          value: 'По цене',
+          action: 'SORT_BY_PRICE'
         },
         {
-          "value": "По id",
-          "action": "SORT_BY_ID"
+          value: 'По id',
+          action: 'SORT_BY_ID'
         },
       ]
     },
 
     {
-      "type": "Статус",
-      "options": [
+      type: 'Статус',
+      options: [
         {
-          "value": "Все",
-          "action": "SHOW_ALL_STATUS"
+          value: 'Все',
+          action: 'SHOW_ALL_STATUS'
         },
         {
-          "value": "Оплачен",
-          "action": "SHOW_PAID"
+          value: 'Оплачен',
+          action: 'SHOW_PAID'
         },
         {
-          "value": "Ожидает оплаты",
-          "action": "SHOW_UNPAID"
+          value: 'Ожидает оплаты',
+          action: 'SHOW_UNPAID'
         },
       ]
     }
@@ -44,7 +44,7 @@ const initialState = {
       payment: 'Privat 24',
       status: 'Оплачен',
       customer: 'Игорь Курченко',
-      service: ['Правильное питание']
+      service: [ 'Правильное питание' ]
     },
     {
       id: 1,
@@ -89,24 +89,20 @@ const getOrdersVisibilityFilter = state => state.ordersVisibilityFilter;
 export const getAdminSelections = state => state.adminOrders.selections;
 
 export const getVisibleOrders = createSelector(
-  [getOrdersVisibilityFilter, getAdminOrders],
+  [ getOrdersVisibilityFilter, getAdminOrders ],
   (ordersVisibilityFilter, orders) => {
     switch (ordersVisibilityFilter) {
       case 'SORT_BY_ID':
-        return [...orders.sort( (a, b) => a.id - b.id)];
-      break;
+        return [ ...orders.sort( (a, b) => a.id - b.id) ];
 
       case 'SORT_BY_PRICE':
-        return [...orders.sort( (a, b) => a.price - b.price)];
-      break;
+        return [ ...orders.sort( (a, b) => a.price - b.price) ];
 
       case 'SHOW_PAID':
         return orders.filter(o => o.status === 'Оплачен');
-      break;
 
       case 'SHOW_UNPAID':
         return orders.filter(o => o.status === 'Ожидает оплаты');
-      break;
 
       default:
         return orders

@@ -23,7 +23,7 @@ const Footer = props => {
   )
 }
 
-const mapStateToProps = state =>({
+const mapStateToProps = state => ({
   footer: getFooterData(state)
 })
 

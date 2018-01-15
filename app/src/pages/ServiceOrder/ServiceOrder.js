@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import {serviceOrderNextStep, serviceOrderPageLoad, serviceOrderPrevStep} from '../../redux/actions';
+import PropTypes from 'prop-types';
+import {
+  serviceOrderNextStep,
+  serviceOrderPageLoad,
+  serviceOrderPrevStep
+} from '../../redux/actions';
 import {
   ServiceToogleFields,
   AdditionalInfoFields
@@ -10,25 +15,35 @@ import {reduxForm, isInvalid} from 'redux-form';
 import data from './serivceOrderData';
 import './ServiceOrder.scss';
 
-
 class ServiceOrder extends Component {
-  componentDidMount(){
-    this.props.pageLoad(data.trainingData);
-  }
 
-/*
-  handleSubmit = () => {
+  static propTypes = {
+    step: PropTypes.number,
+    nextStep: PropTypes.func,
+    invalid: PropTypes.bool,
+    data: PropTypes.object,
   };
-*/
+
+  componentDidMount(){
+    this.props.pageLoad(data.orderFormData);
+  }
 
   chooseStep = () => {
     switch (this.props.step) {
       case 1:
-        return <ServiceToogleFields step={this.props.step} nextStep={this.props.nextStep} invalid={this.props.invalid} />
+        return <ServiceToogleFields
+            data={data.serviceToogleFields}
+            step={this.props.step}
+            nextStep={this.props.nextStep}
+            invalid={this.props.invalid} />
       case 2:
-        return <AdditionalInfoFields step={this.props.step} prevStep={this.props.prevStep} invalid={this.props.invalid} />
+        return <AdditionalInfoFields
+            data={data.additionalInfoFields}
+            step={this.props.step}
+            prevStep={this.props.prevStep}
+            invalid={this.props.invalid} />
       default:
-        return <p>What step 3?</p>
+        return <p>Something go wrong</p>
     }
   };
 
@@ -60,7 +75,6 @@ const mapDispatchToProps = dispatch => {
     pageLoad: bindActionCreators(serviceOrderPageLoad, dispatch)
   }
 };
-
 
 ServiceOrder = reduxForm({
   form: 'service-order',
