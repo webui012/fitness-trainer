@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import {userLogoff} from '../../redux/actions';
-import {ALL} from '../../redux/constants';
+import { userLogoff } from '../../redux/actions';
+import { ALL } from '../../redux/constants';
 
 import './Login.scss';
 

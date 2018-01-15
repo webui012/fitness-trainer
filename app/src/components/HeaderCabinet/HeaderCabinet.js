@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import {
   Logo,
   Navigation,
@@ -19,5 +21,9 @@ const HeaderCabinet = props => {
   )
 }
 
+HeaderCabinet.propTypes = {
+  logo: PropTypes.string,
+  navigation: PropTypes.PropTypes.arrayOf(PropTypes.object)
+};
 
 export default HeaderCabinet;

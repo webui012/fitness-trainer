@@ -13,9 +13,10 @@ import {
   SignupPage,
   Nutrition,
   ServiceOrder,
+  LoginPage,
   NotFound
 } from 'Pages';
-import LoginContainer from '../../containers/LoginContainer';
+
 import { ALL, USER, ADMIN } from '../../redux/constants';
 
 import MainLayout from '../../layouts/MainLayout';
@@ -27,128 +28,128 @@ export default [
   {
     path: '/',
     exact: true,
-    component: Homepage,
-    role: 'ALL',
+    page: Homepage,
+    role: ALL,
     layout: MainLayout,
     id: 't0y9pNF1Fv'
   },
   {
     path: '/about',
     exact: true,
-    component: About,
-    role: 'ALL',
+    page: About,
+    role: ALL,
     layout: MainLayout,
     id: 'Ukv7NHSQlM'
   },
   {
     path: '/services/online-training',
     exact: true,
-    component: Online,
-    role: 'ALL',
+    page: Online,
+    role: ALL,
     layout: MainLayout,
     id: 'aA8wmJaqKa'
   },
   {
     path: '/services/nutrition-plan',
     exact: true,
-    component: Nutrition,
-    role: 'ALL',
+    page: Nutrition,
+    role: ALL,
     layout: MainLayout,
     id: 'g3osQqyZau'
   },
   {
     path: '/services',
     exact: true,
-    component: Services,
-    role: 'ALL',
+    page: Services,
+    role: ALL,
     layout: MainLayout,
     id: 'qnapXP4om6'
   },
   {
     path: '/sales',
     exact: true,
-    component: Sales,
-    role: 'ALL',
+    page: Sales,
+    role: ALL,
     layout: MainLayout,
     id: 'iFXEEri2iu'
   },
   {
     path: '/contacts',
     exact: true,
-    component: Contacts,
-    role: 'ALL',
+    page: Contacts,
+    role: ALL,
     layout: MainLayout,
     id: '8OsJDwHj1j'
   },
   {
     path: '/login',
     exact: true,
-    component: LoginContainer,
-    role: 'ALL',
+    page: LoginPage,
+    role: ALL,
     layout: LoginLayout,
     id: 'ydY8jq0ah9'
   },
   {
     path: '/signup',
     exact: true,
-    component: SignupPage,
-    role: 'ALL',
+    page: SignupPage,
+    role: ALL,
     layout: LoginLayout,
     id: 'K7RsR4thm1'
   },
   {
     path: '/cabinet/admin',
     exact: true,
-    component: AdminCabinet,
-    role: 'ADMIN',
+    page: AdminCabinet,
+    role: ADMIN,
     layout: AdminLayout,
     id: 'ys8goGn387'
   },
   {
     path: '/cabinet/admin/orders',
     exact: true,
-    component: AdminOrders,
-    role: 'ADMIN',
+    page: AdminOrders,
+    role: ADMIN,
     layout: AdminLayout,
     id: 'fcJpTaRz6N'
   },
   {
     path: '/cabinet/user',
     exact: true,
-    component: UserCabinet,
-    role: 'USER',
+    page: UserCabinet,
+    role: USER,
     layout: UserLayout,
     id: 'Nx5r5mLan0'
   },
   {
     path: '/cabinet/user/metrics',
     exact: true,
-    component: AboutUs,
-    role: 'USER',
+    page: AboutUs,
+    role: USER,
     layout: UserLayout,
     id: 'fcJpTBRz6N'
   },
   {
     path: '/cabinet/user/orders',
     exact: true,
-    component: UserOrders,
-    role: 'USER',
+    page: UserOrders,
+    role: USER,
     layout: UserLayout,
     id: 'fcJpTaRz6Nsq'
   },
   {
     path: '/cabinet/user/service-order',
     exact: true,
-    component: ServiceOrder,
-    role: 'USER',
+    page: ServiceOrder,
+    role: USER,
     layout: UserLayout,
     id: 'f1rTaTz4Nbt'
   },
   {
     path: '',
     exact: false,
-    component: NotFound,
-    role: 'ALL',
+    page: NotFound,
+    role: ALL,
     layout: LoginLayout,
     id: 'fcJpT0007N'
   },

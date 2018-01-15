@@ -9,31 +9,22 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import routes from './routes';
-import { ALL } from '../../redux/constants';
+import isAuthorized from '../../utils/isAuthorized';
 
 import './App.scss';
 
 class App extends Component {
 
-  isAuthorized(pageRole, stateRole) {
-   if (pageRole !== stateRole && pageRole !== ALL) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-
   render() {
-
-    const { userRole } = this.props;
+  const { userRole } = this.props;
 
     return (
       <Router>
         <div className='app'>
           <Switch>
-            {routes.map(({ path, exact, id, component: Component, layout: Layout, role: role }) => (
+            {routes.map(({ path, exact, id, page: Component, layout: Layout, role: role }) => (
               <Route key={id} exact={exact} path={path} render={props => (
-                this.isAuthorized(role, userRole)?(
+                isAuthorized(role, userRole)?(
                   <Layout>
                     <Component {...props} />
                   </Layout>
