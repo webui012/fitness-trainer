@@ -4,7 +4,6 @@ import {
   UserOrders,
   About,
   AboutUs,
-  Cabinet,
   AdminCabinet,
   UserCabinet,
   Services,
