@@ -24,7 +24,7 @@ class About extends Component {
 
   renderAchievments(achievments) {
     return achievments.map((a, i) =>
-      <AchievmentItem img={a.img} title={a.title} date={a.date}/>)
+      <AchievmentItem key={i} img={a.img} title={a.title} date={a.date}/>)
   }
 
   renderParagraphs(paragraphs) {

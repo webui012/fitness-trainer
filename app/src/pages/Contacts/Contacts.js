@@ -29,7 +29,7 @@ class Contacts extends Component {
             <span className='contacts-block-title'>{this.props.data.title}</span>
             <List>
               {this.props.data.fields.map((f,i) =>
-                <List.Item className="s">
+                <List.Item className="s" key={i}>
                   <List.Icon name={f.icon} />
                   <List.Content>{f.data}</List.Content>
                 </List.Item>
