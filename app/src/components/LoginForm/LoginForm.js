@@ -2,8 +2,8 @@ import React from 'react';
 import './LoginForm.scss';
 import { Link, Redirect } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
-import {validate} from './validate';
-import {renderField} from './renderField';
+import { validate } from './validate';
+import { renderField } from './renderField';
 import { ALL } from '../../redux/constants';
 
 

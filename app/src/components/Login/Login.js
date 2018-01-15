@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {userLogoff} from '../../redux/actions';
-import {ALL} from '../../redux/constants';
-
+import { userLogoff } from '../../redux/actions';
+import { ALL } from '../../redux/constants';
 import './Login.scss';
 
 class Login extends Component {
-
   render(){
     if (this.props.userRole === ALL){
       return (
@@ -16,6 +14,7 @@ class Login extends Component {
         </div>
       )
     }
+    
     return (
       <div>
         <Link to='/'>
