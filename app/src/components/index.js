@@ -20,7 +20,7 @@ export { default as Payment } from './Payment/Payment';
 export { default as PaymentItem } from './Payment/PaymentItem/PaymentItem';
 export { default as PersonalTraining } from './PersonalTraining/PersonalTraining';
 export { default as ReviewSection } from './ReviewSection/ReviewSection';
-export { default as SalesItem } from './SalesItem/SalesItem';
+// export { default as SalesItem } from './SalesItem/SalesItem';
 export { default as ServiceSection } from './ServiceSection/ServiceSection';
 export { default as ServiceToogleFields} from './ServiceToogleFields/ServiceToogleFields';
 export { default as Service } from './ServiceSection/Service/Service';
