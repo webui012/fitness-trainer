@@ -1,4 +1,4 @@
-export  const validate = values => {
+export const validate = values => {
   const errors = {}
     if (!values.login) {
       errors.login = 'Это поле необходимо заполнить'

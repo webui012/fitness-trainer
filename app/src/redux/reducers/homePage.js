@@ -5,17 +5,17 @@ const initialState = {
   "sliderData": {
     slides: [
       {
-        url: 'https://www.hdwallpapers.in/walls/pushup_workout-HD.jpg',
+        url: 'https://goo.gl/JH36Zv',
         alt: 'Pushup Workout'
       },
 
        {
-        url: 'https://media.self.com/photos/5867a314bf5e49f716efe864/2:1/pass/workout-package_1.png',
+        url: 'https://goo.gl/nExx2r',
         alt: 'Workout Package'
       },
 
        {
-        url: 'http://cdn-img.health.com/sites/default/files/styles/medium_16_9/public/styles/main/public/gettyimages-498315681.jpg?itok=qqWRWFw9',
+        url: 'https://goo.gl/dCS4uK',
         alt: 'Running Workout'
       }
     ],

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Header } from 'Containers';
-import { AdminSidebar } from 'Components';
-import './AdminLayout.scss';
+import HeaderCabinetAdminData from '../components/HeaderCabinet/HeaderCabinetAdminData';
+import { AdminSidebar } from '../components';
 
 const AdminLayout = props => (
-  <div className='login-layout'>
+  <div className='admin-layout'>
     <Header />
-    <div className='admin-layout-content'>
+    <div className='layout-content'>
+      <AdminSidebar />
       {props.children}
     </div>
     <AdminSidebar />

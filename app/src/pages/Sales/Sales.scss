@@ -1,7 +1,14 @@
-.sales-wrap{
-	background-image: url('../../images/aboutBg.jpg');
- 	background-repeat: no-repeat;
-    background-size: cover;
+.sales-wrapper {
+  // background-color: #e6e6e6;
+  background: url('../../images/pexels-photo.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+.sales-content {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .spinner-wrap{
@@ -11,7 +18,7 @@
 	/*z-index: 999999;*/
 }
 
-.spinner-text{
+.spinner-text {
 	position: relative;
 	top: 100px;
 	left: 500px;

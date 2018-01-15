@@ -13,7 +13,7 @@ const HeaderCabinet = props => {
   const {logo, navigation} = props.data;
 
   return (
-    <header className='header'>
+    <header className='main-header'>
       <Logo data={logo} />
       <Navigation data={navigation} />
       <Login />
