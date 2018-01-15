@@ -34,10 +34,10 @@ const config = {
               loader: 'css-loader',
             },
             {
-              loader: 'postcss-loader',
+              loader: 'sass-loader',
             },
             {
-              loader: 'sass-loader',
+              loader: 'postcss-loader',
             },
           ],
           fallback: 'style-loader',
