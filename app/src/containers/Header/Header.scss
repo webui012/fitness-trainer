@@ -1,7 +1,10 @@
 .main-header {
-  z-index: 1000;
+  z-index: 9999999999999;
   width: 100%;
   top: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   padding: 0 50px;

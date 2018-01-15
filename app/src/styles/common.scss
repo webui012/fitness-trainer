@@ -12,6 +12,7 @@ body {
 
 .admin-layout .layout-content {
   display: flex;
+  // position: relative;
 }
 
 .page-title {
@@ -53,6 +54,7 @@ body {
 }
 
 .layout-content {
+  padding-top: 54px;
   flex-grow: 1;
   position: relative;
 }
