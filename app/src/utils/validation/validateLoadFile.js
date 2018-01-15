@@ -10,10 +10,11 @@ export default (value, fieldName, action, store) => {
   let currentValue = Validation.checkPngJpgJpegExtension(previousValue);
 
   if (previousValue !== currentValue) {
-    action({[fieldName]: currentValue});
+    action({ [fieldName]: currentValue });
     return;
   } else if (storeName !== null) {
-    action({[fieldName]: null});
-  }
+    action({ [fieldName]: null });
+  };
+
   return currentValue;
-}
+};

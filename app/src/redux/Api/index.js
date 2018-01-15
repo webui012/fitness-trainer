@@ -27,29 +27,6 @@ class Api {
       }, 500);
     });
   }
-
-  static sendForm(data) {
-    if (data) {
-      const { userId } = data;
-      delete data.userId;
-      return fetch(`http://localhost:6289/${userId}`, {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })
-      .then(response => {
-        if (response.status !== 200) {
-          console.log(`Oops, problem. Status Code: ${response.status}`);
-          throw new Error('There was an error saving data');
-        }
-        return response.json();
-      })
-      .catch(error => console.log('error', error.message));
-    }
-  }
 }
 
 export default Api;
