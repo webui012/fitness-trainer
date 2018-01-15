@@ -32,8 +32,12 @@ const config = {
           use: [
             {
               loader: 'css-loader',
-            }, {
+            },
+            {
               loader: 'sass-loader',
+            },
+            {
+              loader: 'postcss-loader',
             },
           ],
           fallback: 'style-loader',
