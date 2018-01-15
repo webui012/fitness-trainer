@@ -10,6 +10,7 @@ const AdminLayout = props => (
       <AdminSidebar />
       {props.children}
     </div>
+    <AdminSidebar />
   </div>
   )
 

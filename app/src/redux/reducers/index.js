@@ -31,7 +31,7 @@ const rootReducer = combineReducers({
   validationAboutUs,
   usersStoreReducer,
   sales,
-  form: formReducer
+  form: formReducer,
 });
 
 export default rootReducer;

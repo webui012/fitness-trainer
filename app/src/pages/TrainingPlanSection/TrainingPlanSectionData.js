@@ -6,12 +6,8 @@ const TrainingPlanSectionData = {
       description: 'training plan img'
     }
   ],
-  textPlan: [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
-  ],
-  textReview: [
-    'Sed ut perspiciatis, unde omnis iste natus error sit voluptatem. '
-  ],
+  textPlan: [ 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.' ],
+  textReview: [ 'Sed ut perspiciatis, unde omnis iste natus error sit voluptatem. ' ],
   slider: {
     slides: [
       {

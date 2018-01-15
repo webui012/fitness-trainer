@@ -44,10 +44,6 @@ let LoginForm = props => {
           <button className='btn-login' type='submit'>Войти</button>
 
           <label className='link-to'>
-            <Link to='/passwordreset' className='linkto'>Забыли пароль?</Link>
-          </label>
-
-          <label className='link-to'>
             <Link to='/signup' className='linkto'>Создать аккаунт</Link>
           </label>
 

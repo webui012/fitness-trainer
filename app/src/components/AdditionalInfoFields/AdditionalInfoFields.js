@@ -1,48 +1,41 @@
 import React, {Component} from 'react';
 import {Field} from 'redux-form';
 import {renderField, renderSelectField} from '../../pages/ServiceOrder/renderField';
-import {
-  ageValidation,
-  weightValidation,
-  heightValidation,
-  bodyParams,
-  checkAimSelected,
-} from '../../utils/orderFormValidation';
+import { checkAimSelected } from '../../utils/orderFormValidation';
 import './AdditionalInfoFields.scss'
 
-const AdditionalInfoFields = ({prevStep, step, invalid}) => {
+const AdditionalInfoFields = ({prevStep, step, invalid, data}) => {
+    const {options, fields} = data;
     return (
       <div className='additional-info'>
         <h2>Персональные данные</h2>
 
         <Field name='trainingPurpose' component={renderSelectField} validate={checkAimSelected}>
-          <option value='default'>Выберите цель...</option>
-          <option value='musclepower'>Наростить мышечную массу</option>
-          <option value='loseweight'>Похудеть</option>
-          <option value='beautybody'>Создать рельеф тела</option>
+          {
+            options.map(option => {
+              return (
+                <option key={option.value} value={option.value}>{option.text}</option>
+              )
+            })
+          }
         </Field>
 
-        <div>
-          <Field name='age' component={renderField} validate={ageValidation} type='number' label='Возраст' />
-          <Field name='height' component={renderField} validate={heightValidation} type='number' label='Рост в см' />
+        <div className='service-order-inputs'>
+          {
+            fields.map(field => {
+              return (
+                <Field key={field.id}
+                    name={field.name}
+                    component={field.component}
+                    validate={field.validate}
+                    type={field.type}
+                    label={field.label}
+                    placeholder={field.placeholder}
+                />
+              )
+            })
+          }
         </div>
-
-        <div>
-          <Field name='weight' component={renderField} validate={weightValidation} type='number' label='Вес в кг' />
-          <Field name='waist' component={renderField} validate={bodyParams} type='number' label='Талия в см' />
-        </div>
-
-        <div>
-          <Field name='brest' component={renderField} validate={bodyParams} type='number' label='Грудь в см' />
-          <Field name='hip' component={renderField} validate={bodyParams} type='number' label='Бедро в см' />
-        </div>
-
-        <div>
-          <Field name='biceps' component={renderField} validate={bodyParams} type='number' label='Бицепс в см' />
-          <Field name='neck' component={renderField} validate={bodyParams} type='number' label='Шея в см' />
-        </div>
-
-        <Field name='contraindication' component='textarea' placeholder='Противопоказания' />
 
         <div>
           <button className='service-order-button' type='button' onClick={() => prevStep(step)}>
@@ -55,6 +48,6 @@ const AdditionalInfoFields = ({prevStep, step, invalid}) => {
 
       </div>
     )
-}
+};
 
 export default AdditionalInfoFields

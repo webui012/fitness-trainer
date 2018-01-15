@@ -37,12 +37,12 @@ class UserOrders extends Component {
   renderOrders = orders => {
     return orders.map((order, i) =>
       <OrderItem id={order.id}
-                 key={i}
-                 date={order.date}
-                 price={order.price}
-                 payment={order.payment}
-                 status={order.status}
-                 service={order.service}/>)
+          key={i}
+          date={order.date}
+          price={order.price}
+          payment={order.payment}
+          status={order.status}
+          service={order.service} />)
   };
 
   handleSelect = e => {

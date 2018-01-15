@@ -1,5 +1,4 @@
 import React from 'react';
-//import { Header } from 'Components';
 import { HeaderCabinet } from 'Components';
 import HeaderCabinetUserData from '../components/HeaderCabinet/HeaderCabinetUserData';
 

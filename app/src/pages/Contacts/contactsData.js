@@ -23,10 +23,10 @@ export const dataContacts = {
         }
     ],
 
-    mapData: {
-        center: { lat: 49.9712, lng: 36.2501 },
-        zoom: 11,
-        bootstrapURLKeys: { key: 'AIzaSyB-7Fn2cGaiF3_2zTedyusFSiYHGn9RfMQ' },
-        text: 'Спортзал'
-    }
-}
+  mapData: {
+    center: { lat: 49.9712, lng: 36.2501 },
+    zoom: 11,
+    bootstrapURLKeys: { key: 'AIzaSyB-7Fn2cGaiF3_2zTedyusFSiYHGn9RfMQ' },
+    text: 'Lorem',
+  },
+};

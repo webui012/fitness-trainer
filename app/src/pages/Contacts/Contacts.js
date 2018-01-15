@@ -1,4 +1,4 @@
-import React,{ Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Contacts.scss';
 import { Map, ContactsField} from 'Components';
@@ -14,12 +14,12 @@ class Contacts extends Component {
     mainTitle: PropTypes.string,
     fields: PropTypes.array,
     data: PropTypes.object,
-    mapData: PropTypes.object
+    mapData: PropTypes.object,
   };
 
   componentDidMount() {
     this.props.constantsGetData();
-  }
+  };
 
   render() {
     return (this.props.data
@@ -42,16 +42,16 @@ class Contacts extends Component {
       : <Dimmer active inverted>
           <Loader inverted content='Загрузка' />
         </Dimmer>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => ({
-  data: state.contactsGetData.data
+  data: state.contactsGetData.data,
 });
 
 const mapDispatchToProps = dispatch => ({
-  constantsGetData: () => dispatch(constantsGetData())
+  constantsGetData: () => dispatch(constantsGetData()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contacts);

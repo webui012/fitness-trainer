@@ -14,13 +14,13 @@ class About extends Component {
       paragrafText: PropTypes.string,
       imageSrc: PropTypes.string,
       imageAlt: PropTypes.string,
-      videoId: PropTypes.string
-    })
-  }
+      videoId: PropTypes.string,
+    }),
+  };
 
   componentDidMount() {
     this.props.pageAboutGetDataRequest();
-  }
+  };
 
   renderAchievments(achievments) {
     return achievments.map((a, i) =>
@@ -81,7 +81,7 @@ class About extends Component {
             </section>
           </div>
         </div>
-      )
+      );
     } else {
       return (
       <Dimmer active inverted>
@@ -92,11 +92,11 @@ class About extends Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.pageAboutGetStaticData.data
+  data: state.pageAboutGetStaticData.data,
 });
 
 const mapDispatchToProps = dispatch => ({
-  pageAboutGetDataRequest: () => dispatch(pageAboutGetDataRequest())
+  pageAboutGetDataRequest: () => dispatch(pageAboutGetDataRequest()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);

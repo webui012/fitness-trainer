@@ -13,11 +13,11 @@ class Aims extends Component {
     nameField: PropTypes.string,
     selectName: PropTypes.string,
     optionValue: PropTypes.string,
-    options: PropTypes.array
-  }
+    options: PropTypes.array,
+  };
 
   formHandler = event => {
-    event.preventDefault()
+    event.preventDefault();
 
     const aims = validate(
       this.select.value,
@@ -28,21 +28,24 @@ class Aims extends Component {
 
     const data = {
       aims,
-      userId:'aimsData'
-    }
+      userId:'aimsData',
+    };
 
     if (aims) {
       this.props.aboutUsFormRequest(data);
     }
-  }
+  };
 
   render() {
-    const { nameField, options } = this.props.aimsFormData
+    const { nameField, options } = this.props.aimsFormData;
     return (
       <div className='aims-wrap'>
         <label>{nameField}</label>
         <div>
-          <select ref={select => this.select = select} id='select-aims' className={this.props.validation['aims'] ? 'select-warning' : null}>
+          <select
+              ref={select => this.select = select}
+              id='select-aims'
+              className={this.props.validation.aims ? 'select-warning' : null}>
             <option id='default-option'>Выберите цель ваших тренировок...</option>
             {options.map((items, i) =>
               <option
@@ -51,8 +54,8 @@ class Aims extends Component {
               >{items.optionInfo}</option>
             )}
           </select>
-          <span className={this.props.validation['aims'] ? 'active-warning' : 'not-active-warning'}>
-            {this.props.validation['aims']}
+          <span className={this.props.validation.aims ? 'active-warning' : 'not-active-warning'}>
+            {this.props.validation.aims}
           </span>
         </div>
         {this.props.aboutUsSendDataForm ? <Spinner /> : null}
@@ -63,22 +66,18 @@ class Aims extends Component {
             onClick={this.formHandler}
         />
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    aboutUsSendDataForm: state.aboutUsSendDataForm.sendData,
-    validation: state.validationAboutUs
-  }
-}
+const mapStateToProps = state => ({
+  aboutUsSendDataForm: state.aboutUsSendDataForm.sendData,
+  validation: state.validationAboutUs,
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    aboutUsFormRequest: data => dispatch(aboutUsFormRequest(data)),
-    aboutUsWarningMessage: data => dispatch(aboutUsWarningMessage(data))
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  aboutUsFormRequest: data => dispatch(aboutUsFormRequest(data)),
+  aboutUsWarningMessage: data => dispatch(aboutUsWarningMessage(data)),
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Aims)
+export default connect(mapStateToProps, mapDispatchToProps)(Aims);

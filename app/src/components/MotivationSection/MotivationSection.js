@@ -10,13 +10,9 @@ const MotivationSection = props => {
     return (
       <section className={sectionStyle}>
         <h3>{heading}</h3>
-        {isRegistered === true ? <Link to='/service-order'>
-          <button className={buttonStyle}>{text}</button>
-        </Link> :
-        <Link to='/signup'>
+        <Link to='/cabinet/user/service-order'>
           <button className={buttonStyle}>{text}</button>
         </Link>
-        }
       </section>
     )
 }

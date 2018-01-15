@@ -5,7 +5,6 @@ export { default as AdditionalInfoFields } from './AdditionalInfoFields/Addition
 export { default as ContactsField } from './ContactsField/ContactsField';
 export { default as ErrorLoadingData } from './ErrorLoadingData/ErrorLoadingData';
 export { default as InputFile } from './InputFile/InputFile';
-export { default as Loading } from './Loading/Loading';
 export { default as Login } from './Login/Login';
 export { default as OrderItem } from './OrderItem/OrderItem';
 export { default as LoginForm } from './LoginForm/LoginForm';
