@@ -5,7 +5,7 @@ import { Field, reduxForm } from 'redux-form';
 import { validate } from './validate';
 import { renderField } from './renderField';
 import { ALL } from '../../redux/constants';
-
+import { Button, Checkbox, Form } from 'semantic-ui-react'
 
 let LoginForm = props => {
 
@@ -17,49 +17,38 @@ let LoginForm = props => {
       )
     }
 
-    return <section className='login-page'>
-      <form onSubmit={handleSubmit}>
+    return (
+      <form className='login-from' onSubmit={handleSubmit}>
         <fieldset className='login-form'>
-          <legend className='login-form-caption'> Войти </legend>
+          <legend className='login-form-caption'>Войти</legend>
 
-          <label className='input-area'>
+          <div className='input-area'>
+            <label htmlFor='' className='input-label'></label>
             <Field
                 className='form'
                 name='login'
                 type='text'
                 component={renderField}
-                label='Введите имя или адрес эл. почты'
-            />
-          </label>
+                label='Введите имя или адрес эл. почты'/>
+          </div>
 
-          <label className='input-area'>
+          <div className='input-area'>
+            <label htmlFor='' className='input-label'></label>
             <Field
                 className='form'
                 name='password'
                 type='password'
                 component={renderField}
-                label='Введите пароль'
-            />
-          </label>
+                label='Введите пароль'/>
+          </div>
 
-          <button
-              className='btn-login'
-              type='submit'
-          >
-            <p className='btn'> Войти </p>
-          </button>
-
-          <label className='link-to'>
-            <Link to='/passwordreset' className='linkto'>Забыли пароль?</Link>
-          </label>
-
-          <label className='link-to'>
-            <Link to='/signup' className='linkto'>Создать аккаунт</Link>
-          </label>
+          <button className='btn-login' type='submit'>Войти</button>
+          <Link to='/passwordreset' className='linkto'>Забыли пароль?</Link>
+          <Link to='/signup' className='linkto'>Создать аккаунт</Link>
 
         </fieldset>
       </form>
-    </section>
+    )
 }
 
 LoginForm = reduxForm(

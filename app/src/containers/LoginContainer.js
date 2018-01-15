@@ -4,6 +4,8 @@ import { Spinner, NoUserFoundError } from 'Components';
 import LoginForm from '../components/LoginForm/LoginForm';
 import { searchUser, errorRedirect } from '../redux/actions';
 import { ADMIN, USER } from '../redux/constants';
+import { Loader, Dimmer } from 'semantic-ui-react'
+
 
 class LoginContainer extends Component{
   constructor(props){
@@ -45,7 +47,9 @@ class LoginContainer extends Component{
     let noUser;
     let errorRedirect;
     if (this.state.loadingStatus){
-      addSpinner = <Spinner />;
+      addSpinner = <Dimmer active inverted>
+                    <Loader inverted content='Загрузка' />
+                  </Dimmer>;
     } else {
       addSpinner ='';
     }
@@ -58,11 +62,14 @@ class LoginContainer extends Component{
     const { userLogin, role } = this.props;
     const { from } = this.props.location.state || {from: {pathname : this.condRedirect(role)}};
 
-    return (<div>
-      <LoginForm onSubmit={this.onSubmitSignInData} from={from} role={role} />
-      {noUser}
-      {addSpinner}
-    </div>
+    return (
+      <div className='page-wrapper login-wrapper'>
+        <div className='page-content login-content'>
+          <LoginForm onSubmit={this.onSubmitSignInData} from={from} role={role} />
+          {noUser}
+          {addSpinner}
+        </div>
+      </div>
     )
   }
 }
