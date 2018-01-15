@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import {Signup, Spinner} from 'Components';
-import {connect} from 'react-redux';
-import {addUser} from '../../redux/actions/index';
+import React, { Component } from 'react';
+import { Signup, Spinner } from 'Components';
+import { connect } from 'react-redux';
+import { addUser } from '../../redux/actions/index';
 import { SubmissionError } from 'redux-form';
 import { USER } from '../../redux/constants';
-
+import { Loader, Dimmer } from 'semantic-ui-react'
 
 class SignupPage extends Component{
 
@@ -32,15 +32,18 @@ class SignupPage extends Component{
     render(){
       let addSpinner;
       if (this.state.loadingStatus){
-        addSpinner = <Spinner />;
+        addSpinner = <Dimmer active inverted>
+                      <Loader inverted content='Загрузка' />
+                    </Dimmer>;
       }
        return (
-         <div>
-           <Signup
-               onSubmit={this.onSubmitRegistrationData}
-               routStatus={this.state.routStatus}
-            />
-           {addSpinner}
+         <div className='page-wrapper signup-wrapper'>
+           <div className='page-content signup-content'>
+             <Signup
+                 onSubmit={this.onSubmitRegistrationData}
+                 routStatus={this.state.routStatus} />
+              {addSpinner}
+           </div>
          </div>
        )
     }

@@ -8,7 +8,6 @@ import { ALL } from '../../redux/constants';
 
 
 let LoginForm = props => {
-
    const { role, from, handleSubmit } = props;
 
    if (role !== ALL) {
@@ -18,7 +17,7 @@ let LoginForm = props => {
     }
 
     return (
-      <form className='login-from' onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <fieldset className='login-form'>
           <legend className='login-form-caption page-title'>Вход</legend>
 
