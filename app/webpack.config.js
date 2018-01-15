@@ -32,12 +32,20 @@ const config = {
           use: [
             {
               loader: 'css-loader',
-            }, {
+            },
+            {
+              loader: 'postcss-loader',
+            },
+            {
               loader: 'sass-loader',
             },
           ],
           fallback: 'style-loader',
         }),
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
