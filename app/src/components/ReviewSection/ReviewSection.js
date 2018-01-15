@@ -8,9 +8,8 @@ const ReviewSection = props => {
    const params = props.data.sliderParams,
         slides = props.data.slides
 
-
     return (
-      <div>
+      <div className='reviews-seciton'>
         <h3 className='title-name'>{props.data.title}</h3>
         <Swiper {...params} className='swiper-wrapper'>
           {slides.map((slider, i) =>
