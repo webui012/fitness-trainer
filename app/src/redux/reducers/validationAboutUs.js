@@ -15,14 +15,14 @@ const initialState = {
   breast: null,
   tail: null,
   hips: null,
-  legs: null
-}
+  legs: null,
+};
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case PAGE_ABOUTUS_WARNING_MESSAGE:
-      return { ...state, ...action.payload }
+      return { ...state, ...action.payload };
     default:
       return state;
   }
-}
+};

@@ -12,13 +12,13 @@ class FullName extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      location: 'загрузите фото'
-    }
+      location: 'загрузите фото',
+    };
   }
 
   static defaultProps = {
-    fields: []
-  }
+    fields: [],
+  };
 
   static propTypes = {
     path: PropTypes.object.isRequired,
@@ -26,13 +26,13 @@ class FullName extends Component {
       type: PropTypes.string,
       placeholder: PropTypes.string,
       ref: PropTypes.string,
-      id: PropTypes.string
+      id: PropTypes.string,
     })),
     aboutUsSendDataForm: PropTypes.bool,
     validation: PropTypes.object.isRequired,
     aboutUsFormRequest: PropTypes.func.isRequired,
-    aboutUsWarningMessage: PropTypes.func.isRequired
-  }
+    aboutUsWarningMessage: PropTypes.func.isRequired,
+  };
 
   getInputs = () => this.props.fields.map(
     field =>
@@ -43,16 +43,16 @@ class FullName extends Component {
             className={this.props.validation[field.ref] ? 'input-warning' : null}
         />
         <span className={this.props.validation[field.ref]
-          ?'active-warning'
-          :'not-active-warning'}> {this.props.validation[field.ref]}
+          ? 'active-warning'
+          : 'not-active-warning'}> {this.props.validation[field.ref]}
         </span>
       </span>);
 
   getAvatar = () => this.props.path.userAvatar
-      ?<img className='avatar' src={this.props.path.userAvatar} alt='user avatar' />
-      :<img className='avatar' src={this.props.path.defaultAvatar} alt='user avatar' />;
+      ? <img className='avatar' src={this.props.path.userAvatar} alt='user avatar' />
+      : <img className='avatar' src={this.props.path.defaultAvatar} alt='user avatar' />;
 
-  getLocation = data => this.setState({location: data});
+  getLocation = data => this.setState({ location: data });
 
   formHandler = event => {
     event.preventDefault();
@@ -79,12 +79,12 @@ class FullName extends Component {
       avatar,
       name,
       surname,
-      userId: 'personalData'
+      userId: 'personalData',
     };
 
     if (name && surname && avatar !== undefined) {
       this.props.aboutUsFormRequest(data);
-      this.setState({location: 'загрузите фото'})
+      this.setState({ location: 'загрузите фото' });
     };
   };
 
@@ -103,18 +103,18 @@ class FullName extends Component {
           <input type='submit' value='Сохранить данные' className='submit-full-name' />
         </form>
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => ({
   aboutUsSendDataForm: state.aboutUsSendDataForm.sendData,
-  validation: state.validationAboutUs
+  validation: state.validationAboutUs,
 });
 
 const mapDispatchToProps = dispatch => ({
   aboutUsFormRequest: data => dispatch(aboutUsFormRequest(data)),
-  aboutUsWarningMessage: data => dispatch(aboutUsWarningMessage(data))
+  aboutUsWarningMessage: data => dispatch(aboutUsWarningMessage(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FullName);

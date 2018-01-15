@@ -8,10 +8,10 @@ const ErrorLoadingData = props =>
       <p>Извините произошла ошибка сохранения данных, попробуйте ещё раз</p>
       <button type='button' name='agree' onClick={props.closeMessage}>Ок</button>
     </div>
-  </div>
+  </div>;
 
 ErrorLoadingData.propTypes = {
-  closeMessage: PropTypes.func.isRequired
-}
+  closeMessage: PropTypes.func.isRequired,
+};
 
 export default ErrorLoadingData;
