@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import YouTube from '@u-wave/react-youtube';
 import { Spinner } from 'Components';
 import { connect } from 'react-redux';
-import { aboutGetDataRequest } from '../../redux/actions/About';
+import { aboutGetDataRequest } from '../../redux/actions/about';
 import './About.scss';
 
 class About extends Component {
