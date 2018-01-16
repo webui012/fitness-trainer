@@ -29,7 +29,7 @@ class About extends Component {
 
   renderParagraphs(paragraphs) {
     return paragraphs.map((p, i) =>
-      <p className='paragraph'>{p}</p>)
+      <p key={i} className='paragraph'>{p}</p>)
   }
 
   renderSections(sections) {
@@ -65,7 +65,7 @@ class About extends Component {
               </Card>
               <Container className='details-info' text>
                 <Header as='h3'>Основная информация</Header>
-                {details.map(d => <InfoField type={d.type} value={d.value}/>)}
+                {details.map((d, i) => <InfoField key={i} type={d.type} value={d.value}/>)}
               </Container>
             </div>
 
