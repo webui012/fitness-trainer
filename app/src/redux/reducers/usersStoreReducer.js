@@ -38,7 +38,7 @@ export default function usersStoreReducer(state = initialState, action){
         if ((action.value.login === state[key].username ||
           action.value.login === state[key].email)
           && action.value.password === state[key].password1) {
-            localStorage.setItem("cachedData", JSON.stringify(
+            localStorage.setItem(CACHED_DATA, JSON.stringify(
               {
                 ...state,
                 [key]:{ ...state[key], signIn: true },
@@ -53,7 +53,7 @@ export default function usersStoreReducer(state = initialState, action){
         }
       }
       if ( state.userRole === ALL ) {
-        localStorage.setItem("cachedData", JSON.stringify(
+        localStorage.setItem(CACHED_DATA, JSON.stringify(
               {
                ...state,
              notFound: true
