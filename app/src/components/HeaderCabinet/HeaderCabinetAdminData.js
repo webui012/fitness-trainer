@@ -11,6 +11,6 @@ const HeaderCabinetAdminData = {
       url: '/cabinet/admin/orders',
     },
   ],
-}
+};
 
 export default HeaderCabinetAdminData;

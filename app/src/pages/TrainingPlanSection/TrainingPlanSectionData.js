@@ -50,6 +50,6 @@ const TrainingPlanSectionData = {
       sectionStyle: 'motivation-section',
       buttonStyle: 'service-button',
     },
-  }
+  };
 
-  export default TrainingPlanSectionData
+  export default TrainingPlanSectionData;

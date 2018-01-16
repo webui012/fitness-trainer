@@ -14,65 +14,65 @@ import { SET_VISIBILITY_FILTER,
 
 export const setOrdersVisibilityFilter = filter => ({
   type: SET_VISIBILITY_FILTER,
-  filter
+  filter,
 });
 
 export const setSortByPrice = (filter) => ({
     type: SORT_BY_PRICE,
-    filter
+    filter,
 });
 
 export const setSortById = (filter) => ({
     type: SORT_BY_ID,
-    filter
+    filter,
 });
 
 export const setShowAllStatus = (filter) => ({
     type: SHOW_ALL_STATUS,
-    filter
+    filter,
 });
 
 export const setShowPayed = (filter) => ({
     type: SHOW_PAYED,
-    filter
+    filter,
 });
 
 export const setShowPaid = (filter) => ({
     type: SHOW_PAID,
-    filter
+    filter,
 });
 
 export const setShowUnpaid = (filter) => ({
     type: SHOW_UNPAID,
-    filter
+    filter,
 });
 
 export const setShowUnpayed = (filter) => ({
     type: SHOW_UNPAYED,
-    filter
+    filter,
 });
 
 export const setShowAllServices = (filter) => ({
     type: SHOW_ALL_SERVICES,
-    filter
+    filter,
 });
 
 export const setShowOnlineService = (filter) => ({
     type: SHOW_ONLINE_SERVICE,
-    filter
+    filter,
 });
 
 export const setShowProgramService = (filter) => ({
     type: SHOW_PROGRAM_SERVICE,
-    filter
+    filter,
 });
 
 export const setShowClothesService = (filter) => ({
     type: SHOW_CLOTHES_SERVICE,
-    filter
+    filter,
 });
 
 export const setShowNutritionService = (filter) => ({
     type: SHOW_NUTRITION_SERVICE,
-    filter
+    filter,
 });

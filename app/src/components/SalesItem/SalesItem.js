@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './SalesItem.scss';
 
 const SalesItem = props => {
-  const {salesHeadline, content, expireDate, salesImgCaption} = props;
+  const { salesHeadline, content, expireDate, salesImgCaption } = props;
   return (
     <div className='item-wrap'>
       <div className='item-info'>
@@ -18,13 +18,14 @@ const SalesItem = props => {
       </div>
 
     </div>
-  )
-}
+  );
+};
+
 SalesItem.propTypes = {
   salesHeadline: PropTypes.string,
   content: PropTypes.string,
   expireDate: PropTypes.string,
-  salesImgCaption: PropTypes.string
-}
+  salesImgCaption: PropTypes.string,
+};
 
-export default SalesItem
+export default SalesItem;

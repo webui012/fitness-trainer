@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const renderField = ({ input, label, type, placeholder, meta: { touched, error }}) => (
+export const renderField = ({ input, label, type, placeholder, meta: { touched, error } }) => (
   <div className='service-order-renderfield'>
     <label>{label}</label>
     <input {...input} type={type} placeholder={placeholder} />

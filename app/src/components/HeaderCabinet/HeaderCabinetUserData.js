@@ -1,4 +1,4 @@
- const HeaderCabinetUserData = {
+const HeaderCabinetUserData = {
   logo: 'Fitness',
 
   navigation: [
@@ -15,6 +15,6 @@
       url: '/cabinet/user/service-order',
     },
   ],
-}
+};
 
-export default HeaderCabinetUserData
+export default HeaderCabinetUserData;

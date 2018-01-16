@@ -1,4 +1,4 @@
-import aboutData from '../../../pages/About/aboutData';
+import aboutData from '../../pages/About/aboutData';
 
 export default () =>
   new Promise((resolve, reject) => {
