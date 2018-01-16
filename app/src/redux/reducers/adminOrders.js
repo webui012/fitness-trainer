@@ -38,7 +38,7 @@ const initialState = {
 
   orders: [
     {
-      id: 3,
+      id: 32,
       date: '21.08.2017',
       price: 200,
       payment: 'Privat 24',
@@ -47,7 +47,7 @@ const initialState = {
       service: [ 'Правильное питание' ]
     },
     {
-      id: 1,
+      id: 12,
       date: '21.08.2017',
       price: 300,
       payment: 'Privat 24',
@@ -56,7 +56,7 @@ const initialState = {
       service: 'Тренировка 1х1'
     },
     {
-      id: 2,
+      id: 59,
       date: '19.08.2011',
       price: 50,
       payment: 'Privat 24',
@@ -65,7 +65,7 @@ const initialState = {
       service: 'Программа тренировок'
     },
     {
-      id: 4,
+      id: 432,
       date: '01.02.2016',
       price: 100,
       payment: 'Privat 24',
