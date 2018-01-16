@@ -45,10 +45,15 @@
   font-size: 12px;
 }
 
+.ui.checkbox {
+  margin: 13px 0;
+}
+
 .btn-login {
+  display: block;
   cursor: pointer;
   border: none;
-  margin-top: 30px;
+  margin-top: 10px;
   align: center;
   padding: 10px 20px;
   color: #fff;

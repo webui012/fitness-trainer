@@ -5,7 +5,7 @@ import { Field, reduxForm } from 'redux-form';
 import { validate } from './validate';
 import { renderField } from './renderField';
 import { ALL } from '../../redux/constants';
-
+import { Checkbox } from 'semantic-ui-react'
 
 let LoginForm = props => {
    const { role, from, handleSubmit } = props;
@@ -40,7 +40,7 @@ let LoginForm = props => {
                 component={renderField}
                 label='Введите пароль' />
           </div>
-
+          <Checkbox label={<label>Запомнить меня</label>} />
           <button className='btn-login' type='submit'>Войти</button>
 
           <label className='link-to'>

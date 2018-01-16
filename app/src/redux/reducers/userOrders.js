@@ -1,4 +1,15 @@
 import { createSelector } from 'reselect'
+import {
+  SORT_BY_ID,
+  SORT_BY_PRICE,
+  SHOW_PAID,
+  SHOW_UNPAID,
+  SHOW_ALL_SERVICES,
+  SHOW_ONLINE_SERVICE,
+  SHOW_NUTRITION_SERVICE,
+  SHOW_PROGRAM_SERVICE,
+  SHOW_CLOTHES_SERVICE
+} from '../constants';
 
 const initialState = {
     selections: [
@@ -112,31 +123,31 @@ export const getVisibleOrders = createSelector(
   [ getOrdersVisibilityFilter, getUserOrders ],
   (ordersVisibilityFilter, orders) => {
     switch (ordersVisibilityFilter) {
-      case 'SORT_BY_ID':
+      case SORT_BY_ID:
         return [ ...orders.sort( (a, b) => a.id - b.id) ];
 
-      case 'SORT_BY_PRICE':
+      case SORT_BY_PRICE:
         return [ ...orders.sort( (a, b) => a.price - b.price) ];
 
-      case 'SHOW_PAID':
+      case SHOW_PAID:
         return orders.filter(o => o.status === 'Оплачен');
 
-      case 'SHOW_UNPAID':
+      case SHOW_UNPAID:
         return orders.filter(o => o.status === 'Ожидает оплаты');
 
-      case 'SHOW_ALL_SERVICES':
+      case SHOW_ALL_SERVICES:
         return orders;
 
-      case 'SHOW_ONLINE_SERVICE':
+      case SHOW_ONLINE_SERVICE:
           return orders.filter(o => o.service === 'Тренировка 1х1');
 
-      case 'SHOW_NUTRITION_SERVICE':
+      case SHOW_NUTRITION_SERVICE:
           return orders.filter(o => o.service === 'Правильное питание');
 
-      case 'SHOW_PROGRAM_SERVICE':
+      case SHOW_PROGRAM_SERVICE:
           return orders.filter(o => o.service === 'Программа тренировок');
 
-      case 'SHOW_CLOTHES_SERVICE':
+      case SHOW_CLOTHES_SERVICE:
           return orders.filter(o => o.service === 'Одежда для фитнесса');
 
       default:
