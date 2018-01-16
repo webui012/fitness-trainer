@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   PersonalTraining,
   ReviewSection,
@@ -8,12 +8,11 @@ import './Online.scss';
 import OnlineData from './OnlineData';
 import ServicesData from './../Services/ServicesData';
 
-
 const Online = props =>
   <div className='online'>
     <PersonalTraining data={OnlineData} />
     <ReviewSection data={OnlineData} />
     <MotivationSection data={ServicesData.motivations} />
-  </div>
+  </div>;
 
-export default Online
+export default Online;

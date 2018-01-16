@@ -15,19 +15,20 @@ const TrainingPlanSection = () => {
     textPlan,
     textReview,
     slider,
-    motivations } = TrainingPlanSectionData;
+    motivations,
+  } = TrainingPlanSectionData;
 
-  const textUpper = textPlan.map((snippet,index) =>
+  const textUpper = textPlan.map((snippet, index) =>
     <p key={index}>{snippet}</p>
-  )
+  );
 
-  const textLower = textReview.map((snippet,index) =>
+  const textLower = textReview.map((snippet, index) =>
     <p key={index}>{snippet}</p>
-  )
+  );
 
   const trainingImage = image.map((pic, index) =>
     <img key={index} src={pic.imgPath} alt={pic.description} />
-    )
+  );
 
   return (
     <div>
@@ -40,8 +41,8 @@ const TrainingPlanSection = () => {
       </section>
       <MotivationSection data={motivations} />
     </div>
-  )
-}
+  );
+};
 
 TrainingPlanSection.propTypes = {
   videoId: PropTypes.string,
@@ -49,7 +50,7 @@ TrainingPlanSection.propTypes = {
   textPlan: PropTypes.arrayOf(PropTypes.string),
   textReview: PropTypes.arrayOf(PropTypes.string),
   slider: PropTypes.object,
-  motivations: PropTypes.objectOf(PropTypes.string)
+  motivations: PropTypes.objectOf(PropTypes.string),
 };
 
-export default TrainingPlanSection
+export default TrainingPlanSection;

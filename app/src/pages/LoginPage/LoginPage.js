@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { LoginForm, Spinner, NoUserFoundError } from 'Components';
@@ -6,92 +6,92 @@ import { searchUser, errorRedirect } from '../../redux/actions';
 import { ADMIN, USER } from '../../redux/constants';
 
 class LoginContainer extends Component{
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      loadingStatus:''
-    }
-    this.onSubmitSignInData = this.onSubmitSignInData.bind(this);
-    this.noUserErrorRedirect = this.noUserErrorRedirect.bind(this);
-    this.changeState = this.changeState.bind(this);
+      loadingStatus: '',
+    };
   }
 
-  onSubmitSignInData(value){
-    this.setState({loadingStatus: true});
+  onSubmitSignInData = value => {
+    this.setState({ loadingStatus: true });
     this.props.send(value);
-
-  }
+  };
 
   condRedirect(role) {
     if (role === ADMIN) {
-      return '/cabinet/admin'
+      return '/cabinet/admin';
     } else if (role === USER) {
-      return '/cabinet/user'
+      return '/cabinet/user';
     }
   }
 
-  changeState(){
-    this.setState({loadingStatus: false});
-  }
+  changeState = () => this.setState({ loadingStatus: false });
 
-  noUserErrorRedirect(){
+  noUserErrorRedirect = () => {
     this.props.errorRedirect();
-    this.setState({loadingStatus: false});
-  }
+    this.setState({ loadingStatus: false });
+  };
 
-  render(){
+  render() {
     let addSpinner;
     let noUser;
     let errorRedirect;
-    if (this.state.loadingStatus){
+    if (this.state.loadingStatus) {
       addSpinner = <Spinner />;
     } else {
-      addSpinner ='';
+      addSpinner = '';
     }
-    if (this.props.noUser){
-      noUser = <NoUserFoundError closeMessage={this.noUserErrorRedirect} redraw={this.changeState} />;
+
+    if (this.props.noUser) {
+      noUser = <NoUserFoundError
+          closeMessage={this.noUserErrorRedirect}
+          redraw={this.changeState}
+      />;
     } else {
       noUser = '';
     }
 
     const { userLogin, role } = this.props;
-    const { from } = this.props.location.state || {from: {pathname : this.condRedirect(role)}};
+    const { from } = this.props.location.state || { from: { pathname: this.condRedirect(role) } };
 
-    return (<div>
-      <LoginForm onSubmit={this.onSubmitSignInData} from={from} role={role} />
-      {noUser}
-      {addSpinner}
-    </div>
-    )
+    return (
+      <div>
+        <LoginForm onSubmit={this.onSubmitSignInData} from={from} role={role} />
+        {noUser}
+        {addSpinner}
+      </div>
+    );
   }
-}
-
+};
 
 const mapDispatchToProps = dispatch => ({
-   send: value => {
+  send: value => {
         const sendData = () => dispatch => {
           fetch('https://jsonplaceholder.typicode.com/posts')
-                  .then(function(response) {
+                  .then(function (response) {
                     return response.status;
                   })
-                    .then(function(status) {
-                        if (status == 200){
+                    .then(function (status) {
+                        if (status === 200) {
                           setTimeout(() => {
-                            dispatch(searchUser(value))
-                          },1000)
+                            dispatch(searchUser(value));
+                          }, 1000);
                         }
-                    })
-        }
-        dispatch(sendData())
+                      });
+        };
+
+        dispatch(sendData());
       },
-    errorRedirect: () => {
-      dispatch(errorRedirect())
-    }
-})
+
+  errorRedirect: () => {
+      dispatch(errorRedirect());
+    },
+});
 
 const mapStateToProps = state => ({
   role: state.usersStoreReducer.userRole,
   noUser: state.usersStoreReducer.notFound,
-})
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);

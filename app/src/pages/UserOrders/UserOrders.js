@@ -28,8 +28,8 @@ class UserOrders extends Component {
   };
 
   // Select items render
-  renderSelections = selections => {
-    return selections.map((select, i) => {
+  renderSelections = selections =>
+    selections.map((select, i) => {
       const { type, options } = select;
 
       return (
@@ -39,28 +39,26 @@ class UserOrders extends Component {
             {this.renderOptions(options)}
           </select>
         </div>
-      )
-    })
-  };
+      );
+    });
 
   // Render options for each select item
-  renderOptions = options => {
-    return options.map((o, i) =>
+  renderOptions = options =>
+    options.map((o, i) =>
       <option key={i} value={o.value}>{o.value}</option>
-    )
-  };
+    );
 
   // Orders list render
-  renderOrders = orders => {
-    return orders.map((order, i) =>
+  renderOrders = orders =>
+    orders.map((order, i) =>
       <OrderItem id={order.id}
           key={i}
           date={order.date}
           price={order.price}
           payment={order.payment}
           status={order.status}
-          service={order.service} />)
-  };
+          service={order.service} />
+      );
 
   handleSelect = e => {
     switch (e.target.value) {
@@ -111,13 +109,13 @@ class UserOrders extends Component {
           {this.renderOrders(orders)}
         </div>
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => ({
-        selections: getUserSelections(state),
-        orders: getVisibleOrders(state)
-    });
+  selections: getUserSelections(state),
+  orders: getVisibleOrders(state),
+});
 
 export default connect(mapStateToProps, { setOrdersVisibilityFilter })(UserOrders);

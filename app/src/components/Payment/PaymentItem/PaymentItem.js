@@ -11,4 +11,6 @@ const PaymentItem = props =>
       <Text content={props.content} />
     </div>
     <Image imageClass='payment-img' path={props.img} />
-  </div>
+  </div>;
+
+export default PaymentItem;
