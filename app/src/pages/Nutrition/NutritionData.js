@@ -20,12 +20,8 @@ const NutritionData = {
             iconUrl: icon_1
         },
     ],
-    textNutrition: [
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
-    ],
-    textTitle: [
-        'Как это работает'
-    ],
+    textNutrition: [ 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.' ],
+    textTitle: [ 'Как это работает' ],
     slider: {
         slides: [
             {
