@@ -38,6 +38,10 @@
   span {
     margin-right: 5px;
   }
+
+  .select-item:last-child select {
+    width: 220px;
+  }
 }
 
 .select-item {
