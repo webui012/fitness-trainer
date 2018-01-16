@@ -4,9 +4,7 @@ import { Table } from 'reactstrap';
 import UserCardsData from './UserCardsData';
 import './UserCards.scss';
 
-
 const UserCard = props => {
-
   const rows = UserCardsData.rows[0];
   const users = props.data;
 
@@ -22,22 +20,19 @@ const UserCard = props => {
           </tr>
         </thead>
 
-        {users.map((user, i) => {
-          return (
-            <tbody key={i}>
-              <tr className='users-row'>
-                <th className='user-firstname'>{user.firstname}</th>
-                <th className='user-lastname'>{user.lastname}</th>
-                <th className='user-registration-date'>{user.registrationDate}</th>
-                <th className='user-status'>{user.status}</th>
-              </tr>
-            </tbody>
-          )
-        })
-        }
+        {users.map((user, i) =>
+          <tbody key={i}>
+            <tr className='users-row'>
+              <th className='user-firstname'>{user.firstname}</th>
+              <th className='user-lastname'>{user.lastname}</th>
+              <th className='user-registration-date'>{user.registrationDate}</th>
+              <th className='user-status'>{user.status}</th>
+            </tr>
+          </tbody>
+        )}
       </Table>
     </div>
-    )
-  }
+  );
+};
 
 export default UserCard;

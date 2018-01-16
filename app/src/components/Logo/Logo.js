@@ -7,4 +7,4 @@ const Logo = props =>
     <Link to='/' className='logo'>{props.data}</Link>
   </div>;
 
-export default Logo
+export default Logo;

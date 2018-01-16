@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import YouTube from '@u-wave/react-youtube';
 import { Spinner } from 'Components';
 import { connect } from 'react-redux';
-import { pageAboutGetDataRequest } from '../../redux/actions/page_About';
+import { aboutGetDataRequest } from '../../redux/actions/about';
 import './About.scss';
 
 class About extends Component {
   static propTypes = {
-    pageAboutGetDataRequest: PropTypes.func.isRequired,
+    aboutGetDataRequest: PropTypes.func.isRequired,
     data: PropTypes.shape({
       paragrafText: PropTypes.string,
       imageSrc: PropTypes.string,
@@ -18,7 +18,7 @@ class About extends Component {
   };
 
   componentDidMount() {
-    this.props.pageAboutGetDataRequest();
+    this.props.aboutGetDataRequest();
   };
 
   render() {
@@ -42,11 +42,11 @@ class About extends Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.pageAboutGetStaticData.data,
+  data: state.aboutGetStaticData.data,
 });
 
 const mapDispatchToProps = dispatch => ({
-  pageAboutGetDataRequest: () => dispatch(pageAboutGetDataRequest()),
+  aboutGetDataRequest: () => dispatch(aboutGetDataRequest()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);

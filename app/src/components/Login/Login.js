@@ -10,6 +10,7 @@ import './Login.scss';
 
 const Login = props => {
   const { userRole } = props;
+
   if (userRole === ALL) {
     return (
       <div className='login-section'>
@@ -17,6 +18,7 @@ const Login = props => {
       </div>
     );
   }
+
   return (
     <div>
       <Link to='/'>
@@ -24,20 +26,20 @@ const Login = props => {
       </Link>
     </div>
   );
-}
+};
 
 Login.propTypes = {
   userRole: PropTypes.string,
 };
 
 const mapStateToProps = state => ({
-    userRole: state.usersStoreReducer.userRole
+  userRole: state.usersStoreReducer.userRole,
 });
 
 const mapDispatchToProps = dispatch => ({
   userLogoff: () => {
-  dispatch(userLogoff())
-  }
+    dispatch(userLogoff());
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

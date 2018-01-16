@@ -22,6 +22,6 @@ export const orderForm = (state = { step: 1 }, action) => {
         data: action.data
       };
     default:
-      return state
+      return state;
   }
 };

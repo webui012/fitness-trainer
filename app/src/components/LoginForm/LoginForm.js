@@ -2,22 +2,22 @@ import React from 'react';
 import './LoginForm.scss';
 import { Link, Redirect } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
-import {validate} from './validate';
-import {renderField} from './renderField';
+import { validate } from './validate';
+import { renderField } from './renderField';
 import { ALL } from '../../redux/constants';
-
 
 let LoginForm = props => {
 
-   const { role, from, handleSubmit } = props;
+  const { role, from, handleSubmit } = props;
 
-   if (role !== ALL) {
-      return (
-        <Redirect to={from} />
-      )
-    }
+  if (role !== ALL) {
+    return (
+      <Redirect to={from} />
+    );
+  }
 
-    return <section className='login-page'>
+  return (
+    <section className='login-page'>
       <form onSubmit={handleSubmit}>
         <fieldset className='login-form'>
           <legend className='login-form-caption'> Войти </legend>
@@ -56,13 +56,12 @@ let LoginForm = props => {
         </fieldset>
       </form>
     </section>
-}
+  );
+};
 
-LoginForm = reduxForm(
-  {
-    form: 'loginForm',
-    validate
-  }
-)(LoginForm)
+LoginForm = reduxForm({
+  form: 'loginForm',
+  validate,
+})(LoginForm);
 
-export default LoginForm
+export default LoginForm;

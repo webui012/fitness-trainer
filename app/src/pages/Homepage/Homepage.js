@@ -5,17 +5,17 @@ import { getHomePageData } from '../../redux/reducers/homePage';
 import { Slider } from 'Components';
 
 const Homepage = props => {
-  const sliderData = props.homePage.sliderData
+  const sliderData = props.homePage.sliderData;
 
-  return <Slider data={sliderData} />
-}
-
-const mapStateToProps = state => ({
-  homePage: getHomePageData(state)
-})
-
-Homepage.propTypes = {
-  homePage: PropTypes.object
+  return <Slider data={sliderData} />;
 };
 
-export default connect(mapStateToProps, null)(Homepage)
+const mapStateToProps = state => ({
+  homePage: getHomePageData(state),
+});
+
+Homepage.propTypes = {
+  homePage: PropTypes.object,
+};
+
+export default connect(mapStateToProps)(Homepage);

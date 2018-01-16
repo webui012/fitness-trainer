@@ -1,7 +1,7 @@
 import {
   PAGE_ABOUT_GETDATA_REQUEST,
   PAGE_ABOUT_GETDATA_SUCCESS
-} from '../../constants';
+} from '../constants';
 
 const initialState = {
   loading: false,

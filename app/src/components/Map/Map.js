@@ -5,11 +5,13 @@ import './Map.scss';
 import Marker from './Marker';
 
 const Map = props => {
-  const { bootstrapURLKeys,
-          center,
-          zoom,
-          text
-        } = props.data
+  const {
+    bootstrapURLKeys,
+    center,
+    zoom,
+    text,
+  } = props.data;
+
   return (
     <div className='map'>
       <GoogleMapReact
@@ -26,13 +28,13 @@ const Map = props => {
       </GoogleMapReact>
     </div>
   );
-}
+};
 
 Map.propTypes = {
-    center: PropTypes.number,
-    zoom: PropTypes.number,
-    key: PropTypes.string,
-    bootstrapURLKeys: PropTypes.string
+  center: PropTypes.number,
+  zoom: PropTypes.number,
+  key: PropTypes.string,
+  bootstrapURLKeys: PropTypes.string,
 };
 
 export default Map;

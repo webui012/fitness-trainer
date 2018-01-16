@@ -114,7 +114,7 @@ const initialState = {
 const userOrders = (state = initialState, action) => {
     switch (action.type) {
         default:
-            return state
+            return state;
     }
 };
 
@@ -164,9 +164,9 @@ export const getVisibleOrders = createSelector(
       break;
 
       default:
-        return [ ...orders ];
+        return orders;
     }
   }
 );
 
-export default userOrders
+export default userOrders;

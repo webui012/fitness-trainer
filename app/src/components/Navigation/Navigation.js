@@ -2,36 +2,35 @@ import React, { Component } from 'react';
 import './Navigation.scss';
 import { Link } from 'react-router-dom';
 
-function handleSubMenu(link) {
+const handleSubMenu = link => {
   if (link.submenu) {
-    return <div className='nav-link-menu'>{renderSubMenu(link.submenu)}</div>
+    return <div className='nav-link-menu'>{renderSubMenu(link.submenu)}</div>;
   }
-}
+};
 
-function renderSubMenu(submenu = []) {
-  let menu = submenu.map((link, i) => {
-   return <Link key={i} to={link.url} className='dropdown-link'>{link.name}</Link>
-  })
+const renderSubMenu = (submenu = []) => {
+  const menu = submenu.map((link, i) =>
+    <Link key={i} to={link.url} className='dropdown-link'>{link.name}</Link>
+  );
 
- return menu
-}
+  return menu;
+};
 
 const Navigation = props => {
-  const links = props.data
+  const links = props.data;
+
   return (
     <nav className='nav'>
       <ul className='nav-list'>
-        {links.map((link, i) => {
-          return (
-            <li key={i} className='nav-list-item'>
-              <Link to={link.url} className='nav-link'>{link.name}</Link>
-              {handleSubMenu(link)}
-            </li>
-          )
-        })}
+        {links.map((link, i) =>
+          <li key={i} className='nav-list-item'>
+            <Link to={link.url} className='nav-link'>{link.name}</Link>
+            {handleSubMenu(link)}
+          </li>
+        )}
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

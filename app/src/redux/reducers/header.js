@@ -39,17 +39,17 @@ const initialState = {
       url: '/contacts',
     },
   ],
-}
+};
 
 // Selector
-export const getHeaderData = state => state.header
+export const getHeaderData = state => state.header;
 
 // Reducer
 const header = (state = initialState, action) => {
   switch (action.type) {
     default:
-      return state
+      return state;
   }
 }
 
-export default header
+export default header;

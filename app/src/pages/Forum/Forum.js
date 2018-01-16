@@ -4,5 +4,6 @@ import { AdminSidebar, UserCards } from 'Components';
 const Forum = props =>
   <div>
     Forum
-  </div>
+  </div>;
+
 export default Forum;

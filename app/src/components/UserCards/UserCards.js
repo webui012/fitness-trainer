@@ -6,11 +6,11 @@ import './UserCards.scss';
 const UserCards = () => {
   const data = UserCardsData.users;
 
-    return (
-      <div className='wrap-user-cards'>
-        <UserCard data={data} />
-      </div>
-    )
-  }
+  return (
+    <div className='wrap-user-cards'>
+      <UserCard data={data} />
+    </div>
+  );
+};
 
 export default UserCards;

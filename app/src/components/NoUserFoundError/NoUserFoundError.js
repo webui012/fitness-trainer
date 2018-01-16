@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './NoUserFoundError.scss';
 
@@ -9,14 +9,17 @@ class NoUserFoundError extends Component {
   }
 
   render() {
-    return <div className='wrap-error'>
-      <div className='error-loading-data'>
-        <p>Пользователь не найден, попробуйте ещё раз</p>
-        <button type='button' name='agree' onClick={this.props.closeMessage}>Ок</button>
+    return (
+      <div className='wrap-error'>
+        <div className='error-loading-data'>
+          <p>Пользователь не найден, попробуйте ещё раз</p>
+          <button type='button' name='agree' onClick={this.props.closeMessage}>Ок</button>
+        </div>
       </div>
-    </div>
+    );
   }
 }
+
 // ErrorLoadingData.propTypes = {
 //   closeMessage: PropTypes.func.isRequired
 //
