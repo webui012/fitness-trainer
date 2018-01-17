@@ -37,21 +37,21 @@ class About extends Component {
   renderAchievments(achievments) {
     return achievments.map((a, i) =>
       <AchievmentItem key={i} img={a.img} title={a.title} date={a.date}/>)
-  }
+  };
 
   renderParagraphs(paragraphs) {
     return paragraphs.map((p, i) =>
       <p key={i} className='paragraph'>{p}</p>)
-  }
+  };
 
   renderSections(sections) {
     return sections.map((s, i) =>
       <Segment key={i}>
         <Header as='h3'>{s.title}</Header>
         {this.renderParagraphs(s.paragraphs)}
-      </Segment>)
+      </Segment>);
 
-  }
+  };
 
   render() {
     if (this.props.data) {
@@ -99,9 +99,9 @@ class About extends Component {
       <Dimmer active inverted>
         <Loader inverted content='Загрузка' />
       </Dimmer>);
-    }
-  }
-}
+    };
+  };
+};
 
 const mapStateToProps = state => ({
   data: state.aboutGetStaticData.data,
