@@ -1,0 +1,61 @@
+.item-wrap{
+	margin-top:20px;
+	margin-bottom:20px;
+	display: inline-block;
+	width:100%;
+
+
+}
+.item-info{
+	width:35%;
+	margin-left:15%;
+	float:left;
+	height:250px;
+	box-shadow: 0 0 10px;
+	padding:1%;
+	position:relative;
+	background-color: white;
+	text-align: justify;
+	opacity: 0.8;
+}
+.info-header{
+	font-size: 200%;
+	text-shadow:1px 1px 3px grey;
+	margin-bottom:2%;
+}
+.info-content{
+	text-shadow:1px 1px 4px grey;
+}
+.expires{
+	font-size: 12px;
+	position:absolute;
+	bottom:3%;
+	text-shadow:1px 1px 4px grey;
+
+}
+.item-img-mask{
+	width:100%;
+	height:250px;
+	background-color: black;
+	opacity: 0.6;
+}
+.item-img h1{
+	position:relative;
+	bottom:15%;
+	float:right;
+	color:white;
+	margin-right:5%;
+	font-size: 200%;
+	text-shadow:1px 1px 3px white;
+
+
+}
+.item-img{
+	width:35%;
+	margin-right:15%;
+	float:right;
+	height:250px;
+	background-image: url("https://f.ua/statik/images/2014/10/bankoboev.ru_na_2611.jpg");
+	background-size: cover;
+	box-shadow: 0 0 10px;
+}

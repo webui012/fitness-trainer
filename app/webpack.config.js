@@ -27,7 +27,7 @@ const config = {
         },
       },
       {
-        test: /\.scss/,
+        test: /\.scss$/,
         use: extractSass.extract({
           use: [
             {

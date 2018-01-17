@@ -5,8 +5,22 @@ import { getVisibleOrders, getUserSelections } from '../../redux/reducers/userOr
 import { setOrdersVisibilityFilter } from '../../redux/actions';
 import OrderItem from '../../components/OrderItem/OrderItem';
 import './UserOrders.scss';
-import { Card, Icon, Image } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+import {
+    SORT_BY_PRICE,
+    SORT_BY_ID,
+    SHOW_ALL_STATUS,
+    SHOW_PAYED,
+    SHOW_PAID,
+    SHOW_UNPAID,
+    SHOW_UNPAYED,
+    SHOW_ALL_SERVICES,
+    SHOW_ONLINE_SERVICE,
+    SHOW_NUTRITION_SERVICE,
+    SHOW_PROGRAM_SERVICE,
+    SHOW_CLOTHES_SERVICE
+} from '../../redux/constants/ordersVisibilityFilter.js'
+
+
 
 class UserOrders extends Component {
   constructor(props) {
@@ -35,24 +49,16 @@ class UserOrders extends Component {
     );
 
   // Orders list render
-  renderOrders = orders => {
-    return orders.map((order, i) => {
-      let color = order.status == 'Оплачен' ? 'green' : 'red'
-      return
-      <Card key={i} color={color}>
-        <Card.Content>
-          <Card.Header># {order.id}</Card.Header>
-          <Card.Meta>
-            <span className='date'>{order.date}</span>
-          </Card.Meta>
-
-          <Card.Description>
-            {order.service}
-          </Card.Description>
-        </Card.Content>
-      </Card>
-    })
-  }
+  renderOrders = orders =>
+    orders.map((order, i) =>
+      <OrderItem id={order.id}
+          key={i}
+          date={order.date}
+          price={order.price}
+          payment={order.payment}
+          status={order.status}
+          service={order.service} />
+      );
 
   handleSelect = e => {
     switch (e.target.value) {

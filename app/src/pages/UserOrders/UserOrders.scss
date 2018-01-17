@@ -1,5 +1,4 @@
-.orders-wrapper,
-.admin-cabinet {
+.orders-wrapper {
   padding: 50px 0;
   max-width: 1280px;
   margin: 0 auto;
@@ -35,10 +34,6 @@
 
   span {
     margin-right: 5px;
-  }
-
-  .select-item:last-child select {
-    width: 220px;
   }
 }
 

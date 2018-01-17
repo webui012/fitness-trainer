@@ -1,11 +1,9 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
-
 import {
   PAGE_ABOUT_GETDATA_REQUEST,
   PAGE_ABOUT_GETDATA_SUCCESS,
   ACTION_FAILURE
 } from '../constants';
-
 import getData from '../Api/aboutGetStaticData';
 
 function* pageAboutGetStaticDataAsync(action) {

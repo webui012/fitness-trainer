@@ -1,5 +1,4 @@
 import React from 'react';
-
 export const renderField = ({
   input,
   label,

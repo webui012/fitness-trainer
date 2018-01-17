@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Contacts.scss';
-import { Map, ContactsField} from 'Components';
+import { Map, ContactsField, Spinner } from 'Components';
 import { connect } from 'react-redux';
 import { constantsGetData } from '../../redux/actions';
-import { List, Dimmer, Loader } from 'semantic-ui-react'
+import Api from '../../redux/Api';
 
 class Contacts extends Component {
 
@@ -22,27 +22,23 @@ class Contacts extends Component {
   };
 
   render() {
-    return (this.props.data
-      ? <div className='page-wrapper contacts-wrapper'>
-        <div className='page-content contacts-content'>
-          <div className='block contacts-block'>
-            <span className='contacts-block-title'>{this.props.data.title}</span>
-            <List>
-              {this.props.data.fields.map((f,i) =>
-                <List.Item className="s" key={i}>
-                  <List.Icon name={f.icon} />
-                  <List.Content>{f.data}</List.Content>
-                </List.Item>
-              )}
-            </List>
+    return (this.props.data ?
+      <div className='contacts'>
+        <p className='contacts-title'>{this.props.data.mainTitle}</p>
+        <div className='wrap-contacts-info'>
+          <div className='wrap-contacts-field'>
+            <span className='contacts-field-text-title'>{this.props.data.title}</span>
+            {this.props.data.fields.map(item =>
+              <ContactsField
+                  key={item.id}
+                  data={item.data}
+            />)}
           </div>
           <Map data={this.props.data.mapData} />
         </div>
       </div>
-      : <Dimmer active inverted>
-          <Loader inverted content='Загрузка' />
-        </Dimmer>
-    );
+      : <Spinner />
+  );
   }
 }
 

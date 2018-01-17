@@ -1,36 +1,47 @@
-.about-wrapper {
+.about {
   background: url('../../images/aboutBg.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;;
-  // background-color: #e6e6e6;
-  background-attachment: fixed;
-}
-
-.details-info {
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
-  border-radius: 3px;
-}
-
-.trainer-info {
-  display: flex;
-  align-items: flex-start;
-}
-
-.paragraph {
-  margin: 10px 0;
-  line-height: 1.5;
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.achievments {
-  width: 902px;
-  margin: 40px auto;
-}
-
-.video-section {
+  background-size: 100% 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+
+  .container {
+    width: 65%;
+
+    .caption {
+      margin-top: 30px;
+      margin-bottom: 40px;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo {
+      width: 360px;
+      height: 360px;
+      float: left;
+      margin-right: 15px;
+    }
+
+    .content {
+      margin: 0;
+      font-size: 16px;
+      line-height: 30px;
+      text-align: justify;
+      text-indent: 40px;
+    }
+
+    .first-paragraph {
+      margin-top: -10px;
+    }
+
+    .video {
+      max-width: 800px;
+      max-height: 450px;
+      margin-left: calc(50% - 400px);
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+  }
 }

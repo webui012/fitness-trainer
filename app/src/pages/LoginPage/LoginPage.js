@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Spinner, NoUserFoundError } from 'Components';
-import LoginForm from '../../components/LoginForm/LoginForm';
+
+import { LoginForm, Spinner, NoUserFoundError } from 'Components';
 import { searchUser, errorRedirect } from '../../redux/actions';
 import { ADMIN, USER } from '../../redux/constants';
-import { Loader, Dimmer } from 'semantic-ui-react'
-import './LoginPage.scss';
 
-class LoginPage extends Component{
-  constructor(props){
+class LoginContainer extends Component{
+  constructor(props) {
     super(props);
     this.state = {
-      loadingStatus:''
-    }
-    this.condRedirect = this.condRedirect.bind(this);
-    this.onSubmitSignInData = this.onSubmitSignInData.bind(this);
-    this.noUserErrorRedirect = this.noUserErrorRedirect.bind(this);
-    this.changeState = this.changeState.bind(this);
+      loadingStatus: '',
+    };
   }
 
   onSubmitSignInData = value => {
@@ -43,10 +37,8 @@ class LoginPage extends Component{
     let addSpinner;
     let noUser;
     let errorRedirect;
-    if (this.state.loadingStatus){
-      addSpinner = <Dimmer active inverted>
-                    <Loader inverted content='Загрузка' />
-                  </Dimmer>;
+    if (this.state.loadingStatus) {
+      addSpinner = <Spinner />;
     } else {
       addSpinner = '';
     }
@@ -64,14 +56,12 @@ class LoginPage extends Component{
     const { from } = this.props.location.state || { from: { pathname: this.condRedirect(role) } };
 
     return (
-      <div className='page-wrapper login-wrapper'>
-        <div className='page-content login-content'>
-          <LoginForm onSubmit={this.onSubmitSignInData} from={from} role={role} />
-          {noUser}
-          {addSpinner}
-        </div>
+      <div>
+        <LoginForm onSubmit={this.onSubmitSignInData} from={from} role={role} />
+        {noUser}
+        {addSpinner}
       </div>
-    )
+    );
   }
 };
 
@@ -104,4 +94,4 @@ const mapStateToProps = state => ({
   noUser: state.usersStoreReducer.notFound,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)
+export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);

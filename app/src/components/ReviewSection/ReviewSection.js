@@ -4,24 +4,24 @@ import PropTypes from 'prop-types';
 import './ReviewSection.scss';
 
 const ReviewSection = props => {
-   const params = props.data.sliderParams,
-        slides = props.data.slides;
+  const params = props.data.sliderParams;
+  const slides = props.data.slides;
 
-    return (
-      <div className='reviews-seciton'>
-        <h3 className='title-name'>{props.data.title}</h3>
-        <Swiper {...params} className='swiper-wrapper'>
-          {slides.map((slider, i) =>
-            <div key={i} className='review-slide'>
-              <div className='slide-content'>
-                <span className='review-name'>{slider.name}</span>
-                <p className='review-text'>{slider.text}</p>
-              </div>
-              <img className='review-avatar' src={slider.url} alt={slider.alt} />
-            </div>)}
-        </Swiper>
-      </div>
-    );
+  return (
+    <div>
+      <h3 className='title-name'>{props.data.title}</h3>
+      <Swiper {...params} className='swiper-wrapper'>
+        {slides.map((slider, i) =>
+          <div key={i} className='review-slide'>
+            <div className='slide-content'>
+              <span className='review-name'>{slider.name}</span>
+              <p className='review-text'>{slider.text}</p>
+            </div>
+            <img className='review-avatar' src={slider.url} alt={slider.alt} />
+          </div>)}
+      </Swiper>
+    </div>
+  );
 };
 
 ReviewSection.propTypes = {

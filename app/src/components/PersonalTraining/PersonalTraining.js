@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import './PersonalTraining.scss';
 
 const PersonalTraining = props => {
-    const {videoId, texting, photo} = props.data;
-    return (
-      <section className='personal-training'>
-        <YouTube muted video={videoId} className='video-online' autoplay />
-        <p className='training-text'>{texting}</p>
-        <img className='training-photo' src={photo} />
-      </section>
-    );
+  const { videoId, texting, photo } = props.data;
+  return (
+    <section className='personal-training'>
+      <YouTube video={videoId} className='video-online' autoplay />
+      <p className='training-text'>{texting}</p>
+      <img className='training-photo' src={photo} />
+    </section>
+  );
 };
 
 PersonalTraining.propTypes = {

@@ -14,7 +14,7 @@ const Header = props => {
   const { logo, navigation } = props.header;
 
   return (
-    <header className='main-header'>
+    <header className='header'>
       <Logo data={logo} />
       <Navigation data={navigation} />
       <CabinetEnterButton />

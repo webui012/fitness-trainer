@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Aims, MeasuredData, ErrorLoadingData } from 'Components';
+import { Aims, MeasuredData, Spinner, ErrorLoadingData } from 'Components';
 import { Contraindications, FullName } from 'Containers';
 import { connect } from 'react-redux';
 import { aboutUsGetData, closeErrorMessage } from '../../redux/actions';
-import { Card, Icon, Image, Button, Header, Loader, Dimmer } from 'semantic-ui-react'
 import Api from '../../redux/Api';
 import './AboutUs.scss';
 
@@ -41,10 +40,8 @@ class AboutUs extends Component {
         {this.props.errorMessage ?
           <ErrorLoadingData closeMessage={this.props.closeErrorMessage} /> : null}
       </div>
-      : <Dimmer active inverted>
-          <Loader inverted content='Загрузка' />
-        </Dimmer>
-    );
+      : <Spinner />
+  );
   }
 }
 

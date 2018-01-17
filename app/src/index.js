@@ -9,6 +9,7 @@ import createSagaMiddleware from 'redux-saga';
 import rootSaga from './redux/middleware';
 
 import './styles/reset.scss';
+import './styles/fonts.scss';
 import './styles/common.scss';
 
 const sagaMiddleware = createSagaMiddleware();

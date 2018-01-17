@@ -1,18 +1,12 @@
 .login-page {
+  padding: 130px;
   background-color: #e6e6e6;
   font-weight: 600;
   font-size: 30px;
   display: table;
   text-align: center;
+  height: 1000px;
   width: 100%;
-}
-
-.input-wrapper {
-  margin-top: 20px;
-}
-
-.input-label {
-  font-weight: bold;
 }
 
 .login-form-caption {
@@ -29,37 +23,23 @@
   display: block;
 }
 
-.login-form {
-  width: 300px;
-}
-
 .form {
-  width: 100%;
-  margin-top: 5px;
-  border-radius: 4px;
-  padding: 10px 20px;
-  border: 1px solid rgba(0, 0, 0, 0.4);
-}
-
-.form::placeholder {
-  font-size: 12px;
-}
-
-.ui.checkbox {
-  margin: 13px 0;
+  margin-top: 15px;
+  text-align: inherit;
+  font-size: 20px;
+  opacity: 0.5;
+  height: 65px;
+  width: 30%;
 }
 
 .btn-login {
-  display: block;
-  cursor: pointer;
-  border: none;
-  margin-top: 10px;
+  margin-top: 30px;
   align: center;
-  padding: 10px 20px;
-  color: #fff;
+  height: 65px;
+  width: 30%;
   background-color: #33cc33;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 20px;
   font-style: normal;
   box-shadow: none;
 }
@@ -79,8 +59,7 @@ button:hover {
   font-size: 15px;
 }
 .error-message{
-  margin-top: 3px;
-  display: block;
-  color: #db2828;
-  font-size: 13px;
+  display:block;
+  color:red;
+  font-size:15px;
 }
