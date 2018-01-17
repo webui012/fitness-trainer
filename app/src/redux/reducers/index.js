@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import sales from './Sales/sales';
+import sales from './sales';
 import header from './header';
 import footer from './footer';
 import homePage from './homePage';
@@ -8,11 +8,12 @@ import adminOrders from './adminOrders';
 import userOrders from './userOrders';
 import ordersVisibilityFilter from './ordersVisibilityFilter';
 import aboutUsSendDataForm from './aboutUsSendDataForm';
-import pageAboutGetStaticData from './page_About_getStaticData';
+import aboutGetStaticData from './aboutGetStaticData';
 import aboutUsGetData from './aboutUsGetData';
 import contactsGetData from './contactsGetData';
 import validationAboutUs from './validationAboutUs';
 import usersStoreReducer from './usersStoreReducer';
+
 import { orderForm } from './serviceOrderForm';
 import { reducer as formReducer } from 'redux-form';
 
@@ -25,7 +26,7 @@ const rootReducer = combineReducers({
   ordersVisibilityFilter,
   orderForm,
   aboutUsSendDataForm,
-  pageAboutGetStaticData,
+  aboutGetStaticData,
   aboutUsGetData,
   contactsGetData,
   validationAboutUs,

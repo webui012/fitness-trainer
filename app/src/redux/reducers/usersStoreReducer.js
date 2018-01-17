@@ -97,4 +97,4 @@ export default function usersStoreReducer(state = initialState, action){
 
     default: return state;
   }
-}
+};

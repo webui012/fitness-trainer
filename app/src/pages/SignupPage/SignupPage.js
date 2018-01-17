@@ -29,7 +29,7 @@ class SignupPage extends Component{
        this.setState({routStatus: true});
     }
 
-    render(){
+    render() {
       let addSpinner;
       if (this.state.loadingStatus){
         addSpinner = <Dimmer active inverted>

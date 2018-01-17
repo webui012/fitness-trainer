@@ -57,4 +57,4 @@ const mapDispatchToProps = dispatch => ({
 
 /* showError: data => dispatch(showMessage(data)) */
 
-export default connect(mapStateToProps, mapDispatchToProps)(Sales)
+export default connect(mapStateToProps, mapDispatchToProps)(Sales);

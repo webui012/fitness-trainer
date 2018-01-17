@@ -10,8 +10,8 @@ import { Link } from 'react-router-dom'
 class AdminOrders extends Component {
 
   // Select items render
-  renderSelections = selections => {
-    return selections.map((select, i) => {
+  renderSelections = selections =>
+    selections.map((select, i) => {
       const { type, options } = select;
 
       return (
@@ -21,22 +21,21 @@ class AdminOrders extends Component {
             {this.renderOptions(options)}
           </select>
         </div>
-      )
-    })
-  };
+      );
+    });
 
   // Render options for each select item
-  renderOptions = options => {
-    return options.map((o, i) =>
+  renderOptions = options =>
+    options.map((o, i) =>
       <option key={i} value={o.value}>{o.value}</option>
-    )
-  };
+    );
 
   // Orders list render
   renderOrders = orders => {
     return orders.map((order, i) => {
       let color = order.status == 'Оплачен' ? 'green' : 'red'
-      return <Card key={i} color={color}>
+      return
+      <Card key={i} color={color}>
         <Card.Content>
           <Card.Header># {order.id}</Card.Header>
           <Card.Meta>
@@ -54,8 +53,8 @@ class AdminOrders extends Component {
           </Link>
         </Card.Content>
       </Card>
-    })
-  }
+    });
+  };
 
   handleSelect = e => {
     switch (e.target.value) {
@@ -87,15 +86,13 @@ class AdminOrders extends Component {
           {this.renderOrders(orders)}
         </div>
       </div>
-    )
-  }
-}
-
-const mapStateToProps = state => {
-  return {
-    selections: getAdminSelections(state),
-    orders: getVisibleOrders(state)
+    );
   }
 };
+
+const mapStateToProps = state => ({
+  selections: getAdminSelections(state),
+  orders: getVisibleOrders(state),
+});
 
 export default connect(mapStateToProps, { setOrdersVisibilityFilter })(AdminOrders);

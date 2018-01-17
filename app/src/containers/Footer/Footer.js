@@ -6,11 +6,11 @@ import {
   Logo,
   Navigation,
   Socials
-} from 'Components'
-import './Footer.scss'
+} from 'Components';
+import './Footer.scss';
 
 const Footer = props => {
-  const { logo, caption, socials, copyright, navigation } = props.footer
+  const { logo, caption, socials, copyright, navigation } = props.footer;
 
   return (
     <footer className='main-footer'>
@@ -20,15 +20,15 @@ const Footer = props => {
       <Socials data={socials} />
       <p className='copyright'>{copyright}</p>
     </footer>
-  )
-}
-
-const mapStateToProps = state => ({
-  footer: getFooterData(state)
-})
-
-Footer.propTypes = {
-  footer: PropTypes.object
+  );
 };
 
-export default connect(mapStateToProps, null)(Footer)
+const mapStateToProps = state => ({
+  footer: getFooterData(state),
+});
+
+Footer.propTypes = {
+  footer: PropTypes.object,
+};
+
+export default connect(mapStateToProps)(Footer);

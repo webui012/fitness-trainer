@@ -3,13 +3,25 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import YouTube from '@u-wave/react-youtube';
 import { AchievmentItem, InfoField } from 'Components';
-import { pageAboutGetDataRequest } from '../../redux/actions/page_About';
+import { aboutGetDataRequest } from '../../redux/actions/about';
 import './About.scss';
-import { Divider, Container, List, Segment, Dimmer, Loader, Card, Icon, Image, Button, Header } from 'semantic-ui-react'
+import {
+  Divider,
+  Container,
+  List,
+  Segment,
+  Dimmer,
+  Loader,
+  Card,
+  Icon,
+  Image,
+  Button,
+  Header
+} from 'semantic-ui-react'
 
 class About extends Component {
   static propTypes = {
-    pageAboutGetDataRequest: PropTypes.func.isRequired,
+    aboutGetDataRequest: PropTypes.func.isRequired,
     data: PropTypes.shape({
       paragrafText: PropTypes.string,
       imageSrc: PropTypes.string,
@@ -19,7 +31,7 @@ class About extends Component {
   };
 
   componentDidMount() {
-    this.props.pageAboutGetDataRequest();
+    this.props.aboutGetDataRequest();
   };
 
   renderAchievments(achievments) {
@@ -92,11 +104,11 @@ class About extends Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.pageAboutGetStaticData.data,
+  data: state.aboutGetStaticData.data,
 });
 
 const mapDispatchToProps = dispatch => ({
-  pageAboutGetDataRequest: () => dispatch(pageAboutGetDataRequest()),
+  aboutGetDataRequest: () => dispatch(aboutGetDataRequest()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);

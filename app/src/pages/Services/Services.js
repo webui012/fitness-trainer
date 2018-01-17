@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   ServiceSection,
   MotivationSection,
@@ -6,11 +6,10 @@ import {
 import ServicesData from './ServicesData';
 import './Services.scss';
 
-
 const Services = props =>
   <div className='services'>
     <ServiceSection data={ServicesData.services} />
     <MotivationSection data={ServicesData.motivations} />
   </div>;
 
-export default Services
+export default Services;

@@ -3,15 +3,13 @@ import { Header } from 'Containers';
 import HeaderCabinetAdminData from '../components/HeaderCabinet/HeaderCabinetAdminData';
 import { AdminSidebar } from '../components';
 
-const AdminLayout = props => (
+const AdminLayout = props =>
   <div className='admin-layout'>
     <Header />
     <div className='layout-content'>
       <AdminSidebar />
       {props.children}
     </div>
-    <AdminSidebar />
   </div>
-  )
 
 export default AdminLayout;

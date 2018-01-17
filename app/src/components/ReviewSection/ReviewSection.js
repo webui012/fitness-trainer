@@ -3,10 +3,9 @@ import Swiper from 'react-id-swiper';
 import PropTypes from 'prop-types';
 import './ReviewSection.scss';
 
-
 const ReviewSection = props => {
    const params = props.data.sliderParams,
-        slides = props.data.slides
+        slides = props.data.slides;
 
     return (
       <div className='reviews-seciton'>
@@ -22,15 +21,15 @@ const ReviewSection = props => {
             </div>)}
         </Swiper>
       </div>
-    )
-}
+    );
+};
 
 ReviewSection.propTypes = {
-    title: PropTypes.string,
-    name: PropTypes.string,
-    alt: PropTypes.string,
-    url: PropTypes.string,
-    text: PropTypes.string
+  title: PropTypes.string,
+  name: PropTypes.string,
+  alt: PropTypes.string,
+  url: PropTypes.string,
+  text: PropTypes.string,
 };
 
 export default ReviewSection;

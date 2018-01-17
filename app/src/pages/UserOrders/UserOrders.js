@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getVisibleOrders, getUserSelections } from '../../redux/reducers/userOrders';
@@ -10,11 +11,11 @@ import { Link } from 'react-router-dom'
 class UserOrders extends Component {
   constructor(props) {
     super(props);
-  }
+  };
 
   // Select items render
-  renderSelections = selections => {
-    return selections.map((select, i) => {
+  renderSelections = selections =>
+    selections.map((select, i) => {
       const { type, options } = select;
 
       return (
@@ -24,22 +25,21 @@ class UserOrders extends Component {
             {this.renderOptions(options)}
           </select>
         </div>
-      )
-    })
-  };
+      );
+    });
 
   // Render options for each select item
-  renderOptions = options => {
-    return options.map((o, i) =>
+  renderOptions = options =>
+    options.map((o, i) =>
       <option key={i} value={o.value}>{o.value}</option>
-    )
-  };
+    );
 
   // Orders list render
   renderOrders = orders => {
     return orders.map((order, i) => {
       let color = order.status == 'Оплачен' ? 'green' : 'red'
-      return <Card key={i} color={color}>
+      return
+      <Card key={i} color={color}>
         <Card.Content>
           <Card.Header># {order.id}</Card.Header>
           <Card.Meta>
@@ -57,35 +57,35 @@ class UserOrders extends Component {
   handleSelect = e => {
     switch (e.target.value) {
       case 'По цене':
-        this.props.setOrdersVisibilityFilter('SORT_BY_PRICE');
+        this.props.setOrdersVisibilityFilter(SORT_BY_PRICE);
       break;
 
       case 'По id':
-        this.props.setOrdersVisibilityFilter('SORT_BY_ID');
+        this.props.setOrdersVisibilityFilter(SORT_BY_ID);
       break;
 
       case 'Оплачен':
-        this.props.setOrdersVisibilityFilter('SHOW_PAID');
+        this.props.setOrdersVisibilityFilter(SHOW_PAID);
       break;
 
       case 'Ожидает оплаты':
-        this.props.setOrdersVisibilityFilter('SHOW_UNPAID');
+        this.props.setOrdersVisibilityFilter(SHOW_UNPAID);
       break;
 
       case 'Онлайн тренировка':
-        this.props.setOrdersVisibilityFilter('SHOW_ONLINE_SERVICE');
+        this.props.setOrdersVisibilityFilter(SHOW_ONLINE_SERVICE);
         break;
 
       case 'Правильное питание':
-          this.props.setOrdersVisibilityFilter('SHOW_NUTRITION_SERVICE');
+          this.props.setOrdersVisibilityFilter(SHOW_NUTRITION_SERVICE);
       break;
 
       case 'Программа тренировок':
-          this.props.setOrdersVisibilityFilter('SHOW_PROGRAM_SERVICE');
+          this.props.setOrdersVisibilityFilter(SHOW_PROGRAM_SERVICE);
       break;
 
-      case 'Одежда для фитнесса':
-          this.props.setOrdersVisibilityFilter('SHOW_CLOTHES_SERVICE');
+      case 'Одежда для фитнеса':
+          this.props.setOrdersVisibilityFilter(SHOW_CLOTHES_SERVICE);
       break;
     }
   };
@@ -103,15 +103,13 @@ class UserOrders extends Component {
           {this.renderOrders(orders)}
         </div>
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    selections: getUserSelections(state),
-    orders: getVisibleOrders(state)
-  }
-};
+const mapStateToProps = state => ({
+  selections: getUserSelections(state),
+  orders: getVisibleOrders(state),
+});
 
 export default connect(mapStateToProps, { setOrdersVisibilityFilter })(UserOrders);

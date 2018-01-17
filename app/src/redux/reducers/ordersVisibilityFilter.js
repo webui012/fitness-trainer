@@ -1,12 +1,12 @@
-import { SET_VISIBILITY_FILTER } from '../constants'
+import { SET_VISIBILITY_FILTER } from '../constants';
 
 const ordersVisibilityFilter = (state = 'SHOW_ALL', action) => {
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
-      return action.filter
+      return action.filter;
     default:
-      return state
+      return state;
   }
 }
 
-export default ordersVisibilityFilter
+export default ordersVisibilityFilter;

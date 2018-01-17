@@ -10,11 +10,11 @@ import { Checkbox } from 'semantic-ui-react'
 let LoginForm = props => {
    const { role, from, handleSubmit } = props;
 
-   if (role !== ALL) {
-      return (
-        <Redirect to={from} />
-      )
-    }
+  if (role !== ALL) {
+    return (
+      <Redirect to={from} />
+    );
+  }
 
     return (
       <form onSubmit={handleSubmit}>
@@ -49,14 +49,12 @@ let LoginForm = props => {
 
         </fieldset>
       </form>
-    )
+    );
 }
 
-LoginForm = reduxForm(
-  {
-    form: 'loginForm',
-    validate
-  }
-)(LoginForm)
+LoginForm = reduxForm({
+  form: 'loginForm',
+  validate,
+})(LoginForm);
 
-export default LoginForm
+export default LoginForm;

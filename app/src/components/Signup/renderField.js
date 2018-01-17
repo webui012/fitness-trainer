@@ -5,7 +5,7 @@ export const renderField = ({
   label,
   type,
   className,
-  meta: { touched, error }
+  meta: { touched, error },
 }) => (
   <div className='input-wrapper'>
     <input {...input}
@@ -16,4 +16,4 @@ export const renderField = ({
     {touched &&
         ((error && <span className='error-message'>{error}</span>))}
   </div>
-)
+);

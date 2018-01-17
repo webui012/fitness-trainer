@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Redirect } from 'react-router'
+import { Redirect } from 'react-router';
 import './Signup.scss';
-import { Field, reduxForm } from 'redux-form'
+import { Field, reduxForm } from 'redux-form';
 import { validate } from './validate';
 import { renderField } from './renderField';
 
 let Signup = props => {
-  const { handleSubmit, routStatus} = props;
+  const { handleSubmit, routStatus } = props;
 
   //let routToLogin;
 
-  if (routStatus){
+  if (routStatus) {
     return <Redirect to='/cabinet/user' />;
   }
 

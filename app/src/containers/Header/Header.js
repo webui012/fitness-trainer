@@ -7,11 +7,11 @@ import {
   Navigation,
   Login,
   CabinetEnterButton
-} from 'Components'
+} from 'Components';
 import './Header.scss';
 
 const Header = props => {
-  const { logo, navigation } = props.header
+  const { logo, navigation } = props.header;
 
   return (
     <header className='main-header'>
@@ -20,15 +20,15 @@ const Header = props => {
       <CabinetEnterButton />
       <Login />
     </header>
-  )
-}
-
-const mapStateToProps = state => ({
-  header: getHeaderData(state)
-})
-
-Header.propTypes = {
-  header: PropTypes.object
+  );
 };
 
-export default connect(mapStateToProps, null)(Header)
+const mapStateToProps = state => ({
+  header: getHeaderData(state),
+});
+
+Header.propTypes = {
+  header: PropTypes.object,
+};
+
+export default connect(mapStateToProps)(Header);

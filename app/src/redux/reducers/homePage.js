@@ -1,5 +1,5 @@
 import ActionTypes from '../constants';
-import { createSelector } from 'reselect'
+import { createSelector } from 'reselect';
 
 const initialState = {
   "sliderData": {
@@ -38,17 +38,17 @@ const initialState = {
       loop: true,
     }
   }
-}
+};
 
 // Selector
-export const getHomePageData = state => state.homePage
+export const getHomePageData = state => state.homePage;
 
 // Reducer
 const homePage = (state = initialState, action) => {
   switch (action.type) {
     default:
-      return state
+      return state;
   }
 }
 
-export default homePage
+export default homePage;
