@@ -4,6 +4,8 @@ import { getVisibleOrders, getAdminSelections } from '../../redux/reducers/admin
 import { setOrdersVisibilityFilter } from '../../redux/actions';
 import OrderItem from '../../components/OrderItem/OrderItem';
 import './AdminOrders.scss';
+import { Card, Icon, Image } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 class AdminOrders extends Component {
 
@@ -29,17 +31,30 @@ class AdminOrders extends Component {
     );
 
   // Orders list render
-  renderOrders = orders =>
-    orders.map((order, i) =>
-      <OrderItem id={order.id}
-          key={i}
-          date={order.date}
-          price={order.price}
-          payment={order.payment}
-          status={order.status}
-          customer={order.customer}
-          service={order.service} />
-      );
+  renderOrders = orders => {
+    return orders.map((order, i) => {
+      let color = order.status == 'Оплачен' ? 'green' : 'red'
+      return
+      <Card key={i} color={color}>
+        <Card.Content>
+          <Card.Header># {order.id}</Card.Header>
+          <Card.Meta>
+            <span className='date'>{order.date}</span>
+          </Card.Meta>
+
+          <Card.Description>
+            {order.service}
+          </Card.Description>
+        </Card.Content>
+        <Card.Content extra>
+          <Link to='/user:id'>
+            <Icon name='user' />
+            {order.customer}
+          </Link>
+        </Card.Content>
+      </Card>
+    });
+  };
 
   handleSelect = e => {
     switch (e.target.value) {

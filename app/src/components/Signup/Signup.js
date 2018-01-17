@@ -16,71 +16,65 @@ let Signup = props => {
   }
 
   return (
-    <div className='signup-page'>
       <form onSubmit={handleSubmit}>
         <fieldset className='signup-form'>
-          <legend className='signup-form-caption'>Создать аккаунт</legend>
-          <label className='form-input'>
+          <legend className='signup-form-caption page-title'>Создать аккаунт</legend>
+
+          <div className='input-wrapper'>
+            <label htmlFor='' className='input-label'>Имя</label>
             <Field
                 className='form'
                 name='username'
                 type='text'
                 component={renderField}
-                label='Введите ваше имя'
-            />
-          </label>
+                label='Введите ваше имя'/>
+          </div>
 
-          <label className='form-input'>
+          <div className='input-wrappers'>
+            <label htmlFor='' className='input-label'>Эл.почта</label>
             <Field
                 className='form'
                 name='email'
                 type='email'
                 component={renderField}
-                label='Введите адрес электронной почты'
-            />
-          </label>
+                label='Введите адрес электронной почты'/>
+          </div>
 
-          <label className='form-input'>
+          <div className='input-wrapper'>
+            <label htmlFor='' className='input-label'>Пароль</label>
             <Field
                 className='form'
                 name='password1'
                 type='password'
                 component={renderField}
-                label='Введите пароль'
-            />
-          </label>
+                label='Введите пароль'/>
+          </div>
 
-          <label className='form-input'>
+          <div className='input-wrapper'>
             <Field
                 className='form'
                 name='password2'
                 type='password'
                 component={renderField}
-                label='Повторите пароль'
-            />
-          </label>
+                label='Повторите пароль'/>
+          </div>
 
           <button
-              className='btn-signup'
-              type='submit'
-          >
-            <p className='btn'>Зарегистрироваться</p>
-          </button>
+            className='btn-signup'
+            type='submit'>Зарегистрироваться</button>
 
-
-          <label className='link-to'>
-            <Link to='/login' className='linkto'>Уже есть аккаунт?</Link>
-          </label>
+          <Link to='/login' className='linkto'>Уже есть аккаунт?</Link>
         </fieldset>
       </form>
+  )
+}
 
-    </div>
-  );
-};
+Signup = reduxForm(
+  {
+    form: 'SignUpForm',
+    validate,
+  }
+)(Signup)
 
-Signup = reduxForm({
-  form: 'SignUpForm',
-  validate,
-})(Signup);
 
-export default Signup;
+export default Signup

@@ -7,7 +7,7 @@ export const renderField = ({
   className,
   meta: { touched, error },
 }) => (
-  <div>
+  <div className='input-wrapper'>
     <input {...input}
         placeholder={label}
         type={type}

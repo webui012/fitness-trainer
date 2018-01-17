@@ -13,7 +13,7 @@ const Footer = props => {
   const { logo, caption, socials, copyright, navigation } = props.footer;
 
   return (
-    <footer className='footer'>
+    <footer className='main-footer'>
       <Logo data={logo} />
       <span className='logo-caption'>{caption}</span>
       <Navigation data={navigation} />
