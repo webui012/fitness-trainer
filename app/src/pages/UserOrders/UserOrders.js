@@ -38,21 +38,22 @@ class UserOrders extends Component {
   renderOrders = orders => {
     return orders.map((order, i) => {
       let color = order.status == 'Оплачен' ? 'green' : 'red'
-      return
-      <Card key={i} color={color}>
-        <Card.Content>
-          <Card.Header># {order.id}</Card.Header>
-          <Card.Meta>
-            <span className='date'>{order.date}</span>
-          </Card.Meta>
+      return (
+        <Card key={i} color={color}>
+          <Card.Content>
+            <Card.Header># {order.id}</Card.Header>
+            <Card.Meta>
+              <span className='date'>{order.date}</span>
+            </Card.Meta>
 
-          <Card.Description>
-            {order.service}
-          </Card.Description>
-        </Card.Content>
-      </Card>
-    })
-  }
+            <Card.Description>
+              {order.service}
+            </Card.Description>
+          </Card.Content>
+        </Card>
+      )
+    });
+  };
 
   handleSelect = e => {
     switch (e.target.value) {

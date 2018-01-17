@@ -24,6 +24,7 @@ class AdminOrders extends Component {
       );
     });
 
+
   // Render options for each select item
   renderOptions = options =>
     options.map((o, i) =>
@@ -34,25 +35,26 @@ class AdminOrders extends Component {
   renderOrders = orders => {
     return orders.map((order, i) => {
       let color = order.status == 'Оплачен' ? 'green' : 'red'
-      return
-      <Card key={i} color={color}>
-        <Card.Content>
-          <Card.Header># {order.id}</Card.Header>
-          <Card.Meta>
-            <span className='date'>{order.date}</span>
-          </Card.Meta>
+      return (
+        <Card key={i} color={color}>
+          <Card.Content>
+            <Card.Header># {order.id}</Card.Header>
+            <Card.Meta>
+              <span className='date'>{order.date}</span>
+            </Card.Meta>
 
-          <Card.Description>
-            {order.service}
-          </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <Link to='/user:id'>
-            <Icon name='user' />
-            {order.customer}
-          </Link>
-        </Card.Content>
-      </Card>
+            <Card.Description>
+              {order.service}
+            </Card.Description>
+          </Card.Content>
+          <Card.Content extra>
+            <Link to='/user:id'>
+              <Icon name='user' />
+              {order.customer}
+            </Link>
+          </Card.Content>
+        </Card>
+      )
     });
   };
 
