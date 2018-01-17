@@ -60,5 +60,6 @@
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.77.2",
     "start": "^5.1.0"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }
