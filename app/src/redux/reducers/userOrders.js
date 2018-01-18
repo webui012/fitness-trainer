@@ -3,8 +3,6 @@ import {
     SORT_BY_PRICE,
     SORT_BY_ID,
     SHOW_ALL_STATUS,
-    SHOW_PAYED,
-    SHOW_UNPAYED,
     SHOW_PAID,
     SHOW_UNPAID,
     SHOW_ALL_SERVICES,
@@ -12,7 +10,7 @@ import {
     SHOW_NUTRITION_SERVICE,
     SHOW_PROGRAM_SERVICE,
     SHOW_CLOTHES_SERVICE
-} from '../../redux/constants/ordersVisibilityFilter.js'
+} from '../../redux/constants'
 
 
 const initialState = {
@@ -40,11 +38,11 @@ const initialState = {
                 },
                 {
                     value: 'Оплачен',
-                    action: SHOW_PAYED,
+                    action: SHOW_PAID,
                 },
                 {
                     value: 'Ожидает оплаты',
-                    action: SHOW_UNPAYED,
+                    action: SHOW_UNPAID,
                 },
             ],
         },
