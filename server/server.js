@@ -10,7 +10,12 @@ const app = express();
 
 dotenv.config(); // initialize dotenv config
 
-// mongoose.connect()
+mongoose.connect(
+  process.env.MONGO_ATLAS_HOST +
+  process.env.MONGO_ATLAS_PW +
+  process.env.MONGO_ATLAS_ROUTE,
+  { useMongoClient: true }
+);
 
 app.use(bodyParser.json());
 
