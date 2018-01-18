@@ -23,4 +23,4 @@ app.use('/users', users) // middleware for users endpoints
 
 app.get("/*", (req, res) => res.sendFile(path.join(__dirname, "index.html")))
 
-app.listen(process.env.PORT) // listen PORT from .env config
+app.listen(process.env.PORT || 8080) // listen PORT from .env config
