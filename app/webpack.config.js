@@ -10,11 +10,10 @@ const extractSass = new ExtractTextPlugin({
 
 const config = {
 
-  entry: [ 'babel-polyfill', './src/index.js' ],
+  entry: [ 'babel-polyfill', './client/src/index.js' ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/',
   },
 
   module: {
@@ -76,16 +75,16 @@ const config = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({ template: './public/index.html' }),
+    new HtmlWebpackPlugin({ template: './client/public/index.html' }),
     new CleanWebpackPlugin([ 'dist' ]),
     extractSass,
   ],
 
   resolve: {
     alias: {
-      Components: path.resolve(__dirname, 'src/components/'),
-      Pages: path.resolve(__dirname, 'src/pages/'),
-      Containers: path.resolve(__dirname, 'src/containers/'),
+      Components: path.resolve(__dirname, 'client/src/components/'),
+      Pages: path.resolve(__dirname, 'client/src/pages/'),
+      Containers: path.resolve(__dirname, 'client/src/containers/'),
     },
   },
 };
