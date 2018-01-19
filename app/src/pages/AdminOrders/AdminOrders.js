@@ -6,6 +6,13 @@ import OrderItem from '../../components/OrderItem/OrderItem';
 import './AdminOrders.scss';
 import { Card, Icon, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import {
+    SORT_BY_PRICE,
+    SORT_BY_ID,
+    SHOW_ALL_STATUS,
+    SHOW_PAID,
+    SHOW_UNPAID,
+} from '../../redux/constants'
 
 class AdminOrders extends Component {
 
@@ -61,16 +68,16 @@ class AdminOrders extends Component {
   handleSelect = e => {
     switch (e.target.value) {
       case 'По цене':
-        this.props.setOrdersVisibilityFilter('SORT_BY_PRICE');
+        this.props.setOrdersVisibilityFilter(SORT_BY_PRICE);
         break;
       case 'По id':
-        this.props.setOrdersVisibilityFilter('SORT_BY_ID');
+        this.props.setOrdersVisibilityFilter(SORT_BY_ID);
         break;
       case 'Оплачен':
-        this.props.setOrdersVisibilityFilter('SHOW_PAID');
+        this.props.setOrdersVisibilityFilter(SHOW_PAID);
         break;
       case 'Ожидает оплаты':
-        this.props.setOrdersVisibilityFilter('SHOW_UNPAID');
+        this.props.setOrdersVisibilityFilter(SHOW_UNPAID);
         break;
     }
   };

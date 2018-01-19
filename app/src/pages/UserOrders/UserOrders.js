@@ -4,9 +4,21 @@ import { connect } from 'react-redux';
 import { getVisibleOrders, getUserSelections } from '../../redux/reducers/userOrders';
 import { setOrdersVisibilityFilter } from '../../redux/actions';
 import OrderItem from '../../components/OrderItem/OrderItem';
-import './UserOrders.scss';
 import { Card, Icon, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import './UserOrders.scss';
+import {
+    SORT_BY_PRICE,
+    SORT_BY_ID,
+    SHOW_ALL_STATUS,
+    SHOW_PAID,
+    SHOW_UNPAID,
+    SHOW_ALL_SERVICES,
+    SHOW_ONLINE_SERVICE,
+    SHOW_NUTRITION_SERVICE,
+    SHOW_PROGRAM_SERVICE,
+    SHOW_CLOTHES_SERVICE
+} from '../../redux/constants'
 
 class UserOrders extends Component {
   constructor(props) {
