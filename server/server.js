@@ -7,7 +7,7 @@ import bodyParser from 'body-parser';
 import users from './src/routes/users';
 
 const app = express();
-
+const db = mongoose.connection;
 // Initialize dotenv config
 dotenv.config();
 
@@ -25,23 +25,15 @@ app.use(bodyParser.json());
 // Middlewares for endpoints
 app.use('/users', users)
 
-// Default route
-//app.get("/*", (req, res) => res.sendFile(path.join(__dirname, "index.html")))
-
 // GET for Contacts page----------------------------------------------------
 app.get('/contacts', (req, res) => {
-  mongoose.connect(
-    process.env.MONGO_ATLAS_HOST +
-    process.env.MONGO_ATLAS_PW +
-    process.env.MONGO_ATLAS_ROUTE,
-    { useMongoClient: true }
-  ).collection('contacts').find({}).toArray((err, doc) => {
+ db.collection('contacts').findOne({}, (err, doc) => {
     if (err) {
       console.log(err)
       return res.sendStatus(500);
     }
-    console.log(doc)
-    res.send(doc);
+    console.log(doc);
+    res.json(doc.title);
   })
 })
 // GET for Contacts page----------------------------------------------------

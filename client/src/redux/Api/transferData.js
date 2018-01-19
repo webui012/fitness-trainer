@@ -2,13 +2,7 @@
 class TransferData {
   //Getting page data for the Contacts page
   static dataLocalContacts() {
-    fetch('http://localhost:6289/contacts', {
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    })
+    fetch('/contacts')
     .then(response => {
       if (response.status !== 200) {
         console.log(`Oops, problem. Status Code: ${response.status}`);
