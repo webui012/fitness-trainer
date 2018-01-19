@@ -5,7 +5,6 @@ import { Contraindications, FullName } from 'Containers';
 import { connect } from 'react-redux';
 import { aboutUsGetData, closeErrorMessage } from '../../redux/actions';
 import { Card, Icon, Image, Button, Header, Loader, Dimmer } from 'semantic-ui-react'
-import Api from '../../redux/Api';
 import './AboutUs.scss';
 
 class AboutUs extends Component {

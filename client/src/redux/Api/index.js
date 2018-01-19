@@ -20,13 +20,13 @@ class Api {
     });
   }
 
-  static dataLocalContacts() {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(dataContacts);
-      }, 500);
-    });
-  }
+  // static dataLocalContacts() {
+  //   return new Promise((resolve, reject) => {
+  //     setTimeout(() => {
+  //       resolve(dataContacts);
+  //     }, 500);
+  //   });
+  // }
 }
 
 export default Api;
