@@ -26,13 +26,16 @@ app.use(bodyParser.json());
 app.use('/users', users)
 
 // Default route
-app.get("/*", (req, res) => res.sendFile(path.join(__dirname, "index.html")))
-
-
+//app.get("/*", (req, res) => res.sendFile(path.join(__dirname, "index.html")))
 
 // GET for Contacts page----------------------------------------------------
 app.get('/contacts', (req, res) => {
-  db.contacts.find({}).toArray((err, doc) => {
+  mongoose.connect(
+    process.env.MONGO_ATLAS_HOST +
+    process.env.MONGO_ATLAS_PW +
+    process.env.MONGO_ATLAS_ROUTE,
+    { useMongoClient: true }
+  ).collection('contacts').find({}).toArray((err, doc) => {
     if (err) {
       console.log(err)
       return res.sendStatus(500);

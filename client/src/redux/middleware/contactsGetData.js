@@ -4,12 +4,10 @@ import {
   PAGE_CONTACTS_GETDATA_REQUEST,
   PAGE_CONTACTS_GETDATA_SUCCESS
 } from '../constants';
-// import Api from '../Api';
 import TransferData from '../Api/transferData';
 
 function * contactsGetDataAsync(action) {
   try {
-    //const pageData = yield call(Api.dataLocalContacts);
     const pageData = yield call(TransferData.dataLocalContacts);
     console.log(`m:${pageData}`);
 
