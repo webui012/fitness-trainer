@@ -33,8 +33,8 @@ const salesData = {
 
 let salesAtricles = JSON.stringify(salesData);
 
-router.post('/sales', (req, res) => {
-        salesArticles
+router.get('/sales', (req, res) => {
+         res(salesArticles);
 })
 
 

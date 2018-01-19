@@ -11,11 +11,16 @@ class Api {
   }*/
 
   static dataSales() {
-    fetch('localhost:8080')
+    return fetch('/sales')
         .then(function (response) {
             return response.json;
         })
+        .then(function (data) {
+            console.log(data);
+        })
+
   }
+
 
 }
 
