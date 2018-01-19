@@ -5,12 +5,13 @@ import {
   PAGE_CONTACTS_GETDATA_SUCCESS
 } from '../constants';
 // import Api from '../Api';
-import transferData from '../Api';
+import TransferData from '../Api/transferData';
 
 function * contactsGetDataAsync(action) {
   try {
     //const pageData = yield call(Api.dataLocalContacts);
-    const pageData = yield call(transferData.dataLocalContacts);
+    const pageData = yield call(TransferData.dataLocalContacts);
+    console.log(`m:${pageData}`);
 
     yield put({ type: PAGE_CONTACTS_GETDATA_SUCCESS, payload: pageData });
   } catch (e) {

@@ -1,21 +1,47 @@
 import express from 'express';
-import mongoose from 'mongoose'; //mongoose for further db dev
-import path from 'path'; // local path for index.html
-import dotenv from "dotenv"; // use external config for PORT
-import bodyParser from 'body-parser'; // middleware for parsing
+import mongoose from 'mongoose';
+import path from 'path';
+import dotenv from "dotenv";
+import bodyParser from 'body-parser';
 
-import users from './src/routes/users';  //routes for users actions (login ...)
+import users from './src/routes/users';
 
 const app = express();
 
-dotenv.config(); // initialize dotenv config
+// Initialize dotenv config
+dotenv.config();
 
-// mongoose.connect()
+// Connect server to ATLAS MONGODB with .env params
+mongoose.connect(
+  process.env.MONGO_ATLAS_HOST +
+  process.env.MONGO_ATLAS_PW +
+  process.env.MONGO_ATLAS_ROUTE,
+  { useMongoClient: true }
+);
 
+// Middleware for pargin results
 app.use(bodyParser.json());
 
-app.use('/users', users) // middleware for users endpoints
+// Middlewares for endpoints
+app.use('/users', users)
 
+// Default route
 app.get("/*", (req, res) => res.sendFile(path.join(__dirname, "index.html")))
 
-app.listen(process.env.PORT) // listen PORT from .env config
+
+
+// GET for Contacts page----------------------------------------------------
+app.get('/contacts', (req, res) => {
+  db.contacts.find({}).toArray((err, doc) => {
+    if (err) {
+      console.log(err)
+      return res.sendStatus(500);
+    }
+    console.log(doc)
+    res.send(doc);
+  })
+})
+// GET for Contacts page----------------------------------------------------
+
+// Listen PORT from .env config
+app.listen(process.env.PORT || 8080)
