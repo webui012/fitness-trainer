@@ -2,7 +2,12 @@ import express from 'express';
 import { validationResult } from 'express-validator/check';
 import dataAbout from '../data/about';
 import dataAboutUs from '../data/aboutUs';
-import { contraindications, aims, measuredData } from './validation';
+import {
+  contraindications,
+  aims,
+  measuredData,
+  fullName
+} from '../utils/validationAboutUs';
 
 const router = express.Router();
 
@@ -63,10 +68,18 @@ router.post('/cabinet/measuredData', measuredData, (req, res) => {
   return res.json('200');
 });
 
-router.post('/cabinet/personalData', (req, res) => {
+router.post('/cabinet/personalData', fullName, (req, res) => {
   if (!req.body) {
     return res.sendStatus(400);
   };
+
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    const field = Object.keys(errors.mapped())[0];
+    return res.status(422).json({
+      message: `Поле ${field}: ${errors.mapped()[field].msg}`,
+    });
+  }
 
   console.log(req.body);
   return res.json('200');
