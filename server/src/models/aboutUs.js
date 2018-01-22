@@ -2,7 +2,10 @@ import mongoose from 'mongoose';
 
 const aboutUsAimsFormSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
-  aimsFormData: String
+  aimsFormData: {
+    type: String,
+    required: true,
+  }
 })
 
 export default mongoose.model('Contacts', contactsSchema)
@@ -10,12 +13,12 @@ export default mongoose.model('Contacts', contactsSchema)
 const aboutUsFullNameFormSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   fullNameFields: {
-    avatar: File,
+    avatar: true,
     name: String,
     surname: String,
     birthday: {
       type: Date,
-      
+      default: Date.now,
     },
     height: {
       type: Number,
@@ -38,7 +41,7 @@ const aboutUsContraindicationsFormSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   contrFormData: {
     type: String,
-    max: 100,
+    max: 200,
     min: 1,
     required: true,
   }

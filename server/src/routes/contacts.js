@@ -5,11 +5,12 @@ import Contacts from '../models/contacts';
 const router = express.Router()
 
 router.get('/contacts', (req, res) => {
-  db.collection('contacts').findOne({}, (err, docs) => {
+  Contacts.findOne({}, (err, docs) => {
     if (err) {
       return console.log(err)
     };
-    res.send(docs);
+    console.log(docs)
+    res.json(docs);
   });
 })
 

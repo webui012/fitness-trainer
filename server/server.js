@@ -3,12 +3,9 @@ import mongoose from 'mongoose';
 import path from 'path';
 import dotenv from "dotenv";
 import bodyParser from 'body-parser';
-
-import users from './src/routes/users';
 import contacts from './src/routes/contacts';
 
 const app = express();
-const db = mongoose.connection;
 // Initialize dotenv config
 dotenv.config();
 
@@ -30,9 +27,10 @@ app.all('/*', (req, res, next) => {
 app.use(bodyParser.json());
 
 // Middlewares for endpoints
-app.use('/users', users)
-app.use('/contacts', contacts)
+app.use('/', contacts)
 
+
+//const db = mongoose.connection;
 // app.get('/contacts', (req, res) => {
 //  db.collection('contacts').findOne({}, (err, doc) => {
 //     if (err) {
