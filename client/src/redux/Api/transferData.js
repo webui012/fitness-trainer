@@ -2,12 +2,13 @@ class TransferData {
 
   //Getting page data for the Contacts page
   static dataLocalContacts() {
-    fetch('/contacts')
-<<<<<<< HEAD
-    .then( response => {
-      console.dir(response)
-      return response.json()
-=======
+    fetch('/contacts', {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
     .then(response => {
       if (response.status !== 200) {
         console.log(`Oops, problem. Status Code: ${response.status}`);
@@ -15,11 +16,8 @@ class TransferData {
       }
       console.log(response);
       return response.json();
->>>>>>> bc270d22ec6baafc0766ff0ab277ce8258cf8967
     })
-    .then( data => {
-      return console.log(data)
-    })
+    .then( data => data )
   }
 }
 
