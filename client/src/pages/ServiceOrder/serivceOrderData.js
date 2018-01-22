@@ -1,7 +1,7 @@
 import {renderField} from './renderField';
 import {ageValidation, bodyParams, heightValidation, weightValidation} from '../../utils/orderFormValidation';
 
-const ServiceOrderData = {
+export const ServiceOrderData = {
   orderFormData: {
     serviceType: 'default',
     trainingPurpose: 'default'
@@ -125,5 +125,3 @@ const ServiceOrderData = {
     ]
   }
 };
-
-export default ServiceOrderData;
