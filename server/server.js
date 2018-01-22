@@ -5,8 +5,10 @@ import dotenv from "dotenv";
 import bodyParser from 'body-parser';
 
 import users from './src/routes/users';
+import contacts from './src/routes/contacts';
 
 const app = express();
+const db = mongoose.connection;
 
 // Initialize dotenv config
 dotenv.config();
@@ -24,27 +26,16 @@ app.use(bodyParser.json());
 
 // Middlewares for endpoints
 app.use('/users', users)
+//app.use('/contacts', contacts)
 
 // Default route
-//app.get("/*", (req, res) => res.sendFile(path.join(__dirname, "index.html")))
+app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")))
 
-// GET for Contacts page----------------------------------------------------
-app.get('/contacts', (req, res) => {
-  mongoose.connect(
-    process.env.MONGO_ATLAS_HOST +
-    process.env.MONGO_ATLAS_PW +
-    process.env.MONGO_ATLAS_ROUTE,
-    { useMongoClient: true }
-  ).collection('contacts').find({}).toArray((err, doc) => {
-    if (err) {
-      console.log(err)
-      return res.sendStatus(500);
-    }
-    console.log(doc)
-    res.send(doc);
+app.get("/contacts", (req, res) => {
+  db.collection('contacts').findOne({}, (req, data) => {
+    return res.send(data)
   })
-})
-// GET for Contacts page----------------------------------------------------
+});
 
 // Listen PORT from .env config
 app.listen(process.env.PORT || 8080)

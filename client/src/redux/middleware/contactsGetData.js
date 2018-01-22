@@ -9,7 +9,6 @@ import TransferData from '../Api/transferData';
 function * contactsGetDataAsync(action) {
   try {
     const pageData = yield call(TransferData.dataLocalContacts);
-    console.log(`m:${pageData}`);
 
     yield put({ type: PAGE_CONTACTS_GETDATA_SUCCESS, payload: pageData });
   } catch (e) {
