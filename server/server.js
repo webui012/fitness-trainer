@@ -9,7 +9,10 @@ import contacts from './src/routes/contacts';
 
 const app = express();
 const db = mongoose.connection;
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc270d22ec6baafc0766ff0ab277ce8258cf8967
 // Initialize dotenv config
 dotenv.config();
 
@@ -28,6 +31,7 @@ app.use(bodyParser.json());
 app.use('/users', users)
 //app.use('/contacts', contacts)
 
+<<<<<<< HEAD
 // Default route
 app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")))
 
@@ -35,6 +39,17 @@ app.get("/contacts", (req, res) => {
   db.collection('contacts').findOne({}, (req, data) => {
     const contacts = JSON.stringify(data)
     return res.send(contacts)
+=======
+// GET for Contacts page----------------------------------------------------
+app.get('/contacts', (req, res) => {
+ db.collection('contacts').findOne({}, (err, doc) => {
+    if (err) {
+      console.log(err)
+      return res.sendStatus(500);
+    }
+    console.log(doc);
+    res.json(doc.title);
+>>>>>>> bc270d22ec6baafc0766ff0ab277ce8258cf8967
   })
 });
 
