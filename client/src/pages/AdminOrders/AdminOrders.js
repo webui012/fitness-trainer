@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getVisibleOrders, getAdminSelections } from '../../redux/reducers/adminOrders';
-import { setOrdersVisibilityFilter } from '../../redux/actions';
+import { getVisibleOrders, getAdminSelections, getLoadingStatus } from '../../redux/reducers/adminOrders';
+import { fetchOrders, setOrdersVisibilityFilter } from '../../redux/actions';
 import OrderItem from '../../components/OrderItem/OrderItem';
-import './AdminOrders.scss';
 import { Card, Icon, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import { Divider, Dimmer, Loader } from 'semantic-ui-react'
+import './AdminOrders.scss';
 
 class AdminOrders extends Component {
 
@@ -75,14 +76,17 @@ class AdminOrders extends Component {
     }
   };
 
+  componentDidMount = () => this.props.fetchOrders()
+
   render() {
-    const { orders, selections } = this.props;
+    const { orders, selections, isLoading } = this.props;
 
     return (
       <div className='orders-wrapper'>
-        <div className='orders-select-wrapper'>
+        { isLoading && <Dimmer active inverted><Loader/></Dimmer>}
+        {/* <div className='orders-select-wrapper'>
           {this.renderSelections(selections)}
-        </div>
+        </div> */}
 
         <div className='orders-body'>
           {this.renderOrders(orders)}
@@ -95,6 +99,12 @@ class AdminOrders extends Component {
 const mapStateToProps = state => ({
   selections: getAdminSelections(state),
   orders: getVisibleOrders(state),
+  isLoading: getLoadingStatus(state)
 });
 
-export default connect(mapStateToProps, { setOrdersVisibilityFilter })(AdminOrders);
+const mapDispatchToProps = {
+  setOrdersVisibilityFilter,
+  fetchOrders
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdminOrders);

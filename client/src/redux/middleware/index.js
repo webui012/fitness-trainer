@@ -5,9 +5,11 @@ import aboutUsGetData from './aboutUsGetData';
 import contactsGetData from './contactsGetData';
 import aboutGetStaticData from './aboutGetStaticData';
 import orders from './orders'
+import homepage from './homepage'
 
 export default function * rootSaga() {
   yield all([
+    homepage(),
     orders(),
     aboutUsSendDataForm(),
     aboutUsGetData(),

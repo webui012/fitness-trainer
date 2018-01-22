@@ -5,3 +5,4 @@ export * from './about';
 export * from './serviceOrderForm';
 export * from './login';
 export * from './orders';
+export * from './homepage';

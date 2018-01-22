@@ -9,3 +9,5 @@ export * from './aboutUs';
 export * from './about';
 export * from './ordersVisibilityFilter';
 export * from './sales';
+export * from './orders';
+export * from './homepage';

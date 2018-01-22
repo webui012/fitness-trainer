@@ -1,21 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getHomePageData } from '../../redux/reducers/homePage';
+import { getHomePageData, getLoadingStatus } from '../../redux/reducers/homePage';
+import { fetchHomepage } from '../../redux/actions';
 import { Slider } from 'Components';
+import { Divider, Dimmer, Loader } from 'semantic-ui-react'
 
-const Homepage = props => {
-  const sliderData = props.homePage.sliderData;
 
-  return <Slider data={sliderData} />;
-};
+class Homepage extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    this.props.fetchHomepage()
+  }
+
+  render() {
+    const { isLoading, data } = this.props
+
+    console.log(this.props.data)
+
+    return (
+      <div>
+        { isLoading && <Dimmer active inverted><Loader/></Dimmer>}
+        {/* <Slider data={data.slider} />; */}
+      </div>
+    );
+  }
+}
 
 const mapStateToProps = state => ({
-  homePage: getHomePageData(state),
+  data: getHomePageData(state),
+  isLoading: getLoadingStatus(state)
 });
 
-Homepage.propTypes = {
-  homePage: PropTypes.object,
-};
-
-export default connect(mapStateToProps)(Homepage);
+export default connect(mapStateToProps, { fetchHomepage, getLoadingStatus })(Homepage);

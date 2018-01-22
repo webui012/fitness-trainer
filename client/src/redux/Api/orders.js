@@ -1,7 +1,6 @@
-import axious from 'axious'
+import axios from 'axios'
 
-const path = '/api/orders'
+const path = 'http://localhost:8080/api/admin/orders'
 
 export const fetchOrders = () =>
-  axios.get(path)
-    .then(res => res.data)
+  axios.get(path).then(res => res.data)
