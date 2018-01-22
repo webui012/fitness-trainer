@@ -8,3 +8,4 @@ const contactsSchema = mongoose.Schema({
 })
 
 export default mongoose.model('Contacts', contactsSchema)
+
