@@ -33,7 +33,8 @@ app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")))
 
 app.get("/contacts", (req, res) => {
   db.collection('contacts').findOne({}, (req, data) => {
-    return res.send(data)
+    const contacts = JSON.stringify(data)
+    return res.send(contacts)
   })
 });
 
