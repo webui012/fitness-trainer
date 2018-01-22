@@ -31,10 +31,8 @@ const salesData = {
 }
 
 
-let salesAtricles = JSON.stringify(salesData);
-
 router.get('/sales', (req, res) => {
-         res(salesArticles);
+         return res.json(salesData);
 })
 
 
