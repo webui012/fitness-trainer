@@ -1,47 +1,69 @@
 .FullName {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
+  width: 63%;
 
-  .avatar {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+  .avatar-wrap {
+    width: 42%;
+    text-align: center;
+
+    .avatar {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+    }
   }
+  .personal-info-wrap {
+    width: 50%;
 
-  .full-name-form {
-    width: 223px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-
-    input[type='text'], .submit-full-name {
-      width: 100%;
-      padding: 5px;
-      font-size: 16px;
-      border: 1px solid #999;
-      border-radius: 5px;
+    .full-name-form {
+      align-items: center;
       margin-top: 20px;
-      background: transparent;
 
-      &:focus {
-        border: 1px solid #54a4d4;
-        box-shadow: 0 0 5px rgba(84, 164, 212, 1);
+      legend {
+        text-align: center;
+        margin: 5px 15px 25px;
+        font-size: 20px;
+        font-weight: bold;
       }
 
-      &:hover {
-        background: #fff;
-        color: #0f6605;
-        border: 1px solid #0f6605;
+      .info-filed-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
-    }
 
-    .submit-full-name {
-      background: #0f6605;
-      color: #fff;
-      cursor: pointer;
+      input , .submit-full-name {
+        width: 60%;
+        padding: 5px;
+        font-size: 16px;
+        border: 1px solid #999;
+        border-radius: 5px;
+        margin-top: 10px;
+        background: transparent;
+
+        &:focus {
+          border: 1px solid #54a4d4;
+          box-shadow: 0 0 5px rgba(84, 164, 212, 1);
+        }
+
+        &:hover {
+          background: #fff;
+          color: #0f6605;
+          border: 1px solid #0f6605;
+        }
+      }
+
+      .submit-full-name {
+        background: #0f6605;
+        color: #fff;
+        cursor: pointer;
+        widows: 40%;
+        margin-left: 25%;
+      }
     }
   }
-
 }

@@ -5,17 +5,7 @@ import Contacts from '../models/contacts';
 const router = express.Router()
 
 router.get('/contacts', (req, res) => {
-  Contacts.findOne({}, (err, docs) => {
-    if (err) {
-      return console.log(err)
-    };
-    console.log(docs)
-    res.json(docs);
-  });
-})
-
-router.get('/cabinet/user', (req, res) => {
-  User.find({}, (err, docs) => {
+  Contacts.findById({ _id: "5a6517cb3e5db1237443df19" }, (err, docs) => {
     if (err) {
       return console.log(err)
     };

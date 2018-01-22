@@ -25,24 +25,24 @@ class AboutUs extends Component {
   render() {
     return (this.props.data
       ? <div className='about-us'>
+        <FullName
+            fields={this.props.data.fullNameFields}
+            path={this.props.data.fullNameAvatar}
+            formData={this.props.data.formData}
+        />
         <div className='columns-wrap'>
-          <FullName
-              fields={this.props.data.fullNameFields}
-              path={this.props.data.fullNameAvatar}
-              formData={this.props.data.formData}
-          />
           <MeasuredData dataFields={this.props.data.dataFields} />
+          <div className='add-info-wrap'>
+            <Aims aimsFormData={this.props.data.aimsFormData} />
+            <Contraindications />
+          </div>
+          {this.props.errorMessage ?
+            <ErrorLoadingData closeMessage={this.props.closeErrorMessage} /> : null}
         </div>
-        <div className='add-info-wrap'>
-          <Aims aimsFormData={this.props.data.aimsFormData} />
-          <Contraindications />
-        </div>
-        {this.props.errorMessage ?
-          <ErrorLoadingData closeMessage={this.props.closeErrorMessage} /> : null}
       </div>
       : <Dimmer active inverted>
-          <Loader inverted content='Загрузка' />
-        </Dimmer>
+        <Loader inverted content='Загрузка' />
+      </Dimmer>
     );
   }
 }

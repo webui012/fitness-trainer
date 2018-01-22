@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import path from 'path';
 import dotenv from "dotenv";
 import bodyParser from 'body-parser';
+
 import contacts from './src/routes/contacts';
 
 const app = express();
@@ -28,18 +29,6 @@ app.use(bodyParser.json());
 
 // Middlewares for endpoints
 app.use('/', contacts)
-
-
-//const db = mongoose.connection;
-// app.get('/contacts', (req, res) => {
-//  db.collection('contacts').findOne({}, (err, doc) => {
-//     if (err) {
-//       console.log(err)
-//       return res.sendStatus(500);
-//     }
-//     res.send(doc);
-//   })
-// });
 
 // Listen PORT from .env config
 app.listen(process.env.PORT || 8080)

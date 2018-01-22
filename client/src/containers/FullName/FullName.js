@@ -36,17 +36,20 @@ class FullName extends Component {
 
   getInputs = () => this.props.fields.map(
     field =>
-      <span key={field.id}>
-        <input type={field.type}
-            placeholder={field.placeholder}
-            ref={input => this[field.ref] = input}
-            className={this.props.validation[field.ref] ? 'input-warning' : null}
-        />
+      <div key={field.id}>
+        <div className='info-filed-wrap'>
+          <label>{field.nameField}</label>
+          <input type={field.type}
+              placeholder={field.placeholder}
+              ref={input => this[field.ref] = input}
+              className={this.props.validation[field.ref] ? 'input-warning' : null}
+          />
+        </div>
         <span className={this.props.validation[field.ref]
           ? 'active-warning'
           : 'not-active-warning'}> {this.props.validation[field.ref]}
         </span>
-      </span>);
+      </div>);
 
   getAvatar = () => this.props.path.userAvatar
       ? <img className='avatar' src={this.props.path.userAvatar} alt='user avatar' />
@@ -74,15 +77,38 @@ class FullName extends Component {
       this.props.aboutUsWarningMessage,
       this.props.validation
     );
+    const birth = validate(
+      this.birth.value,
+      'birth',
+      this.props.aboutUsWarningMessage,
+      this.props.validation
+    );
+
+    const height = validate(
+      this.height.value,
+      'height',
+      this.props.aboutUsWarningMessage,
+      this.props.validation
+    );
+
+    const weight = validate(
+      this.weight.value,
+      'weight',
+      this.props.aboutUsWarningMessage,
+      this.props.validation
+    );
 
     const data = {
       avatar,
       name,
       surname,
+      birth, 
+      height, 
+      weight,
       userId: 'personalData',
     };
 
-    if (name && surname && avatar !== undefined) {
+    if (name && surname && avatar && birth && height && weight !== undefined) {
       this.props.aboutUsFormRequest(data);
       this.setState({ location: 'загрузите фото' });
     };
@@ -91,17 +117,22 @@ class FullName extends Component {
   render() {
     return (
       <div className='FullName'>
-        {this.getAvatar()}
-        <form className='full-name-form' onSubmit={this.formHandler}>
+        <div className='avatar-wrap'>
+          {this.getAvatar()}
           <InputFile
               inputValue={this.state.location}
               location={this.getLocation}
               name={this.props.validation.avatar}
           />
-          {this.getInputs()}
-          {this.props.aboutUsSendDataForm ? <Spinner /> : null}
-          <input type='submit' value='Сохранить данные' className='submit-full-name' />
-        </form>
+        </div>
+        <div className='personal-info-wrap'>
+          <form className='full-name-form' onSubmit={this.formHandler}>
+            <legend>Персональная информация</legend>            
+            {this.getInputs()}
+            {this.props.aboutUsSendDataForm ? <Spinner /> : null}
+            <input type='submit' value='Сохранить данные' className='submit-full-name' />
+          </form>
+        </div>
       </div>
     );
   }

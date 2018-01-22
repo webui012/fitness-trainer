@@ -23,25 +23,25 @@ class MeasuredData extends Component {
   };
 
   formHandler = event => {
-    event.preventDefault();
+    event.preventDefault(); 
 
-    const age = validate(
-      this.age.value,
-      'age',
+    const biceps = validate(
+      this.biceps.value,
+      'biceps',
       this.props.aboutUsWarningMessage,
       this.props.validation
     );
 
-    const height = validate(
-      this.height.value,
-      'height',
+    const buttocks = validate(
+      this.buttocks.value,
+      'buttocks',
       this.props.aboutUsWarningMessage,
       this.props.validation
     );
 
-    const weight = validate(
-      this.weight.value,
-      'weight',
+    const shin = validate(
+      this.shin.value,
+      'shin',
       this.props.aboutUsWarningMessage,
       this.props.validation
     );
@@ -75,9 +75,9 @@ class MeasuredData extends Component {
     );
 
     const data = {
-      age,
-      height,
-      weight,
+      biceps,
+      buttocks,
+      shin,
       neck,
       breast,
       tail,
@@ -85,7 +85,7 @@ class MeasuredData extends Component {
       userId: 'measuredData',
     };
 
-    if (age && height && weight && neck && breast && tail && hips) {
+    if ( biceps && buttocks && shin && neck && breast && tail && hips) {
       this.props.aboutUsFormRequest(data);
     };
   };

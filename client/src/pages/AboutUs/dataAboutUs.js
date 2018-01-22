@@ -1,5 +1,4 @@
 import avatar from '../../images/about_us_avatar.png';
-import bodyImg from '../../images/body-sizes.jpg';
 
 export const dataAboutUs = {
   fullNameAvatar: {
@@ -7,20 +6,41 @@ export const dataAboutUs = {
     userAvatar: null,
   },
 
-  bodySizesImg: bodyImg,
-
   fullNameFields: [
     {
       type: 'text',
       placeholder: 'Имя',
       ref: 'name',
       id: 'ecl09xzvrm',
+      nameField: 'Имя',
     },
     {
       type: 'text',
       placeholder: 'Фамилия',
       ref: 'surname',
       id: '6cl4w8pu86',
+      nameField: 'Фамилия',
+    },
+    {
+      type: 'date',
+      placeholder: 'День рождения',
+      ref: 'birth',
+      id: '6cl4w8pu80',
+      nameField: 'День рождения',
+    },
+    {
+      type: 'number',
+      placeholder: 'Рост(см)',
+      ref: 'height',
+      id: '6cl4w8pq45',
+      nameField: 'Рост(см)',
+    },
+    {
+      type: 'number',
+      placeholder: 'Вес(кг)',
+      ref: 'weight',
+      id: '6cl4w8ree7',
+      nameField: 'Вес(кг)',
     },
   ],
 
@@ -28,21 +48,21 @@ export const dataAboutUs = {
     fieldsMeasuredDataForm: [
       {
         type: 'number',
-        nameField: 'Возраст(лет)',
-        ref: 'age',
-        placeholder: 'Введите возраст',
+        nameField: 'Бицепс(см)',
+        ref: 'biceps',
+        placeholder: 'Введите обхват бицепса',
       },
       {
         type: 'number',
-        nameField: 'Рост(см)',
-        ref: 'height',
-        placeholder: 'Введите рост',
+        nameField: 'Ягодицы(см)',
+        ref: 'buttocks',
+        placeholder: 'Введите обхват ягодиц',
       },
       {
         type: 'number',
-        nameField: 'Вес(кг)',
-        ref: 'weight',
-        placeholder: 'Введите вес',
+        nameField: 'Голень(см)',
+        ref: 'shin',
+        placeholder: 'Введите обхват голени',
       },
       {
         type: 'number',

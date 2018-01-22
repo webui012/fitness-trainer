@@ -8,7 +8,6 @@ class TransferData {
         console.log(`Oops, problem. Status Code: ${response.status}`);
         return;
       }
-      console.log(response)
       return response.json();
     })
     .then( data => data )
