@@ -20,6 +20,12 @@ mongoose.connect(
   { useMongoClient: true }
 );
 
+app.all('/*', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:6289');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
 // Middleware for pargin results
 app.use(bodyParser.json());
 
@@ -33,8 +39,7 @@ app.use('/contacts', contacts)
 //       console.log(err)
 //       return res.sendStatus(500);
 //     }
-//     const data = JSON.stringify(doc);
-//     res.send(data);
+//     res.send(doc);
 //   })
 // });
 
