@@ -1,6 +1,9 @@
 .InputFile {
   width: 100%;
   position: relative;
+  box-shadow: 1px 3px 3px #545454;
+  border-radius: 5px;
+  
 
   .file-address {
     display: flex;
@@ -25,7 +28,6 @@
     top: -20px;
     opacity: 0;
     z-index: 1;
-    margin-top: 20px;
     cursor: pointer;
   }
 }

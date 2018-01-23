@@ -4,11 +4,13 @@ import {
   PAGE_ABOUTUS_GETDATA_REQUEST,
   PAGE_ABOUTUS_GETDATA_SUCCESS
 } from '../constants';
-import Api from '../Api';
+//import Api from '../Api';
+import TransferData from '../Api/transferData';
 
 function* aboutUsGetDataAsync(action) {
   try {
-    const pageData = yield call(Api.dataLocal);
+    //const pageData = yield call(Api.dataLocal);
+    const pageData = yield call(TransferData.dataServerUserCabinet);
 
     yield put({ type: PAGE_ABOUTUS_GETDATA_SUCCESS, payload: pageData });
   } catch (e) {
@@ -19,3 +21,4 @@ function* aboutUsGetDataAsync(action) {
 export default function* aboutUsGetData() {
   yield takeEvery(PAGE_ABOUTUS_GETDATA_REQUEST, aboutUsGetDataAsync);
 }
+

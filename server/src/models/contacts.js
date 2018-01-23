@@ -36,7 +36,7 @@ const contactsSchema = mongoose.Schema({
     },
     text: String,
   },
-})
+});
 
-export default mongoose.model('Contacts', contactsSchema)
+export default mongoose.model('Contacts', contactsSchema);
 

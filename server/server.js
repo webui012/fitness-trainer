@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import bodyParser from 'body-parser';
 
 import contacts from './src/routes/contacts';
+import aboutUs from './src/routes/aboutUs';
 
 const app = express();
 // Initialize dotenv config
@@ -17,6 +18,7 @@ mongoose.connect(
   process.env.MONGO_ATLAS_ROUTE,
   { useMongoClient: true }
 );
+let db = mongoose.connection;
 
 app.all('/*', (req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'http://localhost:6289');
@@ -29,6 +31,18 @@ app.use(bodyParser.json());
 
 // Middlewares for endpoints
 app.use('/', contacts)
+app.use('/', aboutUs)
+
+// app.get('/cabinet/user/metrics', (req, res) => {
+//   db.collection('userPersonalData').findOne({}, (err, docs) => {
+//     if (err) {
+//       return console.log(err)
+//     };
+//     console.log(docs);
+//     res.json(docs);
+//   });
+// })
+
 
 // Listen PORT from .env config
 app.listen(process.env.PORT || 8080)
