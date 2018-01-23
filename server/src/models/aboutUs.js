@@ -99,4 +99,4 @@ const aboutUsGetDataSchema = mongoose.Schema({
   },
 });
 
-export default mongoose.model('AboutUsGetDataSchema', aboutUsGetDataSchema);
+export default mongoose.model('personalData', aboutUsGetDataSchema);

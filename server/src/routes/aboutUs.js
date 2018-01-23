@@ -1,6 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import AboutUsGetDataSchema from '../models/aboutUs';
+import personalData from '../models/aboutUs';
 
 const router = express.Router()
 
@@ -9,6 +9,8 @@ router.get('/cabinet/user/metrics', (req, res) => {
     if (err) {
       return console.log(err)
     };
+    console.log(docs);
+    
     res.json(docs);
   });
 })

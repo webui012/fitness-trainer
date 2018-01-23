@@ -30,19 +30,23 @@ app.all('/*', (req, res, next) => {
 app.use(bodyParser.json());
 
 // Middlewares for endpoints
-app.use('/', contacts)
-app.use('/', aboutUs)
+// app.use('/', contacts)
+// // app.use('/', aboutUs)
 
-// app.get('/cabinet/user/metrics', (req, res) => {
-//   db.collection('userPersonalData').findOne({}, (err, docs) => {
-//     if (err) {
-//       return console.log(err)
-//     };
-//     console.log(docs);
-//     res.json(docs);
-//   });
-// })
+app.get('/cabinet/user/metrics', (req, res) => {
+  db.collection('personalData').findOne({}, (err, docs) => {
+    if (err) {
+      return console.log(err)
+    };
+    console.log(docs);
+    res.json(docs);
+  });
+})
 
+app.use(function (err, req, res, next) {
+  console.error(err.stack)
+  res.status(500).send('Something broke!')
+})
 
 // Listen PORT from .env config
 app.listen(process.env.PORT || 8080)
