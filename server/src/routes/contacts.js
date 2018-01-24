@@ -4,7 +4,7 @@ import Contacts from '../models/contacts';
 
 const router = express.Router()
 
-router.get('/contacts', (req, res) => {
+router.get('/', (req, res) => {
   Contacts.findById({ _id: "5a6517cb3e5db1237443df19" }, (err, docs) => {
     if (err) {
       return console.log(err)

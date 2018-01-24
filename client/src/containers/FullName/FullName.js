@@ -102,8 +102,8 @@ class FullName extends Component {
       avatar,
       name,
       surname,
-      birth, 
-      height, 
+      birth,
+      height,
       weight,
       userId: 'personalData',
     };
@@ -127,7 +127,7 @@ class FullName extends Component {
         </div>
         <div className='personal-info-wrap'>
           <form className='full-name-form' onSubmit={this.formHandler}>
-            <legend>Персональная информация</legend>            
+            <legend>Персональная информация</legend>
             {this.getInputs()}
             {this.props.aboutUsSendDataForm ? <Spinner /> : null}
             <input type='submit' value='Сохранить данные' className='submit-full-name' />

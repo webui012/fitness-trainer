@@ -15,7 +15,7 @@ class TransferData {
 
   //Getting page data for the cabinet/user page
   static dataServerUserCabinet() {
-    return fetch('http://localhost:8080/cabinet/user/metrics')
+    return fetch('http://localhost:8080/cabinet/user')
       .then(response => {
         if (response.status !== 200) {
           console.log(`Oops, problem. Status Code: ${response.status}`);

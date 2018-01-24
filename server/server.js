@@ -5,9 +5,10 @@ import dotenv from "dotenv";
 import bodyParser from 'body-parser';
 
 import contacts from './src/routes/contacts';
-import aboutUs from './src/routes/aboutUs';
+import personalData from './src/routes/personalData';
 
 const app = express();
+
 // Initialize dotenv config
 dotenv.config();
 
@@ -30,11 +31,11 @@ app.all('/*', (req, res, next) => {
 app.use(bodyParser.json());
 
 // Middlewares for endpoints
-app.use('/', contacts)
-app.use('/', aboutUs)
+app.use('/contacts', contacts)
+app.use('/cabinet/user', personalData)
 
-// app.get('/cabinet/user/metrics', (req, res) => {
-//   db.collection('userPersonalData').findOne({}, (err, docs) => {
+// app.get('/cabinet/user', (req, res) => {
+//   db.collection('personalData').findOne({}, (err, docs) => {
 //     if (err) {
 //       return console.log(err)
 //     };

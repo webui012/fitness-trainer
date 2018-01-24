@@ -12,13 +12,6 @@ class Api {
     });
   }
 
-  // static dataLocal() {
-  //   return new Promise((resolve, reject) => {
-  //     setTimeout(() => {
-  //       resolve(dataAboutUs);
-  //     }, 500);
-  //   });
-  // }
 }
 
 export default Api;
