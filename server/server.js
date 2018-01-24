@@ -29,4 +29,4 @@ app.use('/users', users)
 app.get("/*", (req, res) => res.sendFile(path.join(__dirname, "index.html")))
 
 // Listen PORT from .env config
-app.listen(process.env.PORT || 8080)
+app.listen(process.env.PORT || 8090)
