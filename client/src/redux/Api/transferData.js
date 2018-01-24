@@ -26,7 +26,7 @@ class TransferData {
       .then( data => data )
   }
 
-  static personalDataSendToServer() {
+  static personalDataSendToServer(data) {
     return fetch('http://localhost:8080/cabinet/user/metrics', {
       method: 'POST',
       headers: {
