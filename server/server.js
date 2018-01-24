@@ -4,8 +4,8 @@ import path from 'path';
 import dotenv from "dotenv";
 import bodyParser from 'body-parser';
 
-import contacts from './src/routes/contacts';
-import { personalData, userPersonalData } from './src/routes/personalData';
+//import contacts from './src/routes/contacts';
+import personalData from './src/routes/personalData';
 
 const app = express();
 
@@ -31,18 +31,18 @@ app.all('/*', (req, res, next) => {
 app.use(bodyParser.json());
 
 // Middlewares for endpoints
-app.use('/contacts', contacts)
-//app.use('/cabinet/user', personalData)
-//app.use('/cabinet/user/metrics', userPersonalData)
+app.use('/', personalData)
+// app.use('/cabinet/user', personalData)
+// app.use('/metrics', personalData)
 
-app.get('/cabinet/user', (req, res) => {
-  db.collection('personalData').findOne({}, (err, docs) => {
-    if (err) {
-      return console.log(err)
-    };
-    res.json(docs);
-  });
-})
+// app.get('/cabinet/user', (req, res) => {
+//   db.collection('personalData').findOne({}, (err, docs) => {
+//     if (err) {
+//       return console.log(err)
+//     };
+//     res.json(docs);
+//   });
+// })
 
 
 // Listen PORT from .env config
