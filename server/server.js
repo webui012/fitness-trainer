@@ -31,6 +31,7 @@ app.all('/*', (req, res, next) => {
 app.use(bodyParser.json());
 
 // Middlewares for endpoints
+<<<<<<< HEAD
 app.use('/', personalData)
 // app.use('/cabinet/user', personalData)
 // app.use('/metrics', personalData)
@@ -44,6 +45,25 @@ app.use('/', personalData)
 //   });
 // })
 
+=======
+// app.use('/', contacts)
+// // app.use('/', aboutUs)
+
+app.get('/cabinet/user/metrics', (req, res) => {
+  db.collection('personalData').findOne({}, (err, docs) => {
+    if (err) {
+      return console.log(err)
+    };
+    console.log(docs);
+    res.json(docs);
+  });
+})
+
+app.use(function (err, req, res, next) {
+  console.error(err.stack)
+  res.status(500).send('Something broke!')
+})
+>>>>>>> 76bf713377e9deb0482525970972e5f26c979468
 
 // Listen PORT from .env config
 app.listen(process.env.PORT || 8080)
