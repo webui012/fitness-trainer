@@ -3,14 +3,14 @@ import { dataContacts } from '../../pages/Contacts/contactsData';
 
 class Api {
 
-  static fetchUserData(data) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        dataAboutUs.formData[`${data.userId}`] = data;
-        reject(dataAboutUs.formData);
-      }, 500);
-    });
-  }
+  // static fetchUserData(data) {
+  //   return new Promise((resolve, reject) => {
+  //     setTimeout(() => {
+  //       dataAboutUs.formData[`${data.userId}`] = data;
+  //       reject(dataAboutUs.formData);
+  //     }, 500);
+  //   });
+  // }
 
 }
 

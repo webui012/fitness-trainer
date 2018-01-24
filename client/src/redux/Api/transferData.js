@@ -25,6 +25,21 @@ class TransferData {
       })
       .then( data => data )
   }
+
+  static personalDataSendToServer() {
+    return fetch('http://localhost:8080/cabinet/user/metrics', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ ...data.data }),
+    })
+      .then(response => {
+        console.log(`api:${response}`)
+        return response.json();
+      })
+  }
 }
 
 export default TransferData;

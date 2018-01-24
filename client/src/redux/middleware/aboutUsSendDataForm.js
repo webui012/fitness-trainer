@@ -4,12 +4,14 @@ import {
   ABOUTUS_FORM_ABOUTUS_SUCCESS,
   ABOUTUS_ACTION_FAILURE,
 } from '../constants';
-import Api from '../Api';
+import TransferData from '../Api/transferData';
 
 function* aboutUsSendDataFormAsync(action) {
   try {
-    const userData = yield call(Api.fetchUserData, action.payload);
-
+    const userData = yield call(TransferData.personalDataSendToServer, action.payload);
+    console.log(`mw:${userData}`)
+    console.log(`mw:${action.payload}`)
+    
     yield put({ type: ABOUTUS_FORM_ABOUTUS_SUCCESS });
   } catch (e) {
     yield put({ type: ABOUTUS_ACTION_FAILURE });
