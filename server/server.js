@@ -39,4 +39,4 @@ app.use(function (err, req, res, next) {
 })
 
 // Listen PORT from .env config
-app.listen(process.env.PORT || 8080)
+app.listen(process.env.PORT || 8080, () => console.log('Server successfully started on http://localhost:8080/'))
