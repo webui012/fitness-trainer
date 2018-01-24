@@ -1,0 +1,41 @@
+.about-trainer {
+	font-family: Lato,'Helvetica Neue', Arial, Helvetica, sans-serif;
+	max-width: 700px !important;
+	line-height: 2;
+  width: 800px;
+	height: 70%;
+  margin-left: auto !important;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+  border-radius: 3px;
+
+  .text-caption {
+    font-size: 20.5714px;
+    border: none;
+    margin: calc(2rem - .14285714em) 0 1rem;
+    padding: 0 0;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    font-weight: 700;
+    line-height: 1.28571429em;
+    text-transform: none;
+    color: rgba(0,0,0,.87);
+
+    &:first-child {
+      margin-top: -.14285714em;
+    }
+  }
+
+  p {
+    margin: 7px 0;
+    background: #fff;
+		font-size: 18.2857px;
+
+    .field-name {
+      font-weight: bold;
+			font-size: 18.2857px;
+      color: rgba(0,0,0,.87);
+			margin-right: 4px;
+    }
+  }
+}

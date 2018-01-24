@@ -1,8 +1,14 @@
-import aboutData from '../../pages/About/aboutData';
+import constants from './constants';
+const { about, localhost8080 } = constants;
 
 export default () =>
-  new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(aboutData);
-    }, 500);
-  });
+  fetch(`${localhost8080}${about}`)
+    .then(response => {
+      if (response.status !== 200) {
+        console.log(`Oops, problem. Status Code: ${response.status}`);
+        throw new Error('Bad request');
+      }
+
+      return response.json();
+    })
+    .catch(error => console.log('error', error.message));

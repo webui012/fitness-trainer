@@ -1,0 +1,63 @@
+.trainer-avatar-block {
+  width: 290px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: #fff;
+  padding: 0;
+  border: none;
+  border-radius: .28571429rem;
+  box-shadow: 0 1px 3px 0 #d4d4d5,0 0 0 1px #d4d4d5;
+  transition: box-shadow .1s ease,transform .1s ease,-webkit-transform .1s ease;
+
+  .trainer-avatar {
+    border-radius: .28571429rem .28571429rem 0 0 !important;
+  }
+
+  .trainer-information {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid rgba(34,36,38,.1);
+    background: 0 0;
+    margin: 0;
+    box-shadow: none;
+    font-size: 1em;
+    border-radius: 0;
+
+    .trainer-name {
+      font-weight: 700;
+      font-size: 1.28571429em;
+      margin-top: -.21425em;
+      line-height: 1.28571429em;
+      font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+      color: rgba(0,0,0,.85);
+      padding: 0.7rem 1rem 0 1rem;
+    }
+
+    .trainer-weight-category {
+      font-size: 1em;
+      color: rgba(0,0,0,.4);
+      padding: 0 1rem 0.7rem 1rem;
+    }
+  }
+
+  .trainer-social-icons {
+    display: flex;
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,.05) !important;
+
+    a {
+      width: 10%;
+      margin: 8px;
+
+      &:first-child {
+        margin-left: 16px;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

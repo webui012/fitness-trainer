@@ -1,0 +1,53 @@
+.achievement-card {
+  max-width: 100%;
+  position: relative;
+  margin: .875em .5em;
+  display: flex;
+  flex-direction: column;
+  width: 290px;
+  min-height: 0;
+  background: #fff;
+  padding: 0;
+  border: none;
+  border-radius: .28571429rem;
+  box-shadow: 0 1px 3px 0 #d4d4d5,0 0 0 1px #d4d4d5;
+  transition: box-shadow .1s ease,transform .1s ease,-webkit-transform .1s ease;
+
+  .achievement-image {
+    position: relative;
+    display: block;
+    flex: 0 0 auto;
+    padding: 0;
+    background: rgba(0,0,0,.05);
+    border-radius: .28571429rem .28571429rem 0 0 !important;
+    border-top: none !important;
+    max-width: 100%;
+  }
+
+  .achievement-text {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid rgba(34,36,38,.1);
+    background: 0 0;
+    margin: 0;
+    padding: 1em 1em;
+    box-shadow: none;
+    font-size: 1em;
+    border-radius: 0 0 .28571429rem .28571429rem !important;
+
+    .text-header {
+      font-weight: 700;
+      font-size: 1.28571429em;
+      margin-top: -.21425em;
+      margin-bottom: 5px;
+      line-height: 1.28571429em;
+      font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+      color: rgba(0,0,0,.85);
+    }
+
+    .text-date {
+      font-size: 1em;
+      color: rgba(0,0,0,.4);
+    }
+  }
+}

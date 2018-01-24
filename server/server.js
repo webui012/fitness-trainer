@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import bodyParser from 'body-parser';
 
 import personalData from './src/routes/personalData';
+import about from './src/routes/about';
+import sendFormsUsersMetrics from './src/routes/sendFormsUsersMetrics';
 
 const app = express();
 
@@ -19,8 +21,6 @@ mongoose.connect(
   { useMongoClient: true }
 );
 
-let db = mongoose.connection;
-
 app.all('/*', (req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'http://localhost:6289');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
@@ -31,7 +31,9 @@ app.all('/*', (req, res, next) => {
 app.use(bodyParser.json());
 
 // Middlewares for endpoints
-app.use('/', personalData)
+app.use('/', personalData);
+app.use('/about', about);
+app.use('/cabinet/forms', about);
 
 app.use(function (err, req, res, next) {
   console.error(err.stack)
