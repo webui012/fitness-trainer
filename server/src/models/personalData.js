@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 
 const personalData = mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
     fullNameAvatar: {
       defaultAvatar: String,
       userAvatar: String,
@@ -13,74 +12,10 @@ const personalData = mongoose.Schema({
         ref: String,
         id: String,
         nameField: String,
-      },
-      {
-        type: String,
-        placeholder: String,
-        ref: String,
-        id: String,
-        nameField: String,
-      },
-      {
-        type: String,
-        placeholder: String,
-        ref: String,
-        id: String,
-        nameField: String,
-      },
-      {
-        type: Number,
-        placeholder: String,
-        ref: String,
-        id: String,
-        nameField: String,
-      },
-      {
-        type: Number,
-        placeholder: String,
-        ref: String,
-        id: String,
-        nameField: String,
       }
     ],
     dataFields: {
       fieldsMeasuredDataForm: [
-        {
-          type: Number,
-          nameField: String,
-          ref: String,
-          placeholder: String,
-        },
-        {
-          type: Number,
-          nameField: String,
-          ref: String,
-          placeholder: String,
-        },
-        {
-          type: Number,
-          nameField: String,
-          ref: String,
-          placeholder: String,
-        },
-        {
-          type: Number,
-          nameField: String,
-          ref: String,
-          placeholder: String,
-        },
-        {
-          type: Number,
-          nameField: String,
-          ref: String,
-          placeholder: String,
-        },
-        {
-          type: Number,
-          nameField: String,
-          ref: String,
-          placeholder: String,
-        },
         {
           type: Number,
           nameField: String,
@@ -99,22 +34,6 @@ const personalData = mongoose.Schema({
       nameField: String,
       selectName: String,
       options: [
-        {
-          optionValue: String,
-          optionInfo: String,
-        },
-        {
-          optionValue: String,
-          optionInfo: String,
-        },
-        {
-          optionValue: String,
-          optionInfo: String,
-        },
-        {
-          optionValue: String,
-          optionInfo: String,
-        },
         {
           optionValue: String,
           optionInfo: String,
