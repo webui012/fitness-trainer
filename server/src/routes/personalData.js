@@ -22,17 +22,28 @@ router.get('/cabinet/user', (req, res) => {
       };
       res.json(docs);
     });
-
 })
 
-let user = new UserPersonalData({"userPesonalData": { name: "Tom", surname: "Paul" }});
+let user = {
+  id: "5a698c93e21462414c0c087",
+  "userPesonalData": {
+    name: "Tom",
+    surname: "Paul",
+    birth: "10-10-2000",
+    height: 170,
+    weight: 70,
+  }
+}
 
-router.post('*/metrics', (req, res) => {
-  user.save((err, user) => {
+router.post('/cabinet/user/metrics', (req, res) => {
+  let newUser = new UserPersonalData(req.body);
+  console.log(req.body)
+  newUser.save((err, docs) => {
     if (err) {
       return console.log(err)
     };
-    console.log("Сохранен объект user", user);
+    console.log(docs)
+    res.json(docs);
   });
 })
 
@@ -46,4 +57,3 @@ router.get('/contacts', (req, res) => {
 })
 
 export default router
-

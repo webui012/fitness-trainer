@@ -1,24 +1,24 @@
 export default {
   avatarBlock: {
-    trainerAvatarSrc: '../../../client/src/images/about_image.jpg',
+    trainerAvatarSrc: 'https://goo.gl/6VPNJL',
     trainerName: 'Кирилл Худаев',
     trainerWeightCategory: 'бодибилдинг (до 95 кг)',
     trainerSocialIcons: [
       {
         id: 'xxtVGtbh4w',
-        data: '../../../client/src/images/social_icons/facebook.png',
+        data: 'https://cdn3.iconfinder.com/data/icons/social-icons-5/128/Facebook.png',
       },
       {
         id: '4DsSDyxMAV',
-        data: '../../../client/src/images/social_icons/skype.png',
+        data: 'https://cdn3.iconfinder.com/data/icons/capsocial-round/500/skype-128.png',
       },
       {
         id: 'MLeaipZ7FS',
-        data: '../../../client/src/images/social_icons/twitter.png',
+        data: 'https://cdn3.iconfinder.com/data/icons/capsocial-round/500/twitter-128.png',
       },
       {
         id: 'eJWf6qeuTG',
-        data: '../../../client/src/images/social_icons/Instagram.png',
+        data: 'https://cdn2.iconfinder.com/data/icons/instagram-new/512/instagram-round-flat-128.png',
       },
     ],
   },
@@ -109,7 +109,7 @@ export default {
     {
       id: '2tHxeWJLMG',
       data: {
-        imgSrc: '../../../client/src/images/about_achievement1.jpg',
+        imgSrc: 'https://goo.gl/z6HJu7',
         headerText: 'Абсолютный чемпион Olympia 2017',
         dateText: '18-21 августа 2012 г.',
       },
@@ -117,7 +117,7 @@ export default {
     {
       id: 'zxcA7YHHg1',
       data: {
-        imgSrc: '../../../client/src/images/about_achievement2.jpg',
+        imgSrc: 'https://goo.gl/bQNj44',
         headerText: '1-е место. Чемпионат Украины',
         dateText: '21 июля 2015 г.',
       },
@@ -125,7 +125,7 @@ export default {
     {
       id: 'j9unZwRJ6C',
       data: {
-        imgSrc: '../../../client/src/images/about_achievement3.jpg',
+        imgSrc: 'https://goo.gl/Jq4DhB',
         headerText: '1-е место Арнольд Классик',
         dateText: '7 апреля 2017 г.',
       },
