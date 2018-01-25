@@ -8,29 +8,29 @@ const userPersonalData = mongoose.Schema({
     name: {
       type: String,
       maxlength: 30,
-      required: true,
+      //required: true,
     },
     surname: {
       type: String,
       maxlength: 30,
-      required: true,
+      //required: true,
     },
     birth: {
       type: String,
-      maxlength: 10,
-      required: true,
+      maxlength: 12,
+      //required: true,
     },
     height: {
       type: Number,
       min: 130,
       max: 300,
-      required: true,
+      //required: true,
     },
     weight: {
       type: Number,
       min: 45,
       max: 250,
-      required: true,
+      //required: true,
     },
   },
   userAims: {

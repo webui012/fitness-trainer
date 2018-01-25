@@ -3,7 +3,6 @@ import mongoose from 'mongoose';
 import path from 'path';
 import dotenv from "dotenv";
 import bodyParser from 'body-parser';
-
 import personalData from './src/routes/personalData';
 
 const app = express();

@@ -33,10 +33,9 @@ class TransferData {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ ...data.data }),
+      body: JSON.stringify({...data}),
     })
       .then(response => {
-        console.log(`api:${response}`)
         return response.json();
       })
   }
