@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 
-const contactsSchema = mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
+const contactsSchema = mongoose.Schema({  
   title: String,
   fields: [
     {

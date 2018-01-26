@@ -13,7 +13,6 @@ router.get('/cabinet/user', (req, res) => {
   //   if (err) {
   //     return console.log(err)
   //   };
-  //   console.log(docs)
   //   res.json(docs);
   // });
     db.collection('personalData').findOne({}, (err, docs) => {
@@ -23,32 +22,56 @@ router.get('/cabinet/user', (req, res) => {
       res.json(docs);
     });
 });
+  
+let id;
 
 router.post('/cabinet/user/metrics', (req, res) => {
   let user;
+
   if (req.body.userId === 'personalData') {
-    user = { userPesonalData: req.body };
+    user = { userPesonalData: req.body };  
+    
+    UserPersonalData.create(user, (err, docs) => {
+      if (err) {
+        return console.log(err);
+      };
+      id = docs._id
+      res.json(docs);
+    }); 
   };
-  
+
   if (req.body.userId === 'measuredData') {
-    user = { userMetrics: req.body};
+    user = { userMetrics: req.body };
+
+    UserPersonalData.findByIdAndUpdate(id, { $set: user }, { new: true }, (err, docs) => {
+      if (err) {
+        return console.log(err);
+      };
+      res.json(docs);
+    });
   };
 
   if (req.body.userId === 'contraindications') {
     user = { userContraindications: req.body.contraindications };
+
+    UserPersonalData.findByIdAndUpdate(id, { $set: user }, { new: true }, (err, docs) => {
+      if (err) {
+        return console.log(err);
+      };
+      res.json(docs);
+    });
   } ;
 
   if (req.body.userId === 'aimsData') {
     user = { userAims: req.body.aims };
-  };
 
-  UserPersonalData.create(user, (err, docs) => {
-    if (err) {
-      return console.log(err);
-    };
-    console.log(docs);
-    res.json(docs);
-  });
+    UserPersonalData.findByIdAndUpdate(id, { $set: user }, { new: true }, (err, docs) => {
+      if (err) {
+        return console.log(err);
+      };
+      res.json(docs);
+    }); 
+  };  
 });
 
 router.get('/contacts', (req, res) => {

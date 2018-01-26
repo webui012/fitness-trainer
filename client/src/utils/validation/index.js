@@ -33,6 +33,17 @@ class Validation {
     return str;
   }
 
+  static checkMoreOneDash(str) {
+    if (str.search(/^[0-9]\--/) !== -1 || str.search(/-$/) !== -1) {
+      return VALIDATION_WARNING.notBeginAndEndDash;
+    }
+
+    if (str.match(/--/g) !== null && str.match(/-/g).length > 1) {
+      return VALIDATION_WARNING.notMoreOneDash;
+    };
+    return str;
+  }
+
   static checkRussianLettersAndDash(str) {
     if (/^[а-яё0-9\-]*$/i.test(str)) {
       return str;
