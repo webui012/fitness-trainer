@@ -18,7 +18,7 @@ const personalData = mongoose.Schema({
   aimsFormData: {
     nameField: String,
     selectName: String,
-    options: Array
+    options: Array,
   },
 });
 
