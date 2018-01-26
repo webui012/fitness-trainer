@@ -1,36 +1,29 @@
 import mongoose from 'mongoose';
 
 const userPersonalData = mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
-  userID: String,  
-  userPesonalData:{
+  userPesonalData: {
     avatar: String,
     name: {
       type: String,
       maxlength: 30,
-      required: true,
     },
     surname: {
       type: String,
       maxlength: 30,
-      required: true,
     },
     birth: {
       type: String,
-      maxlength: 10,
-      required: true,
+      maxlength: 12,
     },
     height: {
       type: Number,
       min: 130,
       max: 300,
-      required: true,
     },
     weight: {
       type: Number,
       min: 45,
       max: 250,
-      required: true,
     },
   },
   userAims: {
@@ -73,12 +66,13 @@ const userPersonalData = mongoose.Schema({
       max: 250,
     },
   },
-  userContraindications:{
+  userContraindications: {
     type: String,
     maxlength: 300,
   },
+},
+{
+  versionKey: false,
 });
 
-let UserPersonalData = mongoose.model('UserPersonalData', userPersonalData)
-
-export default UserPersonalData;
+export default mongoose.model('UserPersonalData', userPersonalData);

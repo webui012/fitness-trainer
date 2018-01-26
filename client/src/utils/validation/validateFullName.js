@@ -32,6 +32,16 @@ export default (value, fieldName, action, store) => {
   }
 
   previousValue = currentValue;
+  currentValue = Validation.checkMoreOneDash(previousValue);
+
+  if (previousValue !== currentValue) {
+    action({ [fieldName]: currentValue });
+    return;
+  } else if (storeName !== null) {
+    action({ [fieldName]: null });
+  }
+
+  previousValue = currentValue;
   currentValue = Validation.maxLength(previousValue, 30);
 
   if (previousValue !== currentValue) {

@@ -6,7 +6,8 @@ export default () =>
     .then(response => {
       if (response.status !== 200) {
         console.log(`Oops, problem. Status Code: ${response.status}`);
-        throw new Error('Bad request');
+        response.json().then(error => throw new Error(error.message));
+        return;
       }
 
       return response.json();

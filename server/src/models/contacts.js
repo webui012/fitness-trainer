@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 
 const contactsSchema = mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
   title: String,
   fields: [
     {
@@ -9,21 +8,6 @@ const contactsSchema = mongoose.Schema({
       icon: String,
       data: String,
     },
-    {
-      id: Number,
-      icon: String,
-      data: String,
-    },
-    {
-      id: Number,
-      icon: String,
-      data: String,
-    },
-    {
-      id: Number,
-      icon: String,
-      data: String,
-    }  ,
   ],
   mapData: {
     center: {
@@ -39,4 +23,3 @@ const contactsSchema = mongoose.Schema({
 });
 
 export default mongoose.model('Contacts', contactsSchema);
-
