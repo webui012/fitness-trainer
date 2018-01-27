@@ -69,33 +69,38 @@ class FullName extends Component {
       this.name.value,
       'name',
       this.props.aboutUsWarningMessage,
-      this.props.validation
+      this.props.validation,
+      this.props.fields[0].type
     );
     const surname = validate(
       this.surname.value,
       'surname',
       this.props.aboutUsWarningMessage,
-      this.props.validation
+      this.props.validation,
+      this.props.fields[1].type
     );
     const birth = validate(
       this.birth.value,
       'birth',
       this.props.aboutUsWarningMessage,
-      this.props.validation
+      this.props.validation,
+      this.props.fields[2].type
     );
 
     const height = validate(
       this.height.value,
       'height',
       this.props.aboutUsWarningMessage,
-      this.props.validation
+      this.props.validation,
+      this.props.fields[3].type
     );
 
     const weight = validate(
       this.weight.value,
       'weight',
       this.props.aboutUsWarningMessage,
-      this.props.validation
+      this.props.validation,
+      this.props.fields[4].type
     );
 
     const data = {

@@ -1,17 +1,22 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import { validationResult } from 'express-validator/check';
 import PersonalData from '../models/personalData';
 import UserPersonalData from '../models/sendPersonalData';
-import Contacts from '../models/contacts';
+import {
+  contraindications,
+  aims,
+  measuredData,
+  fullName
+} from '../utils/validationAboutUs';
+const validation = [aims, contraindications, fullName, measuredData];
 
 const router = express.Router();
 
-const db = mongoose.connection;
-
-router.get('/cabinet/user', (req, res) => {
-  PersonalData.findById({ '_id': '5a67caf8e2146233b4c226d9' || null }, (err, docs) => {
+router.get('/', (req, res) => {
+  PersonalData.findById({ _id: '5a67caf8e2146233b4c226d9' || null }, (err, docs) => {
     if (err) {
-      return console.log(err)
+      return console.log(err);
     };
 
     res.json(docs);
@@ -20,7 +25,11 @@ router.get('/cabinet/user', (req, res) => {
 
 let id;
 
-router.post('/cabinet/user/metrics', (req, res) => {
+router.post('/metrics', validation, (req, res) => {
+  if (!req.body) {
+    return res.sendStatus(400);
+  };
+
   let user;
 
   if (req.body.userId === 'personalData') {
@@ -49,6 +58,13 @@ router.post('/cabinet/user/metrics', (req, res) => {
   };
 
   if (req.body.userId === 'contraindications') {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(422).json({
+        message: `Цель тренировок: ${errors.mapped().aims.msg}`,
+      });
+    }
+
     user = { userContraindications: req.body.contraindications };
 
     UserPersonalData.findByIdAndUpdate(id, { $set: user }, { new: true }, (err, docs) => {
@@ -73,17 +89,8 @@ router.post('/cabinet/user/metrics', (req, res) => {
   };
 });
 
-router.get('/cabinet/user/metrics', (req, res) => {
+router.get('/metrics', (req, res) => {
   UserPersonalData.find({}, (err, docs) => {
-    if (err) {
-      return console.log(err);
-    };
-    res.json(docs);
-  });
-});
-
-router.get('/contacts', (req, res) => {
-  Contacts.findById({ _id: '5a6517cb3e5db1237443df19' }, (err, docs) => {
     if (err) {
       return console.log(err);
     };

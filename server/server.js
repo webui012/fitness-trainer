@@ -7,6 +7,7 @@ import bodyParser from 'body-parser';
 
 import personalData from './src/routes/personalData';
 import about from './src/routes/about';
+import contacts from './src/routes/contacts';
 
 const app = express();
 
@@ -27,12 +28,13 @@ app.all('/*', (req, res, next) => {
 
 app.use(bodyParser.json());
 
-app.use('/', personalData);
+app.use('/cabinet/user', personalData);
 app.use('/about', about);
+app.use('/contacts', contacts);
 
 app.use(function (err, req, res, next) {
-  console.error(err.stack)
-  res.status(500).send('Something broke!')
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
 });
 
 app.listen(process.env.PORT || 8080, () => console.log('Server successfully started on http://localhost:8080/'));

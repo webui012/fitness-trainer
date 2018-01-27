@@ -1,23 +1,31 @@
-import { ALL, ADMIN, ADD_USER, SEARCH_USER, USER_LOGOFF, ERROR_REDIRECT, CACHED_DATA } from '../constants';
+import {
+  ALL,
+  ADMIN,
+  ADD_USER,
+  SEARCH_USER,
+  USER_LOGOFF,
+  ERROR_REDIRECT,
+  CACHED_DATA
+} from '../constants';
 
 let getCachedData = localStorage.getItem(CACHED_DATA);
-if (!getCachedData){
+if (!getCachedData) {
   localStorage.setItem(CACHED_DATA, JSON.stringify(
     {
-     userRole: ALL,
-      admin:{
+      userRole: ALL,
+      admin: {
         username: 'admin',
         password1: 'admin111',
-        currentUserRole: ADMIN
-      }
+        currentUserRole: ADMIN,
+      },
     })
   );
-   getCachedData = localStorage.getItem(CACHED_DATA);
+  getCachedData = localStorage.getItem(CACHED_DATA);
 }
 
 const initialState = JSON.parse(getCachedData);
 
-export default function usersStoreReducer(state = initialState, action){
+export default function usersStoreReducer(state = initialState, action) {
   switch (action.type){
     case ADD_USER:
       localStorage.setItem(CACHED_DATA, JSON.stringify(

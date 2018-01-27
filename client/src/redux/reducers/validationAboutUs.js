@@ -1,6 +1,4 @@
-import {
-  PAGE_ABOUTUS_WARNING_MESSAGE,
-} from '../constants';
+import { ABOUTUS_WARNING_MESSAGE } from '../constants';
 
 const initialState = {
   avatar: null,
@@ -20,7 +18,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case PAGE_ABOUTUS_WARNING_MESSAGE:
+    case ABOUTUS_WARNING_MESSAGE:
       return { ...state, ...action.payload };
     default:
       return state;
