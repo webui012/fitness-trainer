@@ -22,5 +22,6 @@ const personalData = mongoose.Schema({
   },
 });
 
-export default mongoose.model('PersonalData', personalData);
+
+export default mongoose.model('PersonalData', personalData, 'personalData');
 

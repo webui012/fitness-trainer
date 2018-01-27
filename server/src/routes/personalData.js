@@ -9,18 +9,12 @@ const router = express.Router()
 const db = mongoose.connection;
 
 router.get('/cabinet/user', (req, res) => {
-  // PersonalData.findById({ _id: '5a67caf8e2146233b4c226d9' }, (err, docs) => {
-  //   if (err) {
-  //     return console.log(err)
-  //   };
-  //   res.json(docs);
-  // });
-    db.collection('personalData').findOne({}, (err, docs) => {
-      if (err) {
-        return console.log(err);
-      };
-      res.json(docs);
-    });
+  PersonalData.findById({ '_id': '5a67caf8e2146233b4c226d9' || null }, (err, docs) => {
+    if (err) {
+      return console.log(err)
+    };
+    res.json(docs);
+  });
 });
   
 let id;
