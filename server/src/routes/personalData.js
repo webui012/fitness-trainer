@@ -9,9 +9,9 @@ const router = express.Router();
 const db = mongoose.connection;
 
 router.get('/cabinet/user', (req, res) => {
-  db.collection('personalData').findOne({}, (err, docs) => {
+  PersonalData.findById({ '_id': '5a67caf8e2146233b4c226d9' || null }, (err, docs) => {
     if (err) {
-      return console.log(err);
+      return console.log(err)
     };
 
     res.json(docs);
@@ -71,6 +71,15 @@ router.post('/cabinet/user/metrics', (req, res) => {
       res.json(docs);
     });
   };
+});
+
+router.get('/cabinet/user/metrics', (req, res) => {
+  UserPersonalData.find({}, (err, docs) => {
+    if (err) {
+      return console.log(err);
+    };
+    res.json(docs);
+  });
 });
 
 router.get('/contacts', (req, res) => {

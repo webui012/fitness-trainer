@@ -1,21 +1,25 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
 import {
   ABOUTUS_ACTION_FAILURE,
-  PAGE_CONTACTS_GETDATA_REQUEST,
-  PAGE_CONTACTS_GETDATA_SUCCESS
+  CONTACTS_GETDATA_REQUEST,
+  CONTACTS_GETDATA_SUCCESS
 } from '../constants';
 import TransferData from '../Api/transferData';
+import constants from '../Api/constants';
 
-function * contactsGetDataAsync(action) {
+const { contacts, localhost8080 } = constants;
+const getDataFromServer = () => TransferData.dataLocalContacts(localhost8080, contacts);
+
+function* contactsGetDataAsync(action) {
   try {
-    const pageData = yield call(TransferData.dataLocalContacts);
+    const pageData = yield call(getDataFromServer);
 
-    yield put({ type: PAGE_CONTACTS_GETDATA_SUCCESS, payload: pageData });
+    yield put({ type: CONTACTS_GETDATA_SUCCESS, payload: pageData });
   } catch (e) {
     yield put({ type: ABOUTUS_ACTION_FAILURE });
   }
 }
 
-export default function * contactsGetData() {
-  yield takeEvery(PAGE_CONTACTS_GETDATA_REQUEST, contactsGetDataAsync);
+export default function* contactsGetData() {
+  yield takeEvery(CONTACTS_GETDATA_REQUEST, contactsGetDataAsync);
 }

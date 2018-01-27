@@ -1,22 +1,25 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
 import {
   ABOUTUS_ACTION_FAILURE,
-  PAGE_ABOUTUS_GETDATA_REQUEST,
-  PAGE_ABOUTUS_GETDATA_SUCCESS
+  ABOUTUS_GETDATA_REQUEST,
+  ABOUTUS_GETDATA_SUCCESS
 } from '../constants';
 import TransferData from '../Api/transferData';
+import constants from '../Api/constants';
+
+const { userCabinet, localhost8080 } = constants;
+const getDataFromServer = () => TransferData.dataServerUserCabinet(localhost8080, userCabinet);
 
 function* aboutUsGetDataAsync(action) {
   try {
-    const pageData = yield call(TransferData.dataServerUserCabinet);
+    const pageData = yield call(getDataFromServer);
 
-    yield put({ type: PAGE_ABOUTUS_GETDATA_SUCCESS, payload: pageData });
+    yield put({ type: ABOUTUS_GETDATA_SUCCESS, payload: pageData });
   } catch (e) {
     yield put({ type: ABOUTUS_ACTION_FAILURE });
   }
 }
 
 export default function* aboutUsGetData() {
-  yield takeEvery(PAGE_ABOUTUS_GETDATA_REQUEST, aboutUsGetDataAsync);
+  yield takeEvery(ABOUTUS_GETDATA_REQUEST, aboutUsGetDataAsync);
 }
-

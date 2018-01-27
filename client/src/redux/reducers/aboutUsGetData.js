@@ -1,7 +1,4 @@
-import {
-  PAGE_ABOUTUS_GETDATA_REQUEST,
-  PAGE_ABOUTUS_GETDATA_SUCCESS,
-} from '../constants';
+import { ABOUTUS_GETDATA_SUCCESS } from '../constants';
 
 const initialState = {
   data: null,
@@ -10,7 +7,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case PAGE_ABOUTUS_GETDATA_SUCCESS:
+    case ABOUTUS_GETDATA_SUCCESS:
       return { ...state, data: action.payload };
 
     default:

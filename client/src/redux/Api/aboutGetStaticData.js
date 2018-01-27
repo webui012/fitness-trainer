@@ -1,8 +1,5 @@
-import constants from './constants';
-const { about, localhost8080 } = constants;
-
-export default () =>
-  fetch(`${localhost8080}${about}`)
+export default (host, path) =>
+  fetch(`${host}${path}`)
     .then(response => {
       if (response.status !== 200) {
         console.log(`Oops, problem. Status Code: ${response.status}`);

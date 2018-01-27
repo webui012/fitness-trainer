@@ -27,3 +27,8 @@ export const validationAboutUs = {
   regExpJpgJpegPng: /(^$)|(\.jpg|\.jpeg|\.png)$/i,
   regExpRussianLettersAndDash: /^[а-яё\-]*$/i,
 };
+
+// routes constants
+export const routesConstants = {
+  messageAboutWarning: 'Данные отсутствуют в базе данных',
+}

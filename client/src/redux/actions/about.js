@@ -1,5 +1,5 @@
-import { PAGE_ABOUT_GETDATA_REQUEST } from '../constants';
+import { ABOUT_GETDATA_REQUEST } from '../constants';
 
 export const aboutGetDataRequest = () => ({
-  type: PAGE_ABOUT_GETDATA_REQUEST,
+  type: ABOUT_GETDATA_REQUEST,
 });

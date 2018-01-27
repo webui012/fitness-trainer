@@ -1,6 +1,6 @@
 import {
-  PAGE_ABOUT_GETDATA_REQUEST,
-  PAGE_ABOUT_GETDATA_SUCCESS
+  ABOUT_GETDATA_REQUEST,
+  ABOUT_GETDATA_SUCCESS
 } from '../constants';
 
 const initialState = {
@@ -10,10 +10,10 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case PAGE_ABOUT_GETDATA_REQUEST:
+    case ABOUT_GETDATA_REQUEST:
       return { ...state, loading: true };
 
-    case PAGE_ABOUT_GETDATA_SUCCESS:
+    case ABOUT_GETDATA_SUCCESS:
       return { ...state, loading: false, data: action.payload };
 
     default:

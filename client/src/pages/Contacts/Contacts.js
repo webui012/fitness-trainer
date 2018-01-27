@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Contacts.scss';
-import { Map, ContactsField} from 'Components';
+import { Map, ContactsField } from 'Components';
 import { connect } from 'react-redux';
 import { constantsGetData } from '../../redux/actions';
-import { List, Dimmer, Loader } from 'semantic-ui-react'
+import { List, Dimmer, Loader } from 'semantic-ui-react';
 
 class Contacts extends Component {
 
@@ -28,10 +28,10 @@ class Contacts extends Component {
           <div className='block contacts-block'>
             <span className='contacts-block-title'>{this.props.data.title}</span>
             <List>
-              {this.props.data.fields.map((f,i) =>
-                <List.Item className="s" key={i}>
-                  <List.Icon name={f.icon} />
-                  <List.Content>{f.data}</List.Content>
+              {this.props.data.fields.map(field =>
+                <List.Item className='s' key={field.id}>
+                  <List.Icon name={field.icon} />
+                  <List.Content>{field.data}</List.Content>
                 </List.Item>
               )}
             </List>
@@ -40,8 +40,8 @@ class Contacts extends Component {
         </div>
       </div>
       : <Dimmer active inverted>
-          <Loader inverted content='Загрузка' />
-        </Dimmer>
+        <Loader inverted content='Загрузка' />
+      </Dimmer>
     );
   }
 }

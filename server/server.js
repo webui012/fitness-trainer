@@ -2,19 +2,16 @@ import express from 'express';
 import mongoose from 'mongoose';
 mongoose.Promise = Promise;
 import path from 'path';
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 
 import personalData from './src/routes/personalData';
 import about from './src/routes/about';
-import sendFormsUsersMetrics from './src/routes/sendFormsUsersMetrics';
 
 const app = express();
 
-// Initialize dotenv config
 dotenv.config();
 
-// Connect server to ATLAS MONGODB with .env params
 mongoose.connect(
   process.env.MONGO_ATLAS_HOST +
   process.env.MONGO_ATLAS_PW +
@@ -28,18 +25,14 @@ app.all('/*', (req, res, next) => {
   next();
 });
 
-// Middleware for pargin results
 app.use(bodyParser.json());
 
-// Middlewares for endpoints
 app.use('/', personalData);
 app.use('/about', about);
-app.use('/cabinet/forms', about);
 
 app.use(function (err, req, res, next) {
   console.error(err.stack)
   res.status(500).send('Something broke!')
-})
+});
 
-// Listen PORT from .env config
-app.listen(process.env.PORT || 8080, () => console.log('Server successfully started on http://localhost:8080/'))
+app.listen(process.env.PORT || 8080, () => console.log('Server successfully started on http://localhost:8080/'));

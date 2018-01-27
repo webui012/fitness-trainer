@@ -1,8 +1,8 @@
 class TransferData {
 
   //Getting page data for the Contacts page
-  static dataLocalContacts() {
-    return fetch('http://localhost:8080/contacts')
+  static dataLocalContacts(host, path) {
+    return fetch(`${host}${path}`)
     .then( response => {
       if (response.status !== 200) {
         console.log(`Oops, problem. Status Code: ${response.status}`);
@@ -14,8 +14,8 @@ class TransferData {
   }
 
   //Getting page data for the cabinet/user page
-  static dataServerUserCabinet() {
-    return fetch('http://localhost:8080/cabinet/user')
+  static dataServerUserCabinet(host, path) {
+    return fetch(`${host}${path}`)
       .then(response => {
         if (response.status !== 200) {
           console.log(`Oops, problem. Status Code: ${response.status}`);
@@ -23,11 +23,10 @@ class TransferData {
         }
         return response.json();
       })
-      .then( data => data )
   }
 
-  static personalDataSendToServer(data) {
-    return fetch('http://localhost:8080/cabinet/user/metrics', {
+  static personalDataSendToServer(data, host, path) {
+    return fetch(`${host}${path}`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -35,9 +34,9 @@ class TransferData {
       },
       body: JSON.stringify({...data}),
     })
-      .then(response => {
+    .then(response => {
         return response.json();
-      })
+    })
   }
 }
 
