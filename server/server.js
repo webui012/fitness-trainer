@@ -4,6 +4,7 @@ import path from 'path';
 import dotenv from "dotenv";
 import bodyParser from 'body-parser';
 import personalData from './src/routes/personalData';
+import contacts from './src/routes/contacts';
 
 const app = express();
 
@@ -30,7 +31,8 @@ app.all('/*', (req, res, next) => {
 app.use(bodyParser.json());
 
 // Middlewares for endpoints
-app.use('/', personalData)
+app.use('/cabinet/user', personalData)
+app.use('/contacts', contacts)
 
 app.use(function (err, req, res, next) {
   console.error(err.stack)

@@ -23,11 +23,11 @@ class Validation {
   }
 
   static checkNotMoreOneDash(str) {
-    if (str.search(/^\--/) !== -1 || str.search(/-$/) !== -1) {
+    if (str.search(/^\-/) !== -1 || str.search(/-$/) !== -1) {
       return VALIDATION_WARNING.notBeginAndEndDash;
     }
 
-    if (str.match(/--/g) !== null && str.match(/-/g).length > 1) {
+    if (str.match(/-/g) !== null && str.match(/-/g).length > 1) {
       return VALIDATION_WARNING.notMoreOneDash;
     };
     return str;
@@ -45,7 +45,7 @@ class Validation {
   }
 
   static checkRussianLettersAndDash(str) {
-    if (/^[а-яё0-9\-]*$/i.test(str)) {
+    if (/^[а-яё\-]*$/i.test(str)) {
       return str;
     } else {
       return VALIDATION_WARNING.rusLettersAndDash;
@@ -53,7 +53,7 @@ class Validation {
   }
 
   static checkOnlyRussianLetters(str) {
-    if (/^[а-яё0-9]*$/i.test(str)) {
+    if (/^[а-яё]*$/i.test(str)) {
       return str;
     } else {
       return VALIDATION_WARNING.rusLettersAndDash;

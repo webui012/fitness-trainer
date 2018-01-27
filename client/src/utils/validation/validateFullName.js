@@ -1,12 +1,19 @@
 import Validation from './index';
 
-export default (value, fieldName, action, store) => {
+export default (value, fieldName, action, store, field) => {
   let storeName = store[fieldName];
   let previousValue = value;
+  let fields = field.type;
+  
+  if ( fields === 'text') {
+    console.log('boom')
+  };
+
   let currentValue = Validation.checkEmptyString(previousValue);
 
   if (previousValue !== currentValue) {
     action({ [fieldName]: currentValue });
+    console.log(field);
     return;
   } else if (storeName !== null) {
     action({ [fieldName]: null });
