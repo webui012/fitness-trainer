@@ -3,14 +3,14 @@ class TransferData {
   //Getting page data for the Contacts page
   static dataLocalContacts(host, path) {
     return fetch(`${host}${path}`)
-    .then( response => {
+    .then(response => {
       if (response.status !== 200) {
         console.log(`Oops, problem. Status Code: ${response.status}`);
         return;
       }
+
       return response.json();
-    })
-    .then( data => data )
+    });
   }
 
   //Getting page data for the cabinet/user page
@@ -21,8 +21,9 @@ class TransferData {
           console.log(`Oops, problem. Status Code: ${response.status}`);
           return;
         }
+
         return response.json();
-      })
+      });
   }
 
   static personalDataSendToServer(data, host, path) {
@@ -32,11 +33,16 @@ class TransferData {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({...data}),
+      body: JSON.stringify({ ...data }),
     })
     .then(response => {
-        return response.json();
-    })
+      if (response.status !== 200) {
+        console.log(`Oops, problem. Status Code: ${response.status}`);
+        return;
+      }
+
+      return response.json();
+    });
   }
 }
 

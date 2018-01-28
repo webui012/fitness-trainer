@@ -3,13 +3,6 @@ import mongoose from 'mongoose';
 import { validationResult } from 'express-validator/check';
 import PersonalData from '../models/personalData';
 import UserPersonalData from '../models/sendPersonalData';
-import {
-  contraindications,
-  aims,
-  measuredData,
-  fullName
-} from '../utils/validationAboutUs';
-const validation = [aims, contraindications, fullName, measuredData];
 
 const router = express.Router();
 
@@ -25,7 +18,7 @@ router.get('/', (req, res) => {
 
 let id;
 
-router.post('/metrics', validation, (req, res) => {
+router.post('/metrics', (req, res) => {
   if (!req.body) {
     return res.sendStatus(400);
   };
@@ -58,13 +51,6 @@ router.post('/metrics', validation, (req, res) => {
   };
 
   if (req.body.userId === 'contraindications') {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(422).json({
-        message: `Цель тренировок: ${errors.mapped().aims.msg}`,
-      });
-    }
-
     user = { userContraindications: req.body.contraindications };
 
     UserPersonalData.findByIdAndUpdate(id, { $set: user }, { new: true }, (err, docs) => {
