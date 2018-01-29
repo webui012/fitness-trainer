@@ -5,7 +5,7 @@ import getData from '../Api/serviceOrderGetData';
 function * serviceOrderAsync(action) {
   try {
     const data = yield call(getData);
-
+    console.log(data);
     yield put({ type: SUCCESS_ORDER_FORM, data });
   } catch (e) {
     yield put({ type: ACTION_FAILURE });

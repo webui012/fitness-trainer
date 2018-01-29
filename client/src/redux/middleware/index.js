@@ -5,6 +5,7 @@ import aboutUsGetData from './aboutUsGetData';
 import contactsGetData from './contactsGetData';
 import aboutGetStaticData from './aboutGetStaticData';
 import serviceOrderPageLoad from './serviceOrderPageLoad';
+import servicesPageLoad from './servicesPageLoad';
 
 export default function * rootSaga() {
   yield all([
@@ -14,5 +15,6 @@ export default function * rootSaga() {
     showSalesPage(),
     aboutGetStaticData(),
     serviceOrderPageLoad(),
+    servicesPageLoad(),
   ]);
 }

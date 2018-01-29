@@ -14,6 +14,7 @@ import contactsGetData from './contactsGetData';
 import validationAboutUs from './validationAboutUs';
 import usersStoreReducer from './usersStoreReducer';
 import serviceOrderForm from './serviceOrderForm';
+import servicesPage from './servicesPage';
 import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
@@ -31,6 +32,7 @@ const rootReducer = combineReducers({
   validationAboutUs,
   usersStoreReducer,
   sales,
+  servicesPage,
 
   form: formReducer,
 });

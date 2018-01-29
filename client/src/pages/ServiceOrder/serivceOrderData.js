@@ -28,7 +28,7 @@ export const ServiceOrderData = {
     options: [
       {
         value: 'default',
-        text: 'Выберите цель тернировок...'
+        text: 'Выберите цель тренировок...'
       },
       {
         value: 'musclepower',

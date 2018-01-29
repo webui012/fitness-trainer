@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field } from 'redux-form';
 import { renderField, renderSelectField } from '../../pages/ServiceOrder/renderField';
-import { checkAimSelected } from '../../utils/orderFormValidation';
+import { checkAimSelected, required } from '../../utils/orderFormValidation';
 import './AdditionalInfoFields.scss';
 
 const AdditionalInfoFields = ({ prevStep, step, invalid, data }) => {
@@ -14,7 +14,7 @@ const AdditionalInfoFields = ({ prevStep, step, invalid, data }) => {
       <Field
           name='trainingPurpose'
           component={renderSelectField}
-          validate={checkAimSelected}
+          validate={[ checkAimSelected, required ]}
       >
         {
           options.map(option => <option
@@ -25,7 +25,7 @@ const AdditionalInfoFields = ({ prevStep, step, invalid, data }) => {
         }
       </Field>
 
-      <div className='service-order-inputs'>
+      {/*      <div className='service-order-inputs'>
         {
           fields.map(field =>
             <Field key={field.id}
@@ -37,9 +37,9 @@ const AdditionalInfoFields = ({ prevStep, step, invalid, data }) => {
                 placeholder={field.placeholder}
             />)
         }
-      </div>
+      </div>*/}
 
-      <div>
+      <div className='service-order-additional-fields'>
         <button className='service-order-button' type='button' onClick={() => prevStep(step)}>
           Назад
         </button>

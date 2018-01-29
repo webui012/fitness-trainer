@@ -13,9 +13,8 @@ import {
   AdditionalInfoFields
 } from 'Components';
 import { reduxForm, isInvalid } from 'redux-form';
-// import {ServiceOrderData} from './serivceOrderData';
 
-import { Card, Icon, Image, Button, Header, Loader, Dimmer  } from 'semantic-ui-react'
+import { Card, Icon, Image, Button, Header, Loader, Dimmer } from 'semantic-ui-react'
 import './ServiceOrder.scss';
 
 class ServiceOrder extends Component {

@@ -1,9 +1,17 @@
-import {ServiceOrderData} from '../../pages/ServiceOrder/serivceOrderData';
-
 export default () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(ServiceOrderData);
-    }, 1000);
-  });
+  return fetch('http://localhost:8080/cabinet/user/service-order', {
+    method: 'GET',
+    headers : {
+      'Content-Type': 'application/json',
+       Accept: 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.status !== 200) {
+      console.log(`Oops, problem. Status Code: ${response.status}`);
+      throw new Error('Bad request');
+    }
+    return response.json();
+  })
+  .catch(error => console.log('error', error.message));
 }

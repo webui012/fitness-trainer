@@ -1,21 +1,51 @@
 import express from 'express';
-import mongoose from 'mongoose'; //mongoose for further db dev
-import path from 'path'; // local path for index.html
-import dotenv from "dotenv"; // use external config for PORT
-import bodyParser from 'body-parser'; // middleware for parsing
+import mongoose from 'mongoose';
+import path from 'path';
+import dotenv from 'dotenv';
+import bodyParser from 'body-parser';
 
-import users from './src/routes/users';  //routes for users actions (login ...)
+import getServiceOrderPage from './src/routes/serviceOrder';
+import getServicesPage from './src/routes/services';
 
 const app = express();
 
-dotenv.config(); // initialize dotenv config
+// Initialize dotenv config
+dotenv.config();
 
-// mongoose.connect()
+mongoose.Promise = global.Promise;
+// Connect server to ATLAS MONGODB with .env params
+mongoose.connect(
+  process.env.MONGO_ATLAS_HOST +
+  process.env.MONGO_ATLAS_PW +
+  process.env.MONGO_ATLAS_ROUTE,
+  { useMongoClient: true }
+);
 
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+
+// Enable CORS so that we can make HTTP request from webpack-dev-server
+app.all('/*', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
+// Middleware for parsing
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true}));
 
-app.use('/users', users) // middleware for users endpoints
+// API routes
+app.route('/cabinet/user/service-order')
+  //get service order page
+  .get(getServiceOrderPage);
 
-app.get("/*", (req, res) => res.sendFile(path.join(__dirname, "index.html")))
+app.route('/services')
+  .get(getServicesPage);
 
-app.listen(process.env.PORT) // listen PORT from .env config
+// Default route
+app.get('/*', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+
+// Listen PORT from .env config
+app.listen(process.env.PORT || 8080);
