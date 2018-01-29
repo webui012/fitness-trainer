@@ -15,7 +15,6 @@ class AdminCabinet extends Component {
 
   componentDidMount() {
     this.props.adminCabinetGetData();
-    console.log(this.props.data)
   };
 
   render() {

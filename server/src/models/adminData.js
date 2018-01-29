@@ -1,7 +1,12 @@
 import mongoose from 'mongoose';
 
 const adminDataSchema = mongoose.Schema({
-  rows: Array,
+  rows: {
+    status: String,
+    date: String,
+    weight: String,
+    user: String,
+  },
   users: Array,
 });
 

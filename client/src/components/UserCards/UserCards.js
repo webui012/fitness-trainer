@@ -7,28 +7,28 @@ import { Link } from 'react-router-dom'
 
 class UserCards extends Component {
   render() {
-    console.log(this.props.data)
     const users = this.props.data.users;
+    const rows = this.props.data.rows;
     return (
       <div className='user-cards-wrapper'>
         <Table basic='very' celled collapsing>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>Пользователь</Table.HeaderCell>
-              <Table.HeaderCell>Дата регистрации</Table.HeaderCell>
-              <Table.HeaderCell>Вес, кг</Table.HeaderCell>
-              <Table.HeaderCell>Статус</Table.HeaderCell>
+              <Table.HeaderCell>{rows.user}</Table.HeaderCell>
+              <Table.HeaderCell>{rows.date}</Table.HeaderCell>
+              <Table.HeaderCell>{rows.weight}</Table.HeaderCell>
+              <Table.HeaderCell>{rows.status}</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
 
           <Table.Body>
             {users.map((u, i) =>
-              <Table.Row>
+              <Table.Row key={i}>
                 <Table.Cell>
                   <Header as='h4' image>
                     <Image src={u.img} rounded size='mini' />
                     <Header.Content>
-                      <Link to='/user:id1' key='i'>{`${u.firstname} ${u.lastname}`}</Link>
+                      <Link to='/user:id1'>{`${u.firstname} ${u.lastname}`}</Link>
                       <Header.Subheader>{u.sport}</Header.Subheader>
                     </Header.Content>
                   </Header>
