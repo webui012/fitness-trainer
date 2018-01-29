@@ -1,9 +1,7 @@
-.InputFile {
+.input-file {
   width: 100%;
   position: relative;
-  box-shadow: 1px 3px 3px #545454;
   border-radius: 5px;
-
 
   .file-address {
     display: flex;
@@ -16,6 +14,7 @@
     background: #0f6605;
     color: #fff;
     margin-top: 20px;
+    box-shadow: 1px 3px 3px #545454;
   }
 
   .load-avatar {
@@ -30,5 +29,29 @@
     z-index: 1;
     margin-top: 17px;
     cursor: pointer;
+  }
+}
+
+.save-avatar {
+  width: 60%;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  margin-top: 10px;
+  background: #0f6605;
+  color: #fff;
+  cursor: pointer;
+  widows: 40%;
+
+  &:focus {
+    border: 1px solid #54a4d4;
+    box-shadow: 0 0 5px rgba(84, 164, 212, 1);
+  }
+
+  &:hover {
+    background: #fff;
+    color: #0f6605;
+    border: 1px solid #0f6605;
   }
 }

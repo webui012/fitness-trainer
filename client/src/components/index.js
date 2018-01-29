@@ -1,10 +1,10 @@
 export { default as Aims } from './Aims/Aims';
 export { default as AchievmentItem } from './AchievmentItem/AchievmentItem';
+export { default as Avatar } from './Avatar/Avatar';
 export { default as InfoField } from './InfoField/InfoField';
 export { default as AdditionalInfoFields } from './AdditionalInfoFields/AdditionalInfoFields';
 export { default as ContactsField } from './ContactsField/ContactsField';
 export { default as ErrorLoadingData } from './ErrorLoadingData/ErrorLoadingData';
-export { default as InputFile } from './InputFile/InputFile';
 export { default as Login } from './Login/Login';
 export { default as OrderItem } from './OrderItem/OrderItem';
 export { default as LoginForm } from './LoginForm/LoginForm';

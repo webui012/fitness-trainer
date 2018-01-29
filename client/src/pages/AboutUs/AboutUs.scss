@@ -5,6 +5,23 @@
   flex-direction: column;
   padding: 20px;
 
+  .avatar-fullname-wrap {
+    width: 63%;
+    display: flex;
+    margin: 0 auto;
+
+    .avatar-wrap {
+      width: 42%;
+      text-align: center;
+
+      .avatar {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+      }
+    }
+  }
+
   input[type='submit'],
   input[type='file'] {
     box-shadow: 1px 3px 3px #545454;

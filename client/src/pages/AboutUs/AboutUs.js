@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Aims, MeasuredData, ErrorLoadingData, Spinner } from 'Components';
+import { Aims, Avatar, MeasuredData, ErrorLoadingData, Spinner } from 'Components';
 import { Contraindications, FullName } from 'Containers';
 import { connect } from 'react-redux';
 import { aboutUsGetData, closeErrorMessage } from '../../redux/actions';
@@ -24,11 +24,13 @@ class AboutUs extends Component {
   render() {
     return (this.props.data
       ? <div className='about-us'>
-        <FullName
-            fields={this.props.data.fullNameFields}
-            path={this.props.data.fullNameAvatar}
-            formData={this.props.data.formData}
-        />
+        <div className='avatar-fullname-wrap'>
+          <Avatar path={this.props.data.fullNameAvatar} />
+          <FullName
+              fields={this.props.data.fullNameFields}
+              formData={this.props.data.formData}
+          />
+        </div>
         <div className='columns-wrap'>
           <MeasuredData dataFields={this.props.data.dataFields} />
           <div className='add-info-wrap'>

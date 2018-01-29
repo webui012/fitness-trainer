@@ -1,23 +1,10 @@
 .FullName {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  width: 63%;
+  margin-left: auto;
+  width: 49%;
 
-  .avatar-wrap {
-    width: 42%;
-    text-align: center;
-
-    .avatar {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-    }
-  }
   .personal-info-wrap {
-    width: 50%;
+    width: 100%;
 
     .full-name-form {
       align-items: center;
