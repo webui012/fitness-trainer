@@ -9,7 +9,7 @@ import TransferData from '../Api/transferData';
 function* aboutUsSendDataFormAsync(action) {
   try {
     const userData = yield call(TransferData.personalDataSendToServer, action.payload);
-    console.log(userData)
+
     yield put({ type: ABOUTUS_FORM_ABOUTUS_SUCCESS });
   } catch (e) {
     yield put({ type: ABOUTUS_ACTION_FAILURE });

@@ -8,7 +8,7 @@ import { UserCards } from 'Components';
 class AdminCabinet extends Component {
 
   static propTypes = {
-    data: PropTypes.object,
+    data: PropTypes.array,
     errorMessage: PropTypes.bool,
     adminCabinetGetData: PropTypes.func,
   };
