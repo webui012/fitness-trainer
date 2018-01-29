@@ -1,6 +1,5 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import { validationResult } from 'express-validator/check';
 import PersonalData from '../models/personalData';
 import UserPersonalData from '../models/sendPersonalData';
 
