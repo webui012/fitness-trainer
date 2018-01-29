@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import bodyParser from 'body-parser';
 import personalData from './src/routes/personalData';
 import contacts from './src/routes/contacts';
+import adminCabinet from './src/routes/adminData';
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.all('/*', (req, res, next) => {
 app.use(bodyParser.json());
 
 // Middlewares for endpoints
+app.use('/cabinet/admin', adminCabinet)
 app.use('/cabinet/user', personalData)
 app.use('/contacts', contacts)
 

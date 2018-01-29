@@ -11,7 +11,7 @@ class TransferData {
       return response.json();
     })
     .then( data => data )
-  }
+  };
 
   //Getting page data for the cabinet/user page
   static dataServerUserCabinet() {
@@ -24,8 +24,22 @@ class TransferData {
         return response.json();
       })
       .then( data => data )
-  }
+  };
 
+  //Getting adminCabinet data for the cabinet/admin page
+  static dataServerAdminCabinet() {
+    return fetch('http://localhost:8080/cabinet/admin')
+    .then(response => {
+      if (response.status !== 200) {
+        console.log(`Oops, problem. Status Code: ${response.status}`);
+        return;
+      }
+      return response.json();
+    })
+    .then(data => data)
+  };
+
+  //Dispathing form data for the cabinet/user page
   static personalDataSendToServer(data) {
     return fetch('http://localhost:8080/cabinet/user/metrics', {
       method: 'POST',
@@ -37,8 +51,9 @@ class TransferData {
     })
       .then(response => {
         return response.json();
-      })
+    })
   }
+
 }
 
 export default TransferData;

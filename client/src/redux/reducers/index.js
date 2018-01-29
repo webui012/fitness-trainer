@@ -13,6 +13,7 @@ import aboutUsGetData from './aboutUsGetData';
 import contactsGetData from './contactsGetData';
 import validationAboutUs from './validationAboutUs';
 import usersStoreReducer from './usersStoreReducer';
+import adminCabinetGetData from './adminCabinetGetData';
 
 import { orderForm } from './serviceOrderForm';
 import { reducer as formReducer } from 'redux-form';
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
   adminOrders,
   userOrders,
   ordersVisibilityFilter,
+  adminCabinetGetData,
   orderForm,
   aboutUsSendDataForm,
   aboutGetStaticData,

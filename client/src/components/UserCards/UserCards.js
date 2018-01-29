@@ -1,12 +1,14 @@
-import React, { PropTypes } from 'react';
-import UserCardsData from './UserCardsData';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+// import UserCardsData from './UserCardsData';
 import './UserCards.scss';
 import { Header, Image, Table } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
-const UserCards = () => {
-  const users = UserCardsData.users;
-
+class UserCards extends Component {
+  render() {
+    console.log(this.props.data)
+    const users = this.props.data.users;
     return (
       <div className='user-cards-wrapper'>
         <Table basic='very' celled collapsing>
@@ -26,7 +28,7 @@ const UserCards = () => {
                   <Header as='h4' image>
                     <Image src={u.img} rounded size='mini' />
                     <Header.Content>
-                      <Link to='/user:id1'>{`${u.firstname} ${u.lastname}`}</Link>
+                      <Link to='/user:id1' key='i'>{`${u.firstname} ${u.lastname}`}</Link>
                       <Header.Subheader>{u.sport}</Header.Subheader>
                     </Header.Content>
                   </Header>
@@ -38,8 +40,8 @@ const UserCards = () => {
             )}
           </Table.Body>
         </Table>
-    </div>
+      </div>
     )
   }
-
+}
 export default UserCards;
