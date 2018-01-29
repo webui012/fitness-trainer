@@ -1,4 +1,4 @@
-import { ADD_USER, SEARCH_USER, USER_LOGOFF, ERROR_REDIRECT } from '../constants';
+import { ADD_USER, SEARCH_USER, USER_LOGOFF, ERROR_REDIRECT, SIGNIN_SAVE_DATA_REQUEST, LOGIN_SEARCH_DATA_REQUEST} from '../constants';
 
 export const addUser = value => ({
   type: ADD_USER,
@@ -18,3 +18,13 @@ export const userLogoff = role => ({
 export const errorRedirect = () => ({
   type: USER_LOGOFF,
 })
+
+export const signUpRequest = value => ({
+  type: SIGNIN_SAVE_DATA_REQUEST,
+  payload: value,
+});
+
+export const logInRequest = value => ({
+  type: LOGIN_SEARCH_DATA_REQUEST,
+  payload: value,
+});

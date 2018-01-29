@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Spinner, NoUserFoundError } from 'Components';
 import LoginForm from '../../components/LoginForm/LoginForm';
-import { searchUser, errorRedirect } from '../../redux/actions';
+import { searchUser, errorRedirect, logInRequest } from '../../redux/actions';
 import { ADMIN, USER } from '../../redux/constants';
 import { Loader, Dimmer } from 'semantic-ui-react'
 import './LoginPage.scss';
@@ -76,23 +76,10 @@ class LoginPage extends Component{
 };
 
 const mapDispatchToProps = dispatch => ({
-  send: value => {
-        const sendData = () => dispatch => {
-          fetch('https://jsonplaceholder.typicode.com/posts')
-                  .then(function (response) {
-                    return response.status;
-                  })
-                    .then(function (status) {
-                        if (status === 200) {
-                          setTimeout(() => {
-                            dispatch(searchUser(value));
-                          }, 1000);
-                        }
-                      });
-        };
-
-        dispatch(sendData());
-      },
+  
+  send(value){
+    dispatch(logInRequest(value));
+  },
 
   errorRedirect: () => {
       dispatch(errorRedirect());

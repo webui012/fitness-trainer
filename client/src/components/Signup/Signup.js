@@ -5,13 +5,14 @@ import './Signup.scss';
 import { Field, reduxForm } from 'redux-form';
 import { validate } from './validate';
 import { renderField } from './renderField';
+import { USER} from '../../redux/constants';
 
 let Signup = props => {
   const { handleSubmit, routStatus } = props;
 
   //let routToLogin;
 
-  if (routStatus) {
+  if (routStatus == USER) {
     return <Redirect to='/cabinet/user' />;
   }
 

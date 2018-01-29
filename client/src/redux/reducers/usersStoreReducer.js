@@ -1,4 +1,4 @@
-import { ALL, ADMIN, ADD_USER, SEARCH_USER, USER_LOGOFF, ERROR_REDIRECT, CACHED_DATA } from '../constants';
+import { ALL, ADMIN, ADD_USER, SEARCH_USER, USER_LOGOFF, ERROR_REDIRECT, CACHED_DATA, SIGNIN_SAVE_DATA_SUCCESS, LOGIN_SEARCH_DATA_SUCCESS } from '../constants';
 
 let getCachedData = localStorage.getItem(CACHED_DATA);
 if (!getCachedData){
@@ -19,7 +19,7 @@ const initialState = JSON.parse(getCachedData);
 
 export default function usersStoreReducer(state = initialState, action){
   switch (action.type){
-    case ADD_USER:
+    case SIGNIN_SAVE_DATA_SUCCESS:
       localStorage.setItem(CACHED_DATA, JSON.stringify(
         {
           ...state,
@@ -33,7 +33,7 @@ export default function usersStoreReducer(state = initialState, action){
         userRole: action.value.currentUserRole
       }
 
-    case SEARCH_USER:
+    case LOGIN_SEARCH_DATA_SUCCESS:
       for(let key in state){
         if ((action.value.login === state[key].username ||
           action.value.login === state[key].email)
