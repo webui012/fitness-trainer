@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Spinner, NoUserFoundError } from 'Components';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import { searchUser, errorRedirect } from '../../redux/actions';
-import { ADMIN, USER } from '../../redux/constants';
+import { ADMIN, USER, ALL } from '../../redux/constants';
 import { Loader, Dimmer } from 'semantic-ui-react'
 import './LoginPage.scss';
 
@@ -62,11 +62,12 @@ class LoginPage extends Component{
 
     const { userLogin, role } = this.props;
     const { from } = this.props.location.state || { from: { pathname: this.condRedirect(role) } };
+    const { pageRole } = this.props.location.state || { pageRole: role };
 
     return (
       <div className='page-wrapper login-wrapper'>
         <div className='page-content login-content'>
-          <LoginForm onSubmit={this.onSubmitSignInData} from={from} role={role} />
+          <LoginForm onSubmit={this.onSubmitSignInData} from={from} role={role} pageRole={pageRole} />
           {noUser}
           {addSpinner}
         </div>

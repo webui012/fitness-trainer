@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { ALL, ADMIN, ADD_USER, SEARCH_USER, USER_LOGOFF, ERROR_REDIRECT, CACHED_DATA } from '../constants';
 
 let getCachedData = localStorage.getItem(CACHED_DATA);
@@ -14,6 +15,28 @@ if (!getCachedData){
   );
    getCachedData = localStorage.getItem(CACHED_DATA);
 }
+
+/*
+axios({
+  method: 'post',
+  url: 'http://localhost:8090/users/login',
+  data: {
+    name: 'dddddd',
+    email: 'ggggggggg'
+  },
+  withCredentials: false
+})
+.then(response => {
+        if (response.status === 200) {
+          console.log(response)
+          }
+        });
+
+*/
+
+axios.get('http://localhost:8090/users/user-role').then(response => {
+      console.log(response.data)
+    })
 
 const initialState = JSON.parse(getCachedData);
 
@@ -52,8 +75,7 @@ export default function usersStoreReducer(state = initialState, action){
             }
         }
       }
-      if ( state.userRole === ALL ) {
-        localStorage.setItem(CACHED_DATA, JSON.stringify(
+      localStorage.setItem(CACHED_DATA, JSON.stringify(
               {
                ...state,
              notFound: true
@@ -63,7 +85,6 @@ export default function usersStoreReducer(state = initialState, action){
             ...state,
              notFound: true
           }
-        }
 
     case USER_LOGOFF:
       for(let key in state){
