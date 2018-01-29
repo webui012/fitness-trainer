@@ -4,7 +4,7 @@ mongoose.Promise = Promise;
 import path from 'path';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
-
+import fileUpload from 'express-fileupload';
 import personalData from './src/routes/personalData';
 import about from './src/routes/about';
 import contacts from './src/routes/contacts';
@@ -25,6 +25,10 @@ app.all('/*', (req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
+
+app.use(fileUpload({
+  limits: { fileSize: 10 * 1024 * 1024 },
+}));
 
 app.use(bodyParser.json());
 

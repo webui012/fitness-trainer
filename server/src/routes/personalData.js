@@ -85,4 +85,21 @@ router.get('/metrics', (req, res) => {
   });
 });
 
+router.post('/metrics/avatar', (req, res) => {
+  if (!req.files) {
+    return res.sendStatus(400);
+  } else {
+    req.files.avatar.mv(imagePath(5757657, req.files.avatar.mimetype));
+    res.send('ok');
+  }
+});
+
+const imagePath = (reqSessionId, mimetype) => {
+  const pathArray = __dirname.split('/');
+  const pathToSrcFolder = pathArray.filter(el => el !== pathArray[pathArray.length - 1]).join('/');
+  const imageTypeArray = mimetype.split('/');
+  const imageType = imageTypeArray[imageTypeArray.length - 1];
+  return `${pathToSrcFolder}/utils/images/${reqSessionId}.${imageType}`;
+};
+
 export default router;

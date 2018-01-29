@@ -20,14 +20,6 @@ class Avatar extends Component {
 
   changeLocation = event => this.setState({ location: event.target.value });
 
-  showSubmitButton = (warningMessage, imageLocation) => {
-    if (imageLocation !== 'загрузите фото') {
-      return (
-        <input type='submit' className='save-avatar' value='Сохранить фото' />
-      );
-    }
-  };
-
   saveAvatarHandler = event => {
     event.preventDefault();
 
@@ -40,11 +32,9 @@ class Avatar extends Component {
 
     if (avatar) {
       const formData = new FormData(this.form);
+      console.log(this.file.files[0]);
       formData.append('avatar', this.file.files[0]);
-      const data = {
-        formData,
-        userId: 'avatar',
-      };
+      const data = { formData, userId: 'avatar' };
       this.props.aboutUsFormRequest(data);
     };
 
@@ -72,7 +62,8 @@ class Avatar extends Component {
               ref={input => this.file = input}
               onChange={this.changeLocation} />
         </div>
-        {this.showSubmitButton(this.props.validation.avatar, this.state.location)}
+        {this.state.location !== 'загрузите фото' ?
+          <input type='submit' className='save-avatar' value='Сохранить фото' /> : null}
       </form>
     );
   }
