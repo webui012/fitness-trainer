@@ -35,8 +35,8 @@ app.use(bodyParser.json())
 // Middleware for session
 app.use(session({
   secret: 'J4QPw^(RdsQ_$ubB',
-  resave: true,
-  saveUninitialized: true,
+  resave: false,
+  saveUninitialized: false,
   //cookie: { secure: true }
   store: new MongoStore({ mongooseConnection: mongoose.connection })
 }))
