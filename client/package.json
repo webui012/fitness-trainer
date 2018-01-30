@@ -4,7 +4,7 @@
   "description": "online resource of professional fitness trainer",
   "main": "index.js",
   "scripts": {
-    "start": "npm install & webpack-dev-server",
+    "start": "webpack-dev-server",
     "build": "webpack"
   },
   "repository": {

@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
         message: routesConstants.messageAboutWarning,
       });
     }
+
     res.json(...content);
   });
 });

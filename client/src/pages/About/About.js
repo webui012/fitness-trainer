@@ -37,7 +37,8 @@ class About extends Component {
         trainerAchievements,
         videoId,
       } = this.props.data;
-
+      // const image = require('../../../../assets/5757657.png');
+      // trainer avatar https://goo.gl/6VPNJL
       return (
         <section className='about'>
           <div className='container'>
