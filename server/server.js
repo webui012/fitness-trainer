@@ -9,6 +9,7 @@ import passport from 'passport';
 const MongoStore = require('connect-mongo')(session);
 
 import users from './src/routes/users';
+import accounts from './src/routes/accounts';
 
 const app = express();
 
@@ -54,7 +55,8 @@ app.use((req, res, next) => {
 
 
 // Middlewares for endpoints
-app.use('/users', users)
+app.use('/users', users);
+app.use('/accounts', accounts);
 
 // Default route
 app.get("/*", (req, res) => res.sendFile(path.join(__dirname, "index.html")))
