@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 
-const salesSchema = mongoose.Schema({
+const saleSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     img: String,
     expireDate: String,
     title: String,
-    description: String
+    description: String,
+    longDescription: Array
 })
-
-export default mongoose.model('Sales', userSchema)
+export default mongoose.model('Sale', saleSchema)
