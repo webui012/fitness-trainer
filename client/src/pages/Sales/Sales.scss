@@ -2,8 +2,9 @@
   // background-color: #e6e6e6;
   background: url('../../images/pexels-photo.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-attachment: fixed;
+  background-position: 50% 50%;
 }
 
 .sales-content {
@@ -12,14 +13,22 @@
 }
 
 .spinner-wrap{
-	color: red;
-	background: lightskyblue;
-	position: absolute;
-	/*z-index: 999999;*/
+  color: red;
+  background: lightskyblue;
+  position: absolute;
+  /*z-index: 999999;*/
 }
 
 .spinner-text {
-	position: relative;
-	top: 100px;
-	left: 500px;
+  position: relative;
+  top: 100px;
+  left: 500px;
+}
+
+.wrap-desc{
+  width: 800px;
+}
+
+.wrap-text{
+  margin: 20px;
 }
