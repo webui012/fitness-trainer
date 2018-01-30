@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-/*import SalesData from './SalesData';*/
 import './Sales.scss';
 import { waitSalesPage } from '../../redux/actions';
 import { Card, Icon, Image, Button, Header, Loader, Dimmer, Modal } from 'semantic-ui-react'
 
 class Sales extends Component {
-    // static propTypes = {
-    //   spinner: PropTypes.bool,
-    //   data: PropTypes.object,
-    //   waitSalesPage: PropTypes.func
-    // };
+    static propTypes = {
+      spinner: PropTypes.bool,
+      data: PropTypes.array,
+      waitSalesPage: PropTypes.func
+    };
 
     componentDidMount() {
         this.props.waitSalesPage();
@@ -34,8 +33,9 @@ class Sales extends Component {
                             <Image wrapped size='large' src={sale.img} />
                             <Header>{sale.title}</Header>
                             <div className="wrap-text">до {sale.expireDate}</div>
-                            <div className='wrap-desc'>{sale.longDescription.map((elem, index) => <p key={index} className="wrap-text">{elem.text}</p>)}</div>
-                           {/* <p className="wrap-desc">{sale.longDescription}</p>*/}
+                            <div className='wrap-desc'>{sale.longDescription.map((elem, index) =>
+                                <p key={index} className="wrap-text">{elem.text}</p>)}
+                            </div>
                         </Modal.Description>
                     </Modal.Content>
                 </Modal>
