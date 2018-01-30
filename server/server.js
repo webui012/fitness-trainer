@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import bodyParser from 'body-parser';
 
 import users from './src/routes/users';
+import orders from './src/routes/orders';
+import homepage from './src/routes/homepage';
 
 const app = express();
 
@@ -19,11 +21,19 @@ mongoose.connect(
   { useMongoClient: true }
 );
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // Middleware for pargin results
 app.use(bodyParser.json());
 
 // Middlewares for endpoints
 app.use('/users', users)
+app.use('/api/admin/orders', orders)
+app.use('/api/home', homepage)
 
 // Default route
 app.get("/*", (req, res) => res.sendFile(path.join(__dirname, "index.html")))

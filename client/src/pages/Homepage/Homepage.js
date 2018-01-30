@@ -19,12 +19,10 @@ class Homepage extends Component {
   render() {
     const { isLoading, data } = this.props
 
-    console.log(this.props.data)
-
     return (
       <div>
         { isLoading && <Dimmer active inverted><Loader/></Dimmer>}
-        {/* <Slider data={data.slider} />; */}
+        <Slider data={data.slider} />
       </div>
     );
   }

@@ -4,7 +4,9 @@ import { ORDERS_REQUEST, ORDERS_SUCCEEDED, ORDERS_FAILED } from '../constants';
 
 const initialState = {
   isLoading: false,
-  data: {}
+  data: {
+    orders: []
+  }
 }
 
 const adminOrders = (state = initialState, action) => {
@@ -29,6 +31,7 @@ const adminOrders = (state = initialState, action) => {
 
 const getAdminOrders = state => state.adminOrders.data.orders;
 export const getLoadingStatus = state => state.adminOrders.isLoading;
+
 const getOrdersVisibilityFilter = state => state.ordersVisibilityFilter;
 
 export const getAdminSelections = state => state.adminOrders.selections;

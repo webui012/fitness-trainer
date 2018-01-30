@@ -35,7 +35,8 @@ class AdminOrders extends Component {
   // Orders list render
   renderOrders = orders => {
     return orders.map((order, i) => {
-      let color = order.status == 'Оплачен' ? 'green' : 'red'
+      let color = order.status == 'Оплачено' ? 'green' : 'red'
+
       return (
         <Card key={i} color={color}>
           <Card.Content>
@@ -76,7 +77,9 @@ class AdminOrders extends Component {
     }
   };
 
-  componentDidMount = () => this.props.fetchOrders()
+  componentDidMount = () => {
+    this.props.fetchOrders()
+  }
 
   render() {
     const { orders, selections, isLoading } = this.props;
