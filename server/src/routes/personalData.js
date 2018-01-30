@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import PersonalData from '../models/personalData';
 import UserPersonalData from '../models/sendPersonalData';
+import { imagePath } from '../utils/helperFunction';
 
 const router = express.Router();
 
@@ -92,13 +93,5 @@ router.post('/metrics/avatar', (req, res) => {
     res.send('ok');
   }
 });
-
-const imagePath = (reqSessionId, mimetype) => {
-  const pathArray = __dirname.split('/');
-  const pathToSrcFolder = pathArray.filter(el => el !== pathArray[pathArray.length - 1]).join('/');
-  const imageTypeArray = mimetype.split('/');
-  const imageType = imageTypeArray[imageTypeArray.length - 1];
-  return `${pathToSrcFolder}/utils/images/${reqSessionId}.${imageType}`;
-};
 
 export default router;

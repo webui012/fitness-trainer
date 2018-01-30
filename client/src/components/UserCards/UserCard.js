@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Table } from 'reactstrap';
-import UserCardsData from './UserCardsData';
 import './UserCards.scss';
 
 const UserCard = props => {

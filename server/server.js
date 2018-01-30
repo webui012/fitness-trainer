@@ -1,6 +1,5 @@
 import express from 'express';
 import mongoose from 'mongoose';
-mongoose.Promise = Promise;
 import path from 'path';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
@@ -8,6 +7,8 @@ import fileUpload from 'express-fileupload';
 import personalData from './src/routes/personalData';
 import about from './src/routes/about';
 import contacts from './src/routes/contacts';
+import adminCabinet from './src/routes/adminData';
+mongoose.Promise = Promise;
 
 const app = express();
 
@@ -32,6 +33,7 @@ app.use(fileUpload({
 
 app.use(bodyParser.json());
 
+app.use('/cabinet/admin', adminCabinet);
 app.use('/cabinet/user', personalData);
 app.use('/about', about);
 app.use('/contacts', contacts);

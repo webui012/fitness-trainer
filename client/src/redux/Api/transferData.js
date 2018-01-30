@@ -26,6 +26,19 @@ class TransferData {
       });
   }
 
+  //Getting adminCabinet data for the cabinet/admin page
+  static dataServerAdminCabinet(host, path) {
+    return fetch(`${host}${path}`)
+    .then(response => {
+      if (response.status !== 200) {
+        console.log(`Oops, problem. Status Code: ${response.status}`);
+        return;
+      }
+
+      return response.json();
+    });
+  };
+
   static personalDataSendToServer(data, host, path) {
     if (data.userId === 'avatar') {
       return fetch(`${host}${path}/avatar`, {
