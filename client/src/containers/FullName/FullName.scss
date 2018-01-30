@@ -1,0 +1,56 @@
+.FullName {
+  display: flex;
+  margin-left: auto;
+  width: 49%;
+
+  .personal-info-wrap {
+    width: 100%;
+
+    .full-name-form {
+      align-items: center;
+      margin-top: 20px;
+
+      legend {
+        text-align: center;
+        margin: 5px 15px 25px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .info-filed-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      input , .submit-full-name {
+        width: 60%;
+        padding: 5px;
+        font-size: 16px;
+        border: 1px solid #999;
+        border-radius: 5px;
+        margin-top: 10px;
+        background: transparent;
+
+        &:focus {
+          border: 1px solid #54a4d4;
+          box-shadow: 0 0 5px rgba(84, 164, 212, 1);
+        }
+
+        &:hover {
+          background: #fff;
+          color: #0f6605;
+          border: 1px solid #0f6605;
+        }
+      }
+
+      .submit-full-name {
+        background: #0f6605;
+        color: #fff;
+        cursor: pointer;
+        widows: 40%;
+        margin-left: 25%;
+      }
+    }
+  }
+}

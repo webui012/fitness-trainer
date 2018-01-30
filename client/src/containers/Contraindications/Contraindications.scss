@@ -1,0 +1,48 @@
+.Contraindications {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 32px;
+  }
+
+  .text {
+    width: 100%;
+    height: 175px;
+    font-size: 16px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    margin-top: 20px;
+    background: transparent;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+
+    &:focus {
+      border: 1px solid #54a4d4;
+      box-shadow: 0 0 5px rgba(84, 164, 212, 1);
+    }
+  }
+
+  .submit-contraindications {
+    width: 40%;
+    align-self: flex-end;
+    background: #0f6605;
+    color: #fff;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+        
+    &:hover {
+      background: #fff;
+      color: #0f6605;
+      border: 1px solid #0f6605;
+    }
+  }
+}

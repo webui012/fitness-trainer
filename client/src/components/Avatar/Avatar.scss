@@ -1,0 +1,57 @@
+.input-file {
+  width: 100%;
+  position: relative;
+  border-radius: 5px;
+
+  .file-address {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    font-size: 16px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background: #0f6605;
+    color: #fff;
+    margin-top: 20px;
+    box-shadow: 1px 3px 3px #545454;
+  }
+
+  .load-avatar {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    position: absolute;
+    left: 0 ;
+    top: -20px;
+    opacity: 0;
+    z-index: 1;
+    margin-top: 17px;
+    cursor: pointer;
+  }
+}
+
+.save-avatar {
+  width: 60%;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  margin-top: 20px;
+  background: #0f6605;
+  color: #fff;
+  cursor: pointer;
+  widows: 40%;
+
+  &:focus {
+    border: 1px solid #54a4d4;
+    box-shadow: 0 0 5px rgba(84, 164, 212, 1);
+  }
+
+  &:hover {
+    background: #fff;
+    color: #0f6605;
+    border: 1px solid #0f6605;
+  }
+}
