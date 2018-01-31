@@ -5,7 +5,7 @@ import { checkAimSelected, required } from '../../utils/orderFormValidation';
 import './AdditionalInfoFields.scss';
 
 const AdditionalInfoFields = ({ prevStep, step, invalid, data }) => {
-  const { options, fields } = data;
+  const { options } = data;
 
   return (
     <div className='additional-info'>
@@ -25,20 +25,6 @@ const AdditionalInfoFields = ({ prevStep, step, invalid, data }) => {
         }
       </Field>
 
-      {/*      <div className='service-order-inputs'>
-        {
-          fields.map(field =>
-            <Field key={field.id}
-                name={field.name}
-                component={field.component}
-                validate={field.validate}
-                type={field.type}
-                label={field.label}
-                placeholder={field.placeholder}
-            />)
-        }
-      </div>*/}
-
       <div className='service-order-additional-fields'>
         <button className='service-order-button' type='button' onClick={() => prevStep(step)}>
           Назад
@@ -47,7 +33,6 @@ const AdditionalInfoFields = ({ prevStep, step, invalid, data }) => {
           Отправить
         </button>
       </div>
-
     </div>
   );
 };

@@ -7,14 +7,15 @@ import {
   serviceOrderPageLoad,
   serviceOrderPrevStep,
   serviceOrderPageRequest,
+  servcieOrderFormRequest
 } from '../../redux/actions';
 import {
   ServiceToogleFields,
   AdditionalInfoFields
 } from 'Components';
-import { reduxForm, isInvalid } from 'redux-form';
+import { reduxForm, isInvalid, formValueSelector } from 'redux-form';
 
-import { Card, Icon, Image, Button, Header, Loader, Dimmer } from 'semantic-ui-react'
+import { Loader, Dimmer } from 'semantic-ui-react'
 import './ServiceOrder.scss';
 
 class ServiceOrder extends Component {
@@ -24,6 +25,17 @@ class ServiceOrder extends Component {
     nextStep: PropTypes.func,
     invalid: PropTypes.bool,
     data: PropTypes.object,
+  };
+
+  formHandler = event => {
+    event.preventDefault();
+
+    const data = {
+      ...this.props.myValues,
+      client: this.props.email
+    };
+
+    this.props.orderFormRequest(data)
   };
 
   componentDidMount() {
@@ -55,8 +67,14 @@ class ServiceOrder extends Component {
         <div className='service-order'>
           <span className='progress-step'>Step {this.props.step}</span>
           <progress max={2} value={this.props.step} />
-          <form className='service-order-form'>
-            {this.chooseStep()}
+          <form onSubmit={this.formHandler} className='service-order-form'>
+            {
+              !this.props.sendData ?
+                this.chooseStep() :
+                <Dimmer active inverted>
+                  <Loader inverted content='Идет отправка данных' />
+                </Dimmer>
+            }
           </form>
         </div>
       : <Dimmer active inverted>
@@ -66,11 +84,15 @@ class ServiceOrder extends Component {
   }
 }
 
+const selector = formValueSelector('serviceOrder');
+
 const mapStateToProps = state => ({
   step: state.serviceOrderForm.step,
-  // initialValues: state.serviceOrderForm.data,
   data: state.serviceOrderForm.data,
-  invalid: isInvalid('service-order')(state),
+  sendData: state.serviceOrderFormDataSend.sendData,
+  email: state.usersStoreReducer.Bogdan.email,
+  invalid: isInvalid('serviceOrder')(state),
+  myValues: selector(state, 'serviceType', 'trainingPurpose')
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -78,10 +100,11 @@ const mapDispatchToProps = dispatch => ({
   prevStep: bindActionCreators(serviceOrderPrevStep, dispatch),
   pageLoad: bindActionCreators(serviceOrderPageLoad, dispatch),
   pageRequest: bindActionCreators(serviceOrderPageRequest, dispatch),
+  orderFormRequest: bindActionCreators(servcieOrderFormRequest, dispatch)
 });
 
 ServiceOrder = reduxForm({
-  form: 'service-order',
+  form: 'serviceOrder',
   destroyOnUnmount: false, // a unique name for this form
 })(ServiceOrder);
 

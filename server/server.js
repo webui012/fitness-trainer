@@ -4,7 +4,7 @@ import path from 'path';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 
-import getServiceOrderPage from './src/routes/serviceOrder';
+import { getServiceOrderPage, postOrder } from './src/routes/serviceOrder';
 import getServicesPage from './src/routes/services';
 
 const app = express();
@@ -39,7 +39,9 @@ app.use(bodyParser.urlencoded({ extended: true}));
 // API routes
 app.route('/cabinet/user/service-order')
   //get service order page
-  .get(getServiceOrderPage);
+  .get(getServiceOrderPage)
+  //create new order
+  .post(postOrder);
 
 app.route('/services')
   .get(getServicesPage);
