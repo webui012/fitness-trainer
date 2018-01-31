@@ -27,3 +27,8 @@ export const createNewOrder = data => {
   return axios.post('http://localhost:8080/api/orders', { data })
     .then(res => res.data)
 };
+
+export const fetchOrders = data => {
+  return axios.post('http://localhost:8080/api/orders', { data })
+    .then(res => res.data)
+};

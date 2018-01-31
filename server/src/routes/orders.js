@@ -13,12 +13,12 @@ router.use(authenticate);
 // Create order
 router.post('/', (req, res) => {
   // console.log(req.headers.Authorization)
-  console.log(req.header("Authorization"))
+  console.log(req.body)
   const order = new ServiceOrder({
     _id: mongoose.Types.ObjectId(),
     clientId: req.currentUser._id,
-    serviceType: "Правильное питание",
-    trainingPurpose: "Похудеть"
+    serviceType: req.serviceType,
+    trainingPurpose: req.trainingPurpose
   })
 
   order.save()
@@ -32,7 +32,7 @@ router.get("/", (req, res) => {
   // Find all orders with clientId == currentUser._id and send to client
   ServiceOrder.find({
     clientId: req.currentUser._id
-  }).then(todos => res.json(todos));
+  }).then(orders => res.json(orders));
 });
 
 export default router
