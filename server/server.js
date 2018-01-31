@@ -7,10 +7,10 @@ import bodyParser from 'body-parser';
 import auth from './src/routes/auth';
 import users from './src/routes/users';
 //import orders from './src/routes/orders';
-import sales from './src/routes/sales';
+import sales from './src/routes/pages/sales';
+import services from './src/routes/pages/services';
 
 import { getServiceOrderPage, postOrder } from './src/routes/serviceOrder';
-import getServicesPage from './src/routes/services';
 
 // Initialize dotenv config
 dotenv.config();
@@ -43,8 +43,6 @@ app.route('/cabinet/user/service-order')
   //create new order
   .post(postOrder);
 
-app.route('/services')
-  .get(getServicesPage);
 
 // Routes for user registration and auth
 app.use('/api/auth', auth);
@@ -53,8 +51,9 @@ app.use('/api/users', users)
 // Routes for orders
 //app.use('/api/orders', orders)
 
-// Routes for orders
+// Routes for PAGES
 app.use('/api/sales', sales)
+app.use('/api/services', services)
 
 // Default route
 app.get('/*', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));

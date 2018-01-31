@@ -1,5 +1,5 @@
 export default () => {
-  return fetch('http://localhost:8080/services', {
+  return fetch('http://localhost:8080/api/services', {
     method: 'GET',
     headers : {
       'Content-Type': 'application/json',
