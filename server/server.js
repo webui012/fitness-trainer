@@ -3,8 +3,16 @@ import mongoose from 'mongoose';
 import path from 'path';
 import dotenv from "dotenv";
 import bodyParser from 'body-parser';
+import session from 'express-session';
+import passport from 'passport';
+
+
+const MongoStore = require('connect-mongo')(session);
 
 import users from './src/routes/users';
+import accounts from './src/routes/accounts';
+
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
@@ -19,14 +27,43 @@ mongoose.connect(
   { useMongoClient: true }
 );
 
-// Middleware for pargin results
-app.use(bodyParser.json());
+// Middleware for parsing results
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+)
+app.use(bodyParser.json())
+
+// Middleware for session
+app.use(cookieParser())
+app.use(session({
+  secret: 'J4QPw^(RdsQ_$ubB',
+  resave: false,
+  saveUninitialized: false,
+  //cookie: { secure: true }
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
+}))
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Enable CORS so that we can make HTTP request from webpack-dev-server
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE');
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+
 
 // Middlewares for endpoints
-app.use('/users', users)
+app.use('/users', users);
+app.use('/accounts', accounts);
 
 // Default route
 app.get("/*", (req, res) => res.sendFile(path.join(__dirname, "index.html")))
 
 // Listen PORT from .env config
-app.listen(process.env.PORT || 8080)
+app.listen(process.env.PORT || 1312)
