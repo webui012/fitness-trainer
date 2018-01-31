@@ -44,4 +44,4 @@ userSchema.methods.toAuthJSON = function toAuthJSON() {
   };
 };
 
-export default mongoose.model('User', userSchema)
+export default mongoose.model('User', userSchema, 'usersJWT')
