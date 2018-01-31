@@ -3,12 +3,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import PersonalData from '../models/personalData';
 import UserPersonalData from '../models/sendPersonalData';
-<<<<<<< HEAD
 import User from '../models/user';
-import { imagePath } from '../utils/helperFunction';
-=======
 import { imagePath, pathToAssets, getFileExtension } from '../utils/helperFunction';
->>>>>>> d43273bb486fc171a41b88d6ce93ae6df3ee3596
 
 const router = express.Router();
 
@@ -44,7 +40,7 @@ router.post('/metrics', (req, res) => {
   //     res.json(docs);
   //   });
   // };
-  
+
   if (req.body.userId === 'personalData') {
     user = { userPesonalData: req.body };
 
@@ -119,20 +115,6 @@ router.post('/metrics/avatar', (req, res) => {
       });
     });
     req.files.avatar.mv(imagePath(5757657, req.files.avatar.mimetype));
-<<<<<<< HEAD
-    // User.find({id: req.user.id})
-    //   .then(user => {
-    //     if (!user.id) { throw new Error(); }
-    //
-    //     req.files.avatar.mv(imagePath(user.id, req.files.avatar.mimetype));
-    //     const imageTypeArray = req.files.avatar.mimetype.split('/');
-    //     const imageType = imageTypeArray[imageTypeArray.length - 1];
-    //     user.avatar.useravatar = `${user.id}.${imageType}`;
-    //     user.save();
-    //   })
-    //   .catch(err => res.sendStatus(500).json({ message: 'User not found' }));
-=======
->>>>>>> d43273bb486fc171a41b88d6ce93ae6df3ee3596
     res.send('ok');
   }
 });
