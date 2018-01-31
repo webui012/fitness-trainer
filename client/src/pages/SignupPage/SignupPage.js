@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import SignUpForm from '../../components/Forms/SignUpForm';
 import { connect } from 'react-redux';
-import { getLoadingStatus } from '../../redux/reducers/auth';
 import { userSignUp } from '../../redux/actions/auth';
+import { getLoadingStatus } from '../../redux/reducers/auth';
+import './SignupPage.scss';
 
 class SignupPage extends Component {
-  submit = data => {
-    this.props.userSignUp(data)
-  }
+  submit = data => this.props.userSignUp(data)
 
-  render = () =>
-     <SignUpForm isLoading={this.props.isLoading} submit={this.submit}/>
+  render = () => (
+    <div className='page-wrapper signup-wrapper'>
+      <div className='page-content signup-content'>
+        <SignUpForm isLoading={this.props.isLoading} submit={this.submit}/>
+      </div>
+    </div>
+  )
 }
 
 const mapStateToProps = state => ({
