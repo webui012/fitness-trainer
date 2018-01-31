@@ -3,13 +3,15 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 const userSchema = mongoose.Schema({
-<<<<<<< HEAD
-  email: { type: String, unique: false },
-  currentUserRole: { type: String, unique: false },
-  local: {
-    username: { type: String, unique: false, required: false },
-    password1: { type: String, unique: false, required: false }
-  }, 
+  _id: mongoose.Schema.Types.ObjectId,
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: { type: String, required: true },
+  isAdmin: { type: Boolean, required: true },
+  // Тут добавите поля типа: замеры, вес, т.д
   userAvatar: { type: String, default: null },
   userPesonalData: {
     name: {
@@ -79,22 +81,6 @@ const userSchema = mongoose.Schema({
     type: String,
     maxlength: 300,
   },
-},
-{
-  versionKey: false,
-});
-
-export default mongoose.model('User', userSchema, 'users')
-=======
-  _id: mongoose.Schema.Types.ObjectId,
-  email: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  password: { type: String, required: true },
-  isAdmin: { type: Boolean, required: true }
-  // Тут добавите поля типа: замеры, вес, т.д
 })
 
 // Check if password correct
@@ -128,4 +114,3 @@ userSchema.methods.toAuthJSON = function toAuthJSON() {
 };
 
 export default mongoose.model('User', userSchema, 'usersJWT')
->>>>>>> server-dev
