@@ -8,6 +8,8 @@ import personalData from './src/routes/personalData';
 import about from './src/routes/about';
 import contacts from './src/routes/contacts';
 import adminCabinet from './src/routes/adminData';
+import users from './src/routes/users';  //routes for users actions (login ...)
+import sales from './src/routes/sales';  //routes for users actions (login ...)
 mongoose.Promise = Promise;
 
 const app = express();
@@ -37,6 +39,8 @@ app.use('/cabinet/admin', adminCabinet);
 app.use('/cabinet/user', personalData);
 app.use('/about', about);
 app.use('/contacts', contacts);
+app.use('/users', users); // middleware for users endpoints
+app.use('/api/sales', sales); // middleware for users endpoints
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);
