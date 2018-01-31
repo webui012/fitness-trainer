@@ -5,8 +5,11 @@ import PersonalData from '../models/personalData';
 import UserPersonalData from '../models/sendPersonalData';
 import User from '../models/user';
 import { imagePath, pathToAssets, getFileExtension } from '../utils/helperFunction';
+import authenticate from "../middlewares/authenticate";
 
 const router = express.Router();
+
+router.use(authenticate);
 
 router.get('/', (req, res) => {
   PersonalData.findById({ _id: '5a67caf8e2146233b4c226d9' || null }, (err, docs) => {
@@ -18,7 +21,7 @@ router.get('/', (req, res) => {
   });
 });
 
-let id = '5a7117e55ce3db3039586237';
+let id;
 
 router.post('/metrics', (req, res) => {
   if (!req.body) {
@@ -26,20 +29,7 @@ router.post('/metrics', (req, res) => {
   };
 
   let user;
-
-  // if (req.body.userId === 'personalData') {
-  //   user = { userPesonalData: req.body };
-
-  //   User.create(user, (err, docs) => {
-  //     if (err) {
-  //       return console.log(err);
-  //     };
-
-  //     id = docs._id;
-  //     //id = req.user_id
-  //     res.json(docs);
-  //   });
-  // };
+  id = req.currentUser._id;
 
   if (req.body.userId === 'personalData') {
     user = { userPesonalData: req.body };
@@ -48,9 +38,6 @@ router.post('/metrics', (req, res) => {
       if (err) {
         return console.log(err);
       };
-
-      id = docs._id;
-      //id = req.user_id
       res.json(docs);
     });
   };

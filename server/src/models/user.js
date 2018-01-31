@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 const userSchema = mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
+  //_id: mongoose.Schema.Types.ObjectId,
   email: {
     type: String,
     required: true,
@@ -81,6 +81,9 @@ const userSchema = mongoose.Schema({
     type: String,
     maxlength: 300,
   },
+},
+{
+  versionKey: false,
 })
 
 // Check if password correct

@@ -32,7 +32,6 @@ class ServiceOrder extends Component {
 
     const data = {
       ...this.props.myValues,
-      client: this.props.email
     };
 
     this.props.orderFormRequest(data)
@@ -90,7 +89,6 @@ const mapStateToProps = state => ({
   step: state.serviceOrderForm.step,
   data: state.serviceOrderForm.data,
   sendData: state.serviceOrderFormDataSend.sendData,
-  email: state.usersStoreReducer.Bogdan.email,
   invalid: isInvalid('serviceOrder')(state),
   myValues: selector(state, 'serviceType', 'trainingPurpose')
 });

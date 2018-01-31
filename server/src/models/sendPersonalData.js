@@ -75,4 +75,4 @@ const userPersonalData = mongoose.Schema({
   versionKey: false,
 });
 
-export default mongoose.model('UserPersonalData', userPersonalData);
+export default mongoose.model('UserPersonalData', userPersonalData, 'userPersonalData');
