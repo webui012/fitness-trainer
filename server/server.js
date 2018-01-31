@@ -4,8 +4,11 @@ import path from 'path';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 
+
 import { getServiceOrderPage, postOrder } from './src/routes/serviceOrder';
 import getServicesPage from './src/routes/services';
+import users from './src/routes/users'; //routes for users actions (login ...)
+import sales from './src/routes/sales'; //routes for users actions (login ...)
 
 const app = express();
 
@@ -45,6 +48,9 @@ app.route('/cabinet/user/service-order')
 
 app.route('/services')
   .get(getServicesPage);
+
+app.use('/users', users) // middleware for users endpoints
+app.use('/api/sales', sales) // middleware for users endpoints
 
 // Default route
 app.get('/*', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));

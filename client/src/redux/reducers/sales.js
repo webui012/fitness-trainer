@@ -2,7 +2,7 @@ import { PAGE_SALES_WAIT, PAGE_SALES_SUCCESS } from '../constants';
 
 const initialState = {
   spinner: false,
-  data: null,
+  sales: null,
 };
 
 export default (state = initialState, action) => {
@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
       return { ...state, spinner: true };
 
     case PAGE_SALES_SUCCESS:
-      return { ...state, spinner: false, data: action.data };
+      return { ...state, spinner: false, sales: action.data };
 
     default:
       return state;
