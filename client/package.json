@@ -59,6 +59,9 @@
     "reselect": "^3.0.1",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.77.2",
+    "jwt-decode": "^2.2.0",
+    "axios": "^0.17.1",
+    "validator": "^9.2.0",
     "start": "^5.1.0"
   },
   "proxy": "http://localhost:8080"
