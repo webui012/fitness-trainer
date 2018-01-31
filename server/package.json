@@ -10,13 +10,14 @@
   "author": "webui012",
   "license": "ISC",
   "dependencies": {
-    "jsonwebtoken": "^7.4.3",
-    "bcrypt": "^1.0.3",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
+    "jsonwebtoken": "^7.4.3",
+    "moment-timezone": "^0.5.14",
     "mongoose": "^4.13.7",
     "nodemon": "^1.14.3"
   }

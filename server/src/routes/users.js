@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 
 const router = express.Router()
 
+// Create new user
 router.post('/signup', (req, res) => {
   // Get password and email data from body
   const { data } = req.body

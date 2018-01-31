@@ -15,13 +15,16 @@ export default (req, res, next) => {
       if (err) {
         res.status(401).json({ errors: "Invalid token" });
       } else {
+        // Find user with email from decoded token
         User.findOne({ email: decoded.email }).then(user => {
+          // Set current user to that user
           req.currentUser = user;
           next();
         });
       }
     });
   } else {
+    // If there is any token exists
     res.status(401).json({ errors: { global: "No token" } });
   }
 };
