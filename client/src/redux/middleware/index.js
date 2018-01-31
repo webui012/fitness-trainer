@@ -4,6 +4,9 @@ import aboutUsSendDataForm from './aboutUsSendDataForm';
 import aboutUsGetData from './aboutUsGetData';
 import contactsGetData from './contactsGetData';
 import aboutGetStaticData from './aboutGetStaticData';
+import serviceOrderPageLoad from './serviceOrderPageLoad';
+import servicesPageLoad from './servicesPageLoad';
+import serviceOrderFormSendData from './servicOrderFormSendData';
 
 import login from './auth/login';
 import logout from './auth/logout';
@@ -19,5 +22,8 @@ export default function * rootSaga() {
     contactsGetData(),
     showSalesPage(),
     aboutGetStaticData(),
+    serviceOrderPageLoad(),
+    servicesPageLoad(),
+    serviceOrderFormSendData(),
   ]);
 }
