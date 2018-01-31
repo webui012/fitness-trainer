@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { aboutUsFormRequest, aboutUsWarningMessage } from '../../redux/actions';
 import validateImageLoad from '../../utils/validation/validateLoadFile';
 import '../../utils/validation/validation.scss';
+import avatar from '../../images/about_us_avatar.png';
 import './Avatar.scss';
 
 class Avatar extends Component {
@@ -42,12 +43,18 @@ class Avatar extends Component {
   };
 
   render() {
+
+    // src={this.props.path.userAvatar ? require(`../../../../assets/${this.props.path.userAvatar}`) : avatar}
     return (
       <form
           className='avatar-wrap'
           onSubmit={this.saveAvatarHandler}
           ref={form => this.form = form}>
-        <img className='avatar' src={this.props.path.userAvatar} alt='user avatar' />
+        <img
+            className='avatar'
+            src={this.props.path.userAvatar ? this.props.path.userAvatar : avatar}
+            alt='user avatar'
+        />
         <div className='input-file'>
           <div className={this.state.location === 'загрузите фото' ?
             'file-address' : 'file-address-transparent'}>
@@ -79,31 +86,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Avatar);
-
-// import React from 'react';
-// import PropTypes from 'prop-types';
-// import './InputFile.scss';
-//
-// const InputFile = props => {
-//   const loadHandler = event => {
-//     props.location(event.target.value);
-//   };
-//
-//   return (
-//     <div className='InputFile'>
-//       <div className='file-address'>{props.inputValue}</div>
-//       {props.name !== null ?
-//         <span className='active-warning'>{props.name}</span> :
-//         <span className='not-active-warning'>{props.name}</span>}
-//       <input type='file' className='load-avatar' onChange={loadHandler}/>
-//     </div>
-//   );
-// };
-//
-// InputFile.propTypes = {
-//   inputValue: PropTypes.string.isRequired,
-//   name: PropTypes.string,
-//   location: PropTypes.func.isRequired,
-// };
-//
-// export default InputFile;
