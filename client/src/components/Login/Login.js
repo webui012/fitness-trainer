@@ -38,7 +38,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   userLogoff: () => {
-    dispatch(userLogoff());
+    dispatch({type: 'LOGOUT_USER_REQUEST'});
   },
 });
 

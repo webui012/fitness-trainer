@@ -20,52 +20,57 @@ const initialState = JSON.parse(getCachedData);
 export default function usersStoreReducer(state = initialState, action){
   switch (action.type){
     case SIGNIN_SAVE_DATA_SUCCESS:
-      localStorage.setItem(CACHED_DATA, JSON.stringify(
-        {
-          ...state,
-          [action.value.username]: action.value,
-          userRole: action.value.currentUserRole
-        })
-      );
+      // localStorage.setItem(CACHED_DATA, JSON.stringify(
+      //   {
+      //     ...state,
+      //     [action.value.username]: action.value,
+      //     userRole: action.value.currentUserRole
+      //   })
+      // );
     return {
         ...state,
-        [action.value.username]: action.value,
+        //[action.value.username]: action.value,
         userRole: action.value.currentUserRole
       }
 
     case LOGIN_SEARCH_DATA_SUCCESS:
-      for(let key in state){
-        if ((action.value.login === state[key].username ||
-          action.value.login === state[key].email)
-          && action.value.password === state[key].password1) {
-            localStorage.setItem(CACHED_DATA, JSON.stringify(
-              {
-                ...state,
-                [key]:{ ...state[key], signIn: true },
-                userRole: state[key].currentUserRole
-              })
-            );
-            return {
+    return {
               ...state,
-              [key]:{ ...state[key], signIn: true },
-              userRole: state[key].currentUserRole
-            }
-        }
+              //[key]:{ ...state[key], signIn: true },
+              userRole: action.value.user.currentUserRole
       }
-      if ( state.userRole === ALL ) {
-        localStorage.setItem(CACHED_DATA, JSON.stringify(
-              {
-               ...state,
-             notFound: true
-              })
-            );
-          return {
-            ...state,
-             notFound: true
-          }
-        }
+      // for(let key in state){
+      //   if ((action.value.login === state[key].username ||
+      //     action.value.login === state[key].email)
+      //     && action.value.password === state[key].password1) {
+      //       // localStorage.setItem(CACHED_DATA, JSON.stringify(
+      //       //   {
+      //       //     ...state,
+      //       //     [key]:{ ...state[key], signIn: true },
+      //       //     userRole: state[key].currentUserRole
+      //       //   })
+      //       // );
+      //       return {
+      //         ...state,
+      //         //[key]:{ ...state[key], signIn: true },
+      //         userRole: action.value.user.currentUserRole
+      //       }
+      //   }
+      // }
+      // if ( state.userRole === ALL ) {
+      //   // localStorage.setItem(CACHED_DATA, JSON.stringify(
+      //   //       {
+      //   //        ...state,
+      //   //      notFound: true
+      //   //       })
+      //   //     );
+      //     return {
+      //       ...state,
+      //        notFound: true
+      //     }
+      //   }
 
-    case USER_LOGOFF:
+    case "USER_LOGOFFd":
       for(let key in state){
         if (state[key].signIn){
           localStorage.setItem(CACHED_DATA, JSON.stringify(

@@ -11,6 +11,7 @@ import {logInSearchData} from '../Api/usersStorageApi';
 function* logInSearchDataAsync(action) {
   try {
     const value = yield call(logInSearchData, action.payload);
+    console.log(value);
     yield put({ type: LOGIN_SEARCH_DATA_SUCCESS, value });
   } catch (e) {
      console.log("fail");

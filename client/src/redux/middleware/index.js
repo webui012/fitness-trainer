@@ -6,6 +6,7 @@ import contactsGetData from './contactsGetData';
 import aboutGetStaticData from './aboutGetStaticData';
 import usersStorageAddUser from './usersStorageAddUser';
 import usersStorageSearchUser from './usersStorageSearchUser';
+import userLogout from './userLogout';
 
 export default function * rootSaga() {
   yield all([
@@ -16,5 +17,6 @@ export default function * rootSaga() {
     aboutGetStaticData(),
     usersStorageAddUser(),
     usersStorageSearchUser(),
+    userLogout(),
   ]);
 }

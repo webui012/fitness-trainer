@@ -11,6 +11,8 @@ import {SignInSaveData} from '../Api/usersStorageApi';
 function* signInSaveDataAsync(action) {
   try {
     const value = yield call(SignInSaveData, action.payload);
+    console.log("hello", value);
+    
     yield put({ type: SIGNIN_SAVE_DATA_SUCCESS, value });
   } catch (e) {
      console.log("fail");

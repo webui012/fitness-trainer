@@ -25,7 +25,7 @@ let LoginForm = props => {
             <label htmlFor='' className='input-label'>Логин</label>
             <Field
                 className='form'
-                name='login'
+                name='username'
                 type='text'
                 component={renderField}
                 label='Введите имя или адрес эл. почты' />
