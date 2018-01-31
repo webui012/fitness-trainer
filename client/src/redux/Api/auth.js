@@ -8,6 +8,5 @@ export const login = data =>
 export const logout = () =>
   axios.post(path + 'auth/logout').then(res => res.data)
 
-export const signup = data => {
+export const signup = data =>
   axios.post(path + 'users/signup', { data }).then(res => res.data.user)
-}

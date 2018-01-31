@@ -18,7 +18,7 @@ router.post('/signup', (req, res) => {
 
   // Hash password with user method
   user.setPassword(data.password)
-
+  
   // Save user to database and send it in JSON format to client
   user.save()
   .then(user => res.status(200).json({ user: user.toAuthJSON() }))
