@@ -20,19 +20,21 @@ export const SignInSaveData = data =>
       return response.json();
     });
 
-    
 
-export const logInSearchData = (data) =>
+
+export const logInSearchData = data =>
   // new Promise((resolve, reject) => {
   //   setTimeout(() => {
   //     resolve(data);
   //   }, 3000);
   // });
  fetch('http://localhost:1312/users/login', {
-      method: 'POST',
+      method: 'post',
+      mode: 'cors',
+      credentials: 'include',
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
+        //Accept: 'application/json',
+        'Content-type': 'application/json; charset=UTF-8',
       },
       body: JSON.stringify({ ...data }),
     })
@@ -53,8 +55,10 @@ export const logInSearchData = (data) =>
   //   }, 3000);
   // });
  fetch('http://localhost:1312/users/logout', {
-      method: 'POST',
-     
+      method: 'post',
+      mode: 'cors',
+      credentials: 'include',
+
       // headers: {
       //   Accept: 'application/json',
       //   'Content-Type': 'application/json',
