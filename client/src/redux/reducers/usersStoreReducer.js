@@ -33,11 +33,11 @@ axios({
         });
 
 */
-
+/*
 axios.get('http://localhost:8090/users/user-role').then(response => {
       console.log(response.data)
     })
-
+*/
 const initialState = JSON.parse(getCachedData);
 
 export default function usersStoreReducer(state = initialState, action){

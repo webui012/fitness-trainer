@@ -28,7 +28,7 @@ mongoose.connect(
 // Middleware for parsing results
 app.use(
   bodyParser.urlencoded({
-    extended: false
+    extended: true
   })
 )
 app.use(bodyParser.json())
@@ -61,7 +61,7 @@ app.use('/accounts', accounts);
 app.use('/authentication', authentication);
 
 // Default route
-app.get("/*", (req, res) => res.sendFile(path.join(__dirname, "index.html")))
+app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")))
 
 // Listen PORT from .env config
 app.listen(process.env.PORT || 8090)
