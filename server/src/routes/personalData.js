@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
   });
 });
 
-let id;
+let id = '5a7117e55ce3db3039586237';
 
 router.post('/metrics', (req, res) => {
   if (!req.body) {
@@ -26,15 +26,30 @@ router.post('/metrics', (req, res) => {
 
   let user;
 
+  // if (req.body.userId === 'personalData') {
+  //   user = { userPesonalData: req.body };
+
+  //   User.create(user, (err, docs) => {
+  //     if (err) {
+  //       return console.log(err);
+  //     };
+
+  //     id = docs._id;
+  //     //id = req.user_id
+  //     res.json(docs);
+  //   });
+  // };
+  
   if (req.body.userId === 'personalData') {
     user = { userPesonalData: req.body };
 
-    User.create(user, (err, docs) => {
+    User.findByIdAndUpdate(id, { $set: user }, { new: true },(err, docs) => {
       if (err) {
         return console.log(err);
       };
 
       id = docs._id;
+      //id = req.user_id
       res.json(docs);
     });
   };

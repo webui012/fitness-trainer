@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const UserCards = props => {
   const userData = props.data;
-  console.log(userData)
+
   return (
     <div className='user-cards-wrapper'>
       <Table basic='very' celled collapsing>
