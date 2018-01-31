@@ -90,6 +90,17 @@ router.post('/metrics/avatar', (req, res) => {
     return res.sendStatus(400);
   } else {
     req.files.avatar.mv(imagePath(5757657, req.files.avatar.mimetype));
+    // UserPersonalData.find({id: req.user.id})
+    //   .then(user => {
+    //     if (!user.id) { throw new Error(); }
+    //
+    //     req.files.avatar.mv(imagePath(user.id, req.files.avatar.mimetype));
+    //     const imageTypeArray = req.files.avatar.mimetype.split('/');
+    //     const imageType = imageTypeArray[imageTypeArray.length - 1];
+    //     user.avatar.useravatar = `${user.id}.${imageType}`;
+    //     user.save();
+    //   })
+    //   .catch(err => res.sendStatus(500).json({ message: 'User not found' }));
     res.send('ok');
   }
 });
