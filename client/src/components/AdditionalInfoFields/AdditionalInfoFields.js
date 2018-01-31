@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Field } from 'redux-form';
 import { renderField, renderSelectField } from '../../pages/ServiceOrder/renderField';
-import { checkAimSelected } from '../../utils/orderFormValidation';
+import { checkAimSelected, required } from '../../utils/orderFormValidation';
 import './AdditionalInfoFields.scss';
 
 const AdditionalInfoFields = ({ prevStep, step, invalid, data }) => {
-  const { options, fields } = data;
+  const { options } = data;
 
   return (
     <div className='additional-info'>
@@ -14,7 +14,7 @@ const AdditionalInfoFields = ({ prevStep, step, invalid, data }) => {
       <Field
           name='trainingPurpose'
           component={renderSelectField}
-          validate={checkAimSelected}
+          validate={[ checkAimSelected, required ]}
       >
         {
           options.map(option => <option
@@ -25,21 +25,7 @@ const AdditionalInfoFields = ({ prevStep, step, invalid, data }) => {
         }
       </Field>
 
-      <div className='service-order-inputs'>
-        {
-          fields.map(field =>
-            <Field key={field.id}
-                name={field.name}
-                component={field.component}
-                validate={field.validate}
-                type={field.type}
-                label={field.label}
-                placeholder={field.placeholder}
-            />)
-        }
-      </div>
-
-      <div>
+      <div className='service-order-additional-fields'>
         <button className='service-order-button' type='button' onClick={() => prevStep(step)}>
           Назад
         </button>
@@ -47,7 +33,6 @@ const AdditionalInfoFields = ({ prevStep, step, invalid, data }) => {
           Отправить
         </button>
       </div>
-
     </div>
   );
 };

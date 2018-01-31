@@ -6,7 +6,7 @@ import './MotivationSection.scss';
 
 const MotivationSection = props => {
   const { text, heading, sectionStyle, buttonStyle } = props.data;
-  const { isRegistered } = props;
+
   return (
     <section className={sectionStyle}>
       <h3>{heading}</h3>
@@ -17,10 +17,6 @@ const MotivationSection = props => {
   );
 };
 
-const mapStateToProps = state => ({
-  isRegistered: state.orderForm.isRegistered,
-});
-
 MotivationSection.propTypes = {
   data: PropTypes.shape({
     text: PropTypes.string,
@@ -30,4 +26,4 @@ MotivationSection.propTypes = {
   }),
 };
 
-export default connect(mapStateToProps)(MotivationSection);
+export default connect()(MotivationSection);

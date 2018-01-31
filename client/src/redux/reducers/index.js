@@ -13,8 +13,9 @@ import aboutUsGetData from './aboutUsGetData';
 import contactsGetData from './contactsGetData';
 import validationAboutUs from './validationAboutUs';
 import usersStoreReducer from './usersStoreReducer';
-
-import { orderForm } from './serviceOrderForm';
+import serviceOrderForm from './serviceOrderForm';
+import servicesPage from './servicesPage';
+import serviceOrderFormDataSend from './serviceOrderFormDataSend';
 import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
@@ -24,7 +25,7 @@ const rootReducer = combineReducers({
   adminOrders,
   userOrders,
   ordersVisibilityFilter,
-  orderForm,
+  serviceOrderForm,
   aboutUsSendDataForm,
   aboutGetStaticData,
   aboutUsGetData,
@@ -32,6 +33,8 @@ const rootReducer = combineReducers({
   validationAboutUs,
   usersStoreReducer,
   sales,
+  servicesPage,
+  serviceOrderFormDataSend,
   form: formReducer,
 });
 
