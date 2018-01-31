@@ -1,7 +1,7 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
-const bcrypt = require('bcryptjs')
-mongoose.promise = Promise
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const bcrypt = require('bcryptjs');
+mongoose.promise = Promise;
 
 // Define userSchema
 const userSchema = new Schema({
@@ -16,10 +16,10 @@ const userSchema = new Schema({
 // Define schema methods
 userSchema.methods = {
   checkPassword: function(inputPassword) {
-    return bcrypt.compareSync(inputPassword, this.local.password1)
+    return bcrypt.compareSync(inputPassword, this.local.password1);
   },
   hashPassword: plainTextPassword => {
-    return bcrypt.hashSync(plainTextPassword, 12)
+    return bcrypt.hashSync(plainTextPassword, 12);
   }
 }
 
@@ -29,13 +29,12 @@ userSchema.pre('save', function(next) {
     console.log('=======NO PASSWORD PROVIDED=======')
     next()
   } else {
-    this.local.password1 = this.hashPassword(this.local.password1)
+    this.local.password1 = this.hashPassword(this.local.password1);
     next()
   }
-  // this.password = this.hashPassword(this.password)
-  // next()
 })
 
 // Create reference to User & export
-const User = mongoose.model('User', userSchema)
+const User = mongoose.model('User', userSchema);
+
 module.exports = User

@@ -2,7 +2,7 @@ import { put, takeEvery, call } from 'redux-saga/effects';
 
 import {
   LOGIN_SEARCH_DATA_REQUEST,
-  LOGIN_SEARCH_DATA_SUCCESS,
+  AUTHENTICATION_SET_FETCHED_ROLE,
   // ACTION_FAILURE
 } from '../constants';
 
@@ -12,7 +12,7 @@ function* logInSearchDataAsync(action) {
   try {
     const value = yield call(logInSearchData, action.payload);
     console.log(value);
-    yield put({ type: LOGIN_SEARCH_DATA_SUCCESS, value });
+    yield put({ type: AUTHENTICATION_SET_FETCHED_ROLE, value });
   } catch (e) {
      console.log("fail");
   }

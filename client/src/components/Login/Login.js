@@ -33,7 +33,7 @@ Login.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  userRole: state.usersStoreReducer.userRole,
+  userRole: state.authentication.userRole,
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -62,11 +62,12 @@ class LoginPage extends Component{
 
     const { userLogin, role } = this.props;
     const { from } = this.props.location.state || { from: { pathname: this.condRedirect(role) } };
+    const { pageRole } = this.props.location.state || { pageRole: role };
 
     return (
       <div className='page-wrapper login-wrapper'>
         <div className='page-content login-content'>
-          <LoginForm onSubmit={this.onSubmitSignInData} from={from} role={role} />
+          <LoginForm onSubmit={this.onSubmitSignInData} from={from} role={role} pageRole={pageRole} />
           {noUser}
           {addSpinner}
         </div>
@@ -76,7 +77,7 @@ class LoginPage extends Component{
 };
 
 const mapDispatchToProps = dispatch => ({
-  
+
   send(value){
     dispatch(logInRequest(value));
   },
@@ -87,7 +88,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  role: state.usersStoreReducer.userRole,
+  role: state.authentication.userRole,
   noUser: state.usersStoreReducer.notFound,
 });
 

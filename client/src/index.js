@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { App } from 'Containers';
+import { App, Authentication } from 'Containers';
 import { createStore, applyMiddleware } from 'redux';
 import reducer from './redux/reducers';
 import { Provider } from 'react-redux';
@@ -17,7 +17,9 @@ sagaMiddleware.run(rootSaga);
 
 render(
   <Provider store={store}>
-    <App />
+    <Authentication>
+      <App />
+    </Authentication>
   </Provider>,
   document.getElementById('root')
 );

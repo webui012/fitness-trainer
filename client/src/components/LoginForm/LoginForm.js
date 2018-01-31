@@ -8,9 +8,9 @@ import { ALL } from '../../redux/constants';
 import { Checkbox } from 'semantic-ui-react'
 
 let LoginForm = props => {
-   const { role, from, handleSubmit } = props;
+   const { role, from, handleSubmit, pageRole } = props;
 
-  if (role !== ALL) {
+  if (role !== ALL && role === pageRole) {
     return (
       <Redirect to={from} />
     );

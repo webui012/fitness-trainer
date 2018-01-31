@@ -31,7 +31,7 @@ const App = props => {
                 <Redirect to={
                   {
                     pathname: '/login',
-                    state: { from: props.location },
+                    state: { from: props.location, pageRole: role },
                   }
                 } />
               )
@@ -48,7 +48,7 @@ App.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  userRole: state.usersStoreReducer.userRole,
+  userRole: state.authentication.userRole,
 });
 
 export default connect(mapStateToProps)(App);
