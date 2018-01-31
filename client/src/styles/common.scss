@@ -61,3 +61,10 @@ body {
   flex-grow: 1;
   position: relative;
 }
+
+.login-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}

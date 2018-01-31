@@ -7,18 +7,17 @@ const router = express.Router()
 // Create new user (/api/users/signup)
 router.post('/signup', (req, res) => {
   // Get password and email data from body
-  // const { data } = req.body
-  const { email, password } = req.body
+  const { data } = req.body
 
   // Create new user with user schema
   const user = new User({
     _id: mongoose.Types.ObjectId(),
-    email: email,
+    email: data.email,
     isAdmin: false
   })
 
   // Hash password with user method
-  user.setPassword(password)
+  user.setPassword(data.password)
 
   // Save user to database and send it in JSON format to client
   user.save()

@@ -18,8 +18,8 @@ function* login(action) {
       });
 
       user.isAdmin ?
-        history.push('/admin') :
-        history.push('/dashboard')
+        history.push('/cabinet/admin') :
+        history.push('/cabinet/user')
    } catch (e) {
       yield put({ type: LOGIN_FAILED, message: e.message });
    }

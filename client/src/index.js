@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './redux/middleware';
+import { LOGIN_SUCCEEDED } from './redux/constants';
 
 import history from './history';
 import decode from "jwt-decode";
@@ -21,23 +22,23 @@ const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window
 sagaMiddleware.run(rootSaga);
 
 // Authorization
-// if (localStorage.JWT) {
-//   const payload = decode(localStorage.JWT);
-//
-//   const user = {
-//     email: payload.email,
-//     isAdmin: payload.isAdmin,
-//     token: localStorage.JWT
-//   };
-//
-//   setAuthorizationHeader(localStorage.JWT);
-//
-//   store.dispatch({
-//     type: LOGIN_SUCCEEDED,
-//     isLoading: false,
-//     user
-//   });
-// }
+if (localStorage.JWT) {
+  const payload = decode(localStorage.JWT);
+
+  const user = {
+    email: payload.email,
+    isAdmin: payload.isAdmin,
+    token: localStorage.JWT
+  };
+
+  setAuthorizationHeader(localStorage.JWT);
+
+  store.dispatch({
+    type: LOGIN_SUCCEEDED,
+    isLoading: false,
+    user
+  });
+}
 
 render(
   <Router history={history}>

@@ -1,7 +1,10 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
-import  { getAuthenticationStatus, getAdminStatus } from '../reducers/auth';
+import {
+  getAuthenticationStatus,
+  getAdminStatus
+} from '../redux/reducers/auth';
 
 const UserRoute = (
   { isAuthenticated,

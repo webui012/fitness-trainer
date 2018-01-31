@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-const path = 'api/auth'
+const path = 'http://localhost:8080/api/'
 
 export const login = data =>
-  axios.post(path + '/login', { data }).then(res => res.data.user)
+  axios.post(path + 'auth/login', { data }).then(res => res.data.user)
 
 export const logout = () =>
-  axios.post(path + '/logout').then(res => res.data)
+  axios.post(path + 'auth/logout').then(res => res.data)
 
 export const signup = data => {
-  axios.post('api/users/signup', { data }).then(res => res.data.user)
+  axios.post(path + 'users/signup', { data }).then(res => res.data.user)
 }
