@@ -4,6 +4,7 @@ import path from 'path';
 import dotenv from "dotenv";
 import bodyParser from 'body-parser';
 
+import auth from './src/routes/auth';
 import users from './src/routes/users';
 import sales from './src/routes/sales';
 
@@ -22,7 +23,9 @@ app.all('/*', (req, res, next) => {
 
 app.use(bodyParser.json());
 
-app.use('/users', users)
+app.use('/api/auth', auth);
+app.use('/api/users', users)
+
 app.use('/api/sales', sales)
 
 app.get("/*", (req, res) => res.sendFile(path.join(__dirname, "index.html")))
