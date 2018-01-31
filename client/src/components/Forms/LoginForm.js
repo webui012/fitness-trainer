@@ -20,9 +20,9 @@ class LoginForm extends Component {
   validate = data => {
     const errors = {}
     if (!Validator.isEmail(data.email))
-      errors.email = 'Invalid email!'
+      errors.email = 'Некорректный email!'
     if (!data.password)
-      errors.password = 'Cant be blank!'
+      errors.password = 'Это поле не может быть пустым!'
     return errors
   }
 
@@ -52,7 +52,7 @@ class LoginForm extends Component {
         {errors.global && <Message negative header={errors.global} />}
 
         <Form.Field error={!!errors.email}>
-          <label htmlFor='email'>Email</label>
+          <label htmlFor='email'> Email</label>
           <input
             onChange={this.handleChange}
             id='email'
@@ -65,7 +65,7 @@ class LoginForm extends Component {
         </Form.Field>
 
         <Form.Field error={!!errors.password}>
-          <label htmlFor='password'> Password</label>
+          <label htmlFor='password'> Пароль</label>
           <input
             onChange={this.handleChange}
             id='password'
@@ -77,19 +77,19 @@ class LoginForm extends Component {
           {errors.password && <InlineError text={errors.password}/>}
         </Form.Field>
 
-        <Button primary type='submit'>Submit</Button>
+        <Button primary type='submit'>Войти</Button>
 
         <List>
           <List.Item>
             <List.Icon name='question' />
             <List.Content>
-              <Link to='/reset'>Forgot password</Link>
+              <Link to='/reset'>Забыли пароль?</Link>
             </List.Content>
           </List.Item>
           <List.Item>
             <List.Icon name='add user' />
             <List.Content>
-              <Link to='/signup'>Create Account</Link>
+              <Link to='/signup'>Создать аккаунт</Link>
             </List.Content>
           </List.Item>
         </List>

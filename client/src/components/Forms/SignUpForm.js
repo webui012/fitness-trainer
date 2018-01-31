@@ -59,9 +59,9 @@ class SignupForm extends Component {
     const errors = {};
     const { pw_confirmed } = this.state
 
-    if (!isEmail(data.email)) errors.email = 'Invalid email';
-    if (!data.password) errors.password = 'Cant be blank!';
-    if (!pw_confirmed) errors.pw_confirm = 'Passwords do not match!';
+    if (!isEmail(data.email)) errors.email = 'Некорректный email!';
+    if (!data.password) errors.password = 'Это поле не может быть пустым!';
+    if (!pw_confirmed) errors.pw_confirm = 'Пароли не совпадают';
 
     return errors;
   };
@@ -74,7 +74,7 @@ class SignupForm extends Component {
         <legend className='signup-form-caption page-title'>Создать аккаунт</legend>
         {this.props.isLoading && <Dimmer active inverted><Loader/></Dimmer>}
         <Form.Field error={!!errors.email}>
-          <label htmlFor='email'>Email</label>
+          <label htmlFor='email'> Email</label>
           <input
             type='email'
             id='email'
@@ -87,7 +87,7 @@ class SignupForm extends Component {
         </Form.Field>
 
         <Form.Field error={!!errors.password}>
-          <label htmlFor='password'>Password</label>
+          <label htmlFor='password'> Пароль</label>
           <input
             type='password'
             id='password'
@@ -112,11 +112,11 @@ class SignupForm extends Component {
           <Checkbox
             checked={isChecked}
             onChange={this.onToggle}
-            label='I agree to the Privacy Policy'
+            label='Я согласен с условиями использования'
           />
         </Form.Field>
 
-        <Button disabled={!isChecked} primary>Sign Up</Button>
+        <Button disabled={!isChecked} primary>Регистрация</Button>
       </Form>
     );
   }
