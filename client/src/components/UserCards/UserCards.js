@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const UserCards = props => {
   const userData = props.data;
-
+  console.log(userData)
   return (
     <div className='user-cards-wrapper'>
       <Table basic='very' celled collapsing>
@@ -22,7 +22,7 @@ const UserCards = props => {
             <Table.Row key={i}>
               <Table.Cell>
                 <Header as='h4' image>
-                  <Image src={u.userPesonalData.avatar} rounded size='mini' />
+                  <Image src={u.userAvatar} rounded size='mini' />
                   <Header.Content>
                     <Link to='/user:id1'>{`${u.userPesonalData.name} ${u.userPesonalData.surname}`}</Link>
                     <Header.Subheader>{u.userPesonalData.birth}</Header.Subheader>

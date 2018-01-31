@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import PersonalData from '../models/personalData';
 import UserPersonalData from '../models/sendPersonalData';
+import User from '../models/user';
 import { imagePath } from '../utils/helperFunction';
 
 const router = express.Router();
@@ -28,7 +29,7 @@ router.post('/metrics', (req, res) => {
   if (req.body.userId === 'personalData') {
     user = { userPesonalData: req.body };
 
-    UserPersonalData.create(user, (err, docs) => {
+    User.create(user, (err, docs) => {
       if (err) {
         return console.log(err);
       };
@@ -41,7 +42,7 @@ router.post('/metrics', (req, res) => {
   if (req.body.userId === 'measuredData') {
     user = { userMetrics: req.body };
 
-    UserPersonalData.findByIdAndUpdate(id, { $set: user }, { new: true }, (err, docs) => {
+    User.findByIdAndUpdate(id, { $set: user }, { new: true }, (err, docs) => {
       if (err) {
         return console.log(err);
       };
@@ -53,7 +54,7 @@ router.post('/metrics', (req, res) => {
   if (req.body.userId === 'contraindications') {
     user = { userContraindications: req.body.contraindications };
 
-    UserPersonalData.findByIdAndUpdate(id, { $set: user }, { new: true }, (err, docs) => {
+    User.findByIdAndUpdate(id, { $set: user }, { new: true }, (err, docs) => {
       if (err) {
         return console.log(err);
       };
@@ -65,7 +66,7 @@ router.post('/metrics', (req, res) => {
   if (req.body.userId === 'aimsData') {
     user = { userAims: req.body.aims };
 
-    UserPersonalData.findByIdAndUpdate(id, { $set: user }, { new: true }, (err, docs) => {
+    User.findByIdAndUpdate(id, { $set: user }, { new: true }, (err, docs) => {
       if (err) {
         return console.log(err);
       };
@@ -76,11 +77,10 @@ router.post('/metrics', (req, res) => {
 });
 
 router.get('/metrics', (req, res) => {
-  UserPersonalData.find({}, (err, docs) => {
+  User.find({}, (err, docs) => {
     if (err) {
       return console.log(err);
     };
-
     res.json(docs);
   });
 });
@@ -90,7 +90,7 @@ router.post('/metrics/avatar', (req, res) => {
     return res.sendStatus(400);
   } else {
     req.files.avatar.mv(imagePath(5757657, req.files.avatar.mimetype));
-    // UserPersonalData.find({id: req.user.id})
+    // User.find({id: req.user.id})
     //   .then(user => {
     //     if (!user.id) { throw new Error(); }
     //

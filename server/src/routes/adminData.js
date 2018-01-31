@@ -1,12 +1,13 @@
 import express from 'express';
 import mongoose from 'mongoose';
 //import AdminCabinet from '../models/adminData';
-import UserPersonalData from '../models/sendPersonalData';
+// import UserPersonalData from '../models/sendPersonalData';
+import User from '../models/user'
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  UserPersonalData.find({}, (err, docs) => {
+  User.find({}, (err, docs) => {
     if (err) {
       return console.log(err);
     };

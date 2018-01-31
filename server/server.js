@@ -39,7 +39,7 @@ app.use('/cabinet/admin', adminCabinet);
 app.use('/cabinet/user', personalData);
 app.use('/about', about);
 app.use('/contacts', contacts);
-app.use('/users', users); // middleware for users endpoints
+//app.use('/users', users); // middleware for users endpoints
 app.use('/api/sales', sales); // middleware for users endpoints
 
 app.use(function (err, req, res, next) {
