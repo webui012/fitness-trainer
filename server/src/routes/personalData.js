@@ -9,14 +9,10 @@ import authenticate from "../middlewares/authenticate";
 
 const router = express.Router();
 
-<<<<<<< HEAD
 router.use(authenticate);
-=======
-// router.use(authenticate);
->>>>>>> d691e95cedbb5921b2b75e7d2961bb64b00ba70a
 
 router.get('/', (req, res) => {
-  // console.log(req.currentUser);
+
   PersonalData.findById({ _id: '5a67caf8e2146233b4c226d9' || null }, (err, docs) => {
     if (err) {
       return console.log(err);
