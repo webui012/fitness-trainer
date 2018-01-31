@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
+import auth from './auth';
 import sales from './sales';
 import header from './header';
 import footer from './footer';
@@ -18,6 +19,7 @@ import { orderForm } from './serviceOrderForm';
 import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
+  auth,
   header,
   footer,
   homePage,
