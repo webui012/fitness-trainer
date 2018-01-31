@@ -2,9 +2,9 @@
   "name": "fitness-app-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha -- Test/*.js",
     "start": "nodemon --exec babel-node -- ./server.js"
   },
   "author": "webui012",
@@ -14,10 +14,15 @@
     "babel-preset-env": "^1.6.1",
     "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
-    "express": "^4.16.2",
+    "express": "^4.13.4",
     "express-fileupload": "^0.4.0",
     "express-validator": "^4.3.0",
     "mongoose": "^4.13.7",
     "nodemon": "^1.14.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.4.5"
   }
 }
