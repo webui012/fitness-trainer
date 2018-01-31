@@ -18,7 +18,6 @@ export const getServiceOrderPage = () => {
 
 export const createNewOrder = data => {
   // We create the newGame object to be posted to the server
-  console.log('opa');
   const newOrder = {...data};
   return fetch('http://localhost:8080/cabinet/user/service-order', {
     headers: {
