@@ -1,4 +1,4 @@
-.service{
+.service {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -10,24 +10,29 @@
   width: 50%;
   height: 47.5vh;
   color: #ffffff;
+
+  cursor: pointer;
+  background-color: rgba(48, 48, 48, 0.95);
+  background-blend-mode: soft-light;
   z-index: 2;
 
-  h2{
+  h2 {
     font-size: 36px;
     padding: 10px 0;
   }
-  p{
+  p {
     font-size: 18px;
   }
 
-  &:hover{
+  &:hover {
     cursor: pointer;
-    background-color: rgba(48, 48, 48, 0.95);
+    //background-color: rgba(48, 48, 48, 0.98);
     background-blend-mode: soft-light;
     transform-style: preserve-3d;
     transform: scale(1.05);
     transition: 400ms linear;
     z-index: 1;
     overflow: hidden;
+    color: #ffd700;
   }
 }

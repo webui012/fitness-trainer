@@ -6,14 +6,14 @@ import Api from '../Api/sales';
 
 
 function * pageDataLoadingAsync(action) {
-    try {
-        const data = yield call(Api.dataSales);
+  try {
+    const data = yield call(Api.dataSales);
 
-        yield delay(1500);
-        yield put({ type: PAGE_SALES_SUCCESS, data });
+    yield delay(1500);
+    yield put({ type: PAGE_SALES_SUCCESS, data });
     } catch (e) {
-        yield put({ type: 'ERROR' });
-    }
+      yield put({ type: 'ERROR' });
+  }
 }
 
 export default function * showSalesPage() {

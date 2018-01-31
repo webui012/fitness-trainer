@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
+import auth from './auth';
 import sales from './sales';
 import header from './header';
 import footer from './footer';
@@ -14,11 +15,14 @@ import contactsGetData from './contactsGetData';
 import validationAboutUs from './validationAboutUs';
 import usersStoreReducer from './usersStoreReducer';
 import adminCabinetGetData from './adminCabinetGetData';
-
-import { orderForm } from './serviceOrderForm';
+// import { orderForm } from './serviceOrderForm';
+import serviceOrderForm from './serviceOrderForm';
+import servicesPage from './servicesPage';
+import serviceOrderFormDataSend from './serviceOrderFormDataSend';
 import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
+  auth,
   header,
   footer,
   homePage,
@@ -26,7 +30,7 @@ const rootReducer = combineReducers({
   adminCabinetGetData,
   userOrders,
   ordersVisibilityFilter,
-  orderForm,
+  serviceOrderForm,
   aboutUsSendDataForm,
   aboutGetStaticData,
   aboutUsGetData,
@@ -34,6 +38,8 @@ const rootReducer = combineReducers({
   validationAboutUs,
   usersStoreReducer,
   sales,
+  servicesPage,
+  serviceOrderFormDataSend,
   form: formReducer,
 });
 

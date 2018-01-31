@@ -12,7 +12,7 @@ import {
 } from '../utils/constants';
 
 // checking required field
-const required = value =>
+export const required = value =>
   value ? undefined : require;
 
 // checking for negative number

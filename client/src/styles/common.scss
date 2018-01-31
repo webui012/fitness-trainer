@@ -59,5 +59,13 @@ body {
 .layout-content {
   padding-top: 54px;
   flex-grow: 1;
-  position: relative;
+  //position: relative;
+}
+
+.login-content,
+.signup-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
 }

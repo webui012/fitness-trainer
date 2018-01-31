@@ -5,14 +5,17 @@ import PropTypes from 'prop-types';
 import {
   serviceOrderNextStep,
   serviceOrderPageLoad,
-  serviceOrderPrevStep
+  serviceOrderPrevStep,
+  serviceOrderPageRequest,
+  servcieOrderFormRequest
 } from '../../redux/actions';
 import {
   ServiceToogleFields,
   AdditionalInfoFields
 } from 'Components';
-import { reduxForm, isInvalid } from 'redux-form';
-import data from './serivceOrderData';
+import { reduxForm, isInvalid, formValueSelector } from 'redux-form';
+
+import { Loader, Dimmer } from 'semantic-ui-react'
 import './ServiceOrder.scss';
 
 class ServiceOrder extends Component {
@@ -24,21 +27,32 @@ class ServiceOrder extends Component {
     data: PropTypes.object,
   };
 
+  formHandler = event => {
+    event.preventDefault();
+
+    const data = {
+      ...this.props.myValues,
+      client: this.props.email
+    };
+
+    this.props.orderFormRequest(data)
+  };
+
   componentDidMount() {
-    this.props.pageLoad(data.orderFormData);
+    this.props.pageRequest();
   }
 
   chooseStep = () => {
     switch (this.props.step) {
       case 1:
         return <ServiceToogleFields
-            data={data.serviceToogleFields}
+            data={this.props.data.serviceToogleFields}
             step={this.props.step}
             nextStep={this.props.nextStep}
             invalid={this.props.invalid} />;
       case 2:
         return <AdditionalInfoFields
-            data={data.additionalInfoFields}
+            data={this.props.data.additionalInfoFields}
             step={this.props.step}
             prevStep={this.props.prevStep}
             invalid={this.props.invalid} />;
@@ -49,31 +63,48 @@ class ServiceOrder extends Component {
 
   render() {
     return (
-      <div className='service-order'>
-        <span className='progress-step'>Step {this.props.step}</span>
-        <progress max={2} value={this.props.step} />
-        <form className='service-order-form'>
-          {this.chooseStep()}
-        </form>
-      </div>
+      this.props.data ?
+        <div className='service-order'>
+          <span className='progress-step'>Step {this.props.step}</span>
+          <progress max={2} value={this.props.step} />
+          <form onSubmit={this.formHandler} className='service-order-form'>
+            {
+              !this.props.sendData ?
+                this.chooseStep() :
+                <Dimmer active inverted>
+                  <Loader inverted content='Идет отправка данных' />
+                </Dimmer>
+            }
+          </form>
+        </div>
+      : <Dimmer active inverted>
+        <Loader inverted content='Загрузка' />
+      </Dimmer>
     );
   }
 }
 
+const selector = formValueSelector('serviceOrder');
+
 const mapStateToProps = state => ({
-  step: state.orderForm.step,
-  initialValues: state.orderForm.data,
-  invalid: isInvalid('service-order')(state),
+  step: state.serviceOrderForm.step,
+  data: state.serviceOrderForm.data,
+  sendData: state.serviceOrderFormDataSend.sendData,
+  email: state.usersStoreReducer.Bogdan.email,
+  invalid: isInvalid('serviceOrder')(state),
+  myValues: selector(state, 'serviceType', 'trainingPurpose')
 });
 
 const mapDispatchToProps = dispatch => ({
   nextStep: bindActionCreators(serviceOrderNextStep, dispatch),
   prevStep: bindActionCreators(serviceOrderPrevStep, dispatch),
   pageLoad: bindActionCreators(serviceOrderPageLoad, dispatch),
+  pageRequest: bindActionCreators(serviceOrderPageRequest, dispatch),
+  orderFormRequest: bindActionCreators(servcieOrderFormRequest, dispatch)
 });
 
 ServiceOrder = reduxForm({
-  form: 'service-order',
+  form: 'serviceOrder',
   destroyOnUnmount: false, // a unique name for this form
 })(ServiceOrder);
 

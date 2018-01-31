@@ -5,14 +5,27 @@ import aboutUsGetData from './aboutUsGetData';
 import contactsGetData from './contactsGetData';
 import aboutGetStaticData from './aboutGetStaticData';
 import adminCabinetGetData from './adminCabinetGetData';
+import serviceOrderPageLoad from './serviceOrderPageLoad';
+import servicesPageLoad from './servicesPageLoad';
+import serviceOrderFormSendData from './servicOrderFormSendData';
+
+import login from './auth/login';
+import logout from './auth/logout';
+import signup from './auth/signup';
 
 export default function * rootSaga() {
   yield all([
+    login(),
+    logout(),
+    signup(),
     aboutUsSendDataForm(),
     aboutUsGetData(),
     contactsGetData(),
     showSalesPage(),
     aboutGetStaticData(),
     adminCabinetGetData(),
+    serviceOrderPageLoad(),
+    servicesPageLoad(),
+    serviceOrderFormSendData(),
   ]);
 }

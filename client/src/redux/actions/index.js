@@ -5,3 +5,5 @@ export * from './about';
 export * from './serviceOrderForm';
 export * from './login';
 export * from './adminCabinet';
+export * from './auth';
+export * from './servicesPage';
