@@ -17,19 +17,16 @@ import {
   NotFound
 } from 'Pages';
 
-import { ALL, USER, ADMIN } from '../../redux/constants';
-
 import MainLayout from '../../layouts/MainLayout';
 import LoginLayout from '../../layouts/LoginLayout';
 import UserLayout from '../../layouts/UserLayout';
 import AdminLayout from '../../layouts/AdminLayout';
 
-export default [
+export const guestRoutes = [
   {
     path: '/',
     exact: true,
     page: Homepage,
-    role: ALL,
     layout: MainLayout,
     id: 't0y9pNF1Fv'
   },
@@ -37,7 +34,6 @@ export default [
     path: '/about',
     exact: true,
     page: About,
-    role: ALL,
     layout: MainLayout,
     id: 'Ukv7NHSQlM'
   },
@@ -45,7 +41,6 @@ export default [
     path: '/services/online-training',
     exact: true,
     page: Online,
-    role: ALL,
     layout: MainLayout,
     id: 'aA8wmJaqKa'
   },
@@ -53,7 +48,6 @@ export default [
     path: '/services/nutrition-plan',
     exact: true,
     page: Nutrition,
-    role: ALL,
     layout: MainLayout,
     id: 'g3osQqyZau'
   },
@@ -61,7 +55,6 @@ export default [
     path: '/services',
     exact: true,
     page: Services,
-    role: ALL,
     layout: MainLayout,
     id: 'qnapXP4om6'
   },
@@ -69,7 +62,6 @@ export default [
     path: '/sales',
     exact: true,
     page: Sales,
-    role: ALL,
     layout: MainLayout,
     id: 'iFXEEri2iu'
   },
@@ -77,7 +69,6 @@ export default [
     path: '/contacts',
     exact: true,
     page: Contacts,
-    role: ALL,
     layout: MainLayout,
     id: '8OsJDwHj1j'
   },
@@ -85,7 +76,6 @@ export default [
     path: '/login',
     exact: true,
     page: LoginPage,
-    role: ALL,
     layout: LoginLayout,
     id: 'ydY8jq0ah9'
   },
@@ -93,15 +83,16 @@ export default [
     path: '/signup',
     exact: true,
     page: SignupPage,
-    role: ALL,
     layout: LoginLayout,
     id: 'K7RsR4thm1'
-  },
+  }
+]
+
+export const adminRoutes = [
   {
     path: '/cabinet/admin',
     exact: true,
     page: AdminCabinet,
-    role: ADMIN,
     layout: AdminLayout,
     id: 'ys8goGn387'
   },
@@ -109,15 +100,16 @@ export default [
     path: '/cabinet/admin/orders',
     exact: true,
     page: AdminOrders,
-    role: ADMIN,
     layout: AdminLayout,
     id: 'fcJpTaRz6N'
-  },
+  }
+]
+
+export const userRoutes = [
   {
     path: '/cabinet/user',
     exact: true,
     page: UserCabinet,
-    role: USER,
     layout: UserLayout,
     id: 'Nx5r5mLan0'
   },
@@ -125,7 +117,6 @@ export default [
     path: '/cabinet/user/metrics',
     exact: true,
     page: AboutUs,
-    role: USER,
     layout: UserLayout,
     id: 'fcJpTBRz6N'
   },
@@ -133,7 +124,6 @@ export default [
     path: '/cabinet/user/orders',
     exact: true,
     page: UserOrders,
-    role: USER,
     layout: UserLayout,
     id: 'fcJpTaRz6Nsq'
   },
@@ -141,7 +131,6 @@ export default [
     path: '/cabinet/user/service-order',
     exact: true,
     page: ServiceOrder,
-    role: USER,
     layout: UserLayout,
     id: 'f1rTaTz4Nbt'
   },
@@ -149,8 +138,7 @@ export default [
     path: '',
     exact: false,
     page: NotFound,
-    role: ALL,
     layout: LoginLayout,
     id: 'fcJpT0007N'
-  },
-];
+  }
+]

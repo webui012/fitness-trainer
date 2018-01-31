@@ -1,37 +1,34 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import path from 'path';
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 import bodyParser from 'body-parser';
 
+import auth from './src/routes/auth';
+import users from './src/routes/users';
+//import orders from './src/routes/orders';
+import sales from './src/routes/sales';
 
 import { getServiceOrderPage, postOrder } from './src/routes/serviceOrder';
 import getServicesPage from './src/routes/services';
-import users from './src/routes/users'; //routes for users actions (login ...)
-import sales from './src/routes/sales'; //routes for users actions (login ...)
-
-const app = express();
 
 // Initialize dotenv config
 dotenv.config();
 
+mongoose.connect(process.env.MONGODB_URL, { useMongoClient: true })
 mongoose.Promise = global.Promise;
-// Connect server to ATLAS MONGODB with .env params
-mongoose.connect(
-  process.env.MONGO_ATLAS_HOST +
-  process.env.MONGO_ATLAS_PW +
-  process.env.MONGO_ATLAS_ROUTE,
-  { useMongoClient: true }
-);
 
 const db = mongoose.connection;
+
 db.on('error', console.error.bind(console, 'connection error:'));
+
+const app = express();
 
 // Enable CORS so that we can make HTTP request from webpack-dev-server
 app.all('/*', (req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE, PATCH');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
   next();
 });
 
@@ -49,11 +46,17 @@ app.route('/cabinet/user/service-order')
 app.route('/services')
   .get(getServicesPage);
 
-app.use('/users', users) // middleware for users endpoints
-app.use('/api/sales', sales) // middleware for users endpoints
+// Routes for user registration and auth
+app.use('/api/auth', auth);
+app.use('/api/users', users)
+
+// Routes for orders
+//app.use('/api/orders', orders)
+
+// Routes for orders
+app.use('/api/sales', sales)
 
 // Default route
 app.get('/*', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
 
-// Listen PORT from .env config
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT, () => console.log(`Listen on ${process.env.PORT}`))
