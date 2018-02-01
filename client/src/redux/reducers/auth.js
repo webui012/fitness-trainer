@@ -46,5 +46,6 @@ const auth = (state = initialState, action = {}) => {
 export const getLoadingStatus = state => state.auth.isLoading
 export const getAuthenticationStatus = state => !!state.auth.user.token
 export const getAdminStatus = state => state.auth.user.isAdmin
+export const getUsername = state => state.auth.user.username
 
 export default auth;

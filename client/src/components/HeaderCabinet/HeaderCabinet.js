@@ -3,9 +3,13 @@ import PropTypes from 'prop-types';
 import {
   Logo,
   Navigation,
-  Login
+  Login,
+  ProfileMenu
 } from 'Components';
+import { connect } from 'react-redux';
 import './HeaderCabinet.scss';
+import { getUsername } from '../../redux/reducers/auth';
+import { userLogout } from '../../redux/actions/auth';
 
 const HeaderCabinet = props => {
   const { logo, navigation } = props.data;
@@ -14,14 +18,18 @@ const HeaderCabinet = props => {
     <header className='main-header'>
       <Logo data={logo} />
       <Navigation data={navigation} />
-      <Login />
+      <ProfileMenu username={props.username} userLogout={props.userLogout}/>
     </header>
   );
 };
 
-HeaderCabinet.propTypes = {
-  logo: PropTypes.string,
-  navigation: PropTypes.PropTypes.arrayOf(PropTypes.object),
-};
+const mapStateToProps = state => ({
+  username: getUsername(state),
+});
 
-export default HeaderCabinet;
+const mapDispatchToProps = {
+  getUsername,
+  userLogout
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderCabinet);

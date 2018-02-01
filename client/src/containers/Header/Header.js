@@ -6,9 +6,12 @@ import {
   Logo,
   Navigation,
   Login,
-  CabinetEnterButton
+  ProfileMenu
 } from 'Components';
 import './Header.scss';
+import { getAuthenticationStatus, getUsername } from '../../redux/reducers/auth';
+import { userLogout } from '../../redux/actions/auth';
+
 
 const Header = props => {
   const { logo, navigation } = props.header;
@@ -17,18 +20,28 @@ const Header = props => {
     <header className='main-header'>
       <Logo data={logo} />
       <Navigation data={navigation} />
-      <CabinetEnterButton />
-      <Login />
+      {props.isAuthenticated
+        ? <ProfileMenu username={props.username} userLogout={props.userLogout}/>
+        : <Login />
+      }
     </header>
   );
 };
 
 const mapStateToProps = state => ({
   header: getHeaderData(state),
+  username: getUsername(state),
+  isAuthenticated: getAuthenticationStatus(state)
 });
+
+const mapDispatchToProps = {
+  getUsername,
+  getAuthenticationStatus,
+  userLogout
+}
 
 Header.propTypes = {
   header: PropTypes.object,
 };
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

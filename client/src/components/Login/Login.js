@@ -7,12 +7,7 @@ import { userLogout } from '../../redux/actions/auth';
 
 const Login = props =>
     <div className='login-section'>
-      {props.isAuthenticated
-        ? <Link
-            to='/login'
-            className='login-btn'
-            onClick={() => props.userLogout()}>Выход</Link>
-        : <Link to='/login' className='login-btn'>Вход</Link>}
+      <Link to='/login' className='login-btn'>Вход</Link>
     </div>
 
 const mapStateToProps = state => ({

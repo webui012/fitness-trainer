@@ -30,5 +30,6 @@ export { default as Socials } from './Socials/Socials';
 export { default as HeaderCabinet } from './HeaderCabinet/HeaderCabinet';
 export { default as AdminSidebar } from './AdminSidebar/AdminSidebar';
 export { default as UserCards } from './UserCards/UserCards';
+export { default as ProfileMenu } from './ProfileMenu/ProfileMenu';
 export { default as NoUserFoundError } from './NoUserFoundError/NoUserFoundError';
 export { default as CabinetEnterButton } from './CabinetEnterButton/CabinetEnterButton';

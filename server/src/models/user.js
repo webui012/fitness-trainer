@@ -30,6 +30,7 @@ userSchema.methods.setPassword = function setPassword(password) {
 userSchema.methods.generateJWT = function generateJWT() {
   return jwt.sign(
     {
+      username: this.username,
       email: this.email,
       isAdmin: this.isAdmin
     },
@@ -40,6 +41,7 @@ userSchema.methods.generateJWT = function generateJWT() {
 // Prepare user model for client
 userSchema.methods.toAuthJSON = function toAuthJSON() {
   return {
+    username: this.username,
     email: this.email,
     isAdmin: this.isAdmin,
     token: this.generateJWT()

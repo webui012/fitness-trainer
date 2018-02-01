@@ -26,6 +26,7 @@ if (localStorage.JWT) {
   const payload = decode(localStorage.JWT);
 
   const user = {
+    username: payload.username,
     email: payload.email,
     isAdmin: payload.isAdmin,
     token: localStorage.JWT
