@@ -18,12 +18,13 @@ function* signup(action) {
       user
     });
 
+
     user.isAdmin ?
       history.push('/cabinet/admin') :
       history.push('/cabinet/user')
 
     } catch (e) {
-      yield put({ type: SIGNUP_FAILED, message: e.message });
+      yield put({ type: SIGNUP_FAILED, isLoading: false, message: e.message });
   }
 }
 

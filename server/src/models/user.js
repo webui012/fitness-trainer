@@ -20,6 +20,7 @@ userSchema.methods.isValidPassword = function isValidPassword(password) {
   return bcrypt.compareSync(password, this.password);
 };
 
+
 // Hash password with bcrypt
 userSchema.methods.setPassword = function setPassword(password) {
   this.password = bcrypt.hashSync(password, 10);

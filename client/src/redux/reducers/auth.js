@@ -3,6 +3,7 @@ import {
   LOGIN_SUCCEEDED,
   USER_SIGNUP,
   SIGNUP_SUCCEEDED,
+  SIGNUP_FAILED,
   USER_LOGOUT,
   LOGOUT_SUCCEEDED
 } from '../constants';
@@ -33,6 +34,9 @@ const auth = (state = initialState, action = {}) => {
         user: {},
         isLoading: action.isLoading
       }
+
+    case SIGNUP_FAILED:
+      return { ...state, isLoading: action.isLoading }
 
     default:
       return state;
