@@ -1,6 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import Sale from '../models/sale';
+import Sale from '../../models/sale';
 
 const router = express.Router();
 
