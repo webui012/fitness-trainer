@@ -5,10 +5,14 @@ import PersonalData from '../models/personalData';
 import UserPersonalData from '../models/sendPersonalData';
 import User from '../models/user';
 import { imagePath, pathToAssets, getFileExtension } from '../utils/helperFunction';
+import authenticate from "../middlewares/authenticate";
 
 const router = express.Router();
 
+// router.use(authenticate);
+
 router.get('/', (req, res) => {
+  // console.log(req.currentUser);
   PersonalData.findById({ _id: '5a67caf8e2146233b4c226d9' || null }, (err, docs) => {
     if (err) {
       return console.log(err);
