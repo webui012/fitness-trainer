@@ -1,4 +1,4 @@
-import { Dropdown, Icon } from 'semantic-ui-react'
+import { Image, Dropdown, Icon } from 'semantic-ui-react'
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -10,6 +10,8 @@ class ProfileMenu extends Component {
   render() {
     // console.log(this.props)
     return (
+      <div className='profile-menu'>
+        <Image src='https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-128.png' size='tiny' />
       <Dropdown text={this.props.username}>
         <Dropdown.Menu>
           <Dropdown.Item>
@@ -31,6 +33,7 @@ class ProfileMenu extends Component {
 
         </Dropdown.Menu>
       </Dropdown>
+    </div>
     );
   }
 }
