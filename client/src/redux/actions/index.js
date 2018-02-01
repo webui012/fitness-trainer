@@ -6,3 +6,4 @@ export * from './serviceOrderForm';
 export * from './login';
 export * from './auth';
 export * from './servicesPage';
+export * from './orders';

@@ -5,7 +5,7 @@ import sales from './sales';
 import header from './header';
 import footer from './footer';
 import homePage from './homePage';
-import adminOrders from './adminOrders';
+import orders from './orders';
 import userOrders from './userOrders';
 import ordersVisibilityFilter from './ordersVisibilityFilter';
 import aboutUsSendDataForm from './aboutUsSendDataForm';
@@ -24,7 +24,7 @@ const rootReducer = combineReducers({
   header,
   footer,
   homePage,
-  adminOrders,
+  orders,
   userOrders,
   ordersVisibilityFilter,
   serviceOrderForm,

@@ -1,4 +1,5 @@
 import { all } from 'redux-saga/effects';
+import orders from './orders';
 import showSalesPage from './sales';
 import aboutUsSendDataForm from './aboutUsSendDataForm';
 import aboutUsGetData from './aboutUsGetData';
@@ -17,6 +18,7 @@ export default function * rootSaga() {
     login(),
     logout(),
     signup(),
+    orders(),
     aboutUsSendDataForm(),
     aboutUsGetData(),
     contactsGetData(),
