@@ -8,6 +8,7 @@ import _ from 'lodash';
 class SignupForm extends Component {
   state = {
     data: {
+      username: '',
       email: '',
       password: '',
     },
@@ -61,6 +62,7 @@ class SignupForm extends Component {
 
     if (!isEmail(data.email)) errors.email = 'Некорректный email!';
     if (!data.password) errors.password = 'Это поле не может быть пустым!';
+    if (!data.username) errors.username = 'Это поле не может быть пустым!';
     if (!pw_confirmed) errors.pw_confirm = 'Пароли не совпадают';
 
     return errors;
@@ -73,6 +75,18 @@ class SignupForm extends Component {
       <Form className='form' onSubmit={this.onSubmit}>
         <legend className='signup-form-caption page-title'>Создать аккаунт</legend>
         {this.props.isLoading && <Dimmer active inverted><Loader/></Dimmer>}
+        <Form.Field error={!!errors.username}>
+          <label htmlFor='username'> Имя пользователя</label>
+          <input
+            type='text'
+            id='username'
+            name='username'
+            value={data.username}
+            onChange={this.onChange}
+          />
+          {errors.username && <InlineError text={errors.username} />}
+        </Form.Field>
+
         <Form.Field error={!!errors.email}>
           <label htmlFor='email'> Email</label>
           <input

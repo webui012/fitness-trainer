@@ -13,6 +13,7 @@ const OrderSchema = new Schema({
     default: moment.tz(Date.now(), 'Europe/Kiev').format()
   },
   serviceType: String,
+  status: Boolean,
   trainingPurpose: String
 })
 

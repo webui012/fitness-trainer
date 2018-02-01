@@ -17,6 +17,8 @@ router.post('/', (req, res) => {
   const order = new ServiceOrder({
     _id: mongoose.Types.ObjectId(),
     clientId: req.currentUser._id,
+    user: req.currentUser.username,
+    status: false,
     serviceType: serviceType,
     trainingPurpose: trainingPurpose
   })

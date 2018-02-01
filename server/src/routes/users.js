@@ -12,13 +12,14 @@ router.post('/signup', (req, res) => {
   // Create new user with user schema
   const user = new User({
     _id: mongoose.Types.ObjectId(),
+    username: data.username,
     email: data.email,
     isAdmin: false
   })
 
   // Hash password with user method
   user.setPassword(data.password)
-  
+
   // Save user to database and send it in JSON format to client
   user.save()
   .then(user => res.status(200).json({ user: user.toAuthJSON() }))

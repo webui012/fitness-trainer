@@ -35,24 +35,27 @@ class AdminOrders extends Component {
   // Orders list render
   renderOrders = orders => {
     return orders.map((order, i) => {
-      let color = order.status == 'Оплачено' ? 'green' : 'red'
+      let color = order.status ? 'green' : 'red'
 
       return (
-        <Card key={i} color={color}>
+        <Card key={order._id} color={color}>
           <Card.Content>
-            <Card.Header># {order.id}</Card.Header>
+            <Card.Header># {order._id}</Card.Header>
             <Card.Meta>
-              <span className='date'>{order.date}</span>
+              <span className='date'>{order.date.substring(0,10)}</span>
             </Card.Meta>
 
             <Card.Description>
-              {order.service}
+              {order.serviceType}
+            </Card.Description>
+            <Card.Description>
+              {order.trainingPurpose}
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
             <Link to='/user:id'>
               <Icon name='user' />
-              {order.customer}
+              {order.user}
             </Link>
           </Card.Content>
         </Card>

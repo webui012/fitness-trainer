@@ -1,17 +1,14 @@
-/* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getVisibleOrders, getUserSelections } from '../../redux/reducers/userOrders';
-import { setOrdersVisibilityFilter } from '../../redux/actions';
 import OrderItem from '../../components/OrderItem/OrderItem';
 import './UserOrders.scss';
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Icon, Image, Dimmer, Loader } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import { getVisibleOrders, getAdminSelections, getLoadingStatus } from '../../redux/reducers/orders';
+import { fetchOrders, setOrdersVisibilityFilter } from '../../redux/actions';
+
 
 class UserOrders extends Component {
-  constructor(props) {
-    super(props);
-  };
 
   // Select items render
   renderSelections = selections =>
@@ -28,6 +25,7 @@ class UserOrders extends Component {
       );
     });
 
+
   // Render options for each select item
   renderOptions = options =>
     options.map((o, i) =>
@@ -37,17 +35,21 @@ class UserOrders extends Component {
   // Orders list render
   renderOrders = orders => {
     return orders.map((order, i) => {
-      let color = order.status == 'Оплачен' ? 'green' : 'red'
+      let color = order.status ? 'green' : 'red'
+
       return (
-        <Card key={i} color={color}>
+        <Card key={order._id} color={color}>
           <Card.Content>
-            <Card.Header># {order.id}</Card.Header>
+            <Card.Header># {order._id.substring(0,10)}</Card.Header>
             <Card.Meta>
-              <span className='date'>{order.date}</span>
+              <span className='date'>{order.date.substring(0,10)}</span>
             </Card.Meta>
 
             <Card.Description>
-              {order.service}
+              {order.serviceType}
+            </Card.Description>
+            <Card.Description>
+              {order.trainingPurpose}
             </Card.Description>
           </Card.Content>
         </Card>
@@ -58,59 +60,52 @@ class UserOrders extends Component {
   handleSelect = e => {
     switch (e.target.value) {
       case 'По цене':
-        this.props.setOrdersVisibilityFilter(SORT_BY_PRICE);
-      break;
-
-      case 'По id':
-        this.props.setOrdersVisibilityFilter(SORT_BY_ID);
-      break;
-
-      case 'Оплачен':
-        this.props.setOrdersVisibilityFilter(SHOW_PAID);
-      break;
-
-      case 'Ожидает оплаты':
-        this.props.setOrdersVisibilityFilter(SHOW_UNPAID);
-      break;
-
-      case 'Онлайн тренировка':
-        this.props.setOrdersVisibilityFilter(SHOW_ONLINE_SERVICE);
+        this.props.setOrdersVisibilityFilter('SORT_BY_PRICE');
         break;
-
-      case 'Правильное питание':
-          this.props.setOrdersVisibilityFilter(SHOW_NUTRITION_SERVICE);
-      break;
-
-      case 'Программа тренировок':
-          this.props.setOrdersVisibilityFilter(SHOW_PROGRAM_SERVICE);
-      break;
-
-      case 'Одежда для фитнеса':
-          this.props.setOrdersVisibilityFilter(SHOW_CLOTHES_SERVICE);
-      break;
+      case 'По id':
+        this.props.setOrdersVisibilityFilter('SORT_BY_ID');
+        break;
+      case 'Оплачен':
+        this.props.setOrdersVisibilityFilter('SHOW_PAID');
+        break;
+      case 'Ожидает оплаты':
+        this.props.setOrdersVisibilityFilter('SHOW_UNPAID');
+        break;
     }
   };
 
+  componentDidMount = () => {
+    this.props.fetchOrders()
+  }
+
   render() {
-    const { orders, selections } = this.props;
+    const { orders, selections, isLoading } = this.props;
 
     return (
       <div className='orders-wrapper'>
-        <div className='orders-select-wrapper'>
+        { isLoading && <Dimmer active inverted><Loader/></Dimmer>}
+        {/* <div className='orders-select-wrapper'>
           {this.renderSelections(selections)}
-        </div>
+        </div> */}
 
         <div className='orders-body'>
+          {(orders.length == 0) && <h1>Нет заказов :(</h1>}
           {this.renderOrders(orders)}
         </div>
       </div>
     );
   }
-}
+};
 
 const mapStateToProps = state => ({
-  selections: getUserSelections(state),
+  selections: getAdminSelections(state),
   orders: getVisibleOrders(state),
+  isLoading: getLoadingStatus(state)
 });
 
-export default connect(mapStateToProps, { setOrdersVisibilityFilter })(UserOrders);
+const mapDispatchToProps = {
+  setOrdersVisibilityFilter,
+  fetchOrders
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserOrders);
