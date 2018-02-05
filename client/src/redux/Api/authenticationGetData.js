@@ -13,6 +13,6 @@ export default (host, path) =>
         response.json().then(error => throw new Error(error.message));
         return;
       }
-      //return response.json();
+      return response.json();
     })
     .catch(error => console.log('error', error.message));
