@@ -48,19 +48,19 @@ app.use(passport.session());
 
 // Enable CORS so that we can make HTTP request from webpack-dev-server
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', "http://localhost:6289");
+  res.header('Access-Control-Allow-Origin', 'http://localhost:6289');
   res.header('Access-Control-Allow-Credentials', true);
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE, POST');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE, POST, OPTIONS');
   res.header('Access-Control-Allow-Headers',
     'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
   next();
 });
 
 app.options("/*", function(req, res, next){
-  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin', 'http://localhost:6289');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-  res.send(200);
+  res.sendStatus(200);
 });
 
 // Middlewares for endpoints

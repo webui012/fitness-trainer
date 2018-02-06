@@ -16,56 +16,44 @@ router.get('/user', (req, res, next) => {
 
 router.post(
   '/login',
-  function(req, res, next) {
-    console.log(req.body);
-    console.log('================');
-    next();
-  },
   passport.authenticate('local'),
   (req, res) => {
-    console.log('POST to /login');
-    const user = JSON.parse(JSON.stringify(req.user)); // hack
-
-    const cleanUser = Object.assign({}, user);
-    if (cleanUser.local) {
-      console.log(`Deleting ${cleanUser.local.password}`);
-      delete cleanUser.local.password;
-    }
-    res.json(cleanUser.currentUserRole);
+    res.json(req.user.currentUserRole);
   }
 )
 
 router.post('/logout', (req, res) => {
-  console.log("nash user", req.session);
   if (req.user) {
     req.session.destroy();
     res.clearCookie('connect.sid'); // clean up!
     return res.json('ALL');
   } else {
-    return res.json(req.user.currentUserRole);
+    return res.json({
+        error: 'No user to logout'
+      })
   }
 })
 
 router.post('/signup', (req, res) => {
-  const { username, password1, email, currentUserRole } = req.body
+  const { username, password1, email, currentUserRole } = req.body;
 
   // ADD VALIDATION
   User.findOne({ 'local.username': username }, (err, userMatch) => {
     if (userMatch) {
       return res.json({
         error: `Sorry, already a user with the username: ${username}`
-      })
-    }
+      });
+    };
     const newUser = new User({
       'email': email,
       'currentUserRole': currentUserRole,
       'local.username': username,
       'local.password1': password1
-      })
+      });
     newUser.save((err, savedUser) => {
       if (err) return res.json(err);
       return res.json(savedUser.currentUserRole);
-    })
+    });
   })
 })
 
