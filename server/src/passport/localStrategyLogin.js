@@ -1,7 +1,7 @@
 const User = require('../models/user');
 const LocalStrategy = require('passport-local').Strategy;
 
-const strategy = new LocalStrategy(
+const loginStrategy = new LocalStrategy(
   {
     usernameField: 'username' // not necessary, DEFAULT
   },
@@ -21,4 +21,4 @@ const strategy = new LocalStrategy(
   }
 )
 
-module.exports = strategy
+module.exports = loginStrategy

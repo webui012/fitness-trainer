@@ -16,7 +16,15 @@ router.get('/user', (req, res, next) => {
 
 router.post(
   '/login',
-  passport.authenticate('local'),
+  passport.authenticate('local-login'),
+  (req, res) => {
+    res.json(req.user.currentUserRole);
+  }
+)
+
+router.post(
+  '/signup',
+  passport.authenticate('local-signup'),
   (req, res) => {
     res.json(req.user.currentUserRole);
   }
@@ -34,28 +42,6 @@ router.post('/logout', (req, res) => {
   }
 })
 
-router.post('/signup', (req, res) => {
-  const { username, password1, email, currentUserRole } = req.body;
-
-  // ADD VALIDATION
-  User.findOne({ 'local.username': username }, (err, userMatch) => {
-    if (userMatch) {
-      return res.json({
-        error: `Sorry, already a user with the username: ${username}`
-      });
-    };
-    const newUser = new User({
-      'email': email,
-      'currentUserRole': currentUserRole,
-      'local.username': username,
-      'local.password1': password1
-      });
-    newUser.save((err, savedUser) => {
-      if (err) return res.json(err);
-      return res.json(savedUser.currentUserRole);
-    });
-  })
-})
 
 
 router.get('/get-role', (req, res, next) => {
@@ -67,8 +53,5 @@ router.get('/get-role', (req, res, next) => {
     return res.json('ALL')
   }
 })
-
-
-
 
 module.exports = router
